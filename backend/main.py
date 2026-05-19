@@ -33,9 +33,12 @@ import pathlib
 import asyncio
 from fastapi import BackgroundTasks
 
-# Setup Cache Directory
-CACHE_DIR = pathlib.Path("backend/cache_api")
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+# Setup Cache Directory relative to this file
+CACHE_DIR = pathlib.Path(__file__).parent.resolve() / "cache_api"
+try:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+except Exception as e:
+    print(f"Cache directory creation ignored (read-only filesystem): {e}")
 
 # Simple In-Memory Cache to speed up API requests to 0ms
 surah_cache = {}
