@@ -1,5 +1,15 @@
 import React, { useState, useRef } from "react";
-import { Search, Play, Pause, AlertCircle, Sparkles, Copy, Share2 } from "lucide-react";
+import { Search, Play, Pause, AlertCircle, Copy, Share2 } from "lucide-react";
+import { surahList, quranTexts } from "../data/quranData";
+
+const cleanTranslationText = (text: string): string => {
+  if (!text) return "";
+  return text
+    .replace(/<sup[^>]*>.*?<\/sup>/g, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+};
 
 interface SearchResult {
   id: number;
@@ -37,16 +47,90 @@ export const SemanticSearch: React.FC = () => {
     setError(null);
     setQuery(searchQuery);
 
+    // Read the user's selected language preference from LocalStorage
+    const savedLang = localStorage.getItem("quran_language");
+    let translationId = 85;
+    let langCode = "en";
+    if (savedLang) {
+      try {
+        const parsed = JSON.parse(savedLang);
+        if (parsed.translationId) {
+          translationId = parsed.translationId;
+        }
+        if (parsed.code) {
+          langCode = parsed.code;
+        }
+      } catch (e) {}
+    }
+
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+      const res = await fetch(`https://api.quran.com/api/v4/search?q=${encodeURIComponent(searchQuery)}&size=20`);
       if (!res.ok) {
-        throw new Error("Failed to perform search. Please check your backend.");
+        throw new Error("Failed to perform search. Please check your network connection.");
       }
       const data = await res.json();
-      setResults(data);
+      
+      const resultsData = (data.search?.results || []).map((v: any, idx: number) => {
+        const verseKey = v.verse_key;
+        const [sId, vId] = verseKey.split(":");
+        const surahId = parseInt(sId);
+        const verseNum = parseInt(vId);
+        
+        // Find Surah Name from our local surahList
+        const surah = surahList.find(s => s.index === surahId);
+        const surahName = surah ? surah.englishName : `Surah ${surahId}`;
+        
+        // Find translation text
+        let translationText = "";
+        if (v.translations && v.translations.length > 0) {
+          const preferred = v.translations.find((t: any) => t.resource_id === translationId);
+          translationText = preferred ? preferred.text : v.translations[0].text;
+        }
+        
+        return {
+          id: v.verse_id || idx,
+          surah_id: surahId,
+          verse_number: verseNum,
+          verse_key: verseKey,
+          text_uthmani: v.text,
+          translation: cleanTranslationText(translationText),
+          surah_name: surahName
+        };
+      });
+      
+      setResults(resultsData);
     } catch (err: any) {
-      console.error(err);
-      setError(err.message || "An unexpected error occurred during search.");
+      console.warn("Public Search API failed, falling back to local database search:", err);
+      
+      // Fallback search: search in our local database
+      const queryLower = searchQuery.toLowerCase();
+      const localResults: SearchResult[] = [];
+      
+      Object.entries(quranTexts).forEach(([surahIdx, verses]) => {
+        const surahId = parseInt(surahIdx);
+        const surah = surahList.find(s => s.index === surahId);
+        const surahName = surah ? surah.englishName : `Surah ${surahId}`;
+        
+        verses.forEach((v) => {
+          // If searching english and chosen language matches English
+          const matchesEnglish = langCode === "en" && v.english.toLowerCase().includes(queryLower);
+          const matchesArabic = v.arabic.includes(queryLower);
+          
+          if (matchesEnglish || matchesArabic) {
+            localResults.push({
+              id: surahId * 1000 + v.verseNumber,
+              surah_id: surahId,
+              verse_number: v.verseNumber,
+              verse_key: `${surahId}:${v.verseNumber}`,
+              text_uthmani: v.arabic,
+              translation: langCode === "en" ? v.english : "", // Skip translation if language is beyond English
+              surah_name: surahName
+            });
+          }
+        });
+      });
+      
+      setResults(localResults);
     } finally {
       setIsLoading(false);
     }
@@ -108,16 +192,16 @@ export const SemanticSearch: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 p-1 md:p-4">
+    <div className="flex flex-col gap-6 p-0 md:p-4">
       {/* Search Input Panel */}
       <div className="glass-panel p-6 flex flex-col gap-4 glowing-active">
         <div>
           <h2 className="text-xl md:text-2xl font-extrabold text-white flex items-center gap-2">
-            <Sparkles className="text-[var(--color-gold)]" size={22} />
-            <span>AI Semantic Search</span>
+            <Search className="text-[var(--color-gold)]" size={22} />
+            <span>Search the Holy Quran</span>
           </h2>
           <p className="text-xs md:text-sm text-[#b39a7d] mt-1">
-            Search for verses by their inner meaning, concepts, or topics in plain English. Powered by nomic-embed-text & pgvector.
+            Search for verses by keywords, phrases, or topics. Powered by standard index-matching with offline fallback.
           </p>
         </div>
 
@@ -128,7 +212,7 @@ export const SemanticSearch: React.FC = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch(query)}
-            placeholder="Type a concept e.g., 'What does the Quran say about patience in times of trial?'"
+            placeholder="Type a word or phrase e.g., 'patience', 'charity', 'forgiveness'..."
             className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
           />
           <button
@@ -171,7 +255,7 @@ export const SemanticSearch: React.FC = () => {
       {isLoading && (
         <div className="glass-panel p-12 text-center text-[var(--color-gold)] animate-pulse flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-sm font-semibold tracking-wide mt-2">Running vector cosine similarity search...</p>
+          <p className="text-sm font-semibold tracking-wide mt-2">Searching verses...</p>
         </div>
       )}
 
@@ -179,8 +263,8 @@ export const SemanticSearch: React.FC = () => {
       {!isLoading && results.length > 0 && (
         <div className="flex flex-col gap-4">
           <div className="text-xs text-[#b39a7d] px-2 flex justify-between items-center">
-            <span>Found <strong className="text-[var(--color-gold)]">{results.length}</strong> semantic matches</span>
-            <span className="text-[10px] uppercase tracking-wider text-[#8c6b4a]">Ranked by Cosine Similarity</span>
+            <span>Found <strong className="text-[var(--color-gold)]">{results.length}</strong> matches</span>
+            <span className="text-[10px] uppercase tracking-wider text-[#8c6b4a]">Standard Search Index</span>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -195,11 +279,6 @@ export const SemanticSearch: React.FC = () => {
                     <span className="text-[11px] font-bold text-[#8c6b4a] bg-[#33261a] rounded-md px-2.5 py-1 tracking-wide">
                       {result.surah_name} ({result.verse_key})
                     </span>
-                    {result.similarity !== undefined && (
-                      <span className="text-[10px] font-bold text-[#d9a05b] bg-[#33261a]/50 border border-[#4d3926]/30 rounded-md px-2 py-0.5">
-                        {Math.round(result.similarity * 100)}% Match
-                      </span>
-                    )}
                   </div>
                   <button
                     onClick={() => handlePlayPause(result)}

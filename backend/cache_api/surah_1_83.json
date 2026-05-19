@@ -1,0 +1,60 @@
+{
+  "surah": {
+    "id": 1,
+    "name_arabic": "الفاتحة",
+    "name_english": "The Opener",
+    "revelation_place": "makkah",
+    "verses_count": 7
+  },
+  "verses": [
+    {
+      "id": 1,
+      "verse_number": 1,
+      "text_uthmani": "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+      "translation": "En el nombre de Dios<sup foot_note=168371>1</sup>, el Compasivo con toda la creación, el Misericordioso con los creyentes<sup foot_note=168372>2</sup>.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001001.mp3"
+    },
+    {
+      "id": 2,
+      "verse_number": 2,
+      "text_uthmani": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ",
+      "translation": "Todas las alabanzas son para Dios, Señor<sup foot_note=168373>1</sup> de todo cuanto existe,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001002.mp3"
+    },
+    {
+      "id": 3,
+      "verse_number": 3,
+      "text_uthmani": "ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+      "translation": "el Compasivo, el Misericordioso.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001003.mp3"
+    },
+    {
+      "id": 4,
+      "verse_number": 4,
+      "text_uthmani": "مَـٰلِكِ يَوْمِ ٱلدِّينِ",
+      "translation": "Soberano absoluto del Día del Juicio Final,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001004.mp3"
+    },
+    {
+      "id": 5,
+      "verse_number": 5,
+      "text_uthmani": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+      "translation": "solo a Ti te adoramos y solo de Ti imploramos ayuda.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001005.mp3"
+    },
+    {
+      "id": 6,
+      "verse_number": 6,
+      "text_uthmani": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ",
+      "translation": "¡Guíanos por el camino recto!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001006.mp3"
+    },
+    {
+      "id": 7,
+      "verse_number": 7,
+      "text_uthmani": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
+      "translation": "El camino de los que has colmado con Tus favores, no el de los que han caído en Tu ira, ni el de los que se extraviaron.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/001007.mp3"
+    }
+  ]
+}

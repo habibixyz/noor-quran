@@ -3,7 +3,7 @@ import { quranMetadataList } from "./quranMetadata";
 
 async function main() {
   console.log("====================================================");
-  console.log("Starting Onchain Quran Contract Deployment on Base");
+  console.log("Starting Noor Quran Contract Deployment on Base");
   console.log("====================================================");
 
   const [deployer] = await ethers.getSigners();
@@ -13,13 +13,13 @@ async function main() {
   console.log("Account balance:", ethers.formatEther(balanceBefore), "ETH");
 
   // 1. Deploy the contract
-  const OnchainQuranFactory = await ethers.getContractFactory("OnchainQuran");
-  console.log("Deploying OnchainQuran contract...");
-  const onchainQuran = await OnchainQuranFactory.deploy();
-  await onchainQuran.waitForDeployment();
-  const contractAddress = await onchainQuran.getAddress();
+  const NoorQuranFactory = await ethers.getContractFactory("NoorQuran");
+  console.log("Deploying NoorQuran contract...");
+  const noorQuran = await NoorQuranFactory.deploy();
+  await noorQuran.waitForDeployment();
+  const contractAddress = await noorQuran.getAddress();
   
-  console.log("✔ OnchainQuran contract deployed successfully!");
+  console.log("✔ NoorQuran contract deployed successfully!");
   console.log("Contract Address:", contractAddress);
 
   // 2. Initialize Surah Metadata in Batches to avoid block gas limit issues
@@ -48,7 +48,7 @@ async function main() {
 
     console.log(`Sending batch ${Math.floor(i / batchSize) + 1}... Surahs ${indices[0]} to ${indices[indices.length - 1]}`);
     
-    const tx = await onchainQuran.initializeSurahsBatch(
+    const tx = await noorQuran.initializeSurahsBatch(
       indices,
       names,
       englishNames,
@@ -62,7 +62,7 @@ async function main() {
 
   // 3. Mark initialization as complete
   console.log("\nFinalizing initialization...");
-  const finalizeTx = await onchainQuran.setInitialized();
+  const finalizeTx = await noorQuran.setInitialized();
   await finalizeTx.wait();
   console.log("✔ Contract marked as fully initialized!");
 

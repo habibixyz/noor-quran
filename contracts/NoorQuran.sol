@@ -7,12 +7,12 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 
 /**
- * @title OnchainQuran
+ * @title NoorQuran
  * @dev An ERC721 contract representing the Guardianship/Sponsorship of Quran Surahs on the Base Network.
  * It stores the cryptographic integrity hashes of the Arabic text of all 114 Surahs and generates 
  * custom certificate artwork fully on-chain via SVGs.
  */
-contract OnchainQuran is ERC721, Ownable {
+contract NoorQuran is ERC721, Ownable {
     using Strings for uint256;
 
     struct SurahMetadata {
@@ -45,7 +45,7 @@ contract OnchainQuran is ERC721, Ownable {
     event SurahSponsored(address indexed guardian, uint256 indexed surahId, uint256 amount);
     event MetadataInitialized();
 
-    constructor() ERC721("Guardians of Al-Quran", "QURAN") Ownable(msg.sender) {}
+    constructor() ERC721("Noor Quran", "NOOR") Ownable(msg.sender) {}
 
     /**
      * @dev Batch initializes the canonical Surah metadata. Can only be called by the contract owner.
@@ -228,7 +228,7 @@ contract OnchainQuran is ERC721, Ownable {
             '<path d="M 20 580 L 25 578 L 20 576 L 22 580 Z" fill="url(#goldGrad)"/>',
             '<path d="M 380 580 L 375 578 L 380 576 L 378 580 Z" fill="url(#goldGrad)"/>',
             // Title
-            '<text x="200" y="80" text-anchor="middle" fill="url(#goldGrad)" font-family="Georgia, serif" font-size="20" font-weight="bold" letter-spacing="1">GUARDIAN OF AL-QURAN</text>',
+            '<text x="200" y="80" text-anchor="middle" fill="url(#goldGrad)" font-family="Georgia, serif" font-size="20" font-weight="bold" letter-spacing="1">NOOR QURAN GUARDIAN</text>',
             '<line x1="120" y1="100" x2="280" y2="100" stroke="url(#goldGrad)" stroke-width="2"/>',
             '<circle cx="200" cy="100" r="4" fill="url(#goldGrad)"/>',
             // Surah Hexagon-badge

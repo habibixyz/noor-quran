@@ -62,6 +62,19 @@ def save_to_cache(name: str, data):
     except Exception as e:
         print(f"Error writing cache file {name}: {e}")
 
+import re
+
+def clean_translation_text(text_val: str) -> str:
+    if not text_val:
+        return ""
+    # Remove footnote tags along with their content (e.g., <sup ...>1</sup>)
+    cleaned = re.sub(r'<sup[^>]*>.*?</sup>', '', text_val)
+    # Remove any remaining HTML tags
+    cleaned = re.sub(r'<[^<]+?>', '', cleaned)
+    # Replace multiple spaces/newlines/tabs with a single space
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
+
 def get_embedding(text_input: str) -> list[float]:
     # Uses Ollama locally - free, no API key needed
     try:
@@ -153,47 +166,67 @@ async def get_all_surahs():
         return []
 
 @app.get("/api/surah/{surah_id}")
-async def get_surah(surah_id: int):
+async def get_surah(surah_id: int, translation_id: int = 85):
     """Get complete surah with verses, translations, and audio"""
+    cache_key = f"surah_{surah_id}_{translation_id}"
+
     # 1. Check in-memory cache first
-    if surah_id in surah_cache:
-        return surah_cache[surah_id]
+    if cache_key in surah_cache:
+        return surah_cache[cache_key]
 
     # 2. Check disk cache
-    cached = get_cached_file(f"surah_{surah_id}")
+    cached = get_cached_file(cache_key)
     if cached:
-        surah_cache[surah_id] = cached
+        surah_cache[cache_key] = cached
         return cached
 
     if engine:
         try:
             with engine.connect() as conn:
-                surah_result = conn.execute(text("SELECT * FROM surahs WHERE id = :id"), {"id": surah_id}).fetchone()
-                if surah_result:
-                    verses_result = conn.execute(text("""
-                        SELECT
-                            a.id, a.verse_number, a.text_uthmani,
-                            t.text AS translation,
-                            r.audio_url
-                        FROM ayahs a
-                        LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = 85
-                        LEFT JOIN recitations r  ON r.ayah_id = a.id AND r.reciter_id = 7
-                        WHERE a.surah_id = :surah_id
-                        ORDER BY a.verse_number
-                    """), {"surah_id": surah_id}).fetchall()
-                    
-                    res_data = {
-                        "surah": dict(surah_result._mapping),
-                        "verses": [dict(v._mapping) for v in verses_result]
-                    }
-                    # Save to caches
-                    surah_cache[surah_id] = res_data
-                    save_to_cache(f"surah_{surah_id}", res_data)
-                    return res_data
+                # Check if this translation_id exists in the database
+                check_tid = conn.execute(
+                    text("SELECT 1 FROM translations WHERE resource_id = :tid LIMIT 1"),
+                    {"tid": translation_id}
+                ).fetchone()
+
+                if check_tid:
+                    surah_result = conn.execute(text("SELECT * FROM surahs WHERE id = :id"), {"id": surah_id}).fetchone()
+                    if surah_result:
+                        verses_result = conn.execute(text("""
+                            SELECT
+                                a.id, a.verse_number, a.text_uthmani,
+                                t.text AS translation,
+                                r.audio_url
+                            FROM ayahs a
+                            LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = :translation_id
+                            LEFT JOIN recitations r  ON r.ayah_id = a.id AND r.reciter_id = 7
+                            WHERE a.surah_id = :surah_id
+                            ORDER BY a.verse_number
+                        """), {"surah_id": surah_id, "translation_id": translation_id}).fetchall()
+                        
+                        res_data = {
+                            "surah": dict(surah_result._mapping),
+                            "verses": [
+                                {
+                                    "id": v.id,
+                                    "verse_number": v.verse_number,
+                                    "text_uthmani": v.text_uthmani,
+                                    "translation": clean_translation_text(v.translation),
+                                    "audio_url": v.audio_url
+                                }
+                                for v in verses_result
+                            ]
+                        }
+                        # Save to caches
+                        surah_cache[cache_key] = res_data
+                        save_to_cache(cache_key, res_data)
+                        return res_data
+                else:
+                    print(f"Translation resource {translation_id} not in DB, falling back to API.")
         except Exception as e:
             print("DB error on surah fetch, falling back to API:", e)
 
-    # Fallback to Quran.com API if DB is empty or fails
+    # Fallback to Quran.com API if DB is empty, fails, or lacks translation
     try:
         # Get Surah Details
         chapter_res = requests.get(f"{QDC_BASE}/chapters/{surah_id}?language=en", timeout=5.0).json()
@@ -208,7 +241,7 @@ async def get_surah(surah_id: int):
         }
 
         # Get Verses Details (up to 300 verses per page to get whole surah)
-        verses_res = requests.get(f"{QDC_BASE}/verses/by_chapter/{surah_id}?language=en&words=false&translations=85&audio=7&fields=text_uthmani&per_page=300", timeout=8.0).json()
+        verses_res = requests.get(f"{QDC_BASE}/verses/by_chapter/{surah_id}?language=en&words=false&translations={translation_id}&audio=7&fields=text_uthmani&per_page=300", timeout=8.0).json()
         verses_data = []
         
         for v in verses_res.get("verses", []):
@@ -220,7 +253,7 @@ async def get_surah(surah_id: int):
                 "id": v["id"],
                 "verse_number": v["verse_number"],
                 "text_uthmani": v["text_uthmani"],
-                "translation": v["translations"][0]["text"] if v.get("translations") else "",
+                "translation": clean_translation_text(v["translations"][0]["text"]) if v.get("translations") else "",
                 "audio_url": f"https://verses.quran.com/{audio_path}" if audio_path else ""
             })
 
@@ -229,19 +262,20 @@ async def get_surah(surah_id: int):
             "verses": verses_data
         }
         # Save to caches
-        surah_cache[surah_id] = res_data
-        save_to_cache(f"surah_{surah_id}", res_data)
+        surah_cache[cache_key] = res_data
+        save_to_cache(cache_key, res_data)
         return res_data
     except Exception as e:
-        print(f"Error fetching surah {surah_id}: {e}")
+        print(f"Error fetching surah {surah_id} for translation {translation_id}: {e}")
         raise HTTPException(status_code=500, detail="Failed to fetch surah details")
 
 @app.get("/api/search")
-async def semantic_search(q: str = Query(...)):
+async def semantic_search(q: str = Query(...), translation_id: int = 85):
     """Semantic search for verses based on query"""
+    cache_key = f"search_{q}_{translation_id}"
     # Check in-memory cache first
-    if q in search_cache:
-        return search_cache[q]
+    if cache_key in search_cache:
+        return search_cache[cache_key]
 
     if engine:
         try:
@@ -249,9 +283,17 @@ async def semantic_search(q: str = Query(...)):
             vector = get_embedding(q)
             if vector:
                 with engine.connect() as conn:
+                    # Check if requested translation is in DB
+                    check_tid = conn.execute(
+                        text("SELECT 1 FROM translations WHERE resource_id = :tid LIMIT 1"),
+                        {"tid": translation_id}
+                    ).fetchone()
+                    
+                    db_tid = translation_id if check_tid else 85 # fallback to English if not present in DB
+                    
                     # Perform cosine distance query using pgvector HNSW index
                     vector_str = json.dumps(vector)
-                    results = conn.execute(text("""
+                    results = conn.execute(text(f"""
                         SELECT 
                             a.id, a.surah_id, a.verse_number, a.verse_key, a.text_uthmani,
                             t.text AS translation,
@@ -259,7 +301,7 @@ async def semantic_search(q: str = Query(...)):
                             (1 - (a.embedding <=> :vector::vector)) AS similarity
                         FROM ayahs a
                         JOIN surahs s ON s.id = a.surah_id
-                        LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = 85
+                        LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = {db_tid}
                         WHERE a.embedding IS NOT NULL
                         ORDER BY a.embedding <=> :vector::vector
                         LIMIT 10
@@ -273,18 +315,24 @@ async def semantic_search(q: str = Query(...)):
                                 "verse_number": r.verse_number,
                                 "verse_key": r.verse_key,
                                 "text_uthmani": r.text_uthmani,
-                                "translation": r.translation,
+                                "translation": clean_translation_text(r.translation),
                                 "surah_name": r.surah_name,
                                 "similarity": float(r.similarity)
                             }
                             for r in results
                         ]
-                        search_cache[q] = res_list
+                        search_cache[cache_key] = res_list
                         return res_list
             
             # If Ollama failed or vector is empty, do a standard keyword search on DB
             with engine.connect() as conn:
-                results = conn.execute(text("""
+                check_tid = conn.execute(
+                    text("SELECT 1 FROM translations WHERE resource_id = :tid LIMIT 1"),
+                    {"tid": translation_id}
+                ).fetchone()
+                db_tid = translation_id if check_tid else 85
+                
+                results = conn.execute(text(f"""
                     SELECT 
                         a.id, a.surah_id, a.verse_number, a.verse_key, a.text_uthmani,
                         t.text AS translation,
@@ -292,7 +340,7 @@ async def semantic_search(q: str = Query(...)):
                         1.0 AS similarity
                     FROM ayahs a
                     JOIN surahs s ON s.id = a.surah_id
-                    LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = 85
+                    LEFT JOIN translations t ON t.ayah_id = a.id AND t.resource_id = {db_tid}
                     WHERE t.text ILIKE :query OR a.text_simple ILIKE :query
                     LIMIT 10
                 """), {"query": f"%{q}%"}).fetchall()
@@ -304,13 +352,13 @@ async def semantic_search(q: str = Query(...)):
                             "verse_number": r.verse_number,
                             "verse_key": r.verse_key,
                             "text_uthmani": r.text_uthmani,
-                            "translation": r.translation,
+                            "translation": clean_translation_text(r.translation),
                             "surah_name": r.surah_name,
                             "similarity": float(r.similarity)
                         }
                         for r in results
                     ]
-                    search_cache[q] = res_list
+                    search_cache[cache_key] = res_list
                     return res_list
         except Exception as e:
             print("DB search error:", e)
@@ -318,12 +366,13 @@ async def semantic_search(q: str = Query(...)):
     # Search locally through cached files first for 100% instant offline results
     local_results = search_local_cache(q)
     if local_results:
-        search_cache[q] = local_results
+        # Note: Local cached surah files might have the wrong translation, but this is a fast offline search fallback
+        search_cache[cache_key] = local_results
         return local_results
             
     # Fallback to Quran.com API search
     try:
-        res = requests.get(f"{QDC_BASE}/search?query={q}&size=10&translations=85", timeout=5.0).json()
+        res = requests.get(f"{QDC_BASE}/search?query={q}&size=10&translations={translation_id}", timeout=5.0).json()
         search_data = res.get("search") or {}
         search_results = search_data.get("results", []) or []
         
@@ -342,10 +391,7 @@ async def semantic_search(q: str = Query(...)):
             
             translations_list = r.get("translations", []) or []
             translation_html = translations_list[0].get("text", "") if translations_list else ""
-            
-            import re
-            clean_translation = re.sub('<[^<]+?>', '', translation_html) if translation_html else ""
-            
+            clean_translation = clean_translation_text(translation_html)
             surah_name = f"Surah {surah_id}"
             
             matches.append({
@@ -358,7 +404,7 @@ async def semantic_search(q: str = Query(...)):
                 "surah_name": surah_name,
                 "similarity": 0.85
             })
-        search_cache[q] = matches
+        search_cache[cache_key] = matches
         return matches
     except Exception as e:
         print("Quran.com search fallback error:", e)

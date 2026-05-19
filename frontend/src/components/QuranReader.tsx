@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { surahList, getSurahVerses } from "../data/quranData";
-import { BookOpen, Play, Pause, Share2, Copy, Sparkles } from "lucide-react";
+import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown } from "lucide-react";
 
 interface Verse {
   id: number;
@@ -10,12 +10,122 @@ interface Verse {
   audio_url?: string;
 }
 
+interface LanguageOption {
+  code: string;
+  name: string;
+  nativeName: string;
+  translationId: number;
+}
+
+interface ReciterOption {
+  id: string;
+  name: string;
+  style: string;
+  reciterId: number;
+  surahAudioPattern: (surahId: number) => string;
+  verseAudioPattern: (surahId: number, verseNum: number) => string;
+}
+
+const cleanTranslationText = (text: string): string => {
+  if (!text) return "";
+  return text
+    .replace(/<sup[^>]*>.*?<\/sup>/g, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+};
+
+const LANGUAGE_OPTIONS: LanguageOption[] = [
+  { code: "en", name: "English (Sahih)", nativeName: "English", translationId: 85 },
+  { code: "es", name: "Spanish", nativeName: "Español", translationId: 83 },
+  { code: "fr", name: "French", nativeName: "Français", translationId: 136 },
+  { code: "ur", name: "Urdu", nativeName: "اردو", translationId: 158 },
+  { code: "tr", name: "Turkish", nativeName: "Türkçe", translationId: 77 },
+  { code: "id", name: "Indonesian", nativeName: "Bahasa Indonesia", translationId: 33 },
+  { code: "ru", name: "Russian", nativeName: "Русский", translationId: 45 },
+  { code: "bn", name: "Bengali", nativeName: "বাংলা", translationId: 161 },
+  { code: "zh", name: "Chinese", nativeName: "中文", translationId: 109 },
+  { code: "de", name: "German", nativeName: "Deutsch", translationId: 27 },
+];
+
+const RECITER_OPTIONS: ReciterOption[] = [
+  { 
+    id: "alafasy", 
+    name: "Mishary Alafasy", 
+    style: "Murattal", 
+    reciterId: 7,
+    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${s}.mp3`,
+    verseAudioPattern: (s, v) => `https://verses.quran.com/Alafasy/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
+  },
+  { 
+    id: "sudais", 
+    name: "Abdul Rahman Al-Sudais", 
+    style: "Murattal", 
+    reciterId: 3,
+    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.sudais/${s}.mp3`,
+    verseAudioPattern: (s, v) => `https://verses.quran.com/Sudais/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
+  },
+  { 
+    id: "muaiqly", 
+    name: "Maher Al-Muaiqly", 
+    style: "Murattal", 
+    reciterId: 12,
+    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.mahermuaiqly/${s}.mp3`,
+    verseAudioPattern: (s, v) => `https://verses.quran.com/MaherAlMuaiqly/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
+  },
+  { 
+    id: "ghamadi", 
+    name: "Saad Al-Ghamdi", 
+    style: "Murattal", 
+    reciterId: 5,
+    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.ghaamidi/${s}.mp3`,
+    verseAudioPattern: (s, v) => `https://verses.quran.com/Ghamadi/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
+  },
+  { 
+    id: "english", 
+    name: "English translation (Ibrahim Walk)", 
+    style: "Translation Audio", 
+    reciterId: 12,
+    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/en.walk/${s}.mp3`,
+    verseAudioPattern: (s, v) => `https://verses.quran.com/IbrahimWalk/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
+  }
+];
+
 export const QuranReader: React.FC = () => {
   const [selectedSurah, setSelectedSurah] = useState<number>(1);
   const [verses, setVerses] = useState<Verse[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [showGlobalTranslation, setShowGlobalTranslation] = useState<boolean>(true);
   const [individualToggles, setIndividualToggles] = useState<Record<number, boolean>>({});
+
+  // Translation & Recitation settings state
+  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(
+    () => {
+      const saved = localStorage.getItem("quran_language");
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          const matched = LANGUAGE_OPTIONS.find(l => l.translationId === parsed.translationId);
+          if (matched) return matched;
+        } catch (e) {}
+      }
+      return LANGUAGE_OPTIONS[0]; // English
+    }
+  );
+
+  const [selectedReciter, setSelectedReciter] = useState<ReciterOption>(
+    () => {
+      const saved = localStorage.getItem("quran_reciter");
+      if (saved) {
+        const matched = RECITER_OPTIONS.find(r => r.id === saved);
+        if (matched) return matched;
+      }
+      return RECITER_OPTIONS[0]; // Alafasy
+    }
+  );
+
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
+  const [activeSettingsTab, setActiveSettingsTab] = useState<"language" | "audio">("language");
   
   // Audio state (Surah level)
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -28,6 +138,25 @@ export const QuranReader: React.FC = () => {
 
   // Mobile UX State
   const [isMobileListOpen, setIsMobileListOpen] = useState<boolean>(false);
+
+  // Listen for recitation settings changes to dynamically rebuild audio source
+  useEffect(() => {
+    setAudioUrl(selectedReciter.surahAudioPattern(selectedSurah));
+    
+    // Stop surah audio and verse audio if they are playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current.load();
+      setIsPlaying(false);
+    }
+    if (verseAudioRef.current) {
+      verseAudioRef.current.pause();
+      verseAudioRef.current.src = "";
+      verseAudioRef.current.load();
+      setPlayingVerseNum(null);
+    }
+  }, [selectedReciter, selectedSurah]);
 
   useEffect(() => {
     let isMounted = true;
@@ -51,40 +180,36 @@ export const QuranReader: React.FC = () => {
       verseAudioRef.current.load();
       setPlayingVerseNum(null);
     }
-    
-    // Set up audio URL for Alafasy recitations (Surah level)
-    setAudioUrl(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${selectedSurah}.mp3`);
 
-    // Fetch dynamic Surah data from Python Backend API
-    fetch(`/api/surah/${selectedSurah}`)
+    // Fetch dynamic Surah data directly from the public Quran.com API with selected translation
+    fetch(`https://api.quran.com/api/v4/verses/by_chapter/${selectedSurah}?language=en&words=false&translations=${selectedLanguage.translationId}&fields=text_uthmani&per_page=300`)
       .then((res) => {
-        if (!res.ok) throw new Error("API Offline");
+        if (!res.ok) throw new Error("Public API Offline");
         return res.json();
       })
       .then((data) => {
         if (isMounted) {
-          // Map backend snake_case to the component structure
           const mappedVerses = data.verses.map((v: any) => ({
             id: v.id,
             verse_number: v.verse_number,
             text_uthmani: v.text_uthmani,
-            translation: v.translation,
-            audio_url: v.audio_url
+            translation: v.translations && v.translations[0] ? cleanTranslationText(v.translations[0].text) : "",
+            audio_url: v.audio?.url ? `https://verses.quran.com/${v.audio.url}` : undefined
           }));
           setVerses(mappedVerses);
           setIsLoading(false);
         }
       })
       .catch((err) => {
-        console.warn("FastAPI offline, falling back to clean simulated/local client database:", err);
+        console.warn("Quran.com API offline, falling back to clean simulated/local client database:", err);
         if (isMounted) {
-          // Fallback mechanism to ensure working client
+          // Fallback mechanism: use local DB (skip translations if chosen language is not English)
           const localVerses = getSurahVerses(selectedSurah);
           const mappedLocal = localVerses.map((v, idx) => ({
             id: idx,
             verse_number: v.verseNumber,
             text_uthmani: v.arabic,
-            translation: v.english
+            translation: selectedLanguage.code === "en" ? v.english : ""
           }));
           setVerses(mappedLocal);
           setIsLoading(false);
@@ -94,7 +219,7 @@ export const QuranReader: React.FC = () => {
     return () => {
       isMounted = false;
     };
-  }, [selectedSurah]);
+  }, [selectedSurah, selectedLanguage]);
 
   const activeSurahDetails = surahList.find((s) => s.index === selectedSurah) || surahList[0];
 
@@ -164,12 +289,8 @@ export const QuranReader: React.FC = () => {
       verseAudioRef.current.load();
     }
 
-    // Resolve audio URL - Use Quran.com high-performance Cloudflare CDN instead of slow everyayah.com
-    const url = verse.audio_url || (() => {
-      const paddedSurah = String(selectedSurah).padStart(3, "0");
-      const paddedVerse = String(verse.verse_number).padStart(3, "0");
-      return `https://verses.quran.com/Alafasy/mp3/${paddedSurah}${paddedVerse}.mp3`;
-    })();
+    // Resolve audio URL based on selected reciter
+    const url = selectedReciter.verseAudioPattern(selectedSurah, verse.verse_number);
 
     if (verseAudioRef.current) {
       verseAudioRef.current.src = url;
@@ -201,8 +322,151 @@ export const QuranReader: React.FC = () => {
     }
   };
 
+  const renderDropdownContent = () => (
+    <>
+      <div className="flex justify-between items-center mb-3 pb-2 border-b border-[#33261a]">
+        <span className="text-xs font-bold text-[var(--color-gold)] flex items-center gap-1.5 uppercase tracking-wide">
+          <Globe size={13} className="text-[var(--color-gold)]" /> Reader Customization
+        </span>
+        <button 
+          onClick={() => setShowSettingsDropdown(false)} 
+          className="text-[10px] uppercase font-bold tracking-wider text-[#8c6b4a] hover:text-white transition-all"
+        >
+          Close
+        </button>
+      </div>
+
+      {/* Segmented Tab Controls */}
+      <div className="flex bg-[#120d08] p-1 rounded-xl border border-[#33261a] mb-4">
+        <button
+          onClick={() => setActiveSettingsTab("language")}
+          className={`flex-1 flex items-center justify-center gap-2 py-2 text-[11px] font-bold rounded-lg transition-all ${
+            activeSettingsTab === "language"
+              ? "bg-[#33261a] text-[var(--color-gold)] border border-[var(--color-gold)]/20 shadow-md"
+              : "text-[#8c6b4a] hover:text-[#f0e8d0]"
+          }`}
+        >
+          <Globe size={12} /> Language
+        </button>
+        <button
+          onClick={() => setActiveSettingsTab("audio")}
+          className={`flex-1 flex items-center justify-center gap-2 py-2 text-[11px] font-bold rounded-lg transition-all ${
+            activeSettingsTab === "audio"
+              ? "bg-[#33261a] text-[var(--color-gold)] border border-[var(--color-gold)]/20 shadow-md"
+              : "text-[#8c6b4a] hover:text-[#f0e8d0]"
+          }`}
+        >
+          <Volume2 size={12} /> Reciter voice
+        </button>
+      </div>
+
+      <div className="space-y-4">
+        {activeSettingsTab === "language" ? (
+          /* Premium Languages Card List */
+          <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1 animate-in fade-in duration-200">
+            {LANGUAGE_OPTIONS.map((lang) => {
+              const isSelected = selectedLanguage.code === lang.code;
+              return (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    setSelectedLanguage(lang);
+                    localStorage.setItem("quran_language", JSON.stringify(lang));
+                  }}
+                  className={`w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all ${
+                    isSelected
+                      ? "bg-[#241c12] border-[var(--color-gold)] shadow-[0_0_12px_rgba(201,168,76,0.15)]"
+                      : "bg-[#16110b]/55 border-[#33261a] hover:border-[#4d3926] hover:bg-[#1f1810]"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className={`w-8 h-8 flex items-center justify-center rounded-lg text-[10px] font-bold transition-all ${
+                      isSelected ? "bg-[var(--color-gold)] text-[#16110b]" : "bg-[#33261a] text-[#8c6b4a]"
+                    }`}>
+                      {lang.code.toUpperCase()}
+                    </div>
+                    <div>
+                      <div className={`text-sm font-bold ${isSelected ? "text-[var(--color-gold)]" : "text-[#f0e8d0]"}`}>
+                        {lang.name}
+                      </div>
+                      <div className="text-[#8c6b4a] font-medium mt-0.5" style={{ fontSize: "10px" }}>Translation</div>
+                    </div>
+                  </div>
+                  <div className="text-right flex flex-col items-end gap-1">
+                    <div className="font-arabic text-sm text-[#e8d5a3] font-bold">{lang.nativeName}</div>
+                    {isSelected && (
+                      <span className="text-[8px] bg-[var(--color-gold)]/10 text-[var(--color-gold)] px-1.5 py-0.5 rounded font-bold tracking-wider uppercase border border-[var(--color-gold)]/20">
+                        Active
+                      </span>
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        ) : (
+          /* Premium Reciters Card List */
+          <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1 animate-in fade-in duration-200">
+            {RECITER_OPTIONS.map((reciter) => {
+              const isSelected = selectedReciter.id === reciter.id;
+              return (
+                <button
+                  key={reciter.id}
+                  onClick={() => {
+                    setSelectedReciter(reciter);
+                    localStorage.setItem("quran_reciter", reciter.id);
+                  }}
+                  className={`w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all ${
+                    isSelected
+                      ? "bg-[#241c12] border-[var(--color-gold)] shadow-[0_0_12px_rgba(201,168,76,0.15)]"
+                      : "bg-[#16110b]/55 border-[#33261a] hover:border-[#4d3926] hover:bg-[#1f1810]"
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className={`w-8 h-8 flex items-center justify-center rounded-lg transition-all ${
+                      isSelected ? "bg-[var(--color-gold)] text-[#16110b]" : "bg-[#33261a] text-[#8c6b4a]"
+                    }`}>
+                      <Volume2 size={13} />
+                    </div>
+                    <div>
+                      <div className={`text-sm font-bold ${isSelected ? "text-[var(--color-gold)]" : "text-[#f0e8d0]"}`}>
+                        {reciter.name}
+                      </div>
+                      <div className="text-[#8c6b4a] font-medium mt-0.5" style={{ fontSize: "10px" }}>Qari / Reciter</div>
+                    </div>
+                  </div>
+                  <div className="text-right flex flex-col items-end gap-1">
+                    <span className={`text-[8px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider border ${
+                      isSelected ? "bg-[#33261a] text-[var(--color-gold)] border-[var(--color-gold)]/20" : "bg-[#120d08] text-[#8c6b4a] border-[#33261a]"
+                    }`}>
+                      {reciter.style}
+                    </span>
+                    {isSelected && (
+                      <span className="text-[8px] bg-[var(--color-gold)]/10 text-[var(--color-gold)] px-1.5 py-0.5 rounded font-bold tracking-wider uppercase border border-[var(--color-gold)]/20 mt-0.5">
+                        Selected
+                      </span>
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Action / Apply Button */}
+      <button
+        onClick={() => setShowSettingsDropdown(false)}
+        className="w-full mt-4 py-2.5 bg-gradient-to-r from-[var(--color-gold-dark)] to-[var(--color-gold)] text-[#16110b] rounded-xl font-bold text-xs uppercase tracking-widest shadow-lg hover:from-[var(--color-gold)] hover:to-[var(--color-gold-light)] active:translate-y-px transition-all"
+        style={{ background: 'linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 100%)' }}
+      >
+        Apply Customization
+      </button>
+    </>
+  );
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 p-1 md:p-4">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 p-0 md:p-4 relative">
       {/* Side Menu / Sidebar - Hidden on mobile, shown on desktop */}
       <div className="lg:col-span-1 hidden lg:flex flex-col gap-4">
         {/* Current Surah Card */}
@@ -275,7 +539,7 @@ export const QuranReader: React.FC = () => {
       {/* Main Content Area */}
       <div className="lg:col-span-3 flex flex-col gap-4 md:gap-6">
         {/* Header Ribbon / Audio Controller */}
-        <div className="glass-panel p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 glowing-active">
+        <div className="glass-panel p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 glowing-active relative z-40">
           <div>
             <div className="flex items-center gap-2 md:gap-3">
               <span className="px-2 py-0.5 md:px-3 md:py-1 rounded bg-amber-400/20 text-amber-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">
@@ -301,6 +565,29 @@ export const QuranReader: React.FC = () => {
               <BookOpen size={15} />
               <span>Browse Chapters</span>
             </button>
+
+            {/* Language & Audio Settings Button */}
+            <div className="relative">
+              <button
+                onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
+                className="bg-[#33261a] text-[#c9a84c] border border-[#4d3926] p-2.5 rounded-lg font-bold flex items-center justify-center gap-1.5 transition-all hover:bg-[#4d3926]"
+                title="Choose translation language & audio reciter"
+              >
+                <Globe size={16} />
+                <span className="text-xs">
+                  <span className="hidden md:inline">Translation: {selectedLanguage.name} | Reciter: {selectedReciter.name.split(" ").slice(-1)[0]}</span>
+                  <span className="md:hidden">Translate ({selectedLanguage.code.toUpperCase()})</span>
+                </span>
+                <ChevronDown size={13} className="opacity-80 shrink-0" />
+              </button>
+
+              {/* Settings Dropdown Menu (Desktop) */}
+              {showSettingsDropdown && (
+                <div className="settings-dropdown-container glass-panel p-4 shadow-xl border border-[var(--color-glass-border)] bg-[var(--color-bg-dark)]/95 backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-150 rounded-xl hidden md:block">
+                  {renderDropdownContent()}
+                </div>
+              )}
+            </div>
 
             {/* Audio Recitation Button */}
             <button
@@ -351,7 +638,7 @@ export const QuranReader: React.FC = () => {
         {isLoading && (
           <div className="glass-panel py-24 text-center text-[var(--color-gold)] animate-pulse flex flex-col items-center gap-3">
             <div className="w-10 h-10 border-2 border-[var(--color-gold)] border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-sm font-semibold tracking-wide mt-2">Fetching surah verses from FastAPI...</p>
+            <p className="text-sm font-semibold tracking-wide mt-2">Loading Holy Quran verses...</p>
           </div>
         )}
 
@@ -482,6 +769,21 @@ export const QuranReader: React.FC = () => {
                 </button>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Settings Bottom Drawer (Mobile) */}
+      {showSettingsDropdown && (
+        <div className="md:hidden">
+          <div 
+            className="fixed inset-0 bg-black/60 z-[90]"
+            onClick={() => setShowSettingsDropdown(false)}
+          />
+          <div className="settings-dropdown-container glass-panel p-4 shadow-xl border border-[var(--color-glass-border)] bg-[var(--color-bg-dark)]/95 backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-150 rounded-xl">
+            {/* Native Sheet Pull Indicator */}
+            <div className="w-12 h-1 bg-[#4d3926] rounded-full mx-auto mb-3 opacity-60" />
+            {renderDropdownContent()}
           </div>
         </div>
       )}
