@@ -72,17 +72,16 @@ export const SemanticSearch: React.FC = () => {
       if (audioRef.current) {
         audioRef.current.pause();
       }
-      const audio = new Audio(url);
-      audioRef.current = audio;
-      audio.play().then(() => {
-        setPlayingId(result.id);
-      }).catch((err) => {
-        console.error("Audio playback error:", err);
-      });
-
-      audio.onended = () => {
-        setPlayingId(null);
-      };
+      
+      if (audioRef.current) {
+        audioRef.current.src = url;
+        audioRef.current.load(); // Force pre-buffering on mobile
+        audioRef.current.play().then(() => {
+          setPlayingId(result.id);
+        }).catch((err) => {
+          console.error("Audio playback error:", err);
+        });
+      }
     }
   };
 
@@ -247,6 +246,12 @@ export const SemanticSearch: React.FC = () => {
           <p className="text-sm">No exact matches found for "{query}". Try searching other keywords or topics.</p>
         </div>
       )}
+
+      <audio
+        ref={audioRef}
+        onEnded={() => setPlayingId(null)}
+        className="hidden"
+      />
     </div>
   );
 };

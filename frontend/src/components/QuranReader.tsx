@@ -154,18 +154,15 @@ export const QuranReader: React.FC = () => {
       return `https://everyayah.com/data/Alafasy_128kbps/${paddedSurah}${paddedVerse}.mp3`;
     })();
 
-    const audio = new Audio(url);
-    verseAudioRef.current = audio;
-    
-    audio.play().then(() => {
-      setPlayingVerseNum(verse.verse_number);
-    }).catch((err) => {
-      console.error("Verse audio playback error:", err);
-    });
-
-    audio.onended = () => {
-      setPlayingVerseNum(null);
-    };
+    if (verseAudioRef.current) {
+      verseAudioRef.current.src = url;
+      verseAudioRef.current.load(); // Force pre-buffering on mobile
+      verseAudioRef.current.play().then(() => {
+        setPlayingVerseNum(verse.verse_number);
+      }).catch((err) => {
+        console.error("Verse audio playback error:", err);
+      });
+    }
   };
 
   const copyToClipboard = (text: string) => {
@@ -304,6 +301,11 @@ export const QuranReader: React.FC = () => {
               ref={audioRef}
               src={audioUrl}
               onEnded={() => setIsPlaying(false)}
+              className="hidden"
+            />
+            <audio
+              ref={verseAudioRef}
+              onEnded={() => setPlayingVerseNum(null)}
               className="hidden"
             />
           </div>
