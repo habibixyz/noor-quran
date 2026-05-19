@@ -49,8 +49,7 @@ export const QuranReader: React.FC = () => {
     }
     
     // Set up audio URL for Alafasy recitations (Surah level)
-    const paddedIndex = String(selectedSurah).padStart(3, "0");
-    setAudioUrl(`https://download.quranicaudio.com/quran/alafasy/${paddedIndex}.mp3`);
+    setAudioUrl(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${selectedSurah}.mp3`);
 
     // Fetch dynamic Surah data from Python Backend API
     fetch(`/api/surah/${selectedSurah}`)
@@ -116,6 +115,9 @@ export const QuranReader: React.FC = () => {
         verseAudioRef.current.pause();
         setPlayingVerseNum(null);
       }
+
+      // Explicitly load the media source to satisfy strict mobile browser autoplay/stream models
+      audioRef.current.load();
 
       audioRef.current.play().then(() => {
         setIsPlaying(true);
