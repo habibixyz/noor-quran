@@ -36,15 +36,19 @@ export const QuranReader: React.FC = () => {
     // Clear individual verse toggles when switching Surah
     setIndividualToggles({});
     
-    // Stop surah audio if playing
-    if (isPlaying && audioRef.current) {
+    // Stop surah audio and fully release socket/threads
+    if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current.load();
       setIsPlaying(false);
     }
 
-    // Stop verse audio if playing
-    if (playingVerseNum && verseAudioRef.current) {
+    // Stop verse audio and fully release socket/threads
+    if (verseAudioRef.current) {
       verseAudioRef.current.pause();
+      verseAudioRef.current.src = "";
+      verseAudioRef.current.load();
       setPlayingVerseNum(null);
     }
     
@@ -108,15 +112,20 @@ export const QuranReader: React.FC = () => {
 
     if (isPlaying) {
       audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current.load(); // Cleanly dump the large Surah stream
       setIsPlaying(false);
     } else {
-      // Pause any active verse audio first
-      if (playingVerseNum && verseAudioRef.current) {
+      // Pause and release any active verse audio first to prevent overlap/socket contention
+      if (verseAudioRef.current) {
         verseAudioRef.current.pause();
+        verseAudioRef.current.src = "";
+        verseAudioRef.current.load();
         setPlayingVerseNum(null);
       }
 
       // Explicitly load the media source to satisfy strict mobile browser autoplay/stream models
+      audioRef.current.src = audioUrl;
       audioRef.current.load();
 
       audioRef.current.play().then(() => {
@@ -129,31 +138,37 @@ export const QuranReader: React.FC = () => {
 
   // Verse Audio Playback
   const playVerseAudio = (verse: Verse) => {
-    // If already playing this verse, pause it
+    // If already playing this verse, pause and release it
     if (playingVerseNum === verse.verse_number) {
       if (verseAudioRef.current) {
         verseAudioRef.current.pause();
+        verseAudioRef.current.src = "";
+        verseAudioRef.current.load();
       }
       setPlayingVerseNum(null);
       return;
     }
 
-    // Stop any surah-level playing audio
-    if (isPlaying && audioRef.current) {
+    // Stop and fully dump any surah-level playing audio
+    if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current.load();
       setIsPlaying(false);
     }
 
-    // Stop currently playing verse audio
+    // Stop and fully dump currently playing verse audio before swapping source
     if (verseAudioRef.current) {
       verseAudioRef.current.pause();
+      verseAudioRef.current.src = "";
+      verseAudioRef.current.load();
     }
 
-    // Resolve audio URL
+    // Resolve audio URL - Use Quran.com high-performance Cloudflare CDN instead of slow everyayah.com
     const url = verse.audio_url || (() => {
       const paddedSurah = String(selectedSurah).padStart(3, "0");
       const paddedVerse = String(verse.verse_number).padStart(3, "0");
-      return `https://everyayah.com/data/Alafasy_128kbps/${paddedSurah}${paddedVerse}.mp3`;
+      return `https://verses.quran.com/Alafasy/mp3/${paddedSurah}${paddedVerse}.mp3`;
     })();
 
     if (verseAudioRef.current) {

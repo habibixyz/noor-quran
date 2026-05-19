@@ -60,17 +60,21 @@ export const SemanticSearch: React.FC = () => {
       const [sId, vId] = result.verse_key.split(":");
       const paddedSurah = String(sId).padStart(3, "0");
       const paddedVerse = String(vId).padStart(3, "0");
-      return `https://everyayah.com/data/Alafasy_128kbps/${paddedSurah}${paddedVerse}.mp3`;
+      return `https://verses.quran.com/Alafasy/mp3/${paddedSurah}${paddedVerse}.mp3`;
     })();
 
     if (playingId === result.id) {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.src = "";
+        audioRef.current.load(); // Release media socket cleanly
       }
       setPlayingId(null);
     } else {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.src = "";
+        audioRef.current.load(); // Cleanly dump previous loading stream
       }
       
       if (audioRef.current) {
