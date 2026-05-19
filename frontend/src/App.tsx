@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between pb-20 md:pb-0" style={{ background: 'var(--color-bg-deep)' }}>
+    <div className="min-h-screen flex flex-col justify-between pb-28 md:pb-4" style={{ background: 'var(--color-bg-deep)' }}>
 
 
       {/* Main Structural Wrapper Container */}
