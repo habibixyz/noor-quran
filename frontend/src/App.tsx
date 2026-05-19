@@ -23,11 +23,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pb-20 md:pb-0" style={{ background: 'var(--color-bg-deep)' }}>
-      {/* Top Banner Ribbon */}
-      <div className="bg-[var(--color-bg-dark)] border-b border-[var(--color-glass-border)] py-1.5 px-4 text-center text-[10px] tracking-wider text-[#6abf71] font-semibold uppercase flex items-center justify-center gap-2">
-        <BookOpen size={12} className="hidden md:block" />
-        <span>Powered by Python & PostgreSQL Vector Search</span>
-      </div>
+
 
       {/* Main Structural Wrapper Container */}
       <div className="max-w-7xl w-full mx-auto px-2 md:px-4 flex-grow flex flex-col gap-4">
