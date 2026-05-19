@@ -320,20 +320,28 @@ async def semantic_search(q: str = Query(...)):
             
     # Fallback to Quran.com API search
     try:
-        res = requests.get(f"{QDC_BASE}/search?q={q}&size=10&translations=85", timeout=5.0).json()
-        search_results = res.get("search", {}).get("results", [])
+        res = requests.get(f"{QDC_BASE}/search?query={q}&size=10&translations=85", timeout=5.0).json()
+        search_data = res.get("search") or {}
+        search_results = search_data.get("results", []) or []
         
         matches = []
         for r in search_results:
             verse_key = r.get("verse_key")
-            surah_id, verse_num = map(int, verse_key.split(":"))
+            if not verse_key or ":" not in verse_key:
+                continue
+            try:
+                surah_id, verse_num = map(int, verse_key.split(":"))
+            except ValueError:
+                continue
             
-            words = r.get("words", [])
-            arabic_str = " ".join([w.get("text_uthmani", "") or w.get("text", "") for w in words if w.get("char_type") != "end"])
+            words = r.get("words", []) or []
+            arabic_str = " ".join([w.get("text_uthmani", "") or w.get("text", "") for w in words if isinstance(w, dict) and w.get("char_type") != "end"])
             
-            translation_html = r.get("translations", [{}])[0].get("text", "")
+            translations_list = r.get("translations", []) or []
+            translation_html = translations_list[0].get("text", "") if translations_list else ""
+            
             import re
-            clean_translation = re.sub('<[^<]+?>', '', translation_html)
+            clean_translation = re.sub('<[^<]+?>', '', translation_html) if translation_html else ""
             
             surah_name = f"Surah {surah_id}"
             
@@ -351,7 +359,7 @@ async def semantic_search(q: str = Query(...)):
         return matches
     except Exception as e:
         print("Quran.com search fallback error:", e)
-        raise HTTPException(status_code=500, detail="Search failed")
+        return []
 
 # Startup background cache pre-fetcher
 async def prefetch_all_surahs():

@@ -203,8 +203,8 @@ export const QuranReader: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 p-1 md:p-4">
-      {/* Side Menu / Sidebar */}
-      <div className="lg:col-span-1 flex flex-col gap-4">
+      {/* Side Menu / Sidebar - Hidden on mobile, shown on desktop */}
+      <div className="lg:col-span-1 hidden lg:flex flex-col gap-4">
         {/* Current Surah Card */}
         <div className="glass-panel p-4 flex flex-col gap-2">
           <div className="text-[10px] font-bold tracking-widest text-[#8c6b4a] uppercase flex items-center gap-2 mb-2">
@@ -221,23 +221,20 @@ export const QuranReader: React.FC = () => {
             </span>
           </div>
           <button 
-            onClick={() => setIsMobileListOpen(!isMobileListOpen)}
+            onClick={() => setIsMobileListOpen(true)}
             className="w-full p-2 bg-[#33261a] border border-[#4d3926] rounded-lg text-[#c9a84c] text-[11px] font-bold tracking-wide flex items-center justify-center gap-2 transition-all hover:bg-[#4d3926]"
           >
-            <BookOpen size={14} /> Browse All Surahs {isMobileListOpen ? "▲" : "▼"}
+            <BookOpen size={14} /> Browse All Surahs
           </button>
         </div>
 
-        {/* The Surah List (Expandable) */}
-        <div className={`glass-panel p-2 max-h-[40vh] lg:max-h-[60vh] overflow-y-auto custom-scrollbar ${isMobileListOpen ? 'block' : 'hidden lg:block'}`}>
+        {/* Desktop Surah List (always visible on desktop, hidden on mobile) */}
+        <div className="glass-panel p-2 max-h-[60vh] overflow-y-auto custom-scrollbar hidden lg:block">
           <div className="space-y-1">
             {surahList.map((surah) => (
               <button
                 key={surah.index}
-                onClick={() => {
-                  setSelectedSurah(surah.index);
-                  setIsMobileListOpen(false); // Close menu on mobile after selection
-                }}
+                onClick={() => setSelectedSurah(surah.index)}
                 className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all ${
                   selectedSurah === surah.index
                     ? "bg-[#33261a] border border-[#c9a84c]/20 text-[#c9a84c]"
@@ -296,6 +293,15 @@ export const QuranReader: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 md:gap-3 mt-1 md:mt-0">
+            {/* Mobile-only Browse Chapters Button */}
+            <button
+              onClick={() => setIsMobileListOpen(true)}
+              className="lg:hidden bg-[#c9a84c] text-[#16110b] border border-[#c9a84c] text-xs py-2 px-3 flex-1 justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#e8d5a3]"
+            >
+              <BookOpen size={15} />
+              <span>Browse Chapters</span>
+            </button>
+
             {/* Audio Recitation Button */}
             <button
               onClick={handlePlayPause}
@@ -430,6 +436,55 @@ export const QuranReader: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Mobile Surah List Modal */}
+      {isMobileListOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md lg:hidden">
+          <div className="glass-panel w-full max-w-md max-h-[85vh] flex flex-col p-4 overflow-hidden animate-in fade-in zoom-in-95" style={{ background: 'var(--color-bg-dark)' }}>
+            <div className="flex justify-between items-center pb-3 border-b border-[#33261a] mb-3">
+              <h3 className="font-bold text-[var(--color-gold)] text-sm tracking-wide uppercase flex items-center gap-2">
+                <BookOpen size={16} /> Browse All Surahs
+              </h3>
+              <button 
+                onClick={() => setIsMobileListOpen(false)}
+                className="text-[#8c6b4a] hover:text-[#f0e8d0] p-1 text-base font-bold"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="flex-grow overflow-y-auto custom-scrollbar space-y-1 pr-1">
+              {surahList.map((surah) => (
+                <button
+                  key={surah.index}
+                  onClick={() => {
+                    setSelectedSurah(surah.index);
+                    setIsMobileListOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all ${
+                    selectedSurah === surah.index
+                      ? "bg-[#33261a] border border-[#c9a84c]/20 text-[#c9a84c]"
+                      : "hover:bg-[#33261a]/50 text-[#f0e8d0]/75 hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs w-6 h-6 flex items-center justify-center rounded-full bg-[#16110b] border border-[#33261a] text-[#c9a84c] font-bold">
+                      {surah.index}
+                    </span>
+                    <div>
+                      <div className="font-semibold text-sm">{surah.englishName}</div>
+                      <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}</div>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-arabic text-sm text-[#e8d5a3]">{surah.name}</div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
