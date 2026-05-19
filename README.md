@@ -4,7 +4,7 @@ A modern AI-powered Quran experience built on Base.
 
 Read the full Quran in multiple languages, listen to beautiful recitations, search verses instantly with AI, and support charity directly from the platform — all inside a clean and immersive interface.
 
-![Noor Quran Preview](https://quranonbase.vercel.app/og.png)
+Read - https://quranonbase.vercel.app/
 
 ---
 
