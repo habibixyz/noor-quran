@@ -361,36 +361,42 @@ export const QuranReader: React.FC = () => {
               return (
                 <div
                   key={verse.verse_number}
-                  className={`bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-4 md:p-5 cursor-pointer transition-all hover:border-[#2a5a30] ${
+                  className={`bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-4 md:p-5 transition-all hover:border-[#2a5a30] ${
                     isTranslationVisible ? "border-[#c9a84c]/20 bg-[#0f2914]" : ""
                   }`}
-                  onClick={() => toggleVerseTranslation(verse.verse_number)}
                 >
                   {/* Verse Top */}
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-[11px] font-bold text-[#4a7c52] bg-[#1a3d1f] rounded-md px-2.5 py-1 tracking-wide">
                       {selectedSurah} : {verse.verse_number}
                     </span>
-                    <span className="text-[11px] text-[#2a5a30]">Click to toggle translation</span>
+                    <span className="text-[11px] text-[#2a5a30]">Click text to toggle translation</span>
                   </div>
 
-                  {/* Arabic Text */}
-                  <div className="font-arabic text-2xl md:text-3xl text-[#e8d5a3] text-right leading-[1.9] dir-rtl">
-                    {verse.text_uthmani}
-                  </div>
-
-                  {/* Divider */}
-                  <div className="h-[1px] bg-[#1a3d1f] my-4"></div>
-
-                  {/* Translation */}
-                  {isTranslationVisible && (
-                    <div className="text-sm md:text-base text-[#8aab8e] leading-[1.7] italic mb-3">
-                      {verse.translation}
+                  {/* Clickable Text Area */}
+                  <div 
+                    onClick={() => toggleVerseTranslation(verse.verse_number)}
+                    className="cursor-pointer"
+                    title="Click to toggle translation inline"
+                  >
+                    {/* Arabic Text */}
+                    <div className="font-arabic text-2xl md:text-3xl text-[#e8d5a3] text-right leading-[1.9] dir-rtl">
+                      {verse.text_uthmani}
                     </div>
-                  )}
+
+                    {/* Divider */}
+                    <div className="h-[1px] bg-[#1a3d1f] my-4"></div>
+
+                    {/* Translation */}
+                    {isTranslationVisible && (
+                      <div className="text-sm md:text-base text-[#8aab8e] leading-[1.7] italic mb-3">
+                        {verse.translation}
+                      </div>
+                    )}
+                  </div>
 
                   {/* Actions */}
-                  <div className="flex gap-2 mt-3" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex gap-2 mt-3">
                     <button
                       onClick={() => playVerseAudio(verse)}
                       className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[var(--color-gold)] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
