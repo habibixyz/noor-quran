@@ -1,0 +1,32 @@
+{
+  "surah": {
+    "id": 103,
+    "name_arabic": "العصر",
+    "name_english": "The Declining Day",
+    "revelation_place": "makkah",
+    "verses_count": 3
+  },
+  "verses": [
+    {
+      "id": 6177,
+      "verse_number": 1,
+      "text_uthmani": " وَٱلْعَصْرِ",
+      "translation": "By the declining day,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/103001.mp3"
+    },
+    {
+      "id": 6178,
+      "verse_number": 2,
+      "text_uthmani": "إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ",
+      "translation": "man is [deep] in loss,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/103002.mp3"
+    },
+    {
+      "id": 6179,
+      "verse_number": 3,
+      "text_uthmani": "إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ",
+      "translation": "except for those who believe, do good deeds, urge one another to the truth, and urge one another to steadfastness.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/103003.mp3"
+    }
+  ]
+}

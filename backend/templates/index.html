@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Noor Quran - Pure Python</title>
+    
+    <!-- Google Fonts: Amiri for Arabic, Outfit for English -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for pure Python setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for lightweight frontend interactions -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            50: '#FDFCF8',
+                            100: '#FAF7F2',
+                            200: '#F0EBE1',
+                            300: '#E6DEC9',
+                            400: '#D5C4A1',
+                        },
+                        ink: {
+                            900: '#1A211D',
+                            800: '#2A3630',
+                            700: '#3A4B42',
+                        },
+                        gold: {
+                            500: '#C19A6B',
+                            600: '#A68253',
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Amiri', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF7F2;
+            color: #1A211D;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .verse-divider {
+            background-image: linear-gradient(to right, transparent, rgba(193, 154, 107, 0.3), transparent);
+            height: 1px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased" x-data="quranReader()">
+
+    <!-- Fixed Mobile Header -->
+    <header class="fixed top-0 left-0 right-0 bg-parchment-100/90 backdrop-blur-md border-b border-gold-500/20 z-50">
+        <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-gold-600">
+                <i class="ti ti-book-2 text-2xl"></i>
+                <span class="font-semibold tracking-wide text-ink-900">Noor</span>
+            </div>
+            
+            <!-- Surah Selector dropdown -->
+            <select 
+                x-model="selectedSurah" 
+                @change="loadSurah()"
+                class="bg-transparent border border-gold-500/30 text-ink-800 text-sm rounded-full px-4 py-1.5 focus:outline-none focus:border-gold-500 appearance-none pr-8 relative bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C19A6B%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_0.5rem_center] bg-[length:1.2em_1.2em]"
+            >
+                <template x-for="s in surahs" :key="s.id">
+                    <option :value="s.id" x-text="`${s.id}. ${s.name_english}`"></option>
+                </template>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-3xl mx-auto px-4 pt-24 pb-32">
+        
+        <!-- Loading State -->
+        <div x-show="isLoading" class="flex flex-col items-center justify-center py-20 text-gold-500 animate-pulse">
+            <i class="ti ti-book-2 text-5xl mb-4 opacity-50"></i>
+            <p>Loading divine verses...</p>
+        </div>
+
+        <!-- Surah Header Title -->
+        <div x-show="!isLoading && surahDetails" class="text-center mb-12 mt-4" x-transition.opacity>
+            <h1 class="font-arabic text-4xl md:text-5xl text-ink-900 mb-2" x-text="surahDetails?.name_arabic"></h1>
+            <h2 class="text-xl text-gold-600 font-semibold mb-1" x-text="surahDetails?.name_english"></h2>
+            <div class="flex items-center justify-center gap-3 text-sm text-ink-700 uppercase tracking-widest mt-4">
+                <span x-text="surahDetails?.revelation_place"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-500/50"></span>
+                <span x-text="surahDetails?.verses_count + ' Verses'"></span>
+            </div>
+            
+            <!-- Bismillah (except Surah 9) -->
+            <div x-show="selectedSurah != 1 && selectedSurah != 9" class="font-arabic text-3xl text-ink-800 mt-10 mb-2">
+                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+            </div>
+        </div>
+
+        <!-- Verses List -->
+        <div x-show="!isLoading" class="flex flex-col">
+            <template x-for="verse in verses" :key="verse.id">
+                <div class="mb-2 w-full">
+                    
+                    <div class="py-4">
+                        <!-- Verse Number Marker -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center text-gold-600 text-xs font-semibold">
+                                <span x-text="verse.verse_number"></span>
+                            </div>
+                        </div>
+
+                        <!-- Arabic Text -->
+                        <div class="font-arabic text-3xl md:text-4xl text-ink-900 text-center md:text-right leading-[2.2] md:leading-[2.5] mb-6 px-2" dir="rtl">
+                            <span x-text="verse.text_uthmani"></span>
+                        </div>
+
+                        <!-- English Translation -->
+                        <div class="text-ink-700 text-lg md:text-xl leading-relaxed text-center md:text-left font-light px-2">
+                            <span x-text="verse.translation"></span>
+                        </div>
+
+                        <!-- Actions (Play Audio) -->
+                        <div class="flex justify-center md:justify-end mt-6 gap-4">
+                            <button @click="playAudio(verse.audio_url)" class="text-gold-600 hover:text-gold-500 bg-gold-500/10 rounded-full w-10 h-10 flex items-center justify-center transition-colors">
+                                <i class="ti ti-player-play-filled text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Elegant Divider -->
+                    <div class="verse-divider"></div>
+                </div>
+            </template>
+        </div>
+
+    </main>
+
+    <!-- Hidden Audio Element -->
+    <audio id="quranAudio" class="hidden"></audio>
+
+    <script>
+        function quranReader() {
+            return {
+                isLoading: true,
+                surahs: [],
+                verses: [],
+                surahDetails: null,
+                selectedSurah: 1,
+                
+                async init() {
+                    // Fetch list of all surahs for the dropdown
+                    try {
+                        const res = await fetch('/api/surahs');
+                        const data = await res.json();
+                        this.surahs = data;
+                        await this.loadSurah();
+                    } catch (e) {
+                        console.error(e);
+                    }
+                },
+
+                async loadSurah() {
+                    this.isLoading = true;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    try {
+                        const res = await fetch(`/api/surah/${this.selectedSurah}`);
+                        const data = await res.json();
+                        this.surahDetails = data.surah;
+                        this.verses = data.verses;
+                    } catch (e) {
+                        console.error("Failed to load surah", e);
+                    } finally {
+                        this.isLoading = false;
+                    }
+                },
+
+                playAudio(url) {
+                    if (!url) return;
+                    const audio = document.getElementById('quranAudio');
+                    audio.src = url;
+                    audio.play();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

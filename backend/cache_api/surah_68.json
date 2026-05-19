@@ -1,0 +1,375 @@
+{
+  "surah": {
+    "id": 68,
+    "name_arabic": "القلم",
+    "name_english": "The Pen",
+    "revelation_place": "makkah",
+    "verses_count": 52
+  },
+  "verses": [
+    {
+      "id": 5272,
+      "verse_number": 1,
+      "text_uthmani": " نٓ ۚ وَٱلْقَلَمِ وَمَا يَسْطُرُونَ",
+      "translation": "Nun By the pen! By all they write!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068001.mp3"
+    },
+    {
+      "id": 5273,
+      "verse_number": 2,
+      "text_uthmani": "مَآ أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ",
+      "translation": "Your Lord’s grace does not make you [Prophet] a madman:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068002.mp3"
+    },
+    {
+      "id": 5274,
+      "verse_number": 3,
+      "text_uthmani": "وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ",
+      "translation": "you will have a never-ending reward––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068003.mp3"
+    },
+    {
+      "id": 5275,
+      "verse_number": 4,
+      "text_uthmani": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+      "translation": "truly you have a strong character––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068004.mp3"
+    },
+    {
+      "id": 5276,
+      "verse_number": 5,
+      "text_uthmani": "فَسَتُبْصِرُ وَيُبْصِرُونَ",
+      "translation": "and soon you will see, as will they,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068005.mp3"
+    },
+    {
+      "id": 5277,
+      "verse_number": 6,
+      "text_uthmani": "بِأَييِّكُمُ ٱلْمَفْتُونُ",
+      "translation": "which of you is afflicted with madness.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068006.mp3"
+    },
+    {
+      "id": 5278,
+      "verse_number": 7,
+      "text_uthmani": "إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+      "translation": "Your Lord knows best who strays from His path and who is rightly guided.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068007.mp3"
+    },
+    {
+      "id": 5279,
+      "verse_number": 8,
+      "text_uthmani": "فَلَا تُطِعِ ٱلْمُكَذِّبِينَ",
+      "translation": "So do not yield to those who deny the truth––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068008.mp3"
+    },
+    {
+      "id": 5280,
+      "verse_number": 9,
+      "text_uthmani": "وَدُّوا۟ لَوْ تُدْهِنُ فَيُدْهِنُونَ",
+      "translation": "they want you to compromise with them and then they will compromise with you––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068009.mp3"
+    },
+    {
+      "id": 5281,
+      "verse_number": 10,
+      "text_uthmani": "وَلَا تُطِعْ كُلَّ حَلَّافٍ مَّهِينٍ",
+      "translation": "do not yield to any contemptible swearer,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068010.mp3"
+    },
+    {
+      "id": 5282,
+      "verse_number": 11,
+      "text_uthmani": "هَمَّازٍ مَّشَّآءٍۭ بِنَمِيمٍ",
+      "translation": "to any backbiter, slander-monger,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068011.mp3"
+    },
+    {
+      "id": 5283,
+      "verse_number": 12,
+      "text_uthmani": "مَّنَّاعٍ لِّلْخَيْرِ مُعْتَدٍ أَثِيمٍ",
+      "translation": "or hinderer of good, to anyone who is sinful, aggressive,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068012.mp3"
+    },
+    {
+      "id": 5284,
+      "verse_number": 13,
+      "text_uthmani": "عُتُلٍّۭ بَعْدَ ذَٰلِكَ زَنِيمٍ",
+      "translation": "coarse, and on top of all that, an imposter.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068013.mp3"
+    },
+    {
+      "id": 5285,
+      "verse_number": 14,
+      "text_uthmani": "أَن كَانَ ذَا مَالٍ وَبَنِينَ",
+      "translation": "Just because he has wealth and sons,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068014.mp3"
+    },
+    {
+      "id": 5286,
+      "verse_number": 15,
+      "text_uthmani": "إِذَا تُتْلَىٰ عَلَيْهِ ءَايَـٰتُنَا قَالَ أَسَـٰطِيرُ ٱلْأَوَّلِينَ",
+      "translation": "when our revelations are recited to him, he says, ‘These are just ancient fables.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068015.mp3"
+    },
+    {
+      "id": 5287,
+      "verse_number": 16,
+      "text_uthmani": "سَنَسِمُهُۥ عَلَى ٱلْخُرْطُومِ",
+      "translation": "We shall brand him on the snout!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068016.mp3"
+    },
+    {
+      "id": 5288,
+      "verse_number": 17,
+      "text_uthmani": "إِنَّا بَلَوْنَـٰهُمْ كَمَا بَلَوْنَآ أَصْحَـٰبَ ٱلْجَنَّةِ إِذْ أَقْسَمُوا۟ لَيَصْرِمُنَّهَا مُصْبِحِينَ",
+      "translation": "We have tried them as We tried the owners of a certain garden, who swore that they would harvest its fruits in the morning",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068017.mp3"
+    },
+    {
+      "id": 5289,
+      "verse_number": 18,
+      "text_uthmani": "وَلَا يَسْتَثْنُونَ",
+      "translation": "and made no allowance [for the Will of God]:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068018.mp3"
+    },
+    {
+      "id": 5290,
+      "verse_number": 19,
+      "text_uthmani": "فَطَافَ عَلَيْهَا طَآئِفٌ مِّن رَّبِّكَ وَهُمْ نَآئِمُونَ",
+      "translation": "a disaster from your Lord struck the garden as they slept",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068019.mp3"
+    },
+    {
+      "id": 5291,
+      "verse_number": 20,
+      "text_uthmani": "فَأَصْبَحَتْ كَٱلصَّرِيمِ",
+      "translation": "and by morning it was stripped bare, a desolate land.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068020.mp3"
+    },
+    {
+      "id": 5292,
+      "verse_number": 21,
+      "text_uthmani": "فَتَنَادَوْا۟ مُصْبِحِينَ",
+      "translation": "Still they called each other at daybreak,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068021.mp3"
+    },
+    {
+      "id": 5293,
+      "verse_number": 22,
+      "text_uthmani": "أَنِ ٱغْدُوا۟ عَلَىٰ حَرْثِكُمْ إِن كُنتُمْ صَـٰرِمِينَ",
+      "translation": "‘Go early to your field if you wish to gather all its fruits,’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068022.mp3"
+    },
+    {
+      "id": 5294,
+      "verse_number": 23,
+      "text_uthmani": "فَٱنطَلَقُوا۟ وَهُمْ يَتَخَـٰفَتُونَ",
+      "translation": "and went off, whispering,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068023.mp3"
+    },
+    {
+      "id": 5295,
+      "verse_number": 24,
+      "text_uthmani": "أَن لَّا يَدْخُلَنَّهَا ٱلْيَوْمَ عَلَيْكُم مِّسْكِينٌ",
+      "translation": "‘Make sure no poor person enters the garden today!’––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068024.mp3"
+    },
+    {
+      "id": 5296,
+      "verse_number": 25,
+      "text_uthmani": "وَغَدَوْا۟ عَلَىٰ حَرْدٍ قَـٰدِرِينَ",
+      "translation": "they left early, bent on their purpose-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068025.mp3"
+    },
+    {
+      "id": 5297,
+      "verse_number": 26,
+      "text_uthmani": "فَلَمَّا رَأَوْهَا قَالُوٓا۟ إِنَّا لَضَآلُّونَ",
+      "translation": "but when they saw the garden, they said, ‘We must have lost our way!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068026.mp3"
+    },
+    {
+      "id": 5298,
+      "verse_number": 27,
+      "text_uthmani": "بَلْ نَحْنُ مَحْرُومُونَ",
+      "translation": "No- we are ruined!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068027.mp3"
+    },
+    {
+      "id": 5299,
+      "verse_number": 28,
+      "text_uthmani": "قَالَ أَوْسَطُهُمْ أَلَمْ أَقُل لَّكُمْ لَوْلَا تُسَبِّحُونَ",
+      "translation": "The wisest of them said, ‘Did I not say to you, “Will you not glorify God?”’-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068028.mp3"
+    },
+    {
+      "id": 5300,
+      "verse_number": 29,
+      "text_uthmani": "قَالُوا۟ سُبْحَـٰنَ رَبِّنَآ إِنَّا كُنَّا ظَـٰلِمِينَ",
+      "translation": "they said, ‘Glory be to God, Our Lord! Truly, we were doing wrong!’-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068029.mp3"
+    },
+    {
+      "id": 5301,
+      "verse_number": 30,
+      "text_uthmani": "فَأَقْبَلَ بَعْضُهُمْ عَلَىٰ بَعْضٍ يَتَلَـٰوَمُونَ",
+      "translation": "and then they turned to each other in mutual reproach.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068030.mp3"
+    },
+    {
+      "id": 5302,
+      "verse_number": 31,
+      "text_uthmani": "قَالُوا۟ يَـٰوَيْلَنَآ إِنَّا كُنَّا طَـٰغِينَ",
+      "translation": "They said, ‘Alas for us! We have done terrible wrong,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068031.mp3"
+    },
+    {
+      "id": 5303,
+      "verse_number": 32,
+      "text_uthmani": "عَسَىٰ رَبُّنَآ أَن يُبْدِلَنَا خَيْرًا مِّنْهَآ إِنَّآ إِلَىٰ رَبِّنَا رَٰغِبُونَ",
+      "translation": "but maybe our Lord will give us something better in its place: we truly turn to Him in hope.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068032.mp3"
+    },
+    {
+      "id": 5304,
+      "verse_number": 33,
+      "text_uthmani": "كَذَٰلِكَ ٱلْعَذَابُ ۖ وَلَعَذَابُ ٱلْـَٔاخِرَةِ أَكْبَرُ ۚ لَوْ كَانُوا۟ يَعْلَمُونَ",
+      "translation": "Such is the punishment [in this life], but greater still is the punishment in the Hereafter, if only they knew.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068033.mp3"
+    },
+    {
+      "id": 5305,
+      "verse_number": 34,
+      "text_uthmani": "إِنَّ لِلْمُتَّقِينَ عِندَ رَبِّهِمْ جَنَّـٰتِ ٱلنَّعِيمِ",
+      "translation": "There will be Gardens of bliss for those who are mindful of God.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068034.mp3"
+    },
+    {
+      "id": 5306,
+      "verse_number": 35,
+      "text_uthmani": "أَفَنَجْعَلُ ٱلْمُسْلِمِينَ كَٱلْمُجْرِمِينَ",
+      "translation": "Should We treat those who submit to Us as We treat those who do evil?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068035.mp3"
+    },
+    {
+      "id": 5307,
+      "verse_number": 36,
+      "text_uthmani": "مَا لَكُمْ كَيْفَ تَحْكُمُونَ",
+      "translation": "What is the matter with you? On what basis do you judge?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068036.mp3"
+    },
+    {
+      "id": 5308,
+      "verse_number": 37,
+      "text_uthmani": "أَمْ لَكُمْ كِتَـٰبٌ فِيهِ تَدْرُسُونَ",
+      "translation": "Do you have a Scripture that tells you",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068037.mp3"
+    },
+    {
+      "id": 5309,
+      "verse_number": 38,
+      "text_uthmani": "إِنَّ لَكُمْ فِيهِ لَمَا تَخَيَّرُونَ",
+      "translation": "that you will be granted whatever you choose?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068038.mp3"
+    },
+    {
+      "id": 5310,
+      "verse_number": 39,
+      "text_uthmani": "أَمْ لَكُمْ أَيْمَـٰنٌ عَلَيْنَا بَـٰلِغَةٌ إِلَىٰ يَوْمِ ٱلْقِيَـٰمَةِ ۙ إِنَّ لَكُمْ لَمَا تَحْكُمُونَ",
+      "translation": "Have you received from Us solemn oaths, binding to the Day of Resurrection, that you will get whatever you yourselves decide?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068039.mp3"
+    },
+    {
+      "id": 5311,
+      "verse_number": 40,
+      "text_uthmani": "سَلْهُمْ أَيُّهُم بِذَٰلِكَ زَعِيمٌ",
+      "translation": "Ask them [Prophet] which of them will guarantee this.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068040.mp3"
+    },
+    {
+      "id": 5312,
+      "verse_number": 41,
+      "text_uthmani": "أَمْ لَهُمْ شُرَكَآءُ فَلْيَأْتُوا۟ بِشُرَكَآئِهِمْ إِن كَانُوا۟ صَـٰدِقِينَ",
+      "translation": "Do they have ‘partners’ [besides God]? Let them produce their ‘partners’, if what they say is true.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068041.mp3"
+    },
+    {
+      "id": 5313,
+      "verse_number": 42,
+      "text_uthmani": "يَوْمَ يُكْشَفُ عَن سَاقٍ وَيُدْعَوْنَ إِلَى ٱلسُّجُودِ فَلَا يَسْتَطِيعُونَ",
+      "translation": "On the Day when matters become dire, they will be invited to prostrate themselves but will be prevented from doing so,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068042.mp3"
+    },
+    {
+      "id": 5314,
+      "verse_number": 43,
+      "text_uthmani": "خَـٰشِعَةً أَبْصَـٰرُهُمْ تَرْهَقُهُمْ ذِلَّةٌ ۖ وَقَدْ كَانُوا۟ يُدْعَوْنَ إِلَى ٱلسُّجُودِ وَهُمْ سَـٰلِمُونَ",
+      "translation": "and their eyes will be downcast and they will be overwhelmed with shame: they were invited to prostrate themselves when they were safe [but refused].",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068043.mp3"
+    },
+    {
+      "id": 5315,
+      "verse_number": 44,
+      "text_uthmani": "فَذَرْنِى وَمَن يُكَذِّبُ بِهَـٰذَا ٱلْحَدِيثِ ۖ سَنَسْتَدْرِجُهُم مِّنْ حَيْثُ لَا يَعْلَمُونَ",
+      "translation": "So [Prophet] leave those who reject this revelation to Me: We shall lead them on, step by step, in ways beyond their knowledge;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068044.mp3"
+    },
+    {
+      "id": 5316,
+      "verse_number": 45,
+      "text_uthmani": "وَأُمْلِى لَهُمْ ۚ إِنَّ كَيْدِى مَتِينٌ",
+      "translation": "I will allow them more time, for My plan is powerful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068045.mp3"
+    },
+    {
+      "id": 5317,
+      "verse_number": 46,
+      "text_uthmani": "أَمْ تَسْـَٔلُهُمْ أَجْرًا فَهُم مِّن مَّغْرَمٍ مُّثْقَلُونَ",
+      "translation": "Do you demand some reward from them that would burden them with debt?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068046.mp3"
+    },
+    {
+      "id": 5318,
+      "verse_number": 47,
+      "text_uthmani": "أَمْ عِندَهُمُ ٱلْغَيْبُ فَهُمْ يَكْتُبُونَ",
+      "translation": "Do they have knowledge of the unseen that enables them to write it down?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068047.mp3"
+    },
+    {
+      "id": 5319,
+      "verse_number": 48,
+      "text_uthmani": "فَٱصْبِرْ لِحُكْمِ رَبِّكَ وَلَا تَكُن كَصَاحِبِ ٱلْحُوتِ إِذْ نَادَىٰ وَهُوَ مَكْظُومٌ",
+      "translation": "Wait patiently [Prophet] for your Lord’s judgement: do not be like the man in the whale who called out in distress:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068048.mp3"
+    },
+    {
+      "id": 5320,
+      "verse_number": 49,
+      "text_uthmani": "لَّوْلَآ أَن تَدَٰرَكَهُۥ نِعْمَةٌ مِّن رَّبِّهِۦ لَنُبِذَ بِٱلْعَرَآءِ وَهُوَ مَذْمُومٌ",
+      "translation": "if his Lord’s grace had not reached him, he would have been left, abandoned and blameworthy, on the barren shore,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068049.mp3"
+    },
+    {
+      "id": 5321,
+      "verse_number": 50,
+      "text_uthmani": "فَٱجْتَبَـٰهُ رَبُّهُۥ فَجَعَلَهُۥ مِنَ ٱلصَّـٰلِحِينَ",
+      "translation": "but his Lord chose him and made him one of the Righteous.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068050.mp3"
+    },
+    {
+      "id": 5322,
+      "verse_number": 51,
+      "text_uthmani": "وَإِن يَكَادُ ٱلَّذِينَ كَفَرُوا۟ لَيُزْلِقُونَكَ بِأَبْصَـٰرِهِمْ لَمَّا سَمِعُوا۟ ٱلذِّكْرَ وَيَقُولُونَ إِنَّهُۥ لَمَجْنُونٌ",
+      "translation": "The disbelievers almost strike you down with their looks when they hear the Quran. They say, ‘He must be mad!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068051.mp3"
+    },
+    {
+      "id": 5323,
+      "verse_number": 52,
+      "text_uthmani": "وَمَا هُوَ إِلَّا ذِكْرٌ لِّلْعَـٰلَمِينَ",
+      "translation": "but truly it is nothing other than a Reminder for all peoples.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/068052.mp3"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "onchain-quran-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for the Onchain Quran project on Base Network",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network baseSepolia",
+    "deploy:mainnet": "npx hardhat run scripts/deploy.ts --network base"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

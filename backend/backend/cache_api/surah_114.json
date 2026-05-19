@@ -1,0 +1,53 @@
+{
+  "surah": {
+    "id": 114,
+    "name_arabic": "الناس",
+    "name_english": "Mankind",
+    "revelation_place": "makkah",
+    "verses_count": 6
+  },
+  "verses": [
+    {
+      "id": 6231,
+      "verse_number": 1,
+      "text_uthmani": " قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+      "translation": "Say, ‘I seek refuge with the Lord of people,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114001.mp3"
+    },
+    {
+      "id": 6232,
+      "verse_number": 2,
+      "text_uthmani": "مَلِكِ ٱلنَّاسِ",
+      "translation": "the Controller of people,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114002.mp3"
+    },
+    {
+      "id": 6233,
+      "verse_number": 3,
+      "text_uthmani": "إِلَـٰهِ ٱلنَّاسِ",
+      "translation": "the God of people,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114003.mp3"
+    },
+    {
+      "id": 6234,
+      "verse_number": 4,
+      "text_uthmani": "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
+      "translation": "against the harm of the slinking whisperer––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114004.mp3"
+    },
+    {
+      "id": 6235,
+      "verse_number": 5,
+      "text_uthmani": "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
+      "translation": "who whispers into the hearts of people––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114005.mp3"
+    },
+    {
+      "id": 6236,
+      "verse_number": 6,
+      "text_uthmani": "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+      "translation": "whether they be jinn or people.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/114006.mp3"
+    }
+  ]
+}

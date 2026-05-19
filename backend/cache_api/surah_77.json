@@ -1,0 +1,361 @@
+{
+  "surah": {
+    "id": 77,
+    "name_arabic": "المرسلات",
+    "name_english": "The Emissaries",
+    "revelation_place": "makkah",
+    "verses_count": 50
+  },
+  "verses": [
+    {
+      "id": 5623,
+      "verse_number": 1,
+      "text_uthmani": " وَٱلْمُرْسَلَـٰتِ عُرْفًا",
+      "translation": "By the [winds] sent forth in swift succession,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077001.mp3"
+    },
+    {
+      "id": 5624,
+      "verse_number": 2,
+      "text_uthmani": "فَٱلْعَـٰصِفَـٰتِ عَصْفًا",
+      "translation": "violently storming,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077002.mp3"
+    },
+    {
+      "id": 5625,
+      "verse_number": 3,
+      "text_uthmani": "وَٱلنَّـٰشِرَٰتِ نَشْرًا",
+      "translation": "scattering far and wide,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077003.mp3"
+    },
+    {
+      "id": 5626,
+      "verse_number": 4,
+      "text_uthmani": "فَٱلْفَـٰرِقَـٰتِ فَرْقًا",
+      "translation": "separating forcefully,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077004.mp3"
+    },
+    {
+      "id": 5627,
+      "verse_number": 5,
+      "text_uthmani": "فَٱلْمُلْقِيَـٰتِ ذِكْرًا",
+      "translation": "delivering a reminder,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077005.mp3"
+    },
+    {
+      "id": 5628,
+      "verse_number": 6,
+      "text_uthmani": "عُذْرًا أَوْ نُذْرًا",
+      "translation": "as a proof or a warning:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077006.mp3"
+    },
+    {
+      "id": 5629,
+      "verse_number": 7,
+      "text_uthmani": "إِنَّمَا تُوعَدُونَ لَوَٰقِعٌ",
+      "translation": "what you are promised will come to pass.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077007.mp3"
+    },
+    {
+      "id": 5630,
+      "verse_number": 8,
+      "text_uthmani": "فَإِذَا ٱلنُّجُومُ طُمِسَتْ",
+      "translation": "When the stars are dimmed",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077008.mp3"
+    },
+    {
+      "id": 5631,
+      "verse_number": 9,
+      "text_uthmani": "وَإِذَا ٱلسَّمَآءُ فُرِجَتْ",
+      "translation": "and the sky is torn apart,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077009.mp3"
+    },
+    {
+      "id": 5632,
+      "verse_number": 10,
+      "text_uthmani": "وَإِذَا ٱلْجِبَالُ نُسِفَتْ",
+      "translation": "when the mountains are turned to dust",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077010.mp3"
+    },
+    {
+      "id": 5633,
+      "verse_number": 11,
+      "text_uthmani": "وَإِذَا ٱلرُّسُلُ أُقِّتَتْ",
+      "translation": "and the messengers given their appointed time––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077011.mp3"
+    },
+    {
+      "id": 5634,
+      "verse_number": 12,
+      "text_uthmani": "لِأَىِّ يَوْمٍ أُجِّلَتْ",
+      "translation": "for what Day has all this been set?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077012.mp3"
+    },
+    {
+      "id": 5635,
+      "verse_number": 13,
+      "text_uthmani": "لِيَوْمِ ٱلْفَصْلِ",
+      "translation": "The Day of Decision.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077013.mp3"
+    },
+    {
+      "id": 5636,
+      "verse_number": 14,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا يَوْمُ ٱلْفَصْلِ",
+      "translation": "What will explain to you what the Day of Decision is?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077014.mp3"
+    },
+    {
+      "id": 5637,
+      "verse_number": 15,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077015.mp3"
+    },
+    {
+      "id": 5638,
+      "verse_number": 16,
+      "text_uthmani": "أَلَمْ نُهْلِكِ ٱلْأَوَّلِينَ",
+      "translation": "Did We not destroy the first [of them]?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077016.mp3"
+    },
+    {
+      "id": 5639,
+      "verse_number": 17,
+      "text_uthmani": "ثُمَّ نُتْبِعُهُمُ ٱلْـَٔاخِرِينَ",
+      "translation": "We shall make the last follow them:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077017.mp3"
+    },
+    {
+      "id": 5640,
+      "verse_number": 18,
+      "text_uthmani": "كَذَٰلِكَ نَفْعَلُ بِٱلْمُجْرِمِينَ",
+      "translation": "this is how We deal with the guilty.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077018.mp3"
+    },
+    {
+      "id": 5641,
+      "verse_number": 19,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077019.mp3"
+    },
+    {
+      "id": 5642,
+      "verse_number": 20,
+      "text_uthmani": "أَلَمْ نَخْلُقكُّم مِّن مَّآءٍ مَّهِينٍ",
+      "translation": "Did We not make you from an underrated fluid",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077020.mp3"
+    },
+    {
+      "id": 5643,
+      "verse_number": 21,
+      "text_uthmani": "فَجَعَلْنَـٰهُ فِى قَرَارٍ مَّكِينٍ",
+      "translation": "which We housed in a safe lodging",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077021.mp3"
+    },
+    {
+      "id": 5644,
+      "verse_number": 22,
+      "text_uthmani": "إِلَىٰ قَدَرٍ مَّعْلُومٍ",
+      "translation": "for a determined period?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077022.mp3"
+    },
+    {
+      "id": 5645,
+      "verse_number": 23,
+      "text_uthmani": "فَقَدَرْنَا فَنِعْمَ ٱلْقَـٰدِرُونَ",
+      "translation": "We determine [it]: how excellently We determine!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077023.mp3"
+    },
+    {
+      "id": 5646,
+      "verse_number": 24,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077024.mp3"
+    },
+    {
+      "id": 5647,
+      "verse_number": 25,
+      "text_uthmani": "أَلَمْ نَجْعَلِ ٱلْأَرْضَ كِفَاتًا",
+      "translation": "Did We not make the earth a home",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077025.mp3"
+    },
+    {
+      "id": 5648,
+      "verse_number": 26,
+      "text_uthmani": "أَحْيَآءً وَأَمْوَٰتًا",
+      "translation": "for the living and the dead?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077026.mp3"
+    },
+    {
+      "id": 5649,
+      "verse_number": 27,
+      "text_uthmani": "وَجَعَلْنَا فِيهَا رَوَٰسِىَ شَـٰمِخَـٰتٍ وَأَسْقَيْنَـٰكُم مَّآءً فُرَاتًا",
+      "translation": "Did We not place firm, lofty mountains on it and provide you with sweet water?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077027.mp3"
+    },
+    {
+      "id": 5650,
+      "verse_number": 28,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077028.mp3"
+    },
+    {
+      "id": 5651,
+      "verse_number": 29,
+      "text_uthmani": "ٱنطَلِقُوٓا۟ إِلَىٰ مَا كُنتُم بِهِۦ تُكَذِّبُونَ",
+      "translation": "They will be told, ‘Go to that which you used to deny!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077029.mp3"
+    },
+    {
+      "id": 5652,
+      "verse_number": 30,
+      "text_uthmani": "ٱنطَلِقُوٓا۟ إِلَىٰ ظِلٍّ ذِى ثَلَـٰثِ شُعَبٍ",
+      "translation": "Go to a shadow of smoke!’ It rises in three columns;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077030.mp3"
+    },
+    {
+      "id": 5653,
+      "verse_number": 31,
+      "text_uthmani": "لَّا ظَلِيلٍ وَلَا يُغْنِى مِنَ ٱللَّهَبِ",
+      "translation": "no shade does it give, nor relief from the flame;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077031.mp3"
+    },
+    {
+      "id": 5654,
+      "verse_number": 32,
+      "text_uthmani": "إِنَّهَا تَرْمِى بِشَرَرٍ كَٱلْقَصْرِ",
+      "translation": "it shoots out sparks as large as treetrunks",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077032.mp3"
+    },
+    {
+      "id": 5655,
+      "verse_number": 33,
+      "text_uthmani": "كَأَنَّهُۥ جِمَـٰلَتٌ صُفْرٌ",
+      "translation": "and as bright as copper.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077033.mp3"
+    },
+    {
+      "id": 5656,
+      "verse_number": 34,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077034.mp3"
+    },
+    {
+      "id": 5657,
+      "verse_number": 35,
+      "text_uthmani": "هَـٰذَا يَوْمُ لَا يَنطِقُونَ",
+      "translation": "On that Day they will be speechless,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077035.mp3"
+    },
+    {
+      "id": 5658,
+      "verse_number": 36,
+      "text_uthmani": "وَلَا يُؤْذَنُ لَهُمْ فَيَعْتَذِرُونَ",
+      "translation": "and they will be given no chance to offer any excuses.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077036.mp3"
+    },
+    {
+      "id": 5659,
+      "verse_number": 37,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077037.mp3"
+    },
+    {
+      "id": 5660,
+      "verse_number": 38,
+      "text_uthmani": "هَـٰذَا يَوْمُ ٱلْفَصْلِ ۖ جَمَعْنَـٰكُمْ وَٱلْأَوَّلِينَ",
+      "translation": "[They will be told], ‘This is the Day of Decision: We have gathered you and earlier generations.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077038.mp3"
+    },
+    {
+      "id": 5661,
+      "verse_number": 39,
+      "text_uthmani": "فَإِن كَانَ لَكُمْ كَيْدٌ فَكِيدُونِ",
+      "translation": "If you have any plots against Me, try them now.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077039.mp3"
+    },
+    {
+      "id": 5662,
+      "verse_number": 40,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077040.mp3"
+    },
+    {
+      "id": 5663,
+      "verse_number": 41,
+      "text_uthmani": "إِنَّ ٱلْمُتَّقِينَ فِى ظِلَـٰلٍ وَعُيُونٍ",
+      "translation": "But those who took heed of God will enjoy cool shade, springs,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077041.mp3"
+    },
+    {
+      "id": 5664,
+      "verse_number": 42,
+      "text_uthmani": "وَفَوَٰكِهَ مِمَّا يَشْتَهُونَ",
+      "translation": "and any fruit they desire;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077042.mp3"
+    },
+    {
+      "id": 5665,
+      "verse_number": 43,
+      "text_uthmani": "كُلُوا۟ وَٱشْرَبُوا۟ هَنِيٓـًٔۢا بِمَا كُنتُمْ تَعْمَلُونَ",
+      "translation": "[they will be told], ‘Eat and drink to your hearts’ content as a reward for your deeds:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077043.mp3"
+    },
+    {
+      "id": 5666,
+      "verse_number": 44,
+      "text_uthmani": "إِنَّا كَذَٰلِكَ نَجْزِى ٱلْمُحْسِنِينَ",
+      "translation": "this is how We reward those who do good.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077044.mp3"
+    },
+    {
+      "id": 5667,
+      "verse_number": 45,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077045.mp3"
+    },
+    {
+      "id": 5668,
+      "verse_number": 46,
+      "text_uthmani": "كُلُوا۟ وَتَمَتَّعُوا۟ قَلِيلًا إِنَّكُم مُّجْرِمُونَ",
+      "translation": "[You may] eat and enjoy yourselves for a short while, evildoers that you are.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077046.mp3"
+    },
+    {
+      "id": 5669,
+      "verse_number": 47,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077047.mp3"
+    },
+    {
+      "id": 5670,
+      "verse_number": 48,
+      "text_uthmani": "وَإِذَا قِيلَ لَهُمُ ٱرْكَعُوا۟ لَا يَرْكَعُونَ",
+      "translation": "When they are told, ‘Bow down in prayer,’ they do not do so.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077048.mp3"
+    },
+    {
+      "id": 5671,
+      "verse_number": 49,
+      "text_uthmani": "وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ",
+      "translation": "Woe, on that Day, to those who denied the truth!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077049.mp3"
+    },
+    {
+      "id": 5672,
+      "verse_number": 50,
+      "text_uthmani": "فَبِأَىِّ حَدِيثٍۭ بَعْدَهُۥ يُؤْمِنُونَ",
+      "translation": "In what revelation, after this, will they believe?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/077050.mp3"
+    }
+  ]
+}

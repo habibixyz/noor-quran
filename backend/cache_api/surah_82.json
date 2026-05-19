@@ -1,0 +1,144 @@
+{
+  "surah": {
+    "id": 82,
+    "name_arabic": "الإنفطار",
+    "name_english": "The Cleaving",
+    "revelation_place": "makkah",
+    "verses_count": 19
+  },
+  "verses": [
+    {
+      "id": 5830,
+      "verse_number": 1,
+      "text_uthmani": " إِذَا ٱلسَّمَآءُ ٱنفَطَرَتْ",
+      "translation": "When the sky is torn apart,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082001.mp3"
+    },
+    {
+      "id": 5831,
+      "verse_number": 2,
+      "text_uthmani": "وَإِذَا ٱلْكَوَاكِبُ ٱنتَثَرَتْ",
+      "translation": "when the stars are scattered,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082002.mp3"
+    },
+    {
+      "id": 5832,
+      "verse_number": 3,
+      "text_uthmani": "وَإِذَا ٱلْبِحَارُ فُجِّرَتْ",
+      "translation": "when the seas burst forth,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082003.mp3"
+    },
+    {
+      "id": 5833,
+      "verse_number": 4,
+      "text_uthmani": "وَإِذَا ٱلْقُبُورُ بُعْثِرَتْ",
+      "translation": "when graves turn inside out:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082004.mp3"
+    },
+    {
+      "id": 5834,
+      "verse_number": 5,
+      "text_uthmani": "عَلِمَتْ نَفْسٌ مَّا قَدَّمَتْ وَأَخَّرَتْ",
+      "translation": "each soul will know what it has done and what it has left undone.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082005.mp3"
+    },
+    {
+      "id": 5835,
+      "verse_number": 6,
+      "text_uthmani": "يَـٰٓأَيُّهَا ٱلْإِنسَـٰنُ مَا غَرَّكَ بِرَبِّكَ ٱلْكَرِيمِ",
+      "translation": "Mankind, what has lured you away from God,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082006.mp3"
+    },
+    {
+      "id": 5836,
+      "verse_number": 7,
+      "text_uthmani": "ٱلَّذِى خَلَقَكَ فَسَوَّىٰكَ فَعَدَلَكَ",
+      "translation": "your generous Lord, who created you, shaped you, proportioned you,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082007.mp3"
+    },
+    {
+      "id": 5837,
+      "verse_number": 8,
+      "text_uthmani": "فِىٓ أَىِّ صُورَةٍ مَّا شَآءَ رَكَّبَكَ",
+      "translation": "in whatever form He chose?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082008.mp3"
+    },
+    {
+      "id": 5838,
+      "verse_number": 9,
+      "text_uthmani": "كَلَّا بَلْ تُكَذِّبُونَ بِٱلدِّينِ",
+      "translation": "Yet you still take the Judgement to be a lie!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082009.mp3"
+    },
+    {
+      "id": 5839,
+      "verse_number": 10,
+      "text_uthmani": "وَإِنَّ عَلَيْكُمْ لَحَـٰفِظِينَ",
+      "translation": "Over you stand",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082010.mp3"
+    },
+    {
+      "id": 5840,
+      "verse_number": 11,
+      "text_uthmani": "كِرَامًا كَـٰتِبِينَ",
+      "translation": "watchers, noble recorders",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082011.mp3"
+    },
+    {
+      "id": 5841,
+      "verse_number": 12,
+      "text_uthmani": "يَعْلَمُونَ مَا تَفْعَلُونَ",
+      "translation": "who know what you do:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082012.mp3"
+    },
+    {
+      "id": 5842,
+      "verse_number": 13,
+      "text_uthmani": "إِنَّ ٱلْأَبْرَارَ لَفِى نَعِيمٍ",
+      "translation": "the good will live in bliss,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082013.mp3"
+    },
+    {
+      "id": 5843,
+      "verse_number": 14,
+      "text_uthmani": "وَإِنَّ ٱلْفُجَّارَ لَفِى جَحِيمٍ",
+      "translation": "and the wicked will burn in the Fire.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082014.mp3"
+    },
+    {
+      "id": 5844,
+      "verse_number": 15,
+      "text_uthmani": "يَصْلَوْنَهَا يَوْمَ ٱلدِّينِ",
+      "translation": "They will enter it on the Day of Judgement",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082015.mp3"
+    },
+    {
+      "id": 5845,
+      "verse_number": 16,
+      "text_uthmani": "وَمَا هُمْ عَنْهَا بِغَآئِبِينَ",
+      "translation": "and they will find no escape.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082016.mp3"
+    },
+    {
+      "id": 5846,
+      "verse_number": 17,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا يَوْمُ ٱلدِّينِ",
+      "translation": "What will explain to you what the Day of Judgement is?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082017.mp3"
+    },
+    {
+      "id": 5847,
+      "verse_number": 18,
+      "text_uthmani": "ثُمَّ مَآ أَدْرَىٰكَ مَا يَوْمُ ٱلدِّينِ",
+      "translation": "Yes! What will explain to you what the Day of Judgement is?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082018.mp3"
+    },
+    {
+      "id": 5848,
+      "verse_number": 19,
+      "text_uthmani": "يَوْمَ لَا تَمْلِكُ نَفْسٌ لِّنَفْسٍ شَيْـًٔا ۖ وَٱلْأَمْرُ يَوْمَئِذٍ لِّلَّهِ",
+      "translation": "The Day when no soul will be able to do anything for another; on that Day, command will belong to God.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/082019.mp3"
+    }
+  ]
+}

@@ -1,0 +1,907 @@
+{
+  "surah": {
+    "id": 16,
+    "name_arabic": "النحل",
+    "name_english": "The Bee",
+    "revelation_place": "makkah",
+    "verses_count": 128
+  },
+  "verses": [
+    {
+      "id": 1902,
+      "verse_number": 1,
+      "text_uthmani": " أَتَىٰٓ أَمْرُ ٱللَّهِ فَلَا تَسْتَعْجِلُوهُ ۚ سُبْحَـٰنَهُۥ وَتَعَـٰلَىٰ عَمَّا يُشْرِكُونَ",
+      "translation": "God’s Judgement is coming, so do not ask to bring it on sooner. Glory be to Him! He is far above anything they join with Him!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016001.mp3"
+    },
+    {
+      "id": 1903,
+      "verse_number": 2,
+      "text_uthmani": "يُنَزِّلُ ٱلْمَلَـٰٓئِكَةَ بِٱلرُّوحِ مِنْ أَمْرِهِۦ عَلَىٰ مَن يَشَآءُ مِنْ عِبَادِهِۦٓ أَنْ أَنذِرُوٓا۟ أَنَّهُۥ لَآ إِلَـٰهَ إِلَّآ أَنَا۠ فَٱتَّقُونِ",
+      "translation": "He sends down angels with inspiration at His command, to whichever of His servants He chooses, to give [His] warning: ‘There is no god but Me, so beware of Me.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016002.mp3"
+    },
+    {
+      "id": 1904,
+      "verse_number": 3,
+      "text_uthmani": "خَلَقَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ بِٱلْحَقِّ ۚ تَعَـٰلَىٰ عَمَّا يُشْرِكُونَ",
+      "translation": "He created the heavens and earth for a true purpose, and He is far above whatever they join with Him!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016003.mp3"
+    },
+    {
+      "id": 1905,
+      "verse_number": 4,
+      "text_uthmani": "خَلَقَ ٱلْإِنسَـٰنَ مِن نُّطْفَةٍ فَإِذَا هُوَ خَصِيمٌ مُّبِينٌ",
+      "translation": "He created man from a drop of fluid, and yet man openly challenges Him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016004.mp3"
+    },
+    {
+      "id": 1906,
+      "verse_number": 5,
+      "text_uthmani": "وَٱلْأَنْعَـٰمَ خَلَقَهَا ۗ لَكُمْ فِيهَا دِفْءٌ وَمَنَـٰفِعُ وَمِنْهَا تَأْكُلُونَ",
+      "translation": "And livestock––He created them too. You derive warmth and other benefits from them: you get food from them;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016005.mp3"
+    },
+    {
+      "id": 1907,
+      "verse_number": 6,
+      "text_uthmani": "وَلَكُمْ فِيهَا جَمَالٌ حِينَ تُرِيحُونَ وَحِينَ تَسْرَحُونَ",
+      "translation": "you find beauty in them when you bring them home to rest and when you drive them out to pasture.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016006.mp3"
+    },
+    {
+      "id": 1908,
+      "verse_number": 7,
+      "text_uthmani": "وَتَحْمِلُ أَثْقَالَكُمْ إِلَىٰ بَلَدٍ لَّمْ تَكُونُوا۟ بَـٰلِغِيهِ إِلَّا بِشِقِّ ٱلْأَنفُسِ ۚ إِنَّ رَبَّكُمْ لَرَءُوفٌ رَّحِيمٌ",
+      "translation": "They carry your loads to lands you yourselves could not reach without great hardship––truly your Lord is kind and merciful––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016007.mp3"
+    },
+    {
+      "id": 1909,
+      "verse_number": 8,
+      "text_uthmani": "وَٱلْخَيْلَ وَٱلْبِغَالَ وَٱلْحَمِيرَ لِتَرْكَبُوهَا وَزِينَةً ۚ وَيَخْلُقُ مَا لَا تَعْلَمُونَ",
+      "translation": "horses, mules, and donkeys for you to ride and use for show, and other things you know nothing about.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016008.mp3"
+    },
+    {
+      "id": 1910,
+      "verse_number": 9,
+      "text_uthmani": "وَعَلَى ٱللَّهِ قَصْدُ ٱلسَّبِيلِ وَمِنْهَا جَآئِرٌ ۚ وَلَوْ شَآءَ لَهَدَىٰكُمْ أَجْمَعِينَ",
+      "translation": "God points out the right path, for some paths lead the wrong way: if He wished, He could guide you all.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016009.mp3"
+    },
+    {
+      "id": 1911,
+      "verse_number": 10,
+      "text_uthmani": "هُوَ ٱلَّذِىٓ أَنزَلَ مِنَ ٱلسَّمَآءِ مَآءً ۖ لَّكُم مِّنْهُ شَرَابٌ وَمِنْهُ شَجَرٌ فِيهِ تُسِيمُونَ",
+      "translation": "It is He who sends down water for you from the sky, from which comes a drink for you, and the shrubs that you feed to your animals.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016010.mp3"
+    },
+    {
+      "id": 1912,
+      "verse_number": 11,
+      "text_uthmani": "يُنۢبِتُ لَكُم بِهِ ٱلزَّرْعَ وَٱلزَّيْتُونَ وَٱلنَّخِيلَ وَٱلْأَعْنَـٰبَ وَمِن كُلِّ ٱلثَّمَرَٰتِ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَةً لِّقَوْمٍ يَتَفَكَّرُونَ",
+      "translation": "With it He grows for you grain, olives, palms, vines, and all kinds of other crops. There truly is a sign in this for those who reflect.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016011.mp3"
+    },
+    {
+      "id": 1913,
+      "verse_number": 12,
+      "text_uthmani": "وَسَخَّرَ لَكُمُ ٱلَّيْلَ وَٱلنَّهَارَ وَٱلشَّمْسَ وَٱلْقَمَرَ ۖ وَٱلنُّجُومُ مُسَخَّرَٰتٌۢ بِأَمْرِهِۦٓ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّقَوْمٍ يَعْقِلُونَ",
+      "translation": "By His command He has made the night and day, the sun, moon, and stars all of benefit to you. There truly are signs in this for those who use their reason.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016012.mp3"
+    },
+    {
+      "id": 1914,
+      "verse_number": 13,
+      "text_uthmani": "وَمَا ذَرَأَ لَكُمْ فِى ٱلْأَرْضِ مُخْتَلِفًا أَلْوَٰنُهُۥٓ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَةً لِّقَوْمٍ يَذَّكَّرُونَ",
+      "translation": "He has made of benefit to you the many-coloured things He has multiplied on the earth. There truly are signs in this for those who take it to heart.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016013.mp3"
+    },
+    {
+      "id": 1915,
+      "verse_number": 14,
+      "text_uthmani": "وَهُوَ ٱلَّذِى سَخَّرَ ٱلْبَحْرَ لِتَأْكُلُوا۟ مِنْهُ لَحْمًا طَرِيًّا وَتَسْتَخْرِجُوا۟ مِنْهُ حِلْيَةً تَلْبَسُونَهَا وَتَرَى ٱلْفُلْكَ مَوَاخِرَ فِيهِ وَلِتَبْتَغُوا۟ مِن فَضْلِهِۦ وَلَعَلَّكُمْ تَشْكُرُونَ",
+      "translation": "It is He who made the sea of benefit to you: you eat fresh fish from it and bring out jewellery to wear; you see the ships cutting through its waves so that you may go in search of His bounty and give thanks.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016014.mp3"
+    },
+    {
+      "id": 1916,
+      "verse_number": 15,
+      "text_uthmani": "وَأَلْقَىٰ فِى ٱلْأَرْضِ رَوَٰسِىَ أَن تَمِيدَ بِكُمْ وَأَنْهَـٰرًا وَسُبُلًا لَّعَلَّكُمْ تَهْتَدُونَ",
+      "translation": "He has made mountains stand firm on the earth, to prevent it shaking under you, and rivers and paths so that you may find your way,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016015.mp3"
+    },
+    {
+      "id": 1917,
+      "verse_number": 16,
+      "text_uthmani": "وَعَلَـٰمَـٰتٍ ۚ وَبِٱلنَّجْمِ هُمْ يَهْتَدُونَ",
+      "translation": "and landmarks and stars to guide people.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016016.mp3"
+    },
+    {
+      "id": 1918,
+      "verse_number": 17,
+      "text_uthmani": "أَفَمَن يَخْلُقُ كَمَن لَّا يَخْلُقُ ۗ أَفَلَا تَذَكَّرُونَ",
+      "translation": "Can He who creates be compared to one who cannot create? Why do you not take heed?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016017.mp3"
+    },
+    {
+      "id": 1919,
+      "verse_number": 18,
+      "text_uthmani": "وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ ۗ إِنَّ ٱللَّهَ لَغَفُورٌ رَّحِيمٌ",
+      "translation": "If you tried to count God’s blessings, you could never take them all in: He is truly most forgiving and most merciful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016018.mp3"
+    },
+    {
+      "id": 1920,
+      "verse_number": 19,
+      "text_uthmani": "وَٱللَّهُ يَعْلَمُ مَا تُسِرُّونَ وَمَا تُعْلِنُونَ",
+      "translation": "He knows what you conceal and what you reveal.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016019.mp3"
+    },
+    {
+      "id": 1921,
+      "verse_number": 20,
+      "text_uthmani": "وَٱلَّذِينَ يَدْعُونَ مِن دُونِ ٱللَّهِ لَا يَخْلُقُونَ شَيْـًٔا وَهُمْ يُخْلَقُونَ",
+      "translation": "Those they invoke beside God create nothing; they are themselves created.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016020.mp3"
+    },
+    {
+      "id": 1922,
+      "verse_number": 21,
+      "text_uthmani": "أَمْوَٰتٌ غَيْرُ أَحْيَآءٍ ۖ وَمَا يَشْعُرُونَ أَيَّانَ يُبْعَثُونَ",
+      "translation": "They are dead, not living. They do not know when they will be raised up.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016021.mp3"
+    },
+    {
+      "id": 1923,
+      "verse_number": 22,
+      "text_uthmani": "إِلَـٰهُكُمْ إِلَـٰهٌ وَٰحِدٌ ۚ فَٱلَّذِينَ لَا يُؤْمِنُونَ بِٱلْـَٔاخِرَةِ قُلُوبُهُم مُّنكِرَةٌ وَهُم مُّسْتَكْبِرُونَ",
+      "translation": "Your God is the One God. As for those who deny the life to come, their hearts refuse to admit the truth and they are arrogant.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016022.mp3"
+    },
+    {
+      "id": 1924,
+      "verse_number": 23,
+      "text_uthmani": "لَا جَرَمَ أَنَّ ٱللَّهَ يَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِنُونَ ۚ إِنَّهُۥ لَا يُحِبُّ ٱلْمُسْتَكْبِرِينَ",
+      "translation": "There is no doubt that God knows what they conceal and what they reveal. He does not love the arrogant.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016023.mp3"
+    },
+    {
+      "id": 1925,
+      "verse_number": 24,
+      "text_uthmani": "وَإِذَا قِيلَ لَهُم مَّاذَآ أَنزَلَ رَبُّكُمْ ۙ قَالُوٓا۟ أَسَـٰطِيرُ ٱلْأَوَّلِينَ",
+      "translation": "When they are asked, ‘What has your Lord sent down?’ they say, ‘Ancient fables.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016024.mp3"
+    },
+    {
+      "id": 1926,
+      "verse_number": 25,
+      "text_uthmani": "لِيَحْمِلُوٓا۟ أَوْزَارَهُمْ كَامِلَةً يَوْمَ ٱلْقِيَـٰمَةِ ۙ وَمِنْ أَوْزَارِ ٱلَّذِينَ يُضِلُّونَهُم بِغَيْرِ عِلْمٍ ۗ أَلَا سَآءَ مَا يَزِرُونَ",
+      "translation": "On the Day of Resurrection they will bear the full weight of their own burden, as well as some of the burden of those they misled with no true knowledge. How terrible their burden will be!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016025.mp3"
+    },
+    {
+      "id": 1927,
+      "verse_number": 26,
+      "text_uthmani": "قَدْ مَكَرَ ٱلَّذِينَ مِن قَبْلِهِمْ فَأَتَى ٱللَّهُ بُنْيَـٰنَهُم مِّنَ ٱلْقَوَاعِدِ فَخَرَّ عَلَيْهِمُ ٱلسَّقْفُ مِن فَوْقِهِمْ وَأَتَىٰهُمُ ٱلْعَذَابُ مِنْ حَيْثُ لَا يَشْعُرُونَ",
+      "translation": "Those who went before them also schemed, but God attacked the very foundations of what they built. The roof fell down on them: punishment came on them from unimagined directions.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016026.mp3"
+    },
+    {
+      "id": 1928,
+      "verse_number": 27,
+      "text_uthmani": "ثُمَّ يَوْمَ ٱلْقِيَـٰمَةِ يُخْزِيهِمْ وَيَقُولُ أَيْنَ شُرَكَآءِىَ ٱلَّذِينَ كُنتُمْ تُشَـٰٓقُّونَ فِيهِمْ ۚ قَالَ ٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ إِنَّ ٱلْخِزْىَ ٱلْيَوْمَ وَٱلسُّوٓءَ عَلَى ٱلْكَـٰفِرِينَ",
+      "translation": "In the end, on the Day of Resurrection, He will shame them, saying, ‘Where are these “partners” of Mine on whose account you opposed [Me]?’ Those given knowledge will say, ‘Shame and misery on the disbelievers today!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016027.mp3"
+    },
+    {
+      "id": 1929,
+      "verse_number": 28,
+      "text_uthmani": "ٱلَّذِينَ تَتَوَفَّىٰهُمُ ٱلْمَلَـٰٓئِكَةُ ظَالِمِىٓ أَنفُسِهِمْ ۖ فَأَلْقَوُا۟ ٱلسَّلَمَ مَا كُنَّا نَعْمَلُ مِن سُوٓءٍۭ ۚ بَلَىٰٓ إِنَّ ٱللَّهَ عَلِيمٌۢ بِمَا كُنتُمْ تَعْمَلُونَ",
+      "translation": "Those whose lives the angels take while they are wronging themselves will show submission: ‘We were doing no evil.’ ‘Yes you were: God knows fully everything that you have done,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016028.mp3"
+    },
+    {
+      "id": 1930,
+      "verse_number": 29,
+      "text_uthmani": "فَٱدْخُلُوٓا۟ أَبْوَٰبَ جَهَنَّمَ خَـٰلِدِينَ فِيهَا ۖ فَلَبِئْسَ مَثْوَى ٱلْمُتَكَبِّرِينَ",
+      "translation": "so enter the gates of Hell. There you will remain- the home of the arrogant is evil indeed.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016029.mp3"
+    },
+    {
+      "id": 1931,
+      "verse_number": 30,
+      "text_uthmani": "۞ وَقِيلَ لِلَّذِينَ ٱتَّقَوْا۟ مَاذَآ أَنزَلَ رَبُّكُمْ ۚ قَالُوا۟ خَيْرًا ۗ لِّلَّذِينَ أَحْسَنُوا۟ فِى هَـٰذِهِ ٱلدُّنْيَا حَسَنَةٌ ۚ وَلَدَارُ ٱلْـَٔاخِرَةِ خَيْرٌ ۚ وَلَنِعْمَ دَارُ ٱلْمُتَّقِينَ",
+      "translation": "But when the righteous are asked, ‘What has your Lord sent down?’ they will say, ‘All that is good.’ There is a reward in this present world for those who do good, but their home in the Hereafter is far better: the home of the righteous is excellent.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016030.mp3"
+    },
+    {
+      "id": 1932,
+      "verse_number": 31,
+      "text_uthmani": "جَنَّـٰتُ عَدْنٍ يَدْخُلُونَهَا تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ ۖ لَهُمْ فِيهَا مَا يَشَآءُونَ ۚ كَذَٰلِكَ يَجْزِى ٱللَّهُ ٱلْمُتَّقِينَ",
+      "translation": "They will enter perpetual Gardens graced with flowing streams. There they will have everything they wish. This is the way God rewards the righteous,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016031.mp3"
+    },
+    {
+      "id": 1933,
+      "verse_number": 32,
+      "text_uthmani": "ٱلَّذِينَ تَتَوَفَّىٰهُمُ ٱلْمَلَـٰٓئِكَةُ طَيِّبِينَ ۙ يَقُولُونَ سَلَـٰمٌ عَلَيْكُمُ ٱدْخُلُوا۟ ٱلْجَنَّةَ بِمَا كُنتُمْ تَعْمَلُونَ",
+      "translation": "those whose lives the angels take in a state of goodness. They will say to them, ‘Peace be upon you. Enter the Garden as a reward for what you have done.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016032.mp3"
+    },
+    {
+      "id": 1934,
+      "verse_number": 33,
+      "text_uthmani": "هَلْ يَنظُرُونَ إِلَّآ أَن تَأْتِيَهُمُ ٱلْمَلَـٰٓئِكَةُ أَوْ يَأْتِىَ أَمْرُ رَبِّكَ ۚ كَذَٰلِكَ فَعَلَ ٱلَّذِينَ مِن قَبْلِهِمْ ۚ وَمَا ظَلَمَهُمُ ٱللَّهُ وَلَـٰكِن كَانُوٓا۟ أَنفُسَهُمْ يَظْلِمُونَ",
+      "translation": "Are the disbelievers waiting for the angels to come to them, or your Lord’s Judgement? Those who went before them did the same. God did not wrong them; they wronged themselves.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016033.mp3"
+    },
+    {
+      "id": 1935,
+      "verse_number": 34,
+      "text_uthmani": "فَأَصَابَهُمْ سَيِّـَٔاتُ مَا عَمِلُوا۟ وَحَاقَ بِهِم مَّا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
+      "translation": "So the evil they had done hit them and they were surrounded by the very thing they had mocked.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016034.mp3"
+    },
+    {
+      "id": 1936,
+      "verse_number": 35,
+      "text_uthmani": "وَقَالَ ٱلَّذِينَ أَشْرَكُوا۟ لَوْ شَآءَ ٱللَّهُ مَا عَبَدْنَا مِن دُونِهِۦ مِن شَىْءٍ نَّحْنُ وَلَآ ءَابَآؤُنَا وَلَا حَرَّمْنَا مِن دُونِهِۦ مِن شَىْءٍ ۚ كَذَٰلِكَ فَعَلَ ٱلَّذِينَ مِن قَبْلِهِمْ ۚ فَهَلْ عَلَى ٱلرُّسُلِ إِلَّا ٱلْبَلَـٰغُ ٱلْمُبِينُ",
+      "translation": "Those who worshipped others alongside God say, ‘If God had willed, we would not have worshipped anything but Him, nor would our fathers. We would not have declared anything forbidden without His sanction.’ Those before them said the same. Are the messengers obliged to do anything other than deliver [their message] clearly?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016035.mp3"
+    },
+    {
+      "id": 1937,
+      "verse_number": 36,
+      "text_uthmani": "وَلَقَدْ بَعَثْنَا فِى كُلِّ أُمَّةٍ رَّسُولًا أَنِ ٱعْبُدُوا۟ ٱللَّهَ وَٱجْتَنِبُوا۟ ٱلطَّـٰغُوتَ ۖ فَمِنْهُم مَّنْ هَدَى ٱللَّهُ وَمِنْهُم مَّنْ حَقَّتْ عَلَيْهِ ٱلضَّلَـٰلَةُ ۚ فَسِيرُوا۟ فِى ٱلْأَرْضِ فَٱنظُرُوا۟ كَيْفَ كَانَ عَـٰقِبَةُ ٱلْمُكَذِّبِينَ",
+      "translation": "We sent a messenger to every community, saying, ‘Worship God and shun false gods.’ Among them were some God guided; misguidance took hold of others. So travel through the earth and see what was the fate of those who denied the truth.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016036.mp3"
+    },
+    {
+      "id": 1938,
+      "verse_number": 37,
+      "text_uthmani": "إِن تَحْرِصْ عَلَىٰ هُدَىٰهُمْ فَإِنَّ ٱللَّهَ لَا يَهْدِى مَن يُضِلُّ ۖ وَمَا لَهُم مِّن نَّـٰصِرِينَ",
+      "translation": "Though you [Prophet] may be eager to guide them, God does not guide those who misguide [others], nor will they have anyone to help them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016037.mp3"
+    },
+    {
+      "id": 1939,
+      "verse_number": 38,
+      "text_uthmani": "وَأَقْسَمُوا۟ بِٱللَّهِ جَهْدَ أَيْمَـٰنِهِمْ ۙ لَا يَبْعَثُ ٱللَّهُ مَن يَمُوتُ ۚ بَلَىٰ وَعْدًا عَلَيْهِ حَقًّا وَلَـٰكِنَّ أَكْثَرَ ٱلنَّاسِ لَا يَعْلَمُونَ",
+      "translation": "They have sworn by God with their strongest oaths that He will not raise the dead to life. But He will- it is His binding promise, though most people do not realize it-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016038.mp3"
+    },
+    {
+      "id": 1940,
+      "verse_number": 39,
+      "text_uthmani": "لِيُبَيِّنَ لَهُمُ ٱلَّذِى يَخْتَلِفُونَ فِيهِ وَلِيَعْلَمَ ٱلَّذِينَ كَفَرُوٓا۟ أَنَّهُمْ كَانُوا۟ كَـٰذِبِينَ",
+      "translation": "in order to make clear for them what they have differed about and so that the disbelievers may realize that what they said was false.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016039.mp3"
+    },
+    {
+      "id": 1941,
+      "verse_number": 40,
+      "text_uthmani": "إِنَّمَا قَوْلُنَا لِشَىْءٍ إِذَآ أَرَدْنَـٰهُ أَن نَّقُولَ لَهُۥ كُن فَيَكُونُ",
+      "translation": "When We will something to happen, all that We say is, ‘Be,’ and it is.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016040.mp3"
+    },
+    {
+      "id": 1942,
+      "verse_number": 41,
+      "text_uthmani": "وَٱلَّذِينَ هَاجَرُوا۟ فِى ٱللَّهِ مِنۢ بَعْدِ مَا ظُلِمُوا۟ لَنُبَوِّئَنَّهُمْ فِى ٱلدُّنْيَا حَسَنَةً ۖ وَلَأَجْرُ ٱلْـَٔاخِرَةِ أَكْبَرُ ۚ لَوْ كَانُوا۟ يَعْلَمُونَ",
+      "translation": "As for those who emi-grated in God’s cause after being wronged, We shall give them a good home in this world, but the reward of the Hereafter will be far greater, if they only knew it.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016041.mp3"
+    },
+    {
+      "id": 1943,
+      "verse_number": 42,
+      "text_uthmani": "ٱلَّذِينَ صَبَرُوا۟ وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ",
+      "translation": "They are the ones who are steadfast and put their trust in their Lord.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016042.mp3"
+    },
+    {
+      "id": 1944,
+      "verse_number": 43,
+      "text_uthmani": "وَمَآ أَرْسَلْنَا مِن قَبْلِكَ إِلَّا رِجَالًا نُّوحِىٓ إِلَيْهِمْ ۚ فَسْـَٔلُوٓا۟ أَهْلَ ٱلذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ",
+      "translation": "[Prophet], all the messengers We sent before you were simply men to whom We had given the Revelation: you [people] can ask those who have knowledge if you do not know.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016043.mp3"
+    },
+    {
+      "id": 1945,
+      "verse_number": 44,
+      "text_uthmani": "بِٱلْبَيِّنَـٰتِ وَٱلزُّبُرِ ۗ وَأَنزَلْنَآ إِلَيْكَ ٱلذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ وَلَعَلَّهُمْ يَتَفَكَّرُونَ",
+      "translation": "We sent them with clear signs and scriptures. We have sent down the message to you too [Prophet], so that you can explain to people what was sent for them, so that they may reflect.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016044.mp3"
+    },
+    {
+      "id": 1946,
+      "verse_number": 45,
+      "text_uthmani": "أَفَأَمِنَ ٱلَّذِينَ مَكَرُوا۟ ٱلسَّيِّـَٔاتِ أَن يَخْسِفَ ٱللَّهُ بِهِمُ ٱلْأَرْضَ أَوْ يَأْتِيَهُمُ ٱلْعَذَابُ مِنْ حَيْثُ لَا يَشْعُرُونَ",
+      "translation": "Are those who plan evil so sure that God will not make the earth swallow them up, that punishment will not come on them from some unimagined direction,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016045.mp3"
+    },
+    {
+      "id": 1947,
+      "verse_number": 46,
+      "text_uthmani": "أَوْ يَأْخُذَهُمْ فِى تَقَلُّبِهِمْ فَمَا هُم بِمُعْجِزِينَ",
+      "translation": "that it will not catch them suddenly in the midst of their comings and goings- for they cannot frustrate God-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016046.mp3"
+    },
+    {
+      "id": 1948,
+      "verse_number": 47,
+      "text_uthmani": "أَوْ يَأْخُذَهُمْ عَلَىٰ تَخَوُّفٍ فَإِنَّ رَبَّكُمْ لَرَءُوفٌ رَّحِيمٌ",
+      "translation": "or that it will not catch up with them gradually? Indeed your Lord is kind and merciful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016047.mp3"
+    },
+    {
+      "id": 1949,
+      "verse_number": 48,
+      "text_uthmani": "أَوَلَمْ يَرَوْا۟ إِلَىٰ مَا خَلَقَ ٱللَّهُ مِن شَىْءٍ يَتَفَيَّؤُا۟ ظِلَـٰلُهُۥ عَنِ ٱلْيَمِينِ وَٱلشَّمَآئِلِ سُجَّدًا لِّلَّهِ وَهُمْ دَٰخِرُونَ",
+      "translation": "Do the [disbelievers] not observe the things that God has created, casting their shadows right and left, submitting themselves to God obediently?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016048.mp3"
+    },
+    {
+      "id": 1950,
+      "verse_number": 49,
+      "text_uthmani": "وَلِلَّهِ يَسْجُدُ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ مِن دَآبَّةٍ وَٱلْمَلَـٰٓئِكَةُ وَهُمْ لَا يَسْتَكْبِرُونَ",
+      "translation": "It is to God that everything in the heavens and earth submits, every beast that moves, even the angels- they are free from arrogance:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016049.mp3"
+    },
+    {
+      "id": 1951,
+      "verse_number": 50,
+      "text_uthmani": "يَخَافُونَ رَبَّهُم مِّن فَوْقِهِمْ وَيَفْعَلُونَ مَا يُؤْمَرُونَ ۩",
+      "translation": "they fear their Lord above them, and they do as they are commanded.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016050.mp3"
+    },
+    {
+      "id": 1952,
+      "verse_number": 51,
+      "text_uthmani": "۞ وَقَالَ ٱللَّهُ لَا تَتَّخِذُوٓا۟ إِلَـٰهَيْنِ ٱثْنَيْنِ ۖ إِنَّمَا هُوَ إِلَـٰهٌ وَٰحِدٌ ۖ فَإِيَّـٰىَ فَٱرْهَبُونِ",
+      "translation": "God said, ‘Do not take two gods’- for He is the One God––‘ I alone am the One that you should hold in awe.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016051.mp3"
+    },
+    {
+      "id": 1953,
+      "verse_number": 52,
+      "text_uthmani": "وَلَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَلَهُ ٱلدِّينُ وَاصِبًا ۚ أَفَغَيْرَ ٱللَّهِ تَتَّقُونَ",
+      "translation": "Everything in the heavens and earth belongs to Him: everlasting obedience is His right. Will you heed anyone other than God?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016052.mp3"
+    },
+    {
+      "id": 1954,
+      "verse_number": 53,
+      "text_uthmani": "وَمَا بِكُم مِّن نِّعْمَةٍ فَمِنَ ٱللَّهِ ۖ ثُمَّ إِذَا مَسَّكُمُ ٱلضُّرُّ فَإِلَيْهِ تَجْـَٔرُونَ",
+      "translation": "Whatever good things you possess come from God, and when hardship afflicts you, it is to Him alone you cry out for help,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016053.mp3"
+    },
+    {
+      "id": 1955,
+      "verse_number": 54,
+      "text_uthmani": "ثُمَّ إِذَا كَشَفَ ٱلضُّرَّ عَنكُمْ إِذَا فَرِيقٌ مِّنكُم بِرَبِّهِمْ يُشْرِكُونَ",
+      "translation": "yet when He has relieved you of your hardship- lo and behold!- some of you attribute partners to your Lord.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016054.mp3"
+    },
+    {
+      "id": 1956,
+      "verse_number": 55,
+      "text_uthmani": "لِيَكْفُرُوا۟ بِمَآ ءَاتَيْنَـٰهُمْ ۚ فَتَمَتَّعُوا۟ ۖ فَسَوْفَ تَعْلَمُونَ",
+      "translation": "Let them show ingratitude for the favours We have shown them; ‘Enjoy your brief time- soon you will know.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016055.mp3"
+    },
+    {
+      "id": 1957,
+      "verse_number": 56,
+      "text_uthmani": "وَيَجْعَلُونَ لِمَا لَا يَعْلَمُونَ نَصِيبًا مِّمَّا رَزَقْنَـٰهُمْ ۗ تَٱللَّهِ لَتُسْـَٔلُنَّ عَمَّا كُنتُمْ تَفْتَرُونَ",
+      "translation": "They set aside part of the sustenance We give them, for [idols] about which they have no true knowledge. By God! You will be questioned about your false inventions.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016056.mp3"
+    },
+    {
+      "id": 1958,
+      "verse_number": 57,
+      "text_uthmani": "وَيَجْعَلُونَ لِلَّهِ ٱلْبَنَـٰتِ سُبْحَـٰنَهُۥ ۙ وَلَهُم مَّا يَشْتَهُونَ",
+      "translation": "They assign daughters to God––may He be exalted!––and the [sons] they desire to themselves.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016057.mp3"
+    },
+    {
+      "id": 1959,
+      "verse_number": 58,
+      "text_uthmani": "وَإِذَا بُشِّرَ أَحَدُهُم بِٱلْأُنثَىٰ ظَلَّ وَجْهُهُۥ مُسْوَدًّا وَهُوَ كَظِيمٌ",
+      "translation": "When one of them is given news of the birth of a baby girl, his face darkens and he is filled with gloom.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016058.mp3"
+    },
+    {
+      "id": 1960,
+      "verse_number": 59,
+      "text_uthmani": "يَتَوَٰرَىٰ مِنَ ٱلْقَوْمِ مِن سُوٓءِ مَا بُشِّرَ بِهِۦٓ ۚ أَيُمْسِكُهُۥ عَلَىٰ هُونٍ أَمْ يَدُسُّهُۥ فِى ٱلتُّرَابِ ۗ أَلَا سَآءَ مَا يَحْكُمُونَ",
+      "translation": "In his shame he hides himself away from his people because of the bad news he has been given. Should he keep her and suffer contempt or bury her in the dust? How ill they judge!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016059.mp3"
+    },
+    {
+      "id": 1961,
+      "verse_number": 60,
+      "text_uthmani": "لِلَّذِينَ لَا يُؤْمِنُونَ بِٱلْـَٔاخِرَةِ مَثَلُ ٱلسَّوْءِ ۖ وَلِلَّهِ ٱلْمَثَلُ ٱلْأَعْلَىٰ ۚ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+      "translation": "Those who do not believe in the Hereafter should have the contemptible image, and God should have the highest one: He is the Mighty, the Wise.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016060.mp3"
+    },
+    {
+      "id": 1962,
+      "verse_number": 61,
+      "text_uthmani": "وَلَوْ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلْمِهِم مَّا تَرَكَ عَلَيْهَا مِن دَآبَّةٍ وَلَـٰكِن يُؤَخِّرُهُمْ إِلَىٰٓ أَجَلٍ مُّسَمًّى ۖ فَإِذَا جَآءَ أَجَلُهُمْ لَا يَسْتَـْٔخِرُونَ سَاعَةً ۖ وَلَا يَسْتَقْدِمُونَ",
+      "translation": "If God took people to task for the evil they do, He would not leave one living creature on earth, but He reprieves them until an appointed time: when their time comes they cannot delay it for a moment nor can they bring it forward.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016061.mp3"
+    },
+    {
+      "id": 1963,
+      "verse_number": 62,
+      "text_uthmani": "وَيَجْعَلُونَ لِلَّهِ مَا يَكْرَهُونَ وَتَصِفُ أَلْسِنَتُهُمُ ٱلْكَذِبَ أَنَّ لَهُمُ ٱلْحُسْنَىٰ ۖ لَا جَرَمَ أَنَّ لَهُمُ ٱلنَّارَ وَأَنَّهُم مُّفْرَطُونَ",
+      "translation": "They attribute to God what they themselves dislike while their own tongues utter the lie that the best belongs to them. Without doubt it is the Fire that belongs to them: they will be given priority there!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016062.mp3"
+    },
+    {
+      "id": 1964,
+      "verse_number": 63,
+      "text_uthmani": "تَٱللَّهِ لَقَدْ أَرْسَلْنَآ إِلَىٰٓ أُمَمٍ مِّن قَبْلِكَ فَزَيَّنَ لَهُمُ ٱلشَّيْطَـٰنُ أَعْمَـٰلَهُمْ فَهُوَ وَلِيُّهُمُ ٱلْيَوْمَ وَلَهُمْ عَذَابٌ أَلِيمٌ",
+      "translation": "By God, We have sent messengers before you [Muhammad] to other communities, but Satan made their foul deeds seem alluring to them. He is the patron of these present disbelievers too, and a painful punishment awaits them all.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016063.mp3"
+    },
+    {
+      "id": 1965,
+      "verse_number": 64,
+      "text_uthmani": "وَمَآ أَنزَلْنَا عَلَيْكَ ٱلْكِتَـٰبَ إِلَّا لِتُبَيِّنَ لَهُمُ ٱلَّذِى ٱخْتَلَفُوا۟ فِيهِ ۙ وَهُدًى وَرَحْمَةً لِّقَوْمٍ يُؤْمِنُونَ",
+      "translation": "We have sent down the Scripture to you only to make clear to them what they differ about, and as guidance and mercy to those who believe.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016064.mp3"
+    },
+    {
+      "id": 1966,
+      "verse_number": 65,
+      "text_uthmani": "وَٱللَّهُ أَنزَلَ مِنَ ٱلسَّمَآءِ مَآءً فَأَحْيَا بِهِ ٱلْأَرْضَ بَعْدَ مَوْتِهَآ ۚ إِنَّ فِى ذَٰلِكَ لَـَٔايَةً لِّقَوْمٍ يَسْمَعُونَ",
+      "translation": "It is God who sends water down from the sky and with it revives the earth when it is dead. There truly is a sign in this for people who listen.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016065.mp3"
+    },
+    {
+      "id": 1967,
+      "verse_number": 66,
+      "text_uthmani": "وَإِنَّ لَكُمْ فِى ٱلْأَنْعَـٰمِ لَعِبْرَةً ۖ نُّسْقِيكُم مِّمَّا فِى بُطُونِهِۦ مِنۢ بَيْنِ فَرْثٍ وَدَمٍ لَّبَنًا خَالِصًا سَآئِغًا لِّلشَّـٰرِبِينَ",
+      "translation": "In livestock, too, you have a lesson- We give you a drink from the contents of their bellies, between waste matter and blood, pure milk, sweet to the drinker.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016066.mp3"
+    },
+    {
+      "id": 1968,
+      "verse_number": 67,
+      "text_uthmani": "وَمِن ثَمَرَٰتِ ٱلنَّخِيلِ وَٱلْأَعْنَـٰبِ تَتَّخِذُونَ مِنْهُ سَكَرًا وَرِزْقًا حَسَنًا ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَةً لِّقَوْمٍ يَعْقِلُونَ",
+      "translation": "From the fruits of date palms and grapes you take sweet juice and wholesome provisions. There truly is a sign in this for people who use their reason.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016067.mp3"
+    },
+    {
+      "id": 1969,
+      "verse_number": 68,
+      "text_uthmani": "وَأَوْحَىٰ رَبُّكَ إِلَى ٱلنَّحْلِ أَنِ ٱتَّخِذِى مِنَ ٱلْجِبَالِ بُيُوتًا وَمِنَ ٱلشَّجَرِ وَمِمَّا يَعْرِشُونَ",
+      "translation": "And your Lord inspired the bee, saying, ‘Build yourselves houses in the mountains and trees and what people construct.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016068.mp3"
+    },
+    {
+      "id": 1970,
+      "verse_number": 69,
+      "text_uthmani": "ثُمَّ كُلِى مِن كُلِّ ٱلثَّمَرَٰتِ فَٱسْلُكِى سُبُلَ رَبِّكِ ذُلُلًا ۚ يَخْرُجُ مِنۢ بُطُونِهَا شَرَابٌ مُّخْتَلِفٌ أَلْوَٰنُهُۥ فِيهِ شِفَآءٌ لِّلنَّاسِ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَةً لِّقَوْمٍ يَتَفَكَّرُونَ",
+      "translation": "Then feed on all kinds of fruit and follow the ways made easy for you by your Lord.’ From their bellies comes a drink of different colours in which there is healing for people. There truly is a sign in this for those who think.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016069.mp3"
+    },
+    {
+      "id": 1971,
+      "verse_number": 70,
+      "text_uthmani": "وَٱللَّهُ خَلَقَكُمْ ثُمَّ يَتَوَفَّىٰكُمْ ۚ وَمِنكُم مَّن يُرَدُّ إِلَىٰٓ أَرْذَلِ ٱلْعُمُرِ لِكَىْ لَا يَعْلَمَ بَعْدَ عِلْمٍ شَيْـًٔا ۚ إِنَّ ٱللَّهَ عَلِيمٌ قَدِيرٌ",
+      "translation": "It is God who has created you and in time will cause you to die. Some of you will be reduced, in old age, to a most abject state, so that, after having knowledge, they will know nothing at all: God is truly all knowing and all powerful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016070.mp3"
+    },
+    {
+      "id": 1972,
+      "verse_number": 71,
+      "text_uthmani": "وَٱللَّهُ فَضَّلَ بَعْضَكُمْ عَلَىٰ بَعْضٍ فِى ٱلرِّزْقِ ۚ فَمَا ٱلَّذِينَ فُضِّلُوا۟ بِرَآدِّى رِزْقِهِمْ عَلَىٰ مَا مَلَكَتْ أَيْمَـٰنُهُمْ فَهُمْ فِيهِ سَوَآءٌ ۚ أَفَبِنِعْمَةِ ٱللَّهِ يَجْحَدُونَ",
+      "translation": "God has given some of you more provision than others. Those who have been given more are unwilling to pass their provision on to the slaves they possess so that they become their equals. How can they refuse to acknowledge God’s blessings?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016071.mp3"
+    },
+    {
+      "id": 1973,
+      "verse_number": 72,
+      "text_uthmani": "وَٱللَّهُ جَعَلَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا وَجَعَلَ لَكُم مِّنْ أَزْوَٰجِكُم بَنِينَ وَحَفَدَةً وَرَزَقَكُم مِّنَ ٱلطَّيِّبَـٰتِ ۚ أَفَبِٱلْبَـٰطِلِ يُؤْمِنُونَ وَبِنِعْمَتِ ٱللَّهِ هُمْ يَكْفُرُونَ",
+      "translation": "And it is God who has given you spouses from amongst yourselves and through them He has given you children and grandchildren and provided you with good things. How can they believe in falsehood and deny God’s blessings?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016072.mp3"
+    },
+    {
+      "id": 1974,
+      "verse_number": 73,
+      "text_uthmani": "وَيَعْبُدُونَ مِن دُونِ ٱللَّهِ مَا لَا يَمْلِكُ لَهُمْ رِزْقًا مِّنَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ شَيْـًٔا وَلَا يَسْتَطِيعُونَ",
+      "translation": "Those they worship beside God have no power to provide anything for them from the heavens or the earth: they can do nothing.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016073.mp3"
+    },
+    {
+      "id": 1975,
+      "verse_number": 74,
+      "text_uthmani": "فَلَا تَضْرِبُوا۟ لِلَّهِ ٱلْأَمْثَالَ ۚ إِنَّ ٱللَّهَ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ",
+      "translation": "So do not make up images about God: God knows and you do not.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016074.mp3"
+    },
+    {
+      "id": 1976,
+      "verse_number": 75,
+      "text_uthmani": "۞ ضَرَبَ ٱللَّهُ مَثَلًا عَبْدًا مَّمْلُوكًا لَّا يَقْدِرُ عَلَىٰ شَىْءٍ وَمَن رَّزَقْنَـٰهُ مِنَّا رِزْقًا حَسَنًا فَهُوَ يُنفِقُ مِنْهُ سِرًّا وَجَهْرًا ۖ هَلْ يَسْتَوُۥنَ ۚ ٱلْحَمْدُ لِلَّهِ ۚ بَلْ أَكْثَرُهُمْ لَا يَعْلَمُونَ",
+      "translation": "God presents this illustration: a slave controlled by his master, with no power over anything, and another man We have supplied with good provision, from which he gives alms privately and openly. Can they be considered equal? All praise belongs to God, but most of them do not recognize this.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016075.mp3"
+    },
+    {
+      "id": 1977,
+      "verse_number": 76,
+      "text_uthmani": "وَضَرَبَ ٱللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَآ أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَىْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَىٰهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ ۖ هَلْ يَسْتَوِى هُوَ وَمَن يَأْمُرُ بِٱلْعَدْلِ ۙ وَهُوَ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ",
+      "translation": "God presents another illustration: two men, one of them dumb, unable to do anything, a burden to his carer- whatever task he directs him to, he achieves nothing good- can he be considered equal to one who commands justice and is on the straight path?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016076.mp3"
+    },
+    {
+      "id": 1978,
+      "verse_number": 77,
+      "text_uthmani": "وَلِلَّهِ غَيْبُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ وَمَآ أَمْرُ ٱلسَّاعَةِ إِلَّا كَلَمْحِ ٱلْبَصَرِ أَوْ هُوَ أَقْرَبُ ۚ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ",
+      "translation": "All that is hidden from view in the heavens and earth belongs to God. The coming of the Hour of Judgement is like the blink of an eye, or even quicker: God has power over everything.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016077.mp3"
+    },
+    {
+      "id": 1979,
+      "verse_number": 78,
+      "text_uthmani": "وَٱللَّهُ أَخْرَجَكُم مِّنۢ بُطُونِ أُمَّهَـٰتِكُمْ لَا تَعْلَمُونَ شَيْـًٔا وَجَعَلَ لَكُمُ ٱلسَّمْعَ وَٱلْأَبْصَـٰرَ وَٱلْأَفْـِٔدَةَ ۙ لَعَلَّكُمْ تَشْكُرُونَ",
+      "translation": "It is God who brought you out of your mothers’ wombs knowing nothing, and gave you hearing and sight and minds, so that you might be thankful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016078.mp3"
+    },
+    {
+      "id": 1980,
+      "verse_number": 79,
+      "text_uthmani": "أَلَمْ يَرَوْا۟ إِلَى ٱلطَّيْرِ مُسَخَّرَٰتٍ فِى جَوِّ ٱلسَّمَآءِ مَا يُمْسِكُهُنَّ إِلَّا ٱللَّهُ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّقَوْمٍ يُؤْمِنُونَ",
+      "translation": "Do they not see the birds made to fly through the air in the sky? Nothing holds them up except God. There truly are signs in this for those who believe.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016079.mp3"
+    },
+    {
+      "id": 1981,
+      "verse_number": 80,
+      "text_uthmani": "وَٱللَّهُ جَعَلَ لَكُم مِّنۢ بُيُوتِكُمْ سَكَنًا وَجَعَلَ لَكُم مِّن جُلُودِ ٱلْأَنْعَـٰمِ بُيُوتًا تَسْتَخِفُّونَهَا يَوْمَ ظَعْنِكُمْ وَيَوْمَ إِقَامَتِكُمْ ۙ وَمِنْ أَصْوَافِهَا وَأَوْبَارِهَا وَأَشْعَارِهَآ أَثَـٰثًا وَمَتَـٰعًا إِلَىٰ حِينٍ",
+      "translation": "It is God who has given you a place of rest in your homes and from the skins of animals made you homes that you find light [to handle] when you travel and when you set up camp; furnishings and comfort for a while from their wool, fur, and hair.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016080.mp3"
+    },
+    {
+      "id": 1982,
+      "verse_number": 81,
+      "text_uthmani": "وَٱللَّهُ جَعَلَ لَكُم مِّمَّا خَلَقَ ظِلَـٰلًا وَجَعَلَ لَكُم مِّنَ ٱلْجِبَالِ أَكْنَـٰنًا وَجَعَلَ لَكُمْ سَرَٰبِيلَ تَقِيكُمُ ٱلْحَرَّ وَسَرَٰبِيلَ تَقِيكُم بَأْسَكُمْ ۚ كَذَٰلِكَ يُتِمُّ نِعْمَتَهُۥ عَلَيْكُمْ لَعَلَّكُمْ تُسْلِمُونَ",
+      "translation": "It is God who has given you shade from what He has created, and places of shelter in the mountains; garments to protect you from the heat, and garments to protect you in your wars. In this way He perfects His blessings on you, so that you may devote yourselves to Him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016081.mp3"
+    },
+    {
+      "id": 1983,
+      "verse_number": 82,
+      "text_uthmani": "فَإِن تَوَلَّوْا۟ فَإِنَّمَا عَلَيْكَ ٱلْبَلَـٰغُ ٱلْمُبِينُ",
+      "translation": "But if they turn away [Prophet], your only duty is to deliver the message clearly.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016082.mp3"
+    },
+    {
+      "id": 1984,
+      "verse_number": 83,
+      "text_uthmani": "يَعْرِفُونَ نِعْمَتَ ٱللَّهِ ثُمَّ يُنكِرُونَهَا وَأَكْثَرُهُمُ ٱلْكَـٰفِرُونَ",
+      "translation": "They know God’s blessings, but refuse to recognize them: most of them are ungrateful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016083.mp3"
+    },
+    {
+      "id": 1985,
+      "verse_number": 84,
+      "text_uthmani": "وَيَوْمَ نَبْعَثُ مِن كُلِّ أُمَّةٍ شَهِيدًا ثُمَّ لَا يُؤْذَنُ لِلَّذِينَ كَفَرُوا۟ وَلَا هُمْ يُسْتَعْتَبُونَ",
+      "translation": "The day will come when We raise up a witness from every community, when the disbelievers will not be allowed to make excuses or amends.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016084.mp3"
+    },
+    {
+      "id": 1986,
+      "verse_number": 85,
+      "text_uthmani": "وَإِذَا رَءَا ٱلَّذِينَ ظَلَمُوا۟ ٱلْعَذَابَ فَلَا يُخَفَّفُ عَنْهُمْ وَلَا هُمْ يُنظَرُونَ",
+      "translation": "When the evildoers face punishment it will not be lightened for them nor will they be given any respite.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016085.mp3"
+    },
+    {
+      "id": 1987,
+      "verse_number": 86,
+      "text_uthmani": "وَإِذَا رَءَا ٱلَّذِينَ أَشْرَكُوا۟ شُرَكَآءَهُمْ قَالُوا۟ رَبَّنَا هَـٰٓؤُلَآءِ شُرَكَآؤُنَا ٱلَّذِينَ كُنَّا نَدْعُوا۟ مِن دُونِكَ ۖ فَأَلْقَوْا۟ إِلَيْهِمُ ٱلْقَوْلَ إِنَّكُمْ لَكَـٰذِبُونَ",
+      "translation": "When the idolaters see the partners they joined with God they will say, ‘Our Lord, these are the partners we used to invoke beside You,’ but the partners will retort, ‘You are liars,’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016086.mp3"
+    },
+    {
+      "id": 1988,
+      "verse_number": 87,
+      "text_uthmani": "وَأَلْقَوْا۟ إِلَى ٱللَّهِ يَوْمَئِذٍ ٱلسَّلَمَ ۖ وَضَلَّ عَنْهُم مَّا كَانُوا۟ يَفْتَرُونَ",
+      "translation": "and on that Day they will offer total submission to God: their false deities will desert them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016087.mp3"
+    },
+    {
+      "id": 1989,
+      "verse_number": 88,
+      "text_uthmani": "ٱلَّذِينَ كَفَرُوا۟ وَصَدُّوا۟ عَن سَبِيلِ ٱللَّهِ زِدْنَـٰهُمْ عَذَابًا فَوْقَ ٱلْعَذَابِ بِمَا كَانُوا۟ يُفْسِدُونَ",
+      "translation": "Because of the corruption they spread, We shall add torment upon torment for those who disbelieved and barred others from the path of God.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016088.mp3"
+    },
+    {
+      "id": 1990,
+      "verse_number": 89,
+      "text_uthmani": "وَيَوْمَ نَبْعَثُ فِى كُلِّ أُمَّةٍ شَهِيدًا عَلَيْهِم مِّنْ أَنفُسِهِمْ ۖ وَجِئْنَا بِكَ شَهِيدًا عَلَىٰ هَـٰٓؤُلَآءِ ۚ وَنَزَّلْنَا عَلَيْكَ ٱلْكِتَـٰبَ تِبْيَـٰنًا لِّكُلِّ شَىْءٍ وَهُدًى وَرَحْمَةً وَبُشْرَىٰ لِلْمُسْلِمِينَ",
+      "translation": "The day will come when We raise up in each community a witness against them, and We shall bring you [Prophet] as a witness against these people, for We have sent the Scripture down to you explaining everything, and as guidance and mercy and good news to those who devote themselves to God.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016089.mp3"
+    },
+    {
+      "id": 1991,
+      "verse_number": 90,
+      "text_uthmani": "۞ إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَـٰنِ وَإِيتَآئِ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ ۚ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ",
+      "translation": "God commands justice, doing good, and generosity towards relatives and He forbids what is shameful, blameworthy, and oppressive. He teaches you, so that you may take heed.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016090.mp3"
+    },
+    {
+      "id": 1992,
+      "verse_number": 91,
+      "text_uthmani": "وَأَوْفُوا۟ بِعَهْدِ ٱللَّهِ إِذَا عَـٰهَدتُّمْ وَلَا تَنقُضُوا۟ ٱلْأَيْمَـٰنَ بَعْدَ تَوْكِيدِهَا وَقَدْ جَعَلْتُمُ ٱللَّهَ عَلَيْكُمْ كَفِيلًا ۚ إِنَّ ٱللَّهَ يَعْلَمُ مَا تَفْعَلُونَ",
+      "translation": "Fulfil any pledge you make in God’s name and do not break oaths after you have sworn them, for you have made God your surety: God knows everything you do.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016091.mp3"
+    },
+    {
+      "id": 1993,
+      "verse_number": 92,
+      "text_uthmani": "وَلَا تَكُونُوا۟ كَٱلَّتِى نَقَضَتْ غَزْلَهَا مِنۢ بَعْدِ قُوَّةٍ أَنكَـٰثًا تَتَّخِذُونَ أَيْمَـٰنَكُمْ دَخَلًۢا بَيْنَكُمْ أَن تَكُونَ أُمَّةٌ هِىَ أَرْبَىٰ مِنْ أُمَّةٍ ۚ إِنَّمَا يَبْلُوكُمُ ٱللَّهُ بِهِۦ ۚ وَلَيُبَيِّنَنَّ لَكُمْ يَوْمَ ٱلْقِيَـٰمَةِ مَا كُنتُمْ فِيهِ تَخْتَلِفُونَ",
+      "translation": "Do not use your oaths to deceive each other- like a woman who unravels the thread she has firmly spun- just because one party may be more numerous than another. God tests you with this, and on the Day of the Resurrection He will make clear to you those things you differed about.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016092.mp3"
+    },
+    {
+      "id": 1994,
+      "verse_number": 93,
+      "text_uthmani": "وَلَوْ شَآءَ ٱللَّهُ لَجَعَلَكُمْ أُمَّةً وَٰحِدَةً وَلَـٰكِن يُضِلُّ مَن يَشَآءُ وَيَهْدِى مَن يَشَآءُ ۚ وَلَتُسْـَٔلُنَّ عَمَّا كُنتُمْ تَعْمَلُونَ",
+      "translation": "If God so willed, He would have made you all one people, but He leaves to stray whoever He will and guides whoever He will. You will be questioned about your deeds.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016093.mp3"
+    },
+    {
+      "id": 1995,
+      "verse_number": 94,
+      "text_uthmani": "وَلَا تَتَّخِذُوٓا۟ أَيْمَـٰنَكُمْ دَخَلًۢا بَيْنَكُمْ فَتَزِلَّ قَدَمٌۢ بَعْدَ ثُبُوتِهَا وَتَذُوقُوا۟ ٱلسُّوٓءَ بِمَا صَدَدتُّمْ عَن سَبِيلِ ٱللَّهِ ۖ وَلَكُمْ عَذَابٌ عَظِيمٌ",
+      "translation": "Do not use your oaths to deceive each other lest any foot should slip after being firmly placed and lest you should taste the penalty for having hindered others from the path of God, and suffer terrible torment.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016094.mp3"
+    },
+    {
+      "id": 1996,
+      "verse_number": 95,
+      "text_uthmani": "وَلَا تَشْتَرُوا۟ بِعَهْدِ ٱللَّهِ ثَمَنًا قَلِيلًا ۚ إِنَّمَا عِندَ ٱللَّهِ هُوَ خَيْرٌ لَّكُمْ إِن كُنتُمْ تَعْلَمُونَ",
+      "translation": "Do not sell for a small price any pledge made in God’s name: what God has [to give] is better for you, if you only knew.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016095.mp3"
+    },
+    {
+      "id": 1997,
+      "verse_number": 96,
+      "text_uthmani": "مَا عِندَكُمْ يَنفَدُ ۖ وَمَا عِندَ ٱللَّهِ بَاقٍ ۗ وَلَنَجْزِيَنَّ ٱلَّذِينَ صَبَرُوٓا۟ أَجْرَهُم بِأَحْسَنِ مَا كَانُوا۟ يَعْمَلُونَ",
+      "translation": "What you have runs out but what God has endures, and We shall certainly reward those who remain steadfast according to the best of their actions.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016096.mp3"
+    },
+    {
+      "id": 1998,
+      "verse_number": 97,
+      "text_uthmani": "مَنْ عَمِلَ صَـٰلِحًا مِّن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَلَنُحْيِيَنَّهُۥ حَيَوٰةً طَيِّبَةً ۖ وَلَنَجْزِيَنَّهُمْ أَجْرَهُم بِأَحْسَنِ مَا كَانُوا۟ يَعْمَلُونَ",
+      "translation": "To whoever, male or female, does good deeds and has faith, We shall give a good life and reward them according to the best of their actions.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016097.mp3"
+    },
+    {
+      "id": 1999,
+      "verse_number": 98,
+      "text_uthmani": "فَإِذَا قَرَأْتَ ٱلْقُرْءَانَ فَٱسْتَعِذْ بِٱللَّهِ مِنَ ٱلشَّيْطَـٰنِ ٱلرَّجِيمِ",
+      "translation": "[Prophet], when you recite the Quran, seek God’s protection from the outcast, Satan.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016098.mp3"
+    },
+    {
+      "id": 2000,
+      "verse_number": 99,
+      "text_uthmani": "إِنَّهُۥ لَيْسَ لَهُۥ سُلْطَـٰنٌ عَلَى ٱلَّذِينَ ءَامَنُوا۟ وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ",
+      "translation": "He has no power over those who believe and trust in their Lord;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016099.mp3"
+    },
+    {
+      "id": 2001,
+      "verse_number": 100,
+      "text_uthmani": "إِنَّمَا سُلْطَـٰنُهُۥ عَلَى ٱلَّذِينَ يَتَوَلَّوْنَهُۥ وَٱلَّذِينَ هُم بِهِۦ مُشْرِكُونَ",
+      "translation": "his power is only over those who ally themselves with him and those who, because of him, join partners with God.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016100.mp3"
+    },
+    {
+      "id": 2002,
+      "verse_number": 101,
+      "text_uthmani": "وَإِذَا بَدَّلْنَآ ءَايَةً مَّكَانَ ءَايَةٍ ۙ وَٱللَّهُ أَعْلَمُ بِمَا يُنَزِّلُ قَالُوٓا۟ إِنَّمَآ أَنتَ مُفْتَرٍۭ ۚ بَلْ أَكْثَرُهُمْ لَا يَعْلَمُونَ",
+      "translation": "When We substitute one revelation for another- and God knows best what He reveals- they say, ‘You are just making it up,’ but most of them have no knowledge.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016101.mp3"
+    },
+    {
+      "id": 2003,
+      "verse_number": 102,
+      "text_uthmani": "قُلْ نَزَّلَهُۥ رُوحُ ٱلْقُدُسِ مِن رَّبِّكَ بِٱلْحَقِّ لِيُثَبِّتَ ٱلَّذِينَ ءَامَنُوا۟ وَهُدًى وَبُشْرَىٰ لِلْمُسْلِمِينَ",
+      "translation": "Say that the Holy Spirit has brought the Revelation with the Truth step by step from your Lord, to strengthen the believers and as guidance and good news to the devout.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016102.mp3"
+    },
+    {
+      "id": 2004,
+      "verse_number": 103,
+      "text_uthmani": "وَلَقَدْ نَعْلَمُ أَنَّهُمْ يَقُولُونَ إِنَّمَا يُعَلِّمُهُۥ بَشَرٌ ۗ لِّسَانُ ٱلَّذِى يُلْحِدُونَ إِلَيْهِ أَعْجَمِىٌّ وَهَـٰذَا لِسَانٌ عَرَبِىٌّ مُّبِينٌ",
+      "translation": "We know very well that they say, ‘It is a man who teaches him,’ but the language of the person they allude to is foreign, while this revelation is in clear Arabic.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016103.mp3"
+    },
+    {
+      "id": 2005,
+      "verse_number": 104,
+      "text_uthmani": "إِنَّ ٱلَّذِينَ لَا يُؤْمِنُونَ بِـَٔايَـٰتِ ٱللَّهِ لَا يَهْدِيهِمُ ٱللَّهُ وَلَهُمْ عَذَابٌ أَلِيمٌ",
+      "translation": "If people do not believe in God’s revelation, God does not guide them, and a painful punishment awaits them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016104.mp3"
+    },
+    {
+      "id": 2006,
+      "verse_number": 105,
+      "text_uthmani": "إِنَّمَا يَفْتَرِى ٱلْكَذِبَ ٱلَّذِينَ لَا يُؤْمِنُونَ بِـَٔايَـٰتِ ٱللَّهِ ۖ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْكَـٰذِبُونَ",
+      "translation": "Falsehood is fabricated only by those who do not believe in God’s revelation: they are the liars.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016105.mp3"
+    },
+    {
+      "id": 2007,
+      "verse_number": 106,
+      "text_uthmani": "مَن كَفَرَ بِٱللَّهِ مِنۢ بَعْدِ إِيمَـٰنِهِۦٓ إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُۥ مُطْمَئِنٌّۢ بِٱلْإِيمَـٰنِ وَلَـٰكِن مَّن شَرَحَ بِٱلْكُفْرِ صَدْرًا فَعَلَيْهِمْ غَضَبٌ مِّنَ ٱللَّهِ وَلَهُمْ عَذَابٌ عَظِيمٌ",
+      "translation": "With the exception of those who are forced to say they do not believe, although their hearts remain firm in faith, those who reject God after believing in Him and open their hearts to disbelief will have the wrath of God upon them and a grievous punishment awaiting them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016106.mp3"
+    },
+    {
+      "id": 2008,
+      "verse_number": 107,
+      "text_uthmani": "ذَٰلِكَ بِأَنَّهُمُ ٱسْتَحَبُّوا۟ ٱلْحَيَوٰةَ ٱلدُّنْيَا عَلَى ٱلْـَٔاخِرَةِ وَأَنَّ ٱللَّهَ لَا يَهْدِى ٱلْقَوْمَ ٱلْكَـٰفِرِينَ",
+      "translation": "This is because they love the life of this world more than the one to come, and God does not guide those who reject Him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016107.mp3"
+    },
+    {
+      "id": 2009,
+      "verse_number": 108,
+      "text_uthmani": "أُو۟لَـٰٓئِكَ ٱلَّذِينَ طَبَعَ ٱللَّهُ عَلَىٰ قُلُوبِهِمْ وَسَمْعِهِمْ وَأَبْصَـٰرِهِمْ ۖ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْغَـٰفِلُونَ",
+      "translation": "These are people whose hearts, hearing, and sight have been closed off by God: they are heedless,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016108.mp3"
+    },
+    {
+      "id": 2010,
+      "verse_number": 109,
+      "text_uthmani": "لَا جَرَمَ أَنَّهُمْ فِى ٱلْـَٔاخِرَةِ هُمُ ٱلْخَـٰسِرُونَ",
+      "translation": "and there is no doubt that they will be the losers in the Hereafter.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016109.mp3"
+    },
+    {
+      "id": 2011,
+      "verse_number": 110,
+      "text_uthmani": "ثُمَّ إِنَّ رَبَّكَ لِلَّذِينَ هَاجَرُوا۟ مِنۢ بَعْدِ مَا فُتِنُوا۟ ثُمَّ جَـٰهَدُوا۟ وَصَبَرُوٓا۟ إِنَّ رَبَّكَ مِنۢ بَعْدِهَا لَغَفُورٌ رَّحِيمٌ",
+      "translation": "But your Lord will be most forgiving and most merciful to those who leave their homes after persecution, then strive and remain steadfast.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016110.mp3"
+    },
+    {
+      "id": 2012,
+      "verse_number": 111,
+      "text_uthmani": "۞ يَوْمَ تَأْتِى كُلُّ نَفْسٍ تُجَـٰدِلُ عَن نَّفْسِهَا وَتُوَفَّىٰ كُلُّ نَفْسٍ مَّا عَمِلَتْ وَهُمْ لَا يُظْلَمُونَ",
+      "translation": "On the Day when every soul will come pleading for itself, every soul will be paid in full for all its actions- they will not be wronged.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016111.mp3"
+    },
+    {
+      "id": 2013,
+      "verse_number": 112,
+      "text_uthmani": "وَضَرَبَ ٱللَّهُ مَثَلًا قَرْيَةً كَانَتْ ءَامِنَةً مُّطْمَئِنَّةً يَأْتِيهَا رِزْقُهَا رَغَدًا مِّن كُلِّ مَكَانٍ فَكَفَرَتْ بِأَنْعُمِ ٱللَّهِ فَأَذَٰقَهَا ٱللَّهُ لِبَاسَ ٱلْجُوعِ وَٱلْخَوْفِ بِمَا كَانُوا۟ يَصْنَعُونَ",
+      "translation": "God presents the example of a town that was secure and at ease, with provisions coming to it abundantly from all places. Then it became ungrateful for God’s blessings, so God afflicted it with the garment of famine and fear, for what its people had done.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016112.mp3"
+    },
+    {
+      "id": 2014,
+      "verse_number": 113,
+      "text_uthmani": "وَلَقَدْ جَآءَهُمْ رَسُولٌ مِّنْهُمْ فَكَذَّبُوهُ فَأَخَذَهُمُ ٱلْعَذَابُ وَهُمْ ظَـٰلِمُونَ",
+      "translation": "A messenger who was one of them came to them, but they called him a liar. So punishment overwhelmed them in the midst of their evildoing.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016113.mp3"
+    },
+    {
+      "id": 2015,
+      "verse_number": 114,
+      "text_uthmani": "فَكُلُوا۟ مِمَّا رَزَقَكُمُ ٱللَّهُ حَلَـٰلًا طَيِّبًا وَٱشْكُرُوا۟ نِعْمَتَ ٱللَّهِ إِن كُنتُمْ إِيَّاهُ تَعْبُدُونَ",
+      "translation": "So eat of the good and lawful things God has provided for you and be thankful for His blessings, if it is Him that you worship.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016114.mp3"
+    },
+    {
+      "id": 2016,
+      "verse_number": 115,
+      "text_uthmani": "إِنَّمَا حَرَّمَ عَلَيْكُمُ ٱلْمَيْتَةَ وَٱلدَّمَ وَلَحْمَ ٱلْخِنزِيرِ وَمَآ أُهِلَّ لِغَيْرِ ٱللَّهِ بِهِۦ ۖ فَمَنِ ٱضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَإِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ",
+      "translation": "He has forbidden you only these things: carrion, blood, pig’s meat, and animals over which any name other than God’s has been invoked. But if anyone is forced by hunger, not desiring it nor exceeding their immediate need, God is forgiving and merciful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016115.mp3"
+    },
+    {
+      "id": 2017,
+      "verse_number": 116,
+      "text_uthmani": "وَلَا تَقُولُوا۟ لِمَا تَصِفُ أَلْسِنَتُكُمُ ٱلْكَذِبَ هَـٰذَا حَلَـٰلٌ وَهَـٰذَا حَرَامٌ لِّتَفْتَرُوا۟ عَلَى ٱللَّهِ ٱلْكَذِبَ ۚ إِنَّ ٱلَّذِينَ يَفْتَرُونَ عَلَى ٱللَّهِ ٱلْكَذِبَ لَا يُفْلِحُونَ",
+      "translation": "Do not say falsely, ‘This is lawful and that is forbidden,’ inventing a lie about God: those who invent lies about God will not prosper-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016116.mp3"
+    },
+    {
+      "id": 2018,
+      "verse_number": 117,
+      "text_uthmani": "مَتَـٰعٌ قَلِيلٌ وَلَهُمْ عَذَابٌ أَلِيمٌ",
+      "translation": "they may have a little enjoyment, but painful punishment awaits them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016117.mp3"
+    },
+    {
+      "id": 2019,
+      "verse_number": 118,
+      "text_uthmani": "وَعَلَى ٱلَّذِينَ هَادُوا۟ حَرَّمْنَا مَا قَصَصْنَا عَلَيْكَ مِن قَبْلُ ۖ وَمَا ظَلَمْنَـٰهُمْ وَلَـٰكِن كَانُوٓا۟ أَنفُسَهُمْ يَظْلِمُونَ",
+      "translation": "[Prophet], We forbade the Jews what We told you about. We did not wrong them; they wronged themselves.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016118.mp3"
+    },
+    {
+      "id": 2020,
+      "verse_number": 119,
+      "text_uthmani": "ثُمَّ إِنَّ رَبَّكَ لِلَّذِينَ عَمِلُوا۟ ٱلسُّوٓءَ بِجَهَـٰلَةٍ ثُمَّ تَابُوا۟ مِنۢ بَعْدِ ذَٰلِكَ وَأَصْلَحُوٓا۟ إِنَّ رَبَّكَ مِنۢ بَعْدِهَا لَغَفُورٌ رَّحِيمٌ",
+      "translation": "But towards those who do wrong out of ignorance, and afterwards repent and make amends, your Lord is most forgiving and merciful.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016119.mp3"
+    },
+    {
+      "id": 2021,
+      "verse_number": 120,
+      "text_uthmani": "إِنَّ إِبْرَٰهِيمَ كَانَ أُمَّةً قَانِتًا لِّلَّهِ حَنِيفًا وَلَمْ يَكُ مِنَ ٱلْمُشْرِكِينَ",
+      "translation": "Abraham was truly an example: devoutly obedient to God and true in faith. He was not an idolater;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016120.mp3"
+    },
+    {
+      "id": 2022,
+      "verse_number": 121,
+      "text_uthmani": "شَاكِرًا لِّأَنْعُمِهِ ۚ ٱجْتَبَىٰهُ وَهَدَىٰهُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ",
+      "translation": "he was thankful for the blessings of God who chose him and guided him to a straight path.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016121.mp3"
+    },
+    {
+      "id": 2023,
+      "verse_number": 122,
+      "text_uthmani": "وَءَاتَيْنَـٰهُ فِى ٱلدُّنْيَا حَسَنَةً ۖ وَإِنَّهُۥ فِى ٱلْـَٔاخِرَةِ لَمِنَ ٱلصَّـٰلِحِينَ",
+      "translation": "We gave him blessings in this world, and he is among the right-eous in the Hereafter.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016122.mp3"
+    },
+    {
+      "id": 2024,
+      "verse_number": 123,
+      "text_uthmani": "ثُمَّ أَوْحَيْنَآ إِلَيْكَ أَنِ ٱتَّبِعْ مِلَّةَ إِبْرَٰهِيمَ حَنِيفًا ۖ وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ",
+      "translation": "Then We revealed to you [Muhammad], ‘Follow the creed of Abraham, a man of pure faith who was not an idolater.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016123.mp3"
+    },
+    {
+      "id": 2025,
+      "verse_number": 124,
+      "text_uthmani": "إِنَّمَا جُعِلَ ٱلسَّبْتُ عَلَى ٱلَّذِينَ ٱخْتَلَفُوا۟ فِيهِ ۚ وَإِنَّ رَبَّكَ لَيَحْكُمُ بَيْنَهُمْ يَوْمَ ٱلْقِيَـٰمَةِ فِيمَا كَانُوا۟ فِيهِ يَخْتَلِفُونَ",
+      "translation": "The Sabbath was made obligatory only for those who differed about it. On the Day of Resurrection your Lord will judge between them as to their differences.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016124.mp3"
+    },
+    {
+      "id": 2026,
+      "verse_number": 125,
+      "text_uthmani": "ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ ۖ وَجَـٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ ۚ إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ ۖ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+      "translation": "[Prophet], call [people] to the way of your Lord with wisdom and good teaching. Argue with them in the most courteous way, for your Lord knows best who has strayed from His way and who is rightly guided.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016125.mp3"
+    },
+    {
+      "id": 2027,
+      "verse_number": 126,
+      "text_uthmani": "وَإِنْ عَاقَبْتُمْ فَعَاقِبُوا۟ بِمِثْلِ مَا عُوقِبْتُم بِهِۦ ۖ وَلَئِن صَبَرْتُمْ لَهُوَ خَيْرٌ لِّلصَّـٰبِرِينَ",
+      "translation": "If you [believers] have to respond to an attack, make your response proportionate, but it is best to stand fast.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016126.mp3"
+    },
+    {
+      "id": 2028,
+      "verse_number": 127,
+      "text_uthmani": "وَٱصْبِرْ وَمَا صَبْرُكَ إِلَّا بِٱللَّهِ ۚ وَلَا تَحْزَنْ عَلَيْهِمْ وَلَا تَكُ فِى ضَيْقٍ مِّمَّا يَمْكُرُونَ",
+      "translation": "So [Prophet] be steadfast: your steadfastness comes only from God. Do not grieve over them; do not be distressed by their scheming,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016127.mp3"
+    },
+    {
+      "id": 2029,
+      "verse_number": 128,
+      "text_uthmani": "إِنَّ ٱللَّهَ مَعَ ٱلَّذِينَ ٱتَّقَوا۟ وَّٱلَّذِينَ هُم مُّحْسِنُونَ",
+      "translation": "for God is with those who are mindful of Him and who do good.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/016128.mp3"
+    }
+  ]
+}

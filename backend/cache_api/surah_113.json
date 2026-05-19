@@ -1,0 +1,46 @@
+{
+  "surah": {
+    "id": 113,
+    "name_arabic": "الفلق",
+    "name_english": "Al-Falaq",
+    "revelation_place": "makkah",
+    "verses_count": 5
+  },
+  "verses": [
+    {
+      "id": 6226,
+      "verse_number": 1,
+      "text_uthmani": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+      "translation": "Say, \"I seek refuge in the Lord of daybreak",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113001.mp3"
+    },
+    {
+      "id": 6227,
+      "verse_number": 2,
+      "text_uthmani": "مِن شَرِّ مَا خَلَقَ",
+      "translation": "From the evil of that which He created",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113002.mp3"
+    },
+    {
+      "id": 6228,
+      "verse_number": 3,
+      "text_uthmani": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+      "translation": "And from the evil of darkness when it settles",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113003.mp3"
+    },
+    {
+      "id": 6229,
+      "verse_number": 4,
+      "text_uthmani": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلْعُقَدِ",
+      "translation": "And from the evil of the blowers in knots",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113004.mp3"
+    },
+    {
+      "id": 6230,
+      "verse_number": 5,
+      "text_uthmani": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "translation": "And from the evil of an envier when he envies.\"",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113005.mp3"
+    }
+  ]
+}

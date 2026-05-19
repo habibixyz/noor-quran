@@ -1,0 +1,956 @@
+{
+  "surah": {
+    "id": 20,
+    "name_arabic": "طه",
+    "name_english": "Ta-Ha",
+    "revelation_place": "makkah",
+    "verses_count": 135
+  },
+  "verses": [
+    {
+      "id": 2349,
+      "verse_number": 1,
+      "text_uthmani": " طه",
+      "translation": "Ta Ha",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020001.mp3"
+    },
+    {
+      "id": 2350,
+      "verse_number": 2,
+      "text_uthmani": "مَآ أَنزَلْنَا عَلَيْكَ ٱلْقُرْءَانَ لِتَشْقَىٰٓ",
+      "translation": "It was not to distress you [Prophet] that We sent down the Quran to you,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020002.mp3"
+    },
+    {
+      "id": 2351,
+      "verse_number": 3,
+      "text_uthmani": "إِلَّا تَذْكِرَةً لِّمَن يَخْشَىٰ",
+      "translation": "but as a reminder for those who hold God in awe,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020003.mp3"
+    },
+    {
+      "id": 2352,
+      "verse_number": 4,
+      "text_uthmani": "تَنزِيلًا مِّمَّنْ خَلَقَ ٱلْأَرْضَ وَٱلسَّمَـٰوَٰتِ ٱلْعُلَى",
+      "translation": "a revelation from the One who created the earth and the high heaven,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020004.mp3"
+    },
+    {
+      "id": 2353,
+      "verse_number": 5,
+      "text_uthmani": "ٱلرَّحْمَـٰنُ عَلَى ٱلْعَرْشِ ٱسْتَوَىٰ",
+      "translation": "the Lord of Mercy, established on the throne.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020005.mp3"
+    },
+    {
+      "id": 2354,
+      "verse_number": 6,
+      "text_uthmani": "لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَمَا بَيْنَهُمَا وَمَا تَحْتَ ٱلثَّرَىٰ",
+      "translation": "Everything in the heavens and on earth, everything between them, everything beneath the soil, belongs to Him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020006.mp3"
+    },
+    {
+      "id": 2355,
+      "verse_number": 7,
+      "text_uthmani": "وَإِن تَجْهَرْ بِٱلْقَوْلِ فَإِنَّهُۥ يَعْلَمُ ٱلسِّرَّ وَأَخْفَى",
+      "translation": "Whatever you may say aloud, He knows what you keep secret and what is even more hidden.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020007.mp3"
+    },
+    {
+      "id": 2356,
+      "verse_number": 8,
+      "text_uthmani": "ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ",
+      "translation": "God––there is no god but Him––the most excellent names belong to Him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020008.mp3"
+    },
+    {
+      "id": 2357,
+      "verse_number": 9,
+      "text_uthmani": "وَهَلْ أَتَىٰكَ حَدِيثُ مُوسَىٰٓ",
+      "translation": "Has the story of Moses come to you [Prophet]?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020009.mp3"
+    },
+    {
+      "id": 2358,
+      "verse_number": 10,
+      "text_uthmani": "إِذْ رَءَا نَارًا فَقَالَ لِأَهْلِهِ ٱمْكُثُوٓا۟ إِنِّىٓ ءَانَسْتُ نَارًا لَّعَلِّىٓ ءَاتِيكُم مِّنْهَا بِقَبَسٍ أَوْ أَجِدُ عَلَى ٱلنَّارِ هُدًى",
+      "translation": "He saw a fire and said to his people, ‘Stay here––I can see a fire. Maybe I can bring you a flaming brand from it or find some guidance there.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020010.mp3"
+    },
+    {
+      "id": 2359,
+      "verse_number": 11,
+      "text_uthmani": "فَلَمَّآ أَتَىٰهَا نُودِىَ يَـٰمُوسَىٰٓ",
+      "translation": "When he came to the fire, he was summoned, ‘Moses!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020011.mp3"
+    },
+    {
+      "id": 2360,
+      "verse_number": 12,
+      "text_uthmani": "إِنِّىٓ أَنَا۠ رَبُّكَ فَٱخْلَعْ نَعْلَيْكَ ۖ إِنَّكَ بِٱلْوَادِ ٱلْمُقَدَّسِ طُوًى",
+      "translation": "I am your Lord. Take off your shoes: you are in the sacred valley of Tuwa.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020012.mp3"
+    },
+    {
+      "id": 2361,
+      "verse_number": 13,
+      "text_uthmani": "وَأَنَا ٱخْتَرْتُكَ فَٱسْتَمِعْ لِمَا يُوحَىٰٓ",
+      "translation": "I have chosen you, so listen to what is being revealed.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020013.mp3"
+    },
+    {
+      "id": 2362,
+      "verse_number": 14,
+      "text_uthmani": "إِنَّنِىٓ أَنَا ٱللَّهُ لَآ إِلَـٰهَ إِلَّآ أَنَا۠ فَٱعْبُدْنِى وَأَقِمِ ٱلصَّلَوٰةَ لِذِكْرِىٓ",
+      "translation": "I am God; there is no god but Me. So worship Me and keep up the prayer so that you remember Me.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020014.mp3"
+    },
+    {
+      "id": 2363,
+      "verse_number": 15,
+      "text_uthmani": "إِنَّ ٱلسَّاعَةَ ءَاتِيَةٌ أَكَادُ أُخْفِيهَا لِتُجْزَىٰ كُلُّ نَفْسٍۭ بِمَا تَسْعَىٰ",
+      "translation": "The Hour is coming––though I choose to keep it hidden––for each soul to be rewarded for its labour.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020015.mp3"
+    },
+    {
+      "id": 2364,
+      "verse_number": 16,
+      "text_uthmani": "فَلَا يَصُدَّنَّكَ عَنْهَا مَن لَّا يُؤْمِنُ بِهَا وَٱتَّبَعَ هَوَىٰهُ فَتَرْدَىٰ",
+      "translation": "Do not let anyone who does not believe in it and follows his own desires distract you from it, and so bring you to ruin.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020016.mp3"
+    },
+    {
+      "id": 2365,
+      "verse_number": 17,
+      "text_uthmani": "وَمَا تِلْكَ بِيَمِينِكَ يَـٰمُوسَىٰ",
+      "translation": "‘Moses, what is that in your right hand?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020017.mp3"
+    },
+    {
+      "id": 2366,
+      "verse_number": 18,
+      "text_uthmani": "قَالَ هِىَ عَصَاىَ أَتَوَكَّؤُا۟ عَلَيْهَا وَأَهُشُّ بِهَا عَلَىٰ غَنَمِى وَلِىَ فِيهَا مَـَٔارِبُ أُخْرَىٰ",
+      "translation": "‘It is my staff,’ he said, ‘I lean on it; restrain my sheep with it; I also have other uses for it.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020018.mp3"
+    },
+    {
+      "id": 2367,
+      "verse_number": 19,
+      "text_uthmani": "قَالَ أَلْقِهَا يَـٰمُوسَىٰ",
+      "translation": "God said, ‘Throw it down, Moses.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020019.mp3"
+    },
+    {
+      "id": 2368,
+      "verse_number": 20,
+      "text_uthmani": "فَأَلْقَىٰهَا فَإِذَا هِىَ حَيَّةٌ تَسْعَىٰ",
+      "translation": "He threw it down and- lo and behold!- it became a fast-moving snake.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020020.mp3"
+    },
+    {
+      "id": 2369,
+      "verse_number": 21,
+      "text_uthmani": "قَالَ خُذْهَا وَلَا تَخَفْ ۖ سَنُعِيدُهَا سِيرَتَهَا ٱلْأُولَىٰ",
+      "translation": "He said, ‘Pick it up without fear: We shall turn it back into its former state.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020021.mp3"
+    },
+    {
+      "id": 2370,
+      "verse_number": 22,
+      "text_uthmani": "وَٱضْمُمْ يَدَكَ إِلَىٰ جَنَاحِكَ تَخْرُجْ بَيْضَآءَ مِنْ غَيْرِ سُوٓءٍ ءَايَةً أُخْرَىٰ",
+      "translation": "Now place your hand under your armpit and it will come out white, though unharmed: that is another sign.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020022.mp3"
+    },
+    {
+      "id": 2371,
+      "verse_number": 23,
+      "text_uthmani": "لِنُرِيَكَ مِنْ ءَايَـٰتِنَا ٱلْكُبْرَى",
+      "translation": "We do this to show you some of Our greatest signs.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020023.mp3"
+    },
+    {
+      "id": 2372,
+      "verse_number": 24,
+      "text_uthmani": "ٱذْهَبْ إِلَىٰ فِرْعَوْنَ إِنَّهُۥ طَغَىٰ",
+      "translation": "Go to Pharaoh, for he has truly become a tyrant.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020024.mp3"
+    },
+    {
+      "id": 2373,
+      "verse_number": 25,
+      "text_uthmani": "قَالَ رَبِّ ٱشْرَحْ لِى صَدْرِى",
+      "translation": "Moses said, ‘Lord, lift up my heart",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020025.mp3"
+    },
+    {
+      "id": 2374,
+      "verse_number": 26,
+      "text_uthmani": "وَيَسِّرْ لِىٓ أَمْرِى",
+      "translation": "and ease my task for me.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020026.mp3"
+    },
+    {
+      "id": 2375,
+      "verse_number": 27,
+      "text_uthmani": "وَٱحْلُلْ عُقْدَةً مِّن لِّسَانِى",
+      "translation": "Untie my tongue,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020027.mp3"
+    },
+    {
+      "id": 2376,
+      "verse_number": 28,
+      "text_uthmani": "يَفْقَهُوا۟ قَوْلِى",
+      "translation": "so that they may understand my words,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020028.mp3"
+    },
+    {
+      "id": 2377,
+      "verse_number": 29,
+      "text_uthmani": "وَٱجْعَل لِّى وَزِيرًا مِّنْ أَهْلِى",
+      "translation": "and give me a helper from my family,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020029.mp3"
+    },
+    {
+      "id": 2378,
+      "verse_number": 30,
+      "text_uthmani": "هَـٰرُونَ أَخِى",
+      "translation": "my brother Aaron-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020030.mp3"
+    },
+    {
+      "id": 2379,
+      "verse_number": 31,
+      "text_uthmani": "ٱشْدُدْ بِهِۦٓ أَزْرِى",
+      "translation": "augment my strength through him.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020031.mp3"
+    },
+    {
+      "id": 2380,
+      "verse_number": 32,
+      "text_uthmani": "وَأَشْرِكْهُ فِىٓ أَمْرِى",
+      "translation": "Let him share my task",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020032.mp3"
+    },
+    {
+      "id": 2381,
+      "verse_number": 33,
+      "text_uthmani": "كَىْ نُسَبِّحَكَ كَثِيرًا",
+      "translation": "so that we can glorify You much",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020033.mp3"
+    },
+    {
+      "id": 2382,
+      "verse_number": 34,
+      "text_uthmani": "وَنَذْكُرَكَ كَثِيرًا",
+      "translation": "and remember You often:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020034.mp3"
+    },
+    {
+      "id": 2383,
+      "verse_number": 35,
+      "text_uthmani": "إِنَّكَ كُنتَ بِنَا بَصِيرًا",
+      "translation": "You are always watching over us.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020035.mp3"
+    },
+    {
+      "id": 2384,
+      "verse_number": 36,
+      "text_uthmani": "قَالَ قَدْ أُوتِيتَ سُؤْلَكَ يَـٰمُوسَىٰ",
+      "translation": "God said, ‘Moses, your request is granted.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020036.mp3"
+    },
+    {
+      "id": 2385,
+      "verse_number": 37,
+      "text_uthmani": "وَلَقَدْ مَنَنَّا عَلَيْكَ مَرَّةً أُخْرَىٰٓ",
+      "translation": "Indeed We showed you favour before.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020037.mp3"
+    },
+    {
+      "id": 2386,
+      "verse_number": 38,
+      "text_uthmani": "إِذْ أَوْحَيْنَآ إِلَىٰٓ أُمِّكَ مَا يُوحَىٰٓ",
+      "translation": "We inspired your mother, saying,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020038.mp3"
+    },
+    {
+      "id": 2387,
+      "verse_number": 39,
+      "text_uthmani": "أَنِ ٱقْذِفِيهِ فِى ٱلتَّابُوتِ فَٱقْذِفِيهِ فِى ٱلْيَمِّ فَلْيُلْقِهِ ٱلْيَمُّ بِٱلسَّاحِلِ يَأْخُذْهُ عَدُوٌّ لِّى وَعَدُوٌّ لَّهُۥ ۚ وَأَلْقَيْتُ عَلَيْكَ مَحَبَّةً مِّنِّى وَلِتُصْنَعَ عَلَىٰ عَيْنِىٓ",
+      "translation": "“Put your child into the chest, then place him in the river. Let the river wash him on to its bank, and he will be taken in by an enemy of Mine and his.” I showered you with My love and planned that you should be reared under My watchful eye.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020039.mp3"
+    },
+    {
+      "id": 2388,
+      "verse_number": 40,
+      "text_uthmani": "إِذْ تَمْشِىٓ أُخْتُكَ فَتَقُولُ هَلْ أَدُلُّكُمْ عَلَىٰ مَن يَكْفُلُهُۥ ۖ فَرَجَعْنَـٰكَ إِلَىٰٓ أُمِّكَ كَىْ تَقَرَّ عَيْنُهَا وَلَا تَحْزَنَ ۚ وَقَتَلْتَ نَفْسًا فَنَجَّيْنَـٰكَ مِنَ ٱلْغَمِّ وَفَتَنَّـٰكَ فُتُونًا ۚ فَلَبِثْتَ سِنِينَ فِىٓ أَهْلِ مَدْيَنَ ثُمَّ جِئْتَ عَلَىٰ قَدَرٍ يَـٰمُوسَىٰ",
+      "translation": "Your sister went out, saying, “I will tell you someone who will nurse him,” then We returned you to your mother so that she could rejoice and not grieve. Later you killed a man, but We saved you from distress and tried you with other tests. You stayed among the people of Midian for years, then you came here as I ordained.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020040.mp3"
+    },
+    {
+      "id": 2389,
+      "verse_number": 41,
+      "text_uthmani": "وَٱصْطَنَعْتُكَ لِنَفْسِى",
+      "translation": "I have chosen you for Myself.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020041.mp3"
+    },
+    {
+      "id": 2390,
+      "verse_number": 42,
+      "text_uthmani": "ٱذْهَبْ أَنتَ وَأَخُوكَ بِـَٔايَـٰتِى وَلَا تَنِيَا فِى ذِكْرِى",
+      "translation": "Go, you and your brother, with My signs, and make sure that you remember Me.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020042.mp3"
+    },
+    {
+      "id": 2391,
+      "verse_number": 43,
+      "text_uthmani": "ٱذْهَبَآ إِلَىٰ فِرْعَوْنَ إِنَّهُۥ طَغَىٰ",
+      "translation": "Go, both of you, to Pharaoh, for he has exceeded all bounds.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020043.mp3"
+    },
+    {
+      "id": 2392,
+      "verse_number": 44,
+      "text_uthmani": "فَقُولَا لَهُۥ قَوْلًا لَّيِّنًا لَّعَلَّهُۥ يَتَذَكَّرُ أَوْ يَخْشَىٰ",
+      "translation": "Speak to him gently so that he may take heed, or show respect.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020044.mp3"
+    },
+    {
+      "id": 2393,
+      "verse_number": 45,
+      "text_uthmani": "قَالَا رَبَّنَآ إِنَّنَا نَخَافُ أَن يَفْرُطَ عَلَيْنَآ أَوْ أَن يَطْغَىٰ",
+      "translation": "They said, ‘Lord, we fear he will do us great harm or exceed all bounds.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020045.mp3"
+    },
+    {
+      "id": 2394,
+      "verse_number": 46,
+      "text_uthmani": "قَالَ لَا تَخَافَآ ۖ إِنَّنِى مَعَكُمَآ أَسْمَعُ وَأَرَىٰ",
+      "translation": "He said, ‘Do not be afraid, I am with you both, hearing and seeing everything.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020046.mp3"
+    },
+    {
+      "id": 2395,
+      "verse_number": 47,
+      "text_uthmani": "فَأْتِيَاهُ فَقُولَآ إِنَّا رَسُولَا رَبِّكَ فَأَرْسِلْ مَعَنَا بَنِىٓ إِسْرَٰٓءِيلَ وَلَا تُعَذِّبْهُمْ ۖ قَدْ جِئْنَـٰكَ بِـَٔايَةٍ مِّن رَّبِّكَ ۖ وَٱلسَّلَـٰمُ عَلَىٰ مَنِ ٱتَّبَعَ ٱلْهُدَىٰٓ",
+      "translation": "Go and tell him, “We are your Lord’s mes-sengers, so send the Children of Israel with us and do not oppress them. We have brought you a sign from your Lord. Peace be upon whoever follows the right guidance;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020047.mp3"
+    },
+    {
+      "id": 2396,
+      "verse_number": 48,
+      "text_uthmani": "إِنَّا قَدْ أُوحِىَ إِلَيْنَآ أَنَّ ٱلْعَذَابَ عَلَىٰ مَن كَذَّبَ وَتَوَلَّىٰ",
+      "translation": "it has been revealed to us that punishment falls on whoever rejects the truth and turns his back on it.”’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020048.mp3"
+    },
+    {
+      "id": 2397,
+      "verse_number": 49,
+      "text_uthmani": "قَالَ فَمَن رَّبُّكُمَا يَـٰمُوسَىٰ",
+      "translation": "[Pharaoh] said, ‘Moses, who is this Lord of yours?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020049.mp3"
+    },
+    {
+      "id": 2398,
+      "verse_number": 50,
+      "text_uthmani": "قَالَ رَبُّنَا ٱلَّذِىٓ أَعْطَىٰ كُلَّ شَىْءٍ خَلْقَهُۥ ثُمَّ هَدَىٰ",
+      "translation": "Moses said, ‘Our Lord is He who gave everything its form, then gave it guidance.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020050.mp3"
+    },
+    {
+      "id": 2399,
+      "verse_number": 51,
+      "text_uthmani": "قَالَ فَمَا بَالُ ٱلْقُرُونِ ٱلْأُولَىٰ",
+      "translation": "He said, ‘What about former generations?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020051.mp3"
+    },
+    {
+      "id": 2400,
+      "verse_number": 52,
+      "text_uthmani": "قَالَ عِلْمُهَا عِندَ رَبِّى فِى كِتَـٰبٍ ۖ لَّا يَضِلُّ رَبِّى وَلَا يَنسَى",
+      "translation": "Moses said, ‘My Lord alone has knowledge of them, all in a record; my Lord does not err or forget.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020052.mp3"
+    },
+    {
+      "id": 2401,
+      "verse_number": 53,
+      "text_uthmani": "ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ مَهْدًا وَسَلَكَ لَكُمْ فِيهَا سُبُلًا وَأَنزَلَ مِنَ ٱلسَّمَآءِ مَآءً فَأَخْرَجْنَا بِهِۦٓ أَزْوَٰجًا مِّن نَّبَاتٍ شَتَّىٰ",
+      "translation": "It was He who spread out the earth for you and traced routes in it. He sent down water from the sky. With that water We bring forth every kind of plant,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020053.mp3"
+    },
+    {
+      "id": 2402,
+      "verse_number": 54,
+      "text_uthmani": "كُلُوا۟ وَٱرْعَوْا۟ أَنْعَـٰمَكُمْ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّأُو۟لِى ٱلنُّهَىٰ",
+      "translation": "so eat, and graze your cattle. There are truly signs in all this for people of understand-ing.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020054.mp3"
+    },
+    {
+      "id": 2403,
+      "verse_number": 55,
+      "text_uthmani": "۞ مِنْهَا خَلَقْنَـٰكُمْ وَفِيهَا نُعِيدُكُمْ وَمِنْهَا نُخْرِجُكُمْ تَارَةً أُخْرَىٰ",
+      "translation": "From the earth We created you, into it We shall return you, and from it We shall raise you a second time.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020055.mp3"
+    },
+    {
+      "id": 2404,
+      "verse_number": 56,
+      "text_uthmani": "وَلَقَدْ أَرَيْنَـٰهُ ءَايَـٰتِنَا كُلَّهَا فَكَذَّبَ وَأَبَىٰ",
+      "translation": "We showed Pharaoh all Our signs, but he denied them and refused [to change].",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020056.mp3"
+    },
+    {
+      "id": 2405,
+      "verse_number": 57,
+      "text_uthmani": "قَالَ أَجِئْتَنَا لِتُخْرِجَنَا مِنْ أَرْضِنَا بِسِحْرِكَ يَـٰمُوسَىٰ",
+      "translation": "He said, ‘Have you come to drive us from our land with your sorcery, Moses?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020057.mp3"
+    },
+    {
+      "id": 2406,
+      "verse_number": 58,
+      "text_uthmani": "فَلَنَأْتِيَنَّكَ بِسِحْرٍ مِّثْلِهِۦ فَٱجْعَلْ بَيْنَنَا وَبَيْنَكَ مَوْعِدًا لَّا نُخْلِفُهُۥ نَحْنُ وَلَآ أَنتَ مَكَانًا سُوًى",
+      "translation": "We will confront you with sorcery to match your own: make an appointment between us which neither of us will fail to keep, in a mutually agreeable place.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020058.mp3"
+    },
+    {
+      "id": 2407,
+      "verse_number": 59,
+      "text_uthmani": "قَالَ مَوْعِدُكُمْ يَوْمُ ٱلزِّينَةِ وَأَن يُحْشَرَ ٱلنَّاسُ ضُحًى",
+      "translation": "He said, ‘Your meeting will be on the day of the feast, so let the people be assembled when the sun has risen high.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020059.mp3"
+    },
+    {
+      "id": 2408,
+      "verse_number": 60,
+      "text_uthmani": "فَتَوَلَّىٰ فِرْعَوْنُ فَجَمَعَ كَيْدَهُۥ ثُمَّ أَتَىٰ",
+      "translation": "Pharaoh withdrew and gathered his resources, then he returned.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020060.mp3"
+    },
+    {
+      "id": 2409,
+      "verse_number": 61,
+      "text_uthmani": "قَالَ لَهُم مُّوسَىٰ وَيْلَكُمْ لَا تَفْتَرُوا۟ عَلَى ٱللَّهِ كَذِبًا فَيُسْحِتَكُم بِعَذَابٍ ۖ وَقَدْ خَابَ مَنِ ٱفْتَرَىٰ",
+      "translation": "Moses said to them, ‘Beware, do not invent lies against God or He will destroy you with His punishment. Whoever invents lies will fail.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020061.mp3"
+    },
+    {
+      "id": 2410,
+      "verse_number": 62,
+      "text_uthmani": "فَتَنَـٰزَعُوٓا۟ أَمْرَهُم بَيْنَهُمْ وَأَسَرُّوا۟ ٱلنَّجْوَىٰ",
+      "translation": "So they discussed their plan among themselves, talking secretly,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020062.mp3"
+    },
+    {
+      "id": 2411,
+      "verse_number": 63,
+      "text_uthmani": "قَالُوٓا۟ إِنْ هَـٰذَٰنِ لَسَـٰحِرَٰنِ يُرِيدَانِ أَن يُخْرِجَاكُم مِّنْ أَرْضِكُم بِسِحْرِهِمَا وَيَذْهَبَا بِطَرِيقَتِكُمُ ٱلْمُثْلَىٰ",
+      "translation": "saying, ‘These two men are sorcerers. Their purpose is to drive you out of your land with their sorcery and put an end to your time-honoured way of life.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020063.mp3"
+    },
+    {
+      "id": 2412,
+      "verse_number": 64,
+      "text_uthmani": "فَأَجْمِعُوا۟ كَيْدَكُمْ ثُمَّ ٱئْتُوا۟ صَفًّا ۚ وَقَدْ أَفْلَحَ ٱلْيَوْمَ مَنِ ٱسْتَعْلَىٰ",
+      "translation": "So gather your resources and line up for the contest. Whoever wins today is sure to prosper.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020064.mp3"
+    },
+    {
+      "id": 2413,
+      "verse_number": 65,
+      "text_uthmani": "قَالُوا۟ يَـٰمُوسَىٰٓ إِمَّآ أَن تُلْقِىَ وَإِمَّآ أَن نَّكُونَ أَوَّلَ مَنْ أَلْقَىٰ",
+      "translation": "They said, ‘Moses, will you throw first or shall we?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020065.mp3"
+    },
+    {
+      "id": 2414,
+      "verse_number": 66,
+      "text_uthmani": "قَالَ بَلْ أَلْقُوا۟ ۖ فَإِذَا حِبَالُهُمْ وَعِصِيُّهُمْ يُخَيَّلُ إِلَيْهِ مِن سِحْرِهِمْ أَنَّهَا تَسْعَىٰ",
+      "translation": "‘You throw,’ said Moses, and––lo and behold!––through their sorcery, their ropes and staffs seemed to him to be moving.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020066.mp3"
+    },
+    {
+      "id": 2415,
+      "verse_number": 67,
+      "text_uthmani": "فَأَوْجَسَ فِى نَفْسِهِۦ خِيفَةً مُّوسَىٰ",
+      "translation": "Moses was inwardly alarmed,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020067.mp3"
+    },
+    {
+      "id": 2416,
+      "verse_number": 68,
+      "text_uthmani": "قُلْنَا لَا تَخَفْ إِنَّكَ أَنتَ ٱلْأَعْلَىٰ",
+      "translation": "but We said, ‘Do not be afraid, you have the upper hand.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020068.mp3"
+    },
+    {
+      "id": 2417,
+      "verse_number": 69,
+      "text_uthmani": "وَأَلْقِ مَا فِى يَمِينِكَ تَلْقَفْ مَا صَنَعُوٓا۟ ۖ إِنَّمَا صَنَعُوا۟ كَيْدُ سَـٰحِرٍ ۖ وَلَا يُفْلِحُ ٱلسَّاحِرُ حَيْثُ أَتَىٰ",
+      "translation": "Throw down what is in your right hand: it will swallow up what they have produced. They have only produced the tricks of a sorcerer, and a sorcerer will not prosper, wherever he goes.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020069.mp3"
+    },
+    {
+      "id": 2418,
+      "verse_number": 70,
+      "text_uthmani": "فَأُلْقِىَ ٱلسَّحَرَةُ سُجَّدًا قَالُوٓا۟ ءَامَنَّا بِرَبِّ هَـٰرُونَ وَمُوسَىٰ",
+      "translation": "[So it was, and] the sorcerers threw themselves down in submission. ‘We believe,’ they said, ‘in the Lord of Aaron and Moses.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020070.mp3"
+    },
+    {
+      "id": 2419,
+      "verse_number": 71,
+      "text_uthmani": "قَالَ ءَامَنتُمْ لَهُۥ قَبْلَ أَنْ ءَاذَنَ لَكُمْ ۖ إِنَّهُۥ لَكَبِيرُكُمُ ٱلَّذِى عَلَّمَكُمُ ٱلسِّحْرَ ۖ فَلَأُقَطِّعَنَّ أَيْدِيَكُمْ وَأَرْجُلَكُم مِّنْ خِلَـٰفٍ وَلَأُصَلِّبَنَّكُمْ فِى جُذُوعِ ٱلنَّخْلِ وَلَتَعْلَمُنَّ أَيُّنَآ أَشَدُّ عَذَابًا وَأَبْقَىٰ",
+      "translation": "Pharaoh said, ‘How dare you believe in him before I have given you permission? This must be your master, the man who taught you witchcraft. I shall certainly cut off your alternate hands and feet, then crucify you on the trunks of palm trees. You will know for certain which of us has the fiercer and more lasting punishment.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020071.mp3"
+    },
+    {
+      "id": 2420,
+      "verse_number": 72,
+      "text_uthmani": "قَالُوا۟ لَن نُّؤْثِرَكَ عَلَىٰ مَا جَآءَنَا مِنَ ٱلْبَيِّنَـٰتِ وَٱلَّذِى فَطَرَنَا ۖ فَٱقْضِ مَآ أَنتَ قَاضٍ ۖ إِنَّمَا تَقْضِى هَـٰذِهِ ٱلْحَيَوٰةَ ٱلدُّنْيَآ",
+      "translation": "They said, ‘We shall never prefer you to the clear sign that has come to us, nor to Him who created us. So decide whatever you will: you can only decide matters of this present life-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020072.mp3"
+    },
+    {
+      "id": 2421,
+      "verse_number": 73,
+      "text_uthmani": "إِنَّآ ءَامَنَّا بِرَبِّنَا لِيَغْفِرَ لَنَا خَطَـٰيَـٰنَا وَمَآ أَكْرَهْتَنَا عَلَيْهِ مِنَ ٱلسِّحْرِ ۗ وَٱللَّهُ خَيْرٌ وَأَبْقَىٰٓ",
+      "translation": "we believe in our Lord, [hoping] He may forgive us our sins and the sorcery that you forced us to practise- God is better and more lasting.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020073.mp3"
+    },
+    {
+      "id": 2422,
+      "verse_number": 74,
+      "text_uthmani": "إِنَّهُۥ مَن يَأْتِ رَبَّهُۥ مُجْرِمًا فَإِنَّ لَهُۥ جَهَنَّمَ لَا يَمُوتُ فِيهَا وَلَا يَحْيَىٰ",
+      "translation": "Hell will be the reward of those who return to their Lord as evildoers: there they will stay, neither living nor dying.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020074.mp3"
+    },
+    {
+      "id": 2423,
+      "verse_number": 75,
+      "text_uthmani": "وَمَن يَأْتِهِۦ مُؤْمِنًا قَدْ عَمِلَ ٱلصَّـٰلِحَـٰتِ فَأُو۟لَـٰٓئِكَ لَهُمُ ٱلدَّرَجَـٰتُ ٱلْعُلَىٰ",
+      "translation": "But those who return to their Lord as believers with righteous deeds will be rewarded with the highest of ranks,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020075.mp3"
+    },
+    {
+      "id": 2424,
+      "verse_number": 76,
+      "text_uthmani": "جَنَّـٰتُ عَدْنٍ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ خَـٰلِدِينَ فِيهَا ۚ وَذَٰلِكَ جَزَآءُ مَن تَزَكَّىٰ",
+      "translation": "Gardens of lasting bliss graced with flowing streams, and there they will stay. Such is the reward of those who purify themselves.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020076.mp3"
+    },
+    {
+      "id": 2425,
+      "verse_number": 77,
+      "text_uthmani": "وَلَقَدْ أَوْحَيْنَآ إِلَىٰ مُوسَىٰٓ أَنْ أَسْرِ بِعِبَادِى فَٱضْرِبْ لَهُمْ طَرِيقًا فِى ٱلْبَحْرِ يَبَسًا لَّا تَخَـٰفُ دَرَكًا وَلَا تَخْشَىٰ",
+      "translation": "We revealed to Moses, ‘Go out at night with My servants and strike a dry path for them across the sea. Have no fear of being overtaken and do not be dismayed.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020077.mp3"
+    },
+    {
+      "id": 2426,
+      "verse_number": 78,
+      "text_uthmani": "فَأَتْبَعَهُمْ فِرْعَوْنُ بِجُنُودِهِۦ فَغَشِيَهُم مِّنَ ٱلْيَمِّ مَا غَشِيَهُمْ",
+      "translation": "Pharaoh pursued them with his armies and was overwhelmed by the sea.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020078.mp3"
+    },
+    {
+      "id": 2427,
+      "verse_number": 79,
+      "text_uthmani": "وَأَضَلَّ فِرْعَوْنُ قَوْمَهُۥ وَمَا هَدَىٰ",
+      "translation": "Pharaoh truly led his people astray; he did not guide them.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020079.mp3"
+    },
+    {
+      "id": 2428,
+      "verse_number": 80,
+      "text_uthmani": "يَـٰبَنِىٓ إِسْرَٰٓءِيلَ قَدْ أَنجَيْنَـٰكُم مِّنْ عَدُوِّكُمْ وَوَٰعَدْنَـٰكُمْ جَانِبَ ٱلطُّورِ ٱلْأَيْمَنَ وَنَزَّلْنَا عَلَيْكُمُ ٱلْمَنَّ وَٱلسَّلْوَىٰ",
+      "translation": "Children of Israel, We rescued you from your enemies. We made a pledge with you on the right-hand side of the mountain. We sent down manna and quails for you,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020080.mp3"
+    },
+    {
+      "id": 2429,
+      "verse_number": 81,
+      "text_uthmani": "كُلُوا۟ مِن طَيِّبَـٰتِ مَا رَزَقْنَـٰكُمْ وَلَا تَطْغَوْا۟ فِيهِ فَيَحِلَّ عَلَيْكُمْ غَضَبِى ۖ وَمَن يَحْلِلْ عَلَيْهِ غَضَبِى فَقَدْ هَوَىٰ",
+      "translation": "‘Eat from the good things We have provided for you, but do not overstep the bounds, or My wrath will descend on you. Anyone on whom My wrath descends has truly fallen.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020081.mp3"
+    },
+    {
+      "id": 2430,
+      "verse_number": 82,
+      "text_uthmani": "وَإِنِّى لَغَفَّارٌ لِّمَن تَابَ وَءَامَنَ وَعَمِلَ صَـٰلِحًا ثُمَّ ٱهْتَدَىٰ",
+      "translation": "Yet I am most forgiving towards those who repent, believe, do righteous deeds, and stay on the right path.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020082.mp3"
+    },
+    {
+      "id": 2431,
+      "verse_number": 83,
+      "text_uthmani": "۞ وَمَآ أَعْجَلَكَ عَن قَوْمِكَ يَـٰمُوسَىٰ",
+      "translation": "[God said], ‘Moses, what has made you come ahead of your people in such haste?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020083.mp3"
+    },
+    {
+      "id": 2432,
+      "verse_number": 84,
+      "text_uthmani": "قَالَ هُمْ أُو۟لَآءِ عَلَىٰٓ أَثَرِى وَعَجِلْتُ إِلَيْكَ رَبِّ لِتَرْضَىٰ",
+      "translation": "and he said, ‘They are following in my footsteps. I rushed to You, Lord, to please You,’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020084.mp3"
+    },
+    {
+      "id": 2433,
+      "verse_number": 85,
+      "text_uthmani": "قَالَ فَإِنَّا قَدْ فَتَنَّا قَوْمَكَ مِنۢ بَعْدِكَ وَأَضَلَّهُمُ ٱلسَّامِرِىُّ",
+      "translation": "but God said, ‘We have tested your people in your absence: the Samiri has led them astray.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020085.mp3"
+    },
+    {
+      "id": 2434,
+      "verse_number": 86,
+      "text_uthmani": "فَرَجَعَ مُوسَىٰٓ إِلَىٰ قَوْمِهِۦ غَضْبَـٰنَ أَسِفًا ۚ قَالَ يَـٰقَوْمِ أَلَمْ يَعِدْكُمْ رَبُّكُمْ وَعْدًا حَسَنًا ۚ أَفَطَالَ عَلَيْكُمُ ٱلْعَهْدُ أَمْ أَرَدتُّمْ أَن يَحِلَّ عَلَيْكُمْ غَضَبٌ مِّن رَّبِّكُمْ فَأَخْلَفْتُم مَّوْعِدِى",
+      "translation": "Moses returned to his people, angry and aggrieved. He said, ‘My people, did your Lord not make you a gracious promise? Was my absence too long for you? Did you want anger to fall on you from your Lord and so broke your word to me?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020086.mp3"
+    },
+    {
+      "id": 2435,
+      "verse_number": 87,
+      "text_uthmani": "قَالُوا۟ مَآ أَخْلَفْنَا مَوْعِدَكَ بِمَلْكِنَا وَلَـٰكِنَّا حُمِّلْنَآ أَوْزَارًا مِّن زِينَةِ ٱلْقَوْمِ فَقَذَفْنَـٰهَا فَكَذَٰلِكَ أَلْقَى ٱلسَّامِرِىُّ",
+      "translation": "They said, ‘We did not break our word to you deliberately. We were burdened with the weight of people’s jewellery, so we threw it [into the fire], and the Samiri did the same,’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020087.mp3"
+    },
+    {
+      "id": 2436,
+      "verse_number": 88,
+      "text_uthmani": "فَأَخْرَجَ لَهُمْ عِجْلًا جَسَدًا لَّهُۥ خُوَارٌ فَقَالُوا۟ هَـٰذَآ إِلَـٰهُكُمْ وَإِلَـٰهُ مُوسَىٰ فَنَسِىَ",
+      "translation": "but he [used the molten jewellery to] produce an image of a calf which made a lowing sound, and they said, ‘This is your god and Moses’ god, but he has forgotten.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020088.mp3"
+    },
+    {
+      "id": 2437,
+      "verse_number": 89,
+      "text_uthmani": "أَفَلَا يَرَوْنَ أَلَّا يَرْجِعُ إِلَيْهِمْ قَوْلًا وَلَا يَمْلِكُ لَهُمْ ضَرًّا وَلَا نَفْعًا",
+      "translation": "Did they not see that [the calf] gave them no answer, that it had no power to harm or benefit them?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020089.mp3"
+    },
+    {
+      "id": 2438,
+      "verse_number": 90,
+      "text_uthmani": "وَلَقَدْ قَالَ لَهُمْ هَـٰرُونُ مِن قَبْلُ يَـٰقَوْمِ إِنَّمَا فُتِنتُم بِهِۦ ۖ وَإِنَّ رَبَّكُمُ ٱلرَّحْمَـٰنُ فَٱتَّبِعُونِى وَأَطِيعُوٓا۟ أَمْرِى",
+      "translation": "Aaron did say to them, ‘My people, this calf is a test for you. Your true Lord is the Lord of Mercy, so follow me and obey my orders,’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020090.mp3"
+    },
+    {
+      "id": 2439,
+      "verse_number": 91,
+      "text_uthmani": "قَالُوا۟ لَن نَّبْرَحَ عَلَيْهِ عَـٰكِفِينَ حَتَّىٰ يَرْجِعَ إِلَيْنَا مُوسَىٰ",
+      "translation": "but they replied, ‘We shall not give up our devotion to it until Moses returns to us.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020091.mp3"
+    },
+    {
+      "id": 2440,
+      "verse_number": 92,
+      "text_uthmani": "قَالَ يَـٰهَـٰرُونُ مَا مَنَعَكَ إِذْ رَأَيْتَهُمْ ضَلُّوٓا۟",
+      "translation": "Moses said, ‘When you realized they had gone astray, what prevented you, Aaron,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020092.mp3"
+    },
+    {
+      "id": 2441,
+      "verse_number": 93,
+      "text_uthmani": "أَلَّا تَتَّبِعَنِ ۖ أَفَعَصَيْتَ أَمْرِى",
+      "translation": "from coming after me? How could you disobey my orders?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020093.mp3"
+    },
+    {
+      "id": 2442,
+      "verse_number": 94,
+      "text_uthmani": "قَالَ يَبْنَؤُمَّ لَا تَأْخُذْ بِلِحْيَتِى وَلَا بِرَأْسِىٓ ۖ إِنِّى خَشِيتُ أَن تَقُولَ فَرَّقْتَ بَيْنَ بَنِىٓ إِسْرَٰٓءِيلَ وَلَمْ تَرْقُبْ قَوْلِى",
+      "translation": "He said, ‘Son of my mother- let go of my beard and my hair!- I was afraid you would say, “You have caused division among the children of Israel and have not heeded what I said.”’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020094.mp3"
+    },
+    {
+      "id": 2443,
+      "verse_number": 95,
+      "text_uthmani": "قَالَ فَمَا خَطْبُكَ يَـٰسَـٰمِرِىُّ",
+      "translation": "Moses said, ‘And what was the matter with you, Samiri?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020095.mp3"
+    },
+    {
+      "id": 2444,
+      "verse_number": 96,
+      "text_uthmani": "قَالَ بَصُرْتُ بِمَا لَمْ يَبْصُرُوا۟ بِهِۦ فَقَبَضْتُ قَبْضَةً مِّنْ أَثَرِ ٱلرَّسُولِ فَنَبَذْتُهَا وَكَذَٰلِكَ سَوَّلَتْ لِى نَفْسِى",
+      "translation": "He replied, ‘I saw something they did not; I took in some of the teachings of the Messenger but tossed them aside: my soul prompted me to do what I did.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020096.mp3"
+    },
+    {
+      "id": 2445,
+      "verse_number": 97,
+      "text_uthmani": "قَالَ فَٱذْهَبْ فَإِنَّ لَكَ فِى ٱلْحَيَوٰةِ أَن تَقُولَ لَا مِسَاسَ ۖ وَإِنَّ لَكَ مَوْعِدًا لَّن تُخْلَفَهُۥ ۖ وَٱنظُرْ إِلَىٰٓ إِلَـٰهِكَ ٱلَّذِى ظَلْتَ عَلَيْهِ عَاكِفًا ۖ لَّنُحَرِّقَنَّهُۥ ثُمَّ لَنَنسِفَنَّهُۥ فِى ٱلْيَمِّ نَسْفًا",
+      "translation": "Moses said, ‘Get away from here! Your lot in this life is to say, “Do not touch me,” but you have an appointment from which there is no escape. Look at your god which you have kept on worshipping- we shall grind it down and scatter it into the sea.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020097.mp3"
+    },
+    {
+      "id": 2446,
+      "verse_number": 98,
+      "text_uthmani": "إِنَّمَآ إِلَـٰهُكُمُ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ۚ وَسِعَ كُلَّ شَىْءٍ عِلْمًا",
+      "translation": "[People], your true god is the One God- there is no god but Him- whose knowledge embraces everything.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020098.mp3"
+    },
+    {
+      "id": 2447,
+      "verse_number": 99,
+      "text_uthmani": "كَذَٰلِكَ نَقُصُّ عَلَيْكَ مِنْ أَنۢبَآءِ مَا قَدْ سَبَقَ ۚ وَقَدْ ءَاتَيْنَـٰكَ مِن لَّدُنَّا ذِكْرًا",
+      "translation": "In this way We relate to you [Prophet] stories of what happened before. We have given you a Quran from Us.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020099.mp3"
+    },
+    {
+      "id": 2448,
+      "verse_number": 100,
+      "text_uthmani": "مَّنْ أَعْرَضَ عَنْهُ فَإِنَّهُۥ يَحْمِلُ يَوْمَ ٱلْقِيَـٰمَةِ وِزْرًا",
+      "translation": "Whoever turns away from it will bear on the Day of Resurrection a heavy burden",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020100.mp3"
+    },
+    {
+      "id": 2449,
+      "verse_number": 101,
+      "text_uthmani": "خَـٰلِدِينَ فِيهِ ۖ وَسَآءَ لَهُمْ يَوْمَ ٱلْقِيَـٰمَةِ حِمْلًا",
+      "translation": "and will remain under it. What a terrible burden to carry on that Day!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020101.mp3"
+    },
+    {
+      "id": 2450,
+      "verse_number": 102,
+      "text_uthmani": "يَوْمَ يُنفَخُ فِى ٱلصُّورِ ۚ وَنَحْشُرُ ٱلْمُجْرِمِينَ يَوْمَئِذٍ زُرْقًا",
+      "translation": "When the trumpet is sounded and We gather the sinful, sightless,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020102.mp3"
+    },
+    {
+      "id": 2451,
+      "verse_number": 103,
+      "text_uthmani": "يَتَخَـٰفَتُونَ بَيْنَهُمْ إِن لَّبِثْتُمْ إِلَّا عَشْرًا",
+      "translation": "they will murmur to one another, ‘You stayed only ten days [on earth]’-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020103.mp3"
+    },
+    {
+      "id": 2452,
+      "verse_number": 104,
+      "text_uthmani": "نَّحْنُ أَعْلَمُ بِمَا يَقُولُونَ إِذْ يَقُولُ أَمْثَلُهُمْ طَرِيقَةً إِن لَّبِثْتُمْ إِلَّا يَوْمًا",
+      "translation": "We know best what they say- but the more perceptive of them will say, ‘Your stay [on earth] was only a single day.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020104.mp3"
+    },
+    {
+      "id": 2453,
+      "verse_number": 105,
+      "text_uthmani": "وَيَسْـَٔلُونَكَ عَنِ ٱلْجِبَالِ فَقُلْ يَنسِفُهَا رَبِّى نَسْفًا",
+      "translation": "They ask you [Prophet] about the mountains: say, ‘[On that Day] my Lord will blast them into dust",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020105.mp3"
+    },
+    {
+      "id": 2454,
+      "verse_number": 106,
+      "text_uthmani": "فَيَذَرُهَا قَاعًا صَفْصَفًا",
+      "translation": "and leave a flat plain,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020106.mp3"
+    },
+    {
+      "id": 2455,
+      "verse_number": 107,
+      "text_uthmani": "لَّا تَرَىٰ فِيهَا عِوَجًا وَلَآ أَمْتًا",
+      "translation": "with no peak or trough to be seen.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020107.mp3"
+    },
+    {
+      "id": 2456,
+      "verse_number": 108,
+      "text_uthmani": "يَوْمَئِذٍ يَتَّبِعُونَ ٱلدَّاعِىَ لَا عِوَجَ لَهُۥ ۖ وَخَشَعَتِ ٱلْأَصْوَاتُ لِلرَّحْمَـٰنِ فَلَا تَسْمَعُ إِلَّا هَمْسًا",
+      "translation": "On that Day, people will follow the summoner from whom there is no escape; every voice will be hushed for the Lord of Mercy; only whispers will be heard.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020108.mp3"
+    },
+    {
+      "id": 2457,
+      "verse_number": 109,
+      "text_uthmani": "يَوْمَئِذٍ لَّا تَنفَعُ ٱلشَّفَـٰعَةُ إِلَّا مَنْ أَذِنَ لَهُ ٱلرَّحْمَـٰنُ وَرَضِىَ لَهُۥ قَوْلًا",
+      "translation": "On that Day, intercession will be useless except from those to whom the Lord of Mercy has granted permission and whose words He approves-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020109.mp3"
+    },
+    {
+      "id": 2458,
+      "verse_number": 110,
+      "text_uthmani": "يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِهِۦ عِلْمًا",
+      "translation": "He knows what is before and behind them, though they do not comprehend Him-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020110.mp3"
+    },
+    {
+      "id": 2459,
+      "verse_number": 111,
+      "text_uthmani": "۞ وَعَنَتِ ٱلْوُجُوهُ لِلْحَىِّ ٱلْقَيُّومِ ۖ وَقَدْ خَابَ مَنْ حَمَلَ ظُلْمًا",
+      "translation": "and [all] faces will be humbled before the Living, Ever Watchful One. Those burdened with evil deeds will despair,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020111.mp3"
+    },
+    {
+      "id": 2460,
+      "verse_number": 112,
+      "text_uthmani": "وَمَن يَعْمَلْ مِنَ ٱلصَّـٰلِحَـٰتِ وَهُوَ مُؤْمِنٌ فَلَا يَخَافُ ظُلْمًا وَلَا هَضْمًا",
+      "translation": "but whoever has done righteous deeds and believed need have no fear of injustice or deprivation.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020112.mp3"
+    },
+    {
+      "id": 2461,
+      "verse_number": 113,
+      "text_uthmani": "وَكَذَٰلِكَ أَنزَلْنَـٰهُ قُرْءَانًا عَرَبِيًّا وَصَرَّفْنَا فِيهِ مِنَ ٱلْوَعِيدِ لَعَلَّهُمْ يَتَّقُونَ أَوْ يُحْدِثُ لَهُمْ ذِكْرًا",
+      "translation": "We have sent the Quran down in the Arabic tongue and given all kinds of warnings in it, so that they may beware or take heed-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020113.mp3"
+    },
+    {
+      "id": 2462,
+      "verse_number": 114,
+      "text_uthmani": "فَتَعَـٰلَى ٱللَّهُ ٱلْمَلِكُ ٱلْحَقُّ ۗ وَلَا تَعْجَلْ بِٱلْقُرْءَانِ مِن قَبْلِ أَن يُقْضَىٰٓ إِلَيْكَ وَحْيُهُۥ ۖ وَقُل رَّبِّ زِدْنِى عِلْمًا",
+      "translation": "exalted be God, the one who is truly in control. [Prophet], do not rush to recite before the revelation is fully complete but say, ‘Lord, increase me in knowledge!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020114.mp3"
+    },
+    {
+      "id": 2463,
+      "verse_number": 115,
+      "text_uthmani": "وَلَقَدْ عَهِدْنَآ إِلَىٰٓ ءَادَمَ مِن قَبْلُ فَنَسِىَ وَلَمْ نَجِدْ لَهُۥ عَزْمًا",
+      "translation": "We also commanded Adam before you, but he forgot and We found him lacking in constancy.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020115.mp3"
+    },
+    {
+      "id": 2464,
+      "verse_number": 116,
+      "text_uthmani": "وَإِذْ قُلْنَا لِلْمَلَـٰٓئِكَةِ ٱسْجُدُوا۟ لِـَٔادَمَ فَسَجَدُوٓا۟ إِلَّآ إِبْلِيسَ أَبَىٰ",
+      "translation": "When We said to the angels, ‘Bow down before Adam,’ they did. But Iblis refused,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020116.mp3"
+    },
+    {
+      "id": 2465,
+      "verse_number": 117,
+      "text_uthmani": "فَقُلْنَا يَـٰٓـَٔادَمُ إِنَّ هَـٰذَا عَدُوٌّ لَّكَ وَلِزَوْجِكَ فَلَا يُخْرِجَنَّكُمَا مِنَ ٱلْجَنَّةِ فَتَشْقَىٰٓ",
+      "translation": "so We said, ‘Adam, this is your enemy, yours and your wife’s: do not let him drive you out of the garden and make you miserable.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020117.mp3"
+    },
+    {
+      "id": 2466,
+      "verse_number": 118,
+      "text_uthmani": "إِنَّ لَكَ أَلَّا تَجُوعَ فِيهَا وَلَا تَعْرَىٰ",
+      "translation": "In the garden you will never go hungry, feel naked,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020118.mp3"
+    },
+    {
+      "id": 2467,
+      "verse_number": 119,
+      "text_uthmani": "وَأَنَّكَ لَا تَظْمَؤُا۟ فِيهَا وَلَا تَضْحَىٰ",
+      "translation": "be thirsty, or suffer the heat of the sun.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020119.mp3"
+    },
+    {
+      "id": 2468,
+      "verse_number": 120,
+      "text_uthmani": "فَوَسْوَسَ إِلَيْهِ ٱلشَّيْطَـٰنُ قَالَ يَـٰٓـَٔادَمُ هَلْ أَدُلُّكَ عَلَىٰ شَجَرَةِ ٱلْخُلْدِ وَمُلْكٍ لَّا يَبْلَىٰ",
+      "translation": "But Satan whispered to Adam, saying, ‘Adam, shall I show you the tree of immortality and power that never decays?’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020120.mp3"
+    },
+    {
+      "id": 2469,
+      "verse_number": 121,
+      "text_uthmani": "فَأَكَلَا مِنْهَا فَبَدَتْ لَهُمَا سَوْءَٰتُهُمَا وَطَفِقَا يَخْصِفَانِ عَلَيْهِمَا مِن وَرَقِ ٱلْجَنَّةِ ۚ وَعَصَىٰٓ ءَادَمُ رَبَّهُۥ فَغَوَىٰ",
+      "translation": "and they both ate from it. They became conscious of their nakedness and began to cover themselves with leaves from the garden. Adam disobeyed his Lord and was led astray-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020121.mp3"
+    },
+    {
+      "id": 2470,
+      "verse_number": 122,
+      "text_uthmani": "ثُمَّ ٱجْتَبَـٰهُ رَبُّهُۥ فَتَابَ عَلَيْهِ وَهَدَىٰ",
+      "translation": "later his Lord brought him close, accepted his repentance, and guided him-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020122.mp3"
+    },
+    {
+      "id": 2471,
+      "verse_number": 123,
+      "text_uthmani": "قَالَ ٱهْبِطَا مِنْهَا جَمِيعًۢا ۖ بَعْضُكُمْ لِبَعْضٍ عَدُوٌّ ۖ فَإِمَّا يَأْتِيَنَّكُم مِّنِّى هُدًى فَمَنِ ٱتَّبَعَ هُدَاىَ فَلَا يَضِلُّ وَلَا يَشْقَىٰ",
+      "translation": "God said, ‘Get out of the garden as each other’s enemy.’ Whoever follows My guidance, when it comes to you [people], will not go astray nor fall into misery,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020123.mp3"
+    },
+    {
+      "id": 2472,
+      "verse_number": 124,
+      "text_uthmani": "وَمَنْ أَعْرَضَ عَن ذِكْرِى فَإِنَّ لَهُۥ مَعِيشَةً ضَنكًا وَنَحْشُرُهُۥ يَوْمَ ٱلْقِيَـٰمَةِ أَعْمَىٰ",
+      "translation": "but whoever turns away from it will have a life of great hardship. We shall bring him blind to the Assembly on the Day of Resurrection",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020124.mp3"
+    },
+    {
+      "id": 2473,
+      "verse_number": 125,
+      "text_uthmani": "قَالَ رَبِّ لِمَ حَشَرْتَنِىٓ أَعْمَىٰ وَقَدْ كُنتُ بَصِيرًا",
+      "translation": "and he will say, ‘Lord, why did You bring me here blind? I was sighted before!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020125.mp3"
+    },
+    {
+      "id": 2474,
+      "verse_number": 126,
+      "text_uthmani": "قَالَ كَذَٰلِكَ أَتَتْكَ ءَايَـٰتُنَا فَنَسِيتَهَا ۖ وَكَذَٰلِكَ ٱلْيَوْمَ تُنسَىٰ",
+      "translation": "God will say, ‘This is how it is: You ignored Our revelations when they came to you, so today you will be ignored.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020126.mp3"
+    },
+    {
+      "id": 2475,
+      "verse_number": 127,
+      "text_uthmani": "وَكَذَٰلِكَ نَجْزِى مَنْ أَسْرَفَ وَلَمْ يُؤْمِنۢ بِـَٔايَـٰتِ رَبِّهِۦ ۚ وَلَعَذَابُ ٱلْـَٔاخِرَةِ أَشَدُّ وَأَبْقَىٰٓ",
+      "translation": "This is how We reward those who go too far, and who do not believe in their Lord’s revelations. The greatest and most enduring punishment is in the Hereafter.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020127.mp3"
+    },
+    {
+      "id": 2476,
+      "verse_number": 128,
+      "text_uthmani": "أَفَلَمْ يَهْدِ لَهُمْ كَمْ أَهْلَكْنَا قَبْلَهُم مِّنَ ٱلْقُرُونِ يَمْشُونَ فِى مَسَـٰكِنِهِمْ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّأُو۟لِى ٱلنُّهَىٰ",
+      "translation": "Do they not draw a lesson from the many generations We destroyed before them, through whose dwelling places they now walk? There truly are signs in this for anyone with understanding!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020128.mp3"
+    },
+    {
+      "id": 2477,
+      "verse_number": 129,
+      "text_uthmani": "وَلَوْلَا كَلِمَةٌ سَبَقَتْ مِن رَّبِّكَ لَكَانَ لِزَامًا وَأَجَلٌ مُّسَمًّى",
+      "translation": "If it were not for a preordained Word from your Lord [Prophet], they would already have been destroyed. Their time has been set,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020129.mp3"
+    },
+    {
+      "id": 2478,
+      "verse_number": 130,
+      "text_uthmani": "فَٱصْبِرْ عَلَىٰ مَا يَقُولُونَ وَسَبِّحْ بِحَمْدِ رَبِّكَ قَبْلَ طُلُوعِ ٱلشَّمْسِ وَقَبْلَ غُرُوبِهَا ۖ وَمِنْ ءَانَآئِ ٱلَّيْلِ فَسَبِّحْ وَأَطْرَافَ ٱلنَّهَارِ لَعَلَّكَ تَرْضَىٰ",
+      "translation": "so [Prophet] be patient with what they say- celebrate the praise of your Lord, before the rising and setting of the sun, celebrate His praise during the night, and at the beginning and end of the day, so that you may find contentment-",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020130.mp3"
+    },
+    {
+      "id": 2479,
+      "verse_number": 131,
+      "text_uthmani": "وَلَا تَمُدَّنَّ عَيْنَيْكَ إِلَىٰ مَا مَتَّعْنَا بِهِۦٓ أَزْوَٰجًا مِّنْهُمْ زَهْرَةَ ٱلْحَيَوٰةِ ٱلدُّنْيَا لِنَفْتِنَهُمْ فِيهِ ۚ وَرِزْقُ رَبِّكَ خَيْرٌ وَأَبْقَىٰ",
+      "translation": "and do not gaze longingly at what We have given some of them to enjoy, the finery of this present life: We test them through this, but the provision of your Lord is better and more lasting.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020131.mp3"
+    },
+    {
+      "id": 2480,
+      "verse_number": 132,
+      "text_uthmani": "وَأْمُرْ أَهْلَكَ بِٱلصَّلَوٰةِ وَٱصْطَبِرْ عَلَيْهَا ۖ لَا نَسْـَٔلُكَ رِزْقًا ۖ نَّحْنُ نَرْزُقُكَ ۗ وَٱلْعَـٰقِبَةُ لِلتَّقْوَىٰ",
+      "translation": "Order your people to pray, and pray steadfastly yourself. We are not asking you to give Us provision;We provide for you, and the rewards of the Hereafter belong to the devout.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020132.mp3"
+    },
+    {
+      "id": 2481,
+      "verse_number": 133,
+      "text_uthmani": "وَقَالُوا۟ لَوْلَا يَأْتِينَا بِـَٔايَةٍ مِّن رَّبِّهِۦٓ ۚ أَوَلَمْ تَأْتِهِم بَيِّنَةُ مَا فِى ٱلصُّحُفِ ٱلْأُولَىٰ",
+      "translation": "The disbelievers say, ‘Why does he not bring us a sign from his Lord?’ Have they not been given clear proof confirming what was in the earlier scriptures?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020133.mp3"
+    },
+    {
+      "id": 2482,
+      "verse_number": 134,
+      "text_uthmani": "وَلَوْ أَنَّآ أَهْلَكْنَـٰهُم بِعَذَابٍ مِّن قَبْلِهِۦ لَقَالُوا۟ رَبَّنَا لَوْلَآ أَرْسَلْتَ إِلَيْنَا رَسُولًا فَنَتَّبِعَ ءَايَـٰتِكَ مِن قَبْلِ أَن نَّذِلَّ وَنَخْزَىٰ",
+      "translation": "If We had destroyed them through punishment before this Messenger came, they would have said, ‘Lord, if only You had sent us a messenger, we could have followed Your revelations before we suffered humiliation and disgrace!’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020134.mp3"
+    },
+    {
+      "id": 2483,
+      "verse_number": 135,
+      "text_uthmani": "قُلْ كُلٌّ مُّتَرَبِّصٌ فَتَرَبَّصُوا۟ ۖ فَسَتَعْلَمُونَ مَنْ أَصْحَـٰبُ ٱلصِّرَٰطِ ٱلسَّوِىِّ وَمَنِ ٱهْتَدَىٰ",
+      "translation": "[Prophet], say, ‘We are all waiting, so you carry on waiting: you will come to learn who has followed the even path, and been rightly guided.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/020135.mp3"
+    }
+  ]
+}

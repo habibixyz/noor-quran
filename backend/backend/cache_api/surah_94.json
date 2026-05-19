@@ -1,0 +1,67 @@
+{
+  "surah": {
+    "id": 94,
+    "name_arabic": "الشرح",
+    "name_english": "The Relief",
+    "revelation_place": "makkah",
+    "verses_count": 8
+  },
+  "verses": [
+    {
+      "id": 6091,
+      "verse_number": 1,
+      "text_uthmani": " أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+      "translation": "Did We not relieve your heart for you [Prophet],",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094001.mp3"
+    },
+    {
+      "id": 6092,
+      "verse_number": 2,
+      "text_uthmani": "وَوَضَعْنَا عَنكَ وِزْرَكَ",
+      "translation": "and remove the burden",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094002.mp3"
+    },
+    {
+      "id": 6093,
+      "verse_number": 3,
+      "text_uthmani": "ٱلَّذِىٓ أَنقَضَ ظَهْرَكَ",
+      "translation": "that weighed so heavily on your back,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094003.mp3"
+    },
+    {
+      "id": 6094,
+      "verse_number": 4,
+      "text_uthmani": "وَرَفَعْنَا لَكَ ذِكْرَكَ",
+      "translation": "and raise your reputation high?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094004.mp3"
+    },
+    {
+      "id": 6095,
+      "verse_number": 5,
+      "text_uthmani": "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+      "translation": "So truly where there is hardship there is also ease;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094005.mp3"
+    },
+    {
+      "id": 6096,
+      "verse_number": 6,
+      "text_uthmani": "إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+      "translation": "truly where there is hardship there is also ease.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094006.mp3"
+    },
+    {
+      "id": 6097,
+      "verse_number": 7,
+      "text_uthmani": "فَإِذَا فَرَغْتَ فَٱنصَبْ",
+      "translation": "The moment you are freed [of one task] work on,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094007.mp3"
+    },
+    {
+      "id": 6098,
+      "verse_number": 8,
+      "text_uthmani": "وَإِلَىٰ رَبِّكَ فَٱرْغَب",
+      "translation": "and turn to your Lord for everything.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/094008.mp3"
+    }
+  ]
+}

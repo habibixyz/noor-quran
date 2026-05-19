@@ -1,0 +1,46 @@
+{
+  "surah": {
+    "id": 113,
+    "name_arabic": "الفلق",
+    "name_english": "The Daybreak",
+    "revelation_place": "makkah",
+    "verses_count": 5
+  },
+  "verses": [
+    {
+      "id": 6226,
+      "verse_number": 1,
+      "text_uthmani": " قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+      "translation": "Say [Prophet], ‘I seek refuge with the Lord of daybreak",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113001.mp3"
+    },
+    {
+      "id": 6227,
+      "verse_number": 2,
+      "text_uthmani": "مِن شَرِّ مَا خَلَقَ",
+      "translation": "against the harm in what He has created,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113002.mp3"
+    },
+    {
+      "id": 6228,
+      "verse_number": 3,
+      "text_uthmani": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+      "translation": "the harm in the night when darkness gathers,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113003.mp3"
+    },
+    {
+      "id": 6229,
+      "verse_number": 4,
+      "text_uthmani": "وَمِن شَرِّ ٱلنَّفَّـٰثَـٰتِ فِى ٱلْعُقَدِ",
+      "translation": "the harm in witches when they blow on knots,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113004.mp3"
+    },
+    {
+      "id": 6230,
+      "verse_number": 5,
+      "text_uthmani": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "translation": "the harm in the envier when he envies.’",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/113005.mp3"
+    }
+  ]
+}

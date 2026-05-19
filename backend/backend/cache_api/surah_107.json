@@ -1,0 +1,60 @@
+{
+  "surah": {
+    "id": 107,
+    "name_arabic": "الماعون",
+    "name_english": "The Small kindnesses",
+    "revelation_place": "makkah",
+    "verses_count": 7
+  },
+  "verses": [
+    {
+      "id": 6198,
+      "verse_number": 1,
+      "text_uthmani": " أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ",
+      "translation": "[Prophet], have you considered the person who denies the Judgement?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107001.mp3"
+    },
+    {
+      "id": 6199,
+      "verse_number": 2,
+      "text_uthmani": "فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ",
+      "translation": "It is he who pushes aside the orphan",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107002.mp3"
+    },
+    {
+      "id": 6200,
+      "verse_number": 3,
+      "text_uthmani": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ",
+      "translation": "and does not urge others to feed the needy.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107003.mp3"
+    },
+    {
+      "id": 6201,
+      "verse_number": 4,
+      "text_uthmani": "فَوَيْلٌ لِّلْمُصَلِّينَ",
+      "translation": "So woe to those who pray",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107004.mp3"
+    },
+    {
+      "id": 6202,
+      "verse_number": 5,
+      "text_uthmani": "ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
+      "translation": "but are heedless of their prayer;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107005.mp3"
+    },
+    {
+      "id": 6203,
+      "verse_number": 6,
+      "text_uthmani": "ٱلَّذِينَ هُمْ يُرَآءُونَ",
+      "translation": "those who are all show",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107006.mp3"
+    },
+    {
+      "id": 6204,
+      "verse_number": 7,
+      "text_uthmani": "وَيَمْنَعُونَ ٱلْمَاعُونَ",
+      "translation": "and forbid common kindnesses.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/107007.mp3"
+    }
+  ]
+}

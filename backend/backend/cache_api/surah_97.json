@@ -1,0 +1,46 @@
+{
+  "surah": {
+    "id": 97,
+    "name_arabic": "القدر",
+    "name_english": "The Power",
+    "revelation_place": "makkah",
+    "verses_count": 5
+  },
+  "verses": [
+    {
+      "id": 6126,
+      "verse_number": 1,
+      "text_uthmani": "إِنَّآ أَنزَلْنَـٰهُ فِى لَيْلَةِ ٱلْقَدْرِ",
+      "translation": "We sent it down on the Night of Glory.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/097001.mp3"
+    },
+    {
+      "id": 6127,
+      "verse_number": 2,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا لَيْلَةُ ٱلْقَدْرِ",
+      "translation": "What will explain to you what that Night of Glory is?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/097002.mp3"
+    },
+    {
+      "id": 6128,
+      "verse_number": 3,
+      "text_uthmani": "لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+      "translation": "The Night of Glory is better than a thousand months;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/097003.mp3"
+    },
+    {
+      "id": 6129,
+      "verse_number": 4,
+      "text_uthmani": "تَنَزَّلُ ٱلْمَلَـٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ",
+      "translation": "on that night the angels and the Spirit descend again and again with their Lord’s permission on every task;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/097004.mp3"
+    },
+    {
+      "id": 6130,
+      "verse_number": 5,
+      "text_uthmani": "سَلَـٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ",
+      "translation": "[there is] peace that night until the break of dawn.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/097005.mp3"
+    }
+  ]
+}

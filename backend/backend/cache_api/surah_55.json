@@ -1,0 +1,557 @@
+{
+  "surah": {
+    "id": 55,
+    "name_arabic": "الرحمن",
+    "name_english": "The Beneficent",
+    "revelation_place": "madinah",
+    "verses_count": 78
+  },
+  "verses": [
+    {
+      "id": 4902,
+      "verse_number": 1,
+      "text_uthmani": " ٱلرَّحْمَـٰنُ",
+      "translation": "It is the Lord of Mercy",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055001.mp3"
+    },
+    {
+      "id": 4903,
+      "verse_number": 2,
+      "text_uthmani": "عَلَّمَ ٱلْقُرْءَانَ",
+      "translation": "who taught the Quran.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055002.mp3"
+    },
+    {
+      "id": 4904,
+      "verse_number": 3,
+      "text_uthmani": "خَلَقَ ٱلْإِنسَـٰنَ",
+      "translation": "He created man",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055003.mp3"
+    },
+    {
+      "id": 4905,
+      "verse_number": 4,
+      "text_uthmani": "عَلَّمَهُ ٱلْبَيَانَ",
+      "translation": "and taught him to communicate.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055004.mp3"
+    },
+    {
+      "id": 4906,
+      "verse_number": 5,
+      "text_uthmani": "ٱلشَّمْسُ وَٱلْقَمَرُ بِحُسْبَانٍ",
+      "translation": "The sun and the moon follow their calculated courses;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055005.mp3"
+    },
+    {
+      "id": 4907,
+      "verse_number": 6,
+      "text_uthmani": "وَٱلنَّجْمُ وَٱلشَّجَرُ يَسْجُدَانِ",
+      "translation": "the plants and the trees submit to His designs;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055006.mp3"
+    },
+    {
+      "id": 4908,
+      "verse_number": 7,
+      "text_uthmani": "وَٱلسَّمَآءَ رَفَعَهَا وَوَضَعَ ٱلْمِيزَانَ",
+      "translation": "He has raised up the sky. He has set the balance",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055007.mp3"
+    },
+    {
+      "id": 4909,
+      "verse_number": 8,
+      "text_uthmani": "أَلَّا تَطْغَوْا۟ فِى ٱلْمِيزَانِ",
+      "translation": "so that you may not exceed in the balance:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055008.mp3"
+    },
+    {
+      "id": 4910,
+      "verse_number": 9,
+      "text_uthmani": "وَأَقِيمُوا۟ ٱلْوَزْنَ بِٱلْقِسْطِ وَلَا تُخْسِرُوا۟ ٱلْمِيزَانَ",
+      "translation": "weigh with justice and do not fall short in the balance.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055009.mp3"
+    },
+    {
+      "id": 4911,
+      "verse_number": 10,
+      "text_uthmani": "وَٱلْأَرْضَ وَضَعَهَا لِلْأَنَامِ",
+      "translation": "He set down the Earth for His creatures,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055010.mp3"
+    },
+    {
+      "id": 4912,
+      "verse_number": 11,
+      "text_uthmani": "فِيهَا فَـٰكِهَةٌ وَٱلنَّخْلُ ذَاتُ ٱلْأَكْمَامِ",
+      "translation": "with its fruits, its palm trees with sheathed clusters,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055011.mp3"
+    },
+    {
+      "id": 4913,
+      "verse_number": 12,
+      "text_uthmani": "وَٱلْحَبُّ ذُو ٱلْعَصْفِ وَٱلرَّيْحَانُ",
+      "translation": "its husked grain, its fragrant plants.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055012.mp3"
+    },
+    {
+      "id": 4914,
+      "verse_number": 13,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055013.mp3"
+    },
+    {
+      "id": 4915,
+      "verse_number": 14,
+      "text_uthmani": "خَلَقَ ٱلْإِنسَـٰنَ مِن صَلْصَـٰلٍ كَٱلْفَخَّارِ",
+      "translation": "He created mankind out of dried clay, like pottery,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055014.mp3"
+    },
+    {
+      "id": 4916,
+      "verse_number": 15,
+      "text_uthmani": "وَخَلَقَ ٱلْجَآنَّ مِن مَّارِجٍ مِّن نَّارٍ",
+      "translation": "the jinn out of smokeless fire.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055015.mp3"
+    },
+    {
+      "id": 4917,
+      "verse_number": 16,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055016.mp3"
+    },
+    {
+      "id": 4918,
+      "verse_number": 17,
+      "text_uthmani": "رَبُّ ٱلْمَشْرِقَيْنِ وَرَبُّ ٱلْمَغْرِبَيْنِ",
+      "translation": "He is Lord of the two risings and Lord of the two settings.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055017.mp3"
+    },
+    {
+      "id": 4919,
+      "verse_number": 18,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055018.mp3"
+    },
+    {
+      "id": 4920,
+      "verse_number": 19,
+      "text_uthmani": "مَرَجَ ٱلْبَحْرَيْنِ يَلْتَقِيَانِ",
+      "translation": "He released the two bodies of [fresh and salt] water. They meet,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055019.mp3"
+    },
+    {
+      "id": 4921,
+      "verse_number": 20,
+      "text_uthmani": "بَيْنَهُمَا بَرْزَخٌ لَّا يَبْغِيَانِ",
+      "translation": "yet there is a barrier between them they do not cross.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055020.mp3"
+    },
+    {
+      "id": 4922,
+      "verse_number": 21,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055021.mp3"
+    },
+    {
+      "id": 4923,
+      "verse_number": 22,
+      "text_uthmani": "يَخْرُجُ مِنْهُمَا ٱللُّؤْلُؤُ وَٱلْمَرْجَانُ",
+      "translation": "Pearls come forth from them: large ones, and small, brilliant ones.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055022.mp3"
+    },
+    {
+      "id": 4924,
+      "verse_number": 23,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055023.mp3"
+    },
+    {
+      "id": 4925,
+      "verse_number": 24,
+      "text_uthmani": "وَلَهُ ٱلْجَوَارِ ٱلْمُنشَـَٔاتُ فِى ٱلْبَحْرِ كَٱلْأَعْلَـٰمِ",
+      "translation": "His are the moving ships that float, high as mountains, on the sea.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055024.mp3"
+    },
+    {
+      "id": 4926,
+      "verse_number": 25,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055025.mp3"
+    },
+    {
+      "id": 4927,
+      "verse_number": 26,
+      "text_uthmani": "كُلُّ مَنْ عَلَيْهَا فَانٍ",
+      "translation": "Everyone on earth perishes;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055026.mp3"
+    },
+    {
+      "id": 4928,
+      "verse_number": 27,
+      "text_uthmani": "وَيَبْقَىٰ وَجْهُ رَبِّكَ ذُو ٱلْجَلَـٰلِ وَٱلْإِكْرَامِ",
+      "translation": "all that remains is the Face of your Lord, full of majesty, bestowing honour.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055027.mp3"
+    },
+    {
+      "id": 4929,
+      "verse_number": 28,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055028.mp3"
+    },
+    {
+      "id": 4930,
+      "verse_number": 29,
+      "text_uthmani": "يَسْـَٔلُهُۥ مَن فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ كُلَّ يَوْمٍ هُوَ فِى شَأْنٍ",
+      "translation": "Everyone in heaven and earth entreats Him; every day He is at work.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055029.mp3"
+    },
+    {
+      "id": 4931,
+      "verse_number": 30,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055030.mp3"
+    },
+    {
+      "id": 4932,
+      "verse_number": 31,
+      "text_uthmani": "سَنَفْرُغُ لَكُمْ أَيُّهَ ٱلثَّقَلَانِ",
+      "translation": "We shall attend to you two huge armies [of jinn and mankind].",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055031.mp3"
+    },
+    {
+      "id": 4933,
+      "verse_number": 32,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055032.mp3"
+    },
+    {
+      "id": 4934,
+      "verse_number": 33,
+      "text_uthmani": "يَـٰمَعْشَرَ ٱلْجِنِّ وَٱلْإِنسِ إِنِ ٱسْتَطَعْتُمْ أَن تَنفُذُوا۟ مِنْ أَقْطَارِ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ فَٱنفُذُوا۟ ۚ لَا تَنفُذُونَ إِلَّا بِسُلْطَـٰنٍ",
+      "translation": "Jinn and mankind, if you can pass beyond the regions of heaven and earth, then do so: you will not pass without Our authority.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055033.mp3"
+    },
+    {
+      "id": 4935,
+      "verse_number": 34,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055034.mp3"
+    },
+    {
+      "id": 4936,
+      "verse_number": 35,
+      "text_uthmani": "يُرْسَلُ عَلَيْكُمَا شُوَاظٌ مِّن نَّارٍ وَنُحَاسٌ فَلَا تَنتَصِرَانِ",
+      "translation": "A flash of fire and smoke will be released upon you and no one will come to your aid.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055035.mp3"
+    },
+    {
+      "id": 4937,
+      "verse_number": 36,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055036.mp3"
+    },
+    {
+      "id": 4938,
+      "verse_number": 37,
+      "text_uthmani": "فَإِذَا ٱنشَقَّتِ ٱلسَّمَآءُ فَكَانَتْ وَرْدَةً كَٱلدِّهَانِ",
+      "translation": "When the sky is torn apart and turns crimson, like red hide.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055037.mp3"
+    },
+    {
+      "id": 4939,
+      "verse_number": 38,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055038.mp3"
+    },
+    {
+      "id": 4940,
+      "verse_number": 39,
+      "text_uthmani": "فَيَوْمَئِذٍ لَّا يُسْـَٔلُ عَن ذَنۢبِهِۦٓ إِنسٌ وَلَا جَآنٌّ",
+      "translation": "On that Day neither mankind nor jinn will be asked about their sins.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055039.mp3"
+    },
+    {
+      "id": 4941,
+      "verse_number": 40,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055040.mp3"
+    },
+    {
+      "id": 4942,
+      "verse_number": 41,
+      "text_uthmani": "يُعْرَفُ ٱلْمُجْرِمُونَ بِسِيمَـٰهُمْ فَيُؤْخَذُ بِٱلنَّوَٰصِى وَٱلْأَقْدَامِ",
+      "translation": "The guilty will be known by their mark and will be seized by their foreheads and their feet.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055041.mp3"
+    },
+    {
+      "id": 4943,
+      "verse_number": 42,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055042.mp3"
+    },
+    {
+      "id": 4944,
+      "verse_number": 43,
+      "text_uthmani": "هَـٰذِهِۦ جَهَنَّمُ ٱلَّتِى يُكَذِّبُ بِهَا ٱلْمُجْرِمُونَ",
+      "translation": "This is the Hell the guilty deny,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055043.mp3"
+    },
+    {
+      "id": 4945,
+      "verse_number": 44,
+      "text_uthmani": "يَطُوفُونَ بَيْنَهَا وَبَيْنَ حَمِيمٍ ءَانٍ",
+      "translation": "but they will go round between its flames and scalding water.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055044.mp3"
+    },
+    {
+      "id": 4946,
+      "verse_number": 45,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055045.mp3"
+    },
+    {
+      "id": 4947,
+      "verse_number": 46,
+      "text_uthmani": "وَلِمَنْ خَافَ مَقَامَ رَبِّهِۦ جَنَّتَانِ",
+      "translation": "For those who fear [the time when they will] stand before their Lord there are two gardens.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055046.mp3"
+    },
+    {
+      "id": 4948,
+      "verse_number": 47,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055047.mp3"
+    },
+    {
+      "id": 4949,
+      "verse_number": 48,
+      "text_uthmani": "ذَوَاتَآ أَفْنَانٍ",
+      "translation": "With shading branches.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055048.mp3"
+    },
+    {
+      "id": 4950,
+      "verse_number": 49,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055049.mp3"
+    },
+    {
+      "id": 4951,
+      "verse_number": 50,
+      "text_uthmani": "فِيهِمَا عَيْنَانِ تَجْرِيَانِ",
+      "translation": "With a pair of flowing springs.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055050.mp3"
+    },
+    {
+      "id": 4952,
+      "verse_number": 51,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055051.mp3"
+    },
+    {
+      "id": 4953,
+      "verse_number": 52,
+      "text_uthmani": "فِيهِمَا مِن كُلِّ فَـٰكِهَةٍ زَوْجَانِ",
+      "translation": "With every kind of fruit in pairs.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055052.mp3"
+    },
+    {
+      "id": 4954,
+      "verse_number": 53,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055053.mp3"
+    },
+    {
+      "id": 4955,
+      "verse_number": 54,
+      "text_uthmani": "مُتَّكِـِٔينَ عَلَىٰ فُرُشٍۭ بَطَآئِنُهَا مِنْ إِسْتَبْرَقٍ ۚ وَجَنَى ٱلْجَنَّتَيْنِ دَانٍ",
+      "translation": "They will sit on couches upholstered with brocade, the fruit of both gardens within easy reach.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055054.mp3"
+    },
+    {
+      "id": 4956,
+      "verse_number": 55,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055055.mp3"
+    },
+    {
+      "id": 4957,
+      "verse_number": 56,
+      "text_uthmani": "فِيهِنَّ قَـٰصِرَٰتُ ٱلطَّرْفِ لَمْ يَطْمِثْهُنَّ إِنسٌ قَبْلَهُمْ وَلَا جَآنٌّ",
+      "translation": "There will be maidens restraining their glances, untouched beforehand by man or jinn.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055056.mp3"
+    },
+    {
+      "id": 4958,
+      "verse_number": 57,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055057.mp3"
+    },
+    {
+      "id": 4959,
+      "verse_number": 58,
+      "text_uthmani": "كَأَنَّهُنَّ ٱلْيَاقُوتُ وَٱلْمَرْجَانُ",
+      "translation": "Like rubies and brilliant pearls.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055058.mp3"
+    },
+    {
+      "id": 4960,
+      "verse_number": 59,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055059.mp3"
+    },
+    {
+      "id": 4961,
+      "verse_number": 60,
+      "text_uthmani": "هَلْ جَزَآءُ ٱلْإِحْسَـٰنِ إِلَّا ٱلْإِحْسَـٰنُ",
+      "translation": "Shall the reward of good be anything but good?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055060.mp3"
+    },
+    {
+      "id": 4962,
+      "verse_number": 61,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055061.mp3"
+    },
+    {
+      "id": 4963,
+      "verse_number": 62,
+      "text_uthmani": "وَمِن دُونِهِمَا جَنَّتَانِ",
+      "translation": "There are two other gardens below these two.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055062.mp3"
+    },
+    {
+      "id": 4964,
+      "verse_number": 63,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055063.mp3"
+    },
+    {
+      "id": 4965,
+      "verse_number": 64,
+      "text_uthmani": "مُدْهَآمَّتَانِ",
+      "translation": "Both of deepest green.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055064.mp3"
+    },
+    {
+      "id": 4966,
+      "verse_number": 65,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055065.mp3"
+    },
+    {
+      "id": 4967,
+      "verse_number": 66,
+      "text_uthmani": "فِيهِمَا عَيْنَانِ نَضَّاخَتَانِ",
+      "translation": "With a pair of gushing springs.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055066.mp3"
+    },
+    {
+      "id": 4968,
+      "verse_number": 67,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055067.mp3"
+    },
+    {
+      "id": 4969,
+      "verse_number": 68,
+      "text_uthmani": "فِيهِمَا فَـٰكِهَةٌ وَنَخْلٌ وَرُمَّانٌ",
+      "translation": "With fruits- date palms and pomegranate trees.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055068.mp3"
+    },
+    {
+      "id": 4970,
+      "verse_number": 69,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055069.mp3"
+    },
+    {
+      "id": 4971,
+      "verse_number": 70,
+      "text_uthmani": "فِيهِنَّ خَيْرَٰتٌ حِسَانٌ",
+      "translation": "There are good-natured, beautiful maidens.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055070.mp3"
+    },
+    {
+      "id": 4972,
+      "verse_number": 71,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055071.mp3"
+    },
+    {
+      "id": 4973,
+      "verse_number": 72,
+      "text_uthmani": "حُورٌ مَّقْصُورَٰتٌ فِى ٱلْخِيَامِ",
+      "translation": "Dark-eyed, sheltered in pavilions.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055072.mp3"
+    },
+    {
+      "id": 4974,
+      "verse_number": 73,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055073.mp3"
+    },
+    {
+      "id": 4975,
+      "verse_number": 74,
+      "text_uthmani": "لَمْ يَطْمِثْهُنَّ إِنسٌ قَبْلَهُمْ وَلَا جَآنٌّ",
+      "translation": "Untouched beforehand by man or jinn.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055074.mp3"
+    },
+    {
+      "id": 4976,
+      "verse_number": 75,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055075.mp3"
+    },
+    {
+      "id": 4977,
+      "verse_number": 76,
+      "text_uthmani": "مُتَّكِـِٔينَ عَلَىٰ رَفْرَفٍ خُضْرٍ وَعَبْقَرِىٍّ حِسَانٍ",
+      "translation": "They will all sit on green cushions and fine carpets.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055076.mp3"
+    },
+    {
+      "id": 4978,
+      "verse_number": 77,
+      "text_uthmani": "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ",
+      "translation": "Which, then, of your Lord’s blessings do you both deny?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055077.mp3"
+    },
+    {
+      "id": 4979,
+      "verse_number": 78,
+      "text_uthmani": "تَبَـٰرَكَ ٱسْمُ رَبِّكَ ذِى ٱلْجَلَـٰلِ وَٱلْإِكْرَامِ",
+      "translation": "Blessed is the name of your Lord, full of majesty, bestowing honour.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/055078.mp3"
+    }
+  ]
+}

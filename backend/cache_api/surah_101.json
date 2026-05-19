@@ -1,0 +1,88 @@
+{
+  "surah": {
+    "id": 101,
+    "name_arabic": "القارعة",
+    "name_english": "The Calamity",
+    "revelation_place": "makkah",
+    "verses_count": 11
+  },
+  "verses": [
+    {
+      "id": 6158,
+      "verse_number": 1,
+      "text_uthmani": " ٱلْقَارِعَةُ",
+      "translation": "The Crashing Blow!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101001.mp3"
+    },
+    {
+      "id": 6159,
+      "verse_number": 2,
+      "text_uthmani": "مَا ٱلْقَارِعَةُ",
+      "translation": "What is the Crashing Blow?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101002.mp3"
+    },
+    {
+      "id": 6160,
+      "verse_number": 3,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا ٱلْقَارِعَةُ",
+      "translation": "What will explain to you what the Crashing Blow is?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101003.mp3"
+    },
+    {
+      "id": 6161,
+      "verse_number": 4,
+      "text_uthmani": "يَوْمَ يَكُونُ ٱلنَّاسُ كَٱلْفَرَاشِ ٱلْمَبْثُوثِ",
+      "translation": "On a Day when people will be like scattered moths",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101004.mp3"
+    },
+    {
+      "id": 6162,
+      "verse_number": 5,
+      "text_uthmani": "وَتَكُونُ ٱلْجِبَالُ كَٱلْعِهْنِ ٱلْمَنفُوشِ",
+      "translation": "and the mountains like tufts of wool,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101005.mp3"
+    },
+    {
+      "id": 6163,
+      "verse_number": 6,
+      "text_uthmani": "فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ",
+      "translation": "the one whose good deeds are heavy on the scales",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101006.mp3"
+    },
+    {
+      "id": 6164,
+      "verse_number": 7,
+      "text_uthmani": "فَهُوَ فِى عِيشَةٍ رَّاضِيَةٍ",
+      "translation": "will have a pleasant life,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101007.mp3"
+    },
+    {
+      "id": 6165,
+      "verse_number": 8,
+      "text_uthmani": "وَأَمَّا مَنْ خَفَّتْ مَوَٰزِينُهُۥ",
+      "translation": "but the one whose good deeds are light",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101008.mp3"
+    },
+    {
+      "id": 6166,
+      "verse_number": 9,
+      "text_uthmani": "فَأُمُّهُۥ هَاوِيَةٌ",
+      "translation": "will have the Bottomless Pit for his home––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101009.mp3"
+    },
+    {
+      "id": 6167,
+      "verse_number": 10,
+      "text_uthmani": "وَمَآ أَدْرَىٰكَ مَا هِيَهْ",
+      "translation": "what will explain to you what that is?––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101010.mp3"
+    },
+    {
+      "id": 6168,
+      "verse_number": 11,
+      "text_uthmani": "نَارٌ حَامِيَةٌۢ",
+      "translation": "a blazing fire.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/101011.mp3"
+    }
+  ]
+}

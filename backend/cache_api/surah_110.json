@@ -1,0 +1,32 @@
+{
+  "surah": {
+    "id": 110,
+    "name_arabic": "النصر",
+    "name_english": "The Divine Support",
+    "revelation_place": "madinah",
+    "verses_count": 3
+  },
+  "verses": [
+    {
+      "id": 6214,
+      "verse_number": 1,
+      "text_uthmani": " إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ",
+      "translation": "When God’s help comes and He opens up your way [Prophet],",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/110001.mp3"
+    },
+    {
+      "id": 6215,
+      "verse_number": 2,
+      "text_uthmani": "وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا",
+      "translation": "when you see people embracing God’s faith in crowds,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/110002.mp3"
+    },
+    {
+      "id": 6216,
+      "verse_number": 3,
+      "text_uthmani": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًۢا",
+      "translation": "celebrate the praise of your Lord and ask His forgiveness: He is always ready to accept repentance.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/110003.mp3"
+    }
+  ]
+}

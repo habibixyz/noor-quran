@@ -1,0 +1,46 @@
+{
+  "surah": {
+    "id": 105,
+    "name_arabic": "الفيل",
+    "name_english": "The Elephant",
+    "revelation_place": "makkah",
+    "verses_count": 5
+  },
+  "verses": [
+    {
+      "id": 6189,
+      "verse_number": 1,
+      "text_uthmani": " أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَـٰبِ ٱلْفِيلِ",
+      "translation": "Do you [Prophet] not see how your Lord dealt with the army of the elephant?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/105001.mp3"
+    },
+    {
+      "id": 6190,
+      "verse_number": 2,
+      "text_uthmani": "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِى تَضْلِيلٍ",
+      "translation": "Did He not utterly confound their plans?",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/105002.mp3"
+    },
+    {
+      "id": 6191,
+      "verse_number": 3,
+      "text_uthmani": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+      "translation": "He sent ranks of birds against them,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/105003.mp3"
+    },
+    {
+      "id": 6192,
+      "verse_number": 4,
+      "text_uthmani": "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+      "translation": "pelting them with pellets of hard-baked clay:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/105004.mp3"
+    },
+    {
+      "id": 6193,
+      "verse_number": 5,
+      "text_uthmani": "فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍۭ",
+      "translation": "He made them [like] cropped stubble.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/105005.mp3"
+    }
+  ]
+}

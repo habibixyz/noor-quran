@@ -1,0 +1,39 @@
+{
+  "surah": {
+    "id": 106,
+    "name_arabic": "قريش",
+    "name_english": "Quraysh",
+    "revelation_place": "makkah",
+    "verses_count": 4
+  },
+  "verses": [
+    {
+      "id": 6194,
+      "verse_number": 1,
+      "text_uthmani": " لِإِيلَـٰفِ قُرَيْشٍ",
+      "translation": "[He did this] to make the Quraysh feel secure,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/106001.mp3"
+    },
+    {
+      "id": 6195,
+      "verse_number": 2,
+      "text_uthmani": "إِۦلَـٰفِهِمْ رِحْلَةَ ٱلشِّتَآءِ وَٱلصَّيْفِ",
+      "translation": "secure in their winter and summer journeys.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/106002.mp3"
+    },
+    {
+      "id": 6196,
+      "verse_number": 3,
+      "text_uthmani": "فَلْيَعْبُدُوا۟ رَبَّ هَـٰذَا ٱلْبَيْتِ",
+      "translation": "So let them worship the Lord of this House:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/106003.mp3"
+    },
+    {
+      "id": 6197,
+      "verse_number": 4,
+      "text_uthmani": "ٱلَّذِىٓ أَطْعَمَهُم مِّن جُوعٍ وَءَامَنَهُم مِّنْ خَوْفٍۭ",
+      "translation": "who provides them with food to ward off hunger, safety to ward off fear.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/106004.mp3"
+    }
+  ]
+}

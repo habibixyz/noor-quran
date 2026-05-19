@@ -1,0 +1,39 @@
+{
+  "surah": {
+    "id": 112,
+    "name_arabic": "الإخلاص",
+    "name_english": "Al-Ikhlas",
+    "revelation_place": "makkah",
+    "verses_count": 4
+  },
+  "verses": [
+    {
+      "id": 6222,
+      "verse_number": 1,
+      "text_uthmani": "قُلْ هُوَ ٱللَّهُ أَحَدٌ",
+      "translation": "Say, \"He is Allah, [who is] One,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/112001.mp3"
+    },
+    {
+      "id": 6223,
+      "verse_number": 2,
+      "text_uthmani": "ٱللَّهُ ٱلصَّمَدُ",
+      "translation": "Allah, the Eternal Refuge.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/112002.mp3"
+    },
+    {
+      "id": 6224,
+      "verse_number": 3,
+      "text_uthmani": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "translation": "He neither begets nor is born,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/112003.mp3"
+    },
+    {
+      "id": 6225,
+      "verse_number": 4,
+      "text_uthmani": "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌ",
+      "translation": "Nor is there to Him any equivalent.\"",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/112004.mp3"
+    }
+  ]
+}

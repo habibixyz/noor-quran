@@ -1,0 +1,67 @@
+{
+  "surah": {
+    "id": 99,
+    "name_arabic": "الزلزلة",
+    "name_english": "The Earthquake",
+    "revelation_place": "madinah",
+    "verses_count": 8
+  },
+  "verses": [
+    {
+      "id": 6139,
+      "verse_number": 1,
+      "text_uthmani": " إِذَا زُلْزِلَتِ ٱلْأَرْضُ زِلْزَالَهَا",
+      "translation": "When the earth is shaken violently in its [last] quaking,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099001.mp3"
+    },
+    {
+      "id": 6140,
+      "verse_number": 2,
+      "text_uthmani": "وَأَخْرَجَتِ ٱلْأَرْضُ أَثْقَالَهَا",
+      "translation": "when the earth throws out its burdens,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099002.mp3"
+    },
+    {
+      "id": 6141,
+      "verse_number": 3,
+      "text_uthmani": "وَقَالَ ٱلْإِنسَـٰنُ مَا لَهَا",
+      "translation": "when man cries, ‘What is happening to it?’;",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099003.mp3"
+    },
+    {
+      "id": 6142,
+      "verse_number": 4,
+      "text_uthmani": "يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا",
+      "translation": "on that Day, it will tell all",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099004.mp3"
+    },
+    {
+      "id": 6143,
+      "verse_number": 5,
+      "text_uthmani": "بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا",
+      "translation": "because your Lord will inspire it [to do so].",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099005.mp3"
+    },
+    {
+      "id": 6144,
+      "verse_number": 6,
+      "text_uthmani": "يَوْمَئِذٍ يَصْدُرُ ٱلنَّاسُ أَشْتَاتًا لِّيُرَوْا۟ أَعْمَـٰلَهُمْ",
+      "translation": "On that Day, people will come forward in separate groups to be shown their deeds:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099006.mp3"
+    },
+    {
+      "id": 6145,
+      "verse_number": 7,
+      "text_uthmani": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ",
+      "translation": "whoever has done an atom’s-weight of good will see it,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099007.mp3"
+    },
+    {
+      "id": 6146,
+      "verse_number": 8,
+      "text_uthmani": "وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُۥ",
+      "translation": "but whoever has done an atom’s-weight of evil will see that.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/099008.mp3"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "surah": {
+    "id": 108,
+    "name_arabic": "الكوثر",
+    "name_english": "The Abundance",
+    "revelation_place": "makkah",
+    "verses_count": 3
+  },
+  "verses": [
+    {
+      "id": 6205,
+      "verse_number": 1,
+      "text_uthmani": " إِنَّآ أَعْطَيْنَـٰكَ ٱلْكَوْثَرَ",
+      "translation": "We have truly given abundance to you [Prophet]––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/108001.mp3"
+    },
+    {
+      "id": 6206,
+      "verse_number": 2,
+      "text_uthmani": "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ",
+      "translation": "so pray to your Lord and make your sacrifice to Him alone––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/108002.mp3"
+    },
+    {
+      "id": 6207,
+      "verse_number": 3,
+      "text_uthmani": "إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ",
+      "translation": "it is the one who hates you who has been cut off.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/108003.mp3"
+    }
+  ]
+}

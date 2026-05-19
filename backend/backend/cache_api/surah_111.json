@@ -1,0 +1,46 @@
+{
+  "surah": {
+    "id": 111,
+    "name_arabic": "المسد",
+    "name_english": "The Palm Fiber",
+    "revelation_place": "makkah",
+    "verses_count": 5
+  },
+  "verses": [
+    {
+      "id": 6217,
+      "verse_number": 1,
+      "text_uthmani": " تَبَّتْ يَدَآ أَبِى لَهَبٍ وَتَبَّ",
+      "translation": "May the hands of Abu Lahab be ruined! May he be ruined too!",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/111001.mp3"
+    },
+    {
+      "id": 6218,
+      "verse_number": 2,
+      "text_uthmani": "مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ",
+      "translation": "Neither his wealth nor his gains will help him:",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/111002.mp3"
+    },
+    {
+      "id": 6219,
+      "verse_number": 3,
+      "text_uthmani": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+      "translation": "he will burn in the Flaming Fire––",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/111003.mp3"
+    },
+    {
+      "id": 6220,
+      "verse_number": 4,
+      "text_uthmani": "وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ",
+      "translation": "and so will his wife, the firewood-carrier,",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/111004.mp3"
+    },
+    {
+      "id": 6221,
+      "verse_number": 5,
+      "text_uthmani": "فِى جِيدِهَا حَبْلٌ مِّن مَّسَدٍۭ",
+      "translation": "with a palm-fibre rope around her neck.",
+      "audio_url": "https://verses.quran.com/Alafasy/mp3/111005.mp3"
+    }
+  ]
+}
