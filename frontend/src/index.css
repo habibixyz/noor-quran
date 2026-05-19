@@ -2,26 +2,26 @@
 
 :root {
   /* Elegant Premium Color Palette (from HTML mockup) */
-  --color-bg-deep: #0a1f0f;       /* Deepest Forest Green */
-  --color-bg-dark: #0d2512;       /* Sidebar / Cards / Header */
-  --color-bg-light: #1a3d1f;      /* Borders / Active states */
-  --color-emerald-glow: #2a5a30;  /* Subtle highlights */
+  --color-bg-deep: #16110b;       /* Deepest Forest Green */
+  --color-bg-dark: #1f1810;       /* Sidebar / Cards / Header */
+  --color-bg-light: #33261a;      /* Borders / Active states */
+  --color-emerald-glow: #4d3926;  /* Subtle highlights */
   
   --color-gold-light: #e8d5a3;    /* Bright Arabic text */
   --color-gold: #c9a84c;          /* Premium Gold */
   --color-gold-dark: #b8973b;     /* Deep Gold for shadows */
   
   --color-text-light: #f0e8d0;    /* Soft Light Text */
-  --color-text-muted: #4a7c52;    /* Forest Muted Text */
-  --color-glass-bg: #0d2512;      /* Solid premium dark */
-  --color-glass-border: #1a3d1f;
+  --color-text-muted: #8c6b4a;    /* Forest Muted Text */
+  --color-glass-bg: #1f1810;      /* Solid premium dark */
+  --color-glass-border: #33261a;
   
   --font-arabic: 'Amiri', 'Georgia', serif;
   --font-sans: 'Inter', 'Outfit', sans-serif;
   
   --transition-smooth: all 0.15s ease-out;
   --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.08);
-  --shadow-emerald: 0 4px 20px rgba(26, 61, 31, 0.3);
+  --shadow-emerald: 0 4px 20px rgba(70, 45, 25, 0.3);
 }
 
 * {
@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(16, 133, 76, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 10% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
   background-attachment: fixed;
 }
@@ -148,10 +148,10 @@ body {
 
 /* Secondary Emerald Button */
 .emerald-button {
-  background: rgba(16, 133, 76, 0.2);
+  background: rgba(184, 115, 51, 0.2);
   color: var(--color-text-light);
   font-weight: 600;
-  border: 1px solid rgba(16, 133, 76, 0.4);
+  border: 1px solid rgba(184, 115, 51, 0.4);
   border-radius: 12px;
   padding: 12px 24px;
   cursor: pointer;
@@ -161,7 +161,7 @@ body {
   gap: 8px;
 }
 .emerald-button:hover:not(:disabled) {
-  background: rgba(16, 133, 76, 0.4);
+  background: rgba(184, 115, 51, 0.4);
   border-color: var(--color-gold);
   color: var(--color-gold-light);
   transform: translateY(-1px);
@@ -174,7 +174,7 @@ body {
   font-size: 2.2rem;
   line-height: 1.8;
   font-weight: 500;
-  text-shadow: 0 2px 10px rgba(16, 133, 76, 0.3);
+  text-shadow: 0 2px 10px rgba(184, 115, 51, 0.3);
 }
 
 .english-text {
@@ -186,7 +186,7 @@ body {
 /* Glowing Animations */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(16, 133, 76, 0.3);
+    box-shadow: 0 0 15px rgba(184, 115, 51, 0.3);
     border-color: rgba(212, 175, 55, 0.2);
   }
   50% {
@@ -325,23 +325,23 @@ body {
 .border-transparent { border-color: transparent !important; }
 
 /* Backgrounds & Opacities */
-.bg-emerald-950\/20 { background-color: rgba(13, 37, 18, 0.4) !important; }
-.bg-emerald-950\/80 { background-color: rgba(13, 37, 18, 0.8) !important; }
-.bg-emerald-950\/50 { background-color: rgba(13, 37, 18, 0.5) !important; }
-.bg-emerald-950\/60 { background-color: rgba(13, 37, 18, 0.6) !important; }
-.bg-emerald-950\/75 { background-color: rgba(13, 37, 18, 0.75) !important; }
-.bg-emerald-950\/15 { background-color: rgba(13, 37, 18, 0.15) !important; }
-.bg-emerald-950\/10 { background-color: rgba(13, 37, 18, 0.1) !important; }
-.bg-emerald-900\/25 { background-color: rgba(26, 61, 31, 0.25) !important; }
-.bg-emerald-900\/30 { background-color: rgba(26, 61, 31, 0.3) !important; }
-.bg-emerald-900\/50 { background-color: rgba(26, 61, 31, 0.5) !important; }
-.bg-emerald-900\/40 { background-color: rgba(26, 61, 31, 0.4) !important; }
+.bg-emerald-950\/20 { background-color: rgba(40, 25, 15, 0.4) !important; }
+.bg-emerald-950\/80 { background-color: rgba(40, 25, 15, 0.8) !important; }
+.bg-emerald-950\/50 { background-color: rgba(40, 25, 15, 0.5) !important; }
+.bg-emerald-950\/60 { background-color: rgba(40, 25, 15, 0.6) !important; }
+.bg-emerald-950\/75 { background-color: rgba(40, 25, 15, 0.75) !important; }
+.bg-emerald-950\/15 { background-color: rgba(40, 25, 15, 0.15) !important; }
+.bg-emerald-950\/10 { background-color: rgba(40, 25, 15, 0.1) !important; }
+.bg-emerald-900\/25 { background-color: rgba(70, 45, 25, 0.25) !important; }
+.bg-emerald-900\/30 { background-color: rgba(70, 45, 25, 0.3) !important; }
+.bg-emerald-900\/50 { background-color: rgba(70, 45, 25, 0.5) !important; }
+.bg-emerald-900\/40 { background-color: rgba(70, 45, 25, 0.4) !important; }
 .bg-emerald-800 { background-color: var(--color-bg-light) !important; }
-.bg-emerald-800\/40 { background-color: rgba(26, 61, 31, 0.4) !important; }
+.bg-emerald-800\/40 { background-color: rgba(70, 45, 25, 0.4) !important; }
 .bg-amber-400\/10 { background-color: rgba(201, 168, 76, 0.1) !important; }
 .bg-amber-400\/20 { background-color: rgba(201, 168, 76, 0.2) !important; }
 .bg-indigo-500\/10 { background-color: rgba(99, 102, 241, 0.1) !important; }
-.bg-emerald-500\/10 { background-color: rgba(106, 191, 113, 0.1) !important; }
+.bg-emerald-500\/10 { background-color: rgba(217, 160, 91, 0.1) !important; }
 .bg-gradient-to-tr { background: linear-gradient(45deg, var(--color-gold) 0%, var(--color-bg-light) 100%) !important; }
 .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important; }
 
@@ -372,14 +372,14 @@ body {
 .text-white { color: #ffffff !important; }
 .text-amber-300 { color: var(--color-gold-light) !important; }
 .text-amber-400 { color: var(--color-gold) !important; }
-.text-emerald-300 { color: #6abf71 !important; }
+.text-emerald-300 { color: #d9a05b !important; }
 .text-emerald-100\/50 { color: rgba(240, 232, 208, 0.5) !important; }
 .text-emerald-100\/70 { color: rgba(240, 232, 208, 0.7) !important; }
 .text-emerald-100\/40 { color: rgba(240, 232, 208, 0.4) !important; }
 .text-emerald-100\/30 { color: rgba(240, 232, 208, 0.3) !important; }
 .text-emerald-100\/90 { color: rgba(240, 232, 208, 0.9) !important; }
 .text-emerald-100\/60 { color: rgba(240, 232, 208, 0.6) !important; }
-.text-\[\#8ab69d\] { color: var(--color-text-muted) !important; }
+.text-\[\#b39a7d\] { color: var(--color-text-muted) !important; }
 .text-\[\#ffe57f\] { color: var(--color-gold) !important; }
 
 /* Layout Scrollers & Modals */

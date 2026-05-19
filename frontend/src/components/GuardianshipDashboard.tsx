@@ -262,7 +262,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
             <Award size={24} className="md:w-7 md:h-7" />
           </div>
           <div>
-            <div className="text-xs text-[#8ab69d]">Total Guardians</div>
+            <div className="text-xs text-[#b39a7d]">Total Guardians</div>
             <div className="text-2xl md:text-3xl font-extrabold text-white">{analytics.totalGuardians || "2"}</div>
           </div>
         </div>
@@ -272,7 +272,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
             <Coins size={24} className="md:w-7 md:h-7" />
           </div>
           <div>
-            <div className="text-xs text-[#8ab69d]">Sadaqah Raised</div>
+            <div className="text-xs text-[#b39a7d]">Sadaqah Raised</div>
             <div className="text-2xl md:text-3xl font-extrabold text-[#ffe57f]">
               {analytics.totalSadaqah === "0.0" ? "0.006 ETH" : `${analytics.totalSadaqah} ETH`}
             </div>
@@ -284,7 +284,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
             <Heart size={24} className="animate-pulse text-rose-400 md:w-7 md:h-7" />
           </div>
           <div>
-            <div className="text-xs text-[#8ab69d]">Base Network</div>
+            <div className="text-xs text-[#b39a7d]">Base Network</div>
             <div className="text-[10px] md:text-xs font-semibold px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800 w-max mt-1">
               Base Sepolia Online
             </div>
@@ -351,7 +351,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
 
                   <div>
                     <h4 className="text-lg font-bold text-white leading-tight">{surah.englishName}</h4>
-                    <p className="text-xs text-[#8ab69d] italic leading-relaxed mt-0.5">{surah.englishMeaning}</p>
+                    <p className="text-xs text-[#b39a7d] italic leading-relaxed mt-0.5">{surah.englishMeaning}</p>
                   </div>
 
                   {/* Status Banner */}
@@ -414,7 +414,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
                   key={index}
                   className="p-3.5 rounded-lg bg-emerald-950/20 border border-emerald-900 flex flex-col gap-1.5 text-xs"
                 >
-                  <div className="flex justify-between items-center text-[10px] text-[#8ab69d]">
+                  <div className="flex justify-between items-center text-[10px] text-[#b39a7d]">
                     <span className="font-semibold text-amber-400">Surah Sponsored</span>
                     <span>{log.txHash}</span>
                   </div>
@@ -458,7 +458,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
               <div>
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <span className="text-xs text-[#8ab69d] font-bold">Surah #{selectedSurah.index}</span>
+                    <span className="text-xs text-[#b39a7d] font-bold">Surah #{selectedSurah.index}</span>
                     <h3 className="text-2xl font-bold text-white leading-tight mt-0.5">{selectedSurah.englishName}</h3>
                   </div>
                   <button
@@ -468,14 +468,14 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
                     ✕
                   </button>
                 </div>
-                <p className="text-xs text-[#8ab69d] italic border-b border-emerald-900/40 pb-4 mb-4">
+                <p className="text-xs text-[#b39a7d] italic border-b border-emerald-900/40 pb-4 mb-4">
                   "{selectedSurah.englishMeaning}"
                 </p>
 
                 {/* Form fields */}
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-[#8ab69d] mb-1.5">
+                    <label className="block text-xs font-semibold text-[#b39a7d] mb-1.5">
                       Sponsorship Contribution Amount (ETH)
                     </label>
                     <div className="relative">
@@ -487,7 +487,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
                         onChange={(e) => setSponsorshipAmount(e.target.value)}
                         className="w-full pl-4 pr-16 py-3 rounded-xl border border-emerald-800/60 bg-emerald-950/20 text-[#ffe57f] font-bold font-mono focus:outline-none focus:border-amber-400 text-lg"
                       />
-                      <span className="absolute right-4 top-3.5 text-xs text-[#8ab69d] font-bold">
+                      <span className="absolute right-4 top-3.5 text-xs text-[#b39a7d] font-bold">
                         ETH
                       </span>
                     </div>
@@ -522,7 +522,7 @@ export const GuardianshipDashboard: React.FC<GuardianshipDashboardProps> = ({
                 )}
                 
                 {transactionHash && (
-                  <div className="text-[10px] font-mono text-center text-[#8ab69d] mt-2">
+                  <div className="text-[10px] font-mono text-center text-[#b39a7d] mt-2">
                     Tx Hash: <span className="text-white truncate">{transactionHash}</span>
                   </div>
                 )}

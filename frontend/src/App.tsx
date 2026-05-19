@@ -46,13 +46,13 @@ function App() {
 
           {/* Desktop Tab Selection (Hidden on Mobile) */}
           {!isMobile && (
-            <nav className="flex gap-1.5 p-1 bg-[#1a3d1f]/50 rounded-xl border border-[var(--color-glass-border)] text-xs font-bold">
+            <nav className="flex gap-1.5 p-1 bg-[#33261a]/50 rounded-xl border border-[var(--color-glass-border)] text-xs font-bold">
               <button
                 onClick={() => setActiveTab("reader")}
                 className={`px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 ${
                   activeTab === "reader"
                     ? "bg-[var(--color-bg-dark)] text-[var(--color-gold)] shadow-md border border-[var(--color-gold)]/30"
-                    : "text-[#4a7c52] hover:text-[#f0e8d0]"
+                    : "text-[#8c6b4a] hover:text-[#f0e8d0]"
                 }`}
               >
                 <BookOpen size={16} />
@@ -63,7 +63,7 @@ function App() {
                 className={`px-5 py-2.5 rounded-lg transition-all flex items-center gap-2 ${
                   activeTab === "search"
                     ? "bg-[var(--color-bg-dark)] text-[var(--color-gold)] shadow-md border border-[var(--color-gold)]/30"
-                    : "text-[#4a7c52] hover:text-[#f0e8d0]"
+                    : "text-[#8c6b4a] hover:text-[#f0e8d0]"
                 }`}
               >
                 <Search size={16} />
@@ -83,7 +83,7 @@ function App() {
               <button
                 onClick={() => setActiveTab("reader")}
                 className={`flex flex-col items-center gap-1 p-2 flex-1 rounded-xl transition-all ${
-                  activeTab === "reader" ? "text-[var(--color-gold)] bg-[#1a3d1f]" : "text-[#4a7c52]"
+                  activeTab === "reader" ? "text-[var(--color-gold)] bg-[#33261a]" : "text-[#8c6b4a]"
                 }`}
               >
                 <BookOpen size={20} />
@@ -92,7 +92,7 @@ function App() {
               <button
                 onClick={() => setActiveTab("search")}
                 className={`flex flex-col items-center gap-1 p-2 flex-1 rounded-xl transition-all ${
-                  activeTab === "search" ? "text-[var(--color-gold)] bg-[#1a3d1f]" : "text-[#4a7c52]"
+                  activeTab === "search" ? "text-[var(--color-gold)] bg-[#33261a]" : "text-[#8c6b4a]"
                 }`}
               >
                 <Search size={20} />
@@ -112,7 +112,7 @@ function App() {
         </main>
 
         {/* Elegant Footer */}
-        <footer className="glass-panel mb-4 p-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#4a7c52]">
+        <footer className="glass-panel mb-4 p-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c6b4a]">
           <div className="flex items-center gap-1.5">
             <span>© 2026 Noor Quran Reader</span>
           </div>

@@ -207,22 +207,22 @@ export const QuranReader: React.FC = () => {
       <div className="lg:col-span-1 flex flex-col gap-4">
         {/* Current Surah Card */}
         <div className="glass-panel p-4 flex flex-col gap-2">
-          <div className="text-[10px] font-bold tracking-widest text-[#4a7c52] uppercase flex items-center gap-2 mb-2">
+          <div className="text-[10px] font-bold tracking-widest text-[#8c6b4a] uppercase flex items-center gap-2 mb-2">
             <BookOpen size={12} /> Current Surah
           </div>
           <div className="font-arabic text-xl text-[#e8d5a3] text-right">{activeSurahDetails.name}</div>
           <div className="text-lg font-bold text-[#c9a84c] mb-1">{activeSurahDetails.englishName}</div>
           <div className="flex gap-2 mb-3">
-            <span className="text-[10px] font-bold tracking-wide px-2 py-1 rounded bg-[#1a3d1f] text-[#6abf71] border border-[#2a5a30] uppercase">
+            <span className="text-[10px] font-bold tracking-wide px-2 py-1 rounded bg-[#33261a] text-[#d9a05b] border border-[#4d3926] uppercase">
               {activeSurahDetails.type}
             </span>
-            <span className="text-[10px] font-bold tracking-wide px-2 py-1 rounded bg-[#1a2a1a] text-[#4a7c52] border border-[#1a3d1f]">
+            <span className="text-[10px] font-bold tracking-wide px-2 py-1 rounded bg-[#1a2a1a] text-[#8c6b4a] border border-[#33261a]">
               {activeSurahDetails.versesCount} Verses
             </span>
           </div>
           <button 
             onClick={() => setIsMobileListOpen(!isMobileListOpen)}
-            className="w-full p-2 bg-[#1a3d1f] border border-[#2a5a30] rounded-lg text-[#c9a84c] text-[11px] font-bold tracking-wide flex items-center justify-center gap-2 transition-all hover:bg-[#2a5a30]"
+            className="w-full p-2 bg-[#33261a] border border-[#4d3926] rounded-lg text-[#c9a84c] text-[11px] font-bold tracking-wide flex items-center justify-center gap-2 transition-all hover:bg-[#4d3926]"
           >
             <BookOpen size={14} /> Browse All Surahs {isMobileListOpen ? "▲" : "▼"}
           </button>
@@ -240,17 +240,17 @@ export const QuranReader: React.FC = () => {
                 }}
                 className={`w-full flex items-center justify-between p-3 rounded-lg text-left transition-all ${
                   selectedSurah === surah.index
-                    ? "bg-[#1a3d1f] border border-[#c9a84c]/20 text-[#c9a84c]"
-                    : "hover:bg-[#1a3d1f]/50 text-emerald-100/70 hover:text-white"
+                    ? "bg-[#33261a] border border-[#c9a84c]/20 text-[#c9a84c]"
+                    : "hover:bg-[#33261a]/50 text-emerald-100/70 hover:text-white"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-xs w-6 h-6 flex items-center justify-center rounded-full bg-[#0a1f0f] border border-[#1a3d1f] text-[#c9a84c] font-bold">
+                  <span className="text-xs w-6 h-6 flex items-center justify-center rounded-full bg-[#16110b] border border-[#33261a] text-[#c9a84c] font-bold">
                     {surah.index}
                   </span>
                   <div>
                     <div className="font-semibold text-sm">{surah.englishName}</div>
-                    <div className="text-[10px] text-[#4a7c52]">{surah.englishMeaning}</div>
+                    <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}</div>
                   </div>
                 </div>
                 <div className="text-right hidden xl:block">
@@ -263,10 +263,10 @@ export const QuranReader: React.FC = () => {
 
         {/* Progress Card */}
         <div className="glass-panel p-4 hidden lg:block">
-          <div className="text-[10px] font-bold tracking-widest text-[#4a7c52] uppercase flex items-center gap-2 mb-3">
+          <div className="text-[10px] font-bold tracking-widest text-[#8c6b4a] uppercase flex items-center gap-2 mb-3">
             <Sparkles size={12} className="text-[var(--color-gold)]" /> Reading Progress
           </div>
-          <div className="h-1.5 bg-[#1a3d1f] rounded overflow-hidden mb-2">
+          <div className="h-1.5 bg-[#33261a] rounded overflow-hidden mb-2">
             <div className="h-full bg-[#c9a84c] rounded transition-all duration-500" style={{ width: `${(selectedSurah / 114) * 100}%` }}></div>
           </div>
           <div className="text-xs text-[#6b9e72] flex justify-between">
@@ -284,7 +284,7 @@ export const QuranReader: React.FC = () => {
               <span className="px-2 py-0.5 md:px-3 md:py-1 rounded bg-amber-400/20 text-amber-300 text-[10px] md:text-xs font-bold uppercase tracking-wider">
                 {activeSurahDetails.type}
               </span>
-              <span className="text-xs md:text-sm text-[#8ab69d]">{activeSurahDetails.versesCount} Verses</span>
+              <span className="text-xs md:text-sm text-[#b39a7d]">{activeSurahDetails.versesCount} Verses</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-extrabold mt-1 text-white flex items-center gap-2">
               {activeSurahDetails.englishName}
@@ -292,14 +292,14 @@ export const QuranReader: React.FC = () => {
                 ({activeSurahDetails.name})
               </span>
             </h2>
-            <p className="text-sm text-[#8ab69d] italic">{activeSurahDetails.englishMeaning}</p>
+            <p className="text-sm text-[#b39a7d] italic">{activeSurahDetails.englishMeaning}</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 md:gap-3 mt-1 md:mt-0">
             {/* Audio Recitation Button */}
             <button
               onClick={handlePlayPause}
-              className="bg-[#1a3d1f] text-[#c9a84c] border border-[#2a5a30] text-xs md:text-sm py-2 px-3 md:px-4 flex-1 md:flex-none justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#2a5a30]"
+              className="bg-[#33261a] text-[#c9a84c] border border-[#4d3926] text-xs md:text-sm py-2 px-3 md:px-4 flex-1 md:flex-none justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#4d3926]"
               title="Listen to beautiful audio recitation"
             >
               {isPlaying ? (
@@ -330,12 +330,12 @@ export const QuranReader: React.FC = () => {
 
         {/* Global Translation Switch */}
         <div className="flex justify-between items-center px-4 py-2 glass-panel">
-          <div className="text-xs text-[#8ab69d]">
+          <div className="text-xs text-[#b39a7d]">
             💡 <span className="text-[#c9a84c] font-semibold">Tip:</span> Click directly on any Arabic verse to toggle its translation inline.
           </div>
           <button
             onClick={() => setShowGlobalTranslation(!showGlobalTranslation)}
-            className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#1a3d1f] bg-[#0d2512] hover:bg-[#1a3d1f] transition-all text-[#c9a84c]"
+            className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#33261a] bg-[#1f1810] hover:bg-[#33261a] transition-all text-[#c9a84c]"
           >
             {showGlobalTranslation ? "Hide All Translations" : "Show All Translations"}
           </button>
@@ -361,16 +361,16 @@ export const QuranReader: React.FC = () => {
               return (
                 <div
                   key={verse.verse_number}
-                  className={`bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-4 md:p-5 transition-all hover:border-[#2a5a30] ${
-                    isTranslationVisible ? "border-[#c9a84c]/20 bg-[#0f2914]" : ""
+                  className={`bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-4 md:p-5 transition-all hover:border-[#4d3926] ${
+                    isTranslationVisible ? "border-[#c9a84c]/20 bg-[#261c13]" : ""
                   }`}
                 >
                   {/* Verse Top */}
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-[11px] font-bold text-[#4a7c52] bg-[#1a3d1f] rounded-md px-2.5 py-1 tracking-wide">
+                    <span className="text-[11px] font-bold text-[#8c6b4a] bg-[#33261a] rounded-md px-2.5 py-1 tracking-wide">
                       {selectedSurah} : {verse.verse_number}
                     </span>
-                    <span className="text-[11px] text-[#2a5a30]">Click text to toggle translation</span>
+                    <span className="text-[11px] text-[#4d3926]">Click text to toggle translation</span>
                   </div>
 
                   {/* Clickable Text Area */}
@@ -385,11 +385,11 @@ export const QuranReader: React.FC = () => {
                     </div>
 
                     {/* Divider */}
-                    <div className="h-[1px] bg-[#1a3d1f] my-4"></div>
+                    <div className="h-[1px] bg-[#33261a] my-4"></div>
 
                     {/* Translation */}
                     {isTranslationVisible && (
-                      <div className="text-sm md:text-base text-[#8aab8e] leading-[1.7] italic mb-3">
+                      <div className="text-sm md:text-base text-[#b39a7d] leading-[1.7] italic mb-3">
                         {verse.translation}
                       </div>
                     )}
@@ -399,7 +399,7 @@ export const QuranReader: React.FC = () => {
                   <div className="flex gap-2 mt-3">
                     <button
                       onClick={() => playVerseAudio(verse)}
-                      className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[var(--color-gold)] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
+                      className="bg-[#33261a] border border-[#33261a] rounded-md text-[var(--color-gold)] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                     >
                       {playingVerseNum === verse.verse_number ? (
                         <>
@@ -413,13 +413,13 @@ export const QuranReader: React.FC = () => {
                     </button>
                     <button
                       onClick={() => shareVerse(verse)}
-                      className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[#4a7c52] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
+                      className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                     >
                       <Share2 size={13} /> Share
                     </button>
                     <button
                       onClick={() => copyToClipboard(`${verse.text_uthmani}\n\n"${verse.translation}" - Quran ${selectedSurah}:${verse.verse_number}`)}
-                      className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[#4a7c52] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
+                      className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                     >
                       <Copy size={13} /> Copy
                     </button>

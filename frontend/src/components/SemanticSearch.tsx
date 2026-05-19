@@ -116,25 +116,25 @@ export const SemanticSearch: React.FC = () => {
             <Sparkles className="text-[var(--color-gold)]" size={22} />
             <span>AI Semantic Search</span>
           </h2>
-          <p className="text-xs md:text-sm text-[#8ab69d] mt-1">
+          <p className="text-xs md:text-sm text-[#b39a7d] mt-1">
             Search for verses by their inner meaning, concepts, or topics in plain English. Powered by nomic-embed-text & pgvector.
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="flex items-center gap-2 bg-[#0a1f0f] border border-[var(--color-glass-border)] rounded-xl p-1.5 focus-within:border-[var(--color-gold)] transition-all">
+        <div className="flex items-center gap-2 bg-[#16110b] border border-[var(--color-glass-border)] rounded-xl p-1.5 focus-within:border-[var(--color-gold)] transition-all">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch(query)}
             placeholder="Type a concept e.g., 'What does the Quran say about patience in times of trial?'"
-            className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#4a7c52] outline-none"
+            className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
           />
           <button
             onClick={() => handleSearch(query)}
             disabled={isLoading || !query.trim()}
-            className="bg-[#1a3d1f] hover:bg-[#2a5a30] text-[var(--color-gold)] font-bold rounded-lg p-2.5 flex items-center justify-center transition-all disabled:opacity-50"
+            className="bg-[#33261a] hover:bg-[#4d3926] text-[var(--color-gold)] font-bold rounded-lg p-2.5 flex items-center justify-center transition-all disabled:opacity-50"
           >
             <Search size={18} />
           </button>
@@ -142,7 +142,7 @@ export const SemanticSearch: React.FC = () => {
 
         {/* Suggested Topics */}
         <div className="flex flex-col gap-2 mt-2">
-          <div className="text-[10px] font-bold tracking-widest text-[#4a7c52] uppercase">
+          <div className="text-[10px] font-bold tracking-widest text-[#8c6b4a] uppercase">
             Popular Topics
           </div>
           <div className="flex flex-wrap gap-2">
@@ -150,7 +150,7 @@ export const SemanticSearch: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => handleSearch(topic.query)}
-                className="text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-[#1a3d1f] bg-[#0d2512] hover:bg-[#1a3d1f] text-[#8aab8e] hover:text-[var(--color-gold)] transition-all"
+                className="text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-[#33261a] bg-[#1f1810] hover:bg-[#33261a] text-[#b39a7d] hover:text-[var(--color-gold)] transition-all"
               >
                 {topic.label}
               </button>
@@ -178,32 +178,32 @@ export const SemanticSearch: React.FC = () => {
       {/* Search Results */}
       {!isLoading && results.length > 0 && (
         <div className="flex flex-col gap-4">
-          <div className="text-xs text-[#8ab69d] px-2 flex justify-between items-center">
+          <div className="text-xs text-[#b39a7d] px-2 flex justify-between items-center">
             <span>Found <strong className="text-[var(--color-gold)]">{results.length}</strong> semantic matches</span>
-            <span className="text-[10px] uppercase tracking-wider text-[#4a7c52]">Ranked by Cosine Similarity</span>
+            <span className="text-[10px] uppercase tracking-wider text-[#8c6b4a]">Ranked by Cosine Similarity</span>
           </div>
 
           <div className="flex flex-col gap-4">
             {results.map((result) => (
               <div
                 key={result.id}
-                className="bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-5 hover:border-[#2a5a30] transition-all"
+                className="bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-5 hover:border-[#4d3926] transition-all"
               >
                 {/* Result Top bar */}
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-bold text-[#4a7c52] bg-[#1a3d1f] rounded-md px-2.5 py-1 tracking-wide">
+                    <span className="text-[11px] font-bold text-[#8c6b4a] bg-[#33261a] rounded-md px-2.5 py-1 tracking-wide">
                       {result.surah_name} ({result.verse_key})
                     </span>
                     {result.similarity !== undefined && (
-                      <span className="text-[10px] font-bold text-[#6abf71] bg-[#1a3d1f]/50 border border-[#2a5a30]/30 rounded-md px-2 py-0.5">
+                      <span className="text-[10px] font-bold text-[#d9a05b] bg-[#33261a]/50 border border-[#4d3926]/30 rounded-md px-2 py-0.5">
                         {Math.round(result.similarity * 100)}% Match
                       </span>
                     )}
                   </div>
                   <button
                     onClick={() => handlePlayPause(result)}
-                    className="text-[var(--color-gold)] hover:text-white bg-[#1a3d1f] hover:bg-[#2a5a30] p-1.5 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+                    className="text-[var(--color-gold)] hover:text-white bg-[#33261a] hover:bg-[#4d3926] p-1.5 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
                   >
                     {playingId === result.id ? <Pause size={14} className="animate-pulse" /> : <Play size={14} />}
                   </button>
@@ -215,10 +215,10 @@ export const SemanticSearch: React.FC = () => {
                 </div>
 
                 {/* Divider */}
-                <div className="h-[1px] bg-[#1a3d1f] my-3"></div>
+                <div className="h-[1px] bg-[#33261a] my-3"></div>
 
                 {/* Translation */}
-                <div className="text-sm md:text-base text-[#8aab8e] leading-[1.7] italic mb-4">
+                <div className="text-sm md:text-base text-[#b39a7d] leading-[1.7] italic mb-4">
                   {result.translation}
                 </div>
 
@@ -226,13 +226,13 @@ export const SemanticSearch: React.FC = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => copyToClipboard(`${result.text_uthmani}\n\n"${result.translation}" - Quran ${result.verse_key}`)}
-                    className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[#4a7c52] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
+                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                   >
                     <Copy size={13} /> Copy Verse
                   </button>
                   <button
                     onClick={() => shareVerse(result)}
-                    className="bg-[#1a3d1f] border border-[#1a3d1f] rounded-md text-[#4a7c52] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#2a5a30] hover:text-[#6b9e72]"
+                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                   >
                     <Share2 size={13} /> Share
                   </button>
@@ -245,7 +245,7 @@ export const SemanticSearch: React.FC = () => {
 
       {/* Empty State */}
       {!isLoading && results.length === 0 && query && (
-        <div className="glass-panel p-12 text-center text-[#4a7c52]">
+        <div className="glass-panel p-12 text-center text-[#8c6b4a]">
           <AlertCircle size={40} className="mx-auto mb-3 opacity-50 text-[var(--color-gold)]" />
           <p className="text-sm">No exact matches found for "{query}". Try searching other keywords or topics.</p>
         </div>
