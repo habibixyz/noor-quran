@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Heart, Coins, Award, ExternalLink, AlertCircle, CheckCircle2, ArrowRight, Info, Users, ShieldCheck, Sparkles } from "lucide-react";
-import { NETWORKS, CONTRACT_ADDRESSES, DEFAULT_CHAIN_ID, SADAQAH_ZAKAT_ABI } from "../config";
+import { PAYPAL_CLIENT_ID, NETWORKS, CONTRACT_ADDRESSES, DEFAULT_CHAIN_ID, SADAQAH_ZAKAT_ABI } from "../config";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import confetti from "canvas-confetti";
 
 declare global {
@@ -54,8 +55,10 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   const [recentDonations, setRecentDonations] = useState<DonationRecord[]>([]);
 
   // Donation Form
+  const [paymentMethod, setPaymentMethod] = useState<"crypto" | "paypal">("crypto");
   const [donationType, setDonationType] = useState<"sadaqah" | "zakat">("sadaqah");
   const [customAmount, setCustomAmount] = useState<string>("");
+  const [paypalAmount, setPaypalAmount] = useState<string>("10.00");
   const [ethPrice, setEthPrice] = useState<number>(3000); // Default placeholder
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [transactionHash, setTransactionHash] = useState<string>("");
@@ -167,9 +170,13 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
 
   // Quick donate handlers
   const handleQuickDonate = async (usdAmount: number) => {
-    const calculatedEth = getEthFromUsd(usdAmount);
-    setCustomAmount(calculatedEth);
-    await executeDonation(calculatedEth);
+    if (paymentMethod === "crypto") {
+      const calculatedEth = getEthFromUsd(usdAmount);
+      setCustomAmount(calculatedEth);
+      await executeDonation(calculatedEth);
+    } else {
+      setPaypalAmount(usdAmount.toFixed(2));
+    }
   };
 
   const handleCustomDonateSubmit = async (e: React.FormEvent) => {
@@ -353,6 +360,24 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
               <span>Make a Contribution</span>
             </h3>
 
+            {/* Payment Method Selector */}
+            <div className="charity-toggle-wrap">
+              <button
+                type="button"
+                onClick={() => setPaymentMethod("crypto")}
+                className={`charity-toggle-btn ${paymentMethod === "crypto" ? "active" : ""}`}
+              >
+                <span>🦊 Web3 (Base)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setPaymentMethod("paypal")}
+                className={`charity-toggle-btn ${paymentMethod === "paypal" ? "active" : ""}`}
+              >
+                <span>🅿️ PayPal (Fiat)</span>
+              </button>
+            </div>
+
             {/* Donation Type Toggles */}
             <div className="charity-toggle-wrap">
               <button
@@ -389,23 +414,23 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
                       id={`quick-donate-${amount}`}
                       type="button"
                       onClick={() => handleQuickDonate(amount)}
-                      disabled={isLoading}
-                      className="quick-option-chip"
+                      disabled={isLoading && paymentMethod === "crypto"}
+                      className={`quick-option-chip ${paymentMethod === "paypal" && parseFloat(paypalAmount) === amount ? "border-[var(--color-gold)] bg-[#33261a]" : ""}`}
                     >
                       <span className="amount-val">${amount}</span>
-                      <span className="eth-val">{calculatedEth} ETH</span>
+                      {paymentMethod === "crypto" && <span className="eth-val">{calculatedEth} ETH</span>}
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Custom donation form */}
-            <form onSubmit={handleCustomDonateSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="custom-donation-amount" className="block text-xs font-semibold text-[#8c6b4a]">
-                  Or Enter Custom Amount (ETH)
-                </label>
+            {paymentMethod === "crypto" ? (
+              <form onSubmit={handleCustomDonateSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <label htmlFor="custom-donation-amount" className="block text-xs font-semibold text-[#8c6b4a]">
+                    Or Enter Custom Amount (ETH)
+                  </label>
                 <div className="custom-input-wrap">
                   <input
                     id="custom-donation-amount"
@@ -478,6 +503,82 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
                 )}
               </button>
             </form>
+            ) : (
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <label htmlFor="custom-paypal-amount" className="block text-xs font-semibold text-[#8c6b4a]">
+                    Or Enter Custom Amount (USD)
+                  </label>
+                  <div className="custom-input-wrap">
+                    <input
+                      id="custom-paypal-amount"
+                      type="number"
+                      step="1"
+                      min="1"
+                      placeholder="e.g. 50"
+                      value={paypalAmount}
+                      onChange={(e) => setPaypalAmount(e.target.value)}
+                      className="custom-input-field"
+                    />
+                    <div className="custom-input-badge">
+                      <span>USD</span>
+                    </div>
+                  </div>
+                </div>
+
+                {successMessage && (
+                  <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-900/60 text-xs text-emerald-300 flex items-center gap-2">
+                    <CheckCircle2 size={16} className="shrink-0" />
+                    <span>{successMessage}</span>
+                  </div>
+                )}
+
+                {errorMessage && (
+                  <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-900/60 text-xs text-rose-300 flex items-center gap-2">
+                    <AlertCircle size={16} className="shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                <div className="mt-4 pt-4 border-t border-[var(--color-glass-border)]">
+                  <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" }}>
+                    <PayPalButtons 
+                      style={{ layout: "vertical", color: "gold", shape: "rect", label: "donate" }}
+                      createOrder={(_, actions) => {
+                        return actions.order.create({
+                          intent: "CAPTURE",
+                          purchase_units: [
+                            {
+                              amount: {
+                                currency_code: "USD",
+                                value: paypalAmount && parseFloat(paypalAmount) > 0 ? parseFloat(paypalAmount).toFixed(2) : "10.00",
+                              },
+                              description: `Noor Quran - ${donationType === "sadaqah" ? "Sadaqah" : "Zakat"} Donation`,
+                            },
+                          ],
+                        });
+                      }}
+                      onApprove={async (_, actions) => {
+                        if (actions.order) {
+                          try {
+                            const details = await actions.order.capture();
+                            const val = details.purchase_units?.[0]?.amount?.value || paypalAmount;
+                            setSuccessMessage(`JazakAllahu Khairan! Thank you for your ${donationType} of $${val} via PayPal!`);
+                            setErrorMessage("");
+                            triggerConfetti();
+                          } catch (error) {
+                            setErrorMessage("There was an error processing the payment capture.");
+                          }
+                        }
+                      }}
+                      onError={() => {
+                        setErrorMessage("PayPal payment failed or was cancelled. Please try again.");
+                      }}
+                    />
+                  </PayPalScriptProvider>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

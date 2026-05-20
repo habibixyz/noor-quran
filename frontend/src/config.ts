@@ -37,6 +37,8 @@ export const CONTRACT_ADDRESSES = {
 // Default fallback chain in case wallet is disconnected
 export const DEFAULT_CHAIN_ID = NETWORKS.BASE_MAINNET.chainId;
 
+export const PAYPAL_CLIENT_ID = "Ac6_JxwBDHJKbgR6KYZGxMjWisowyEYf8yNitdBpCQzoRH-oZS5eKAWuPwTnjcC60ptJOD4qkg8_5aLh";
+
 // ABI definitions
 export const SADAQAH_ZAKAT_ABI = [
   "function donateSadaqah() external payable",
