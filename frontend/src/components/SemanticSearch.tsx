@@ -237,7 +237,7 @@ export const SemanticSearch: React.FC = () => {
               }
             }}
             placeholder="Type a word or phrase e.g., 'patience', 'charity', 'forgiveness'..."
-            className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
+            className="flex-grow min-w-0 bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
           />
           <button
             id="semantic-search-submit"
