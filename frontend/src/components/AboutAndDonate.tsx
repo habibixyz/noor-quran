@@ -92,50 +92,56 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
     const address = CONTRACT_ADDRESSES[activeChain as keyof typeof CONTRACT_ADDRESSES]?.sadaqahZakat;
     setContractAddress(address);
 
-    if (provider && (chainId === 8453 || chainId === 84532) && address) {
+    if (!address) {
+      loadMockStats();
+      return;
+    }
+
+    try {
+      // Use user's provider if connected and on correct network, otherwise use public read-only RPC
+      const activeProvider = (provider && (chainId === 8453 || chainId === 84532)) 
+        ? provider 
+        : new ethers.JsonRpcProvider(activeChain === 8453 ? NETWORKS.BASE_MAINNET.rpcUrl : NETWORKS.BASE_SEPOLIA.rpcUrl);
+
+      const contract = new ethers.Contract(address, SADAQAH_ZAKAT_ABI, activeProvider);
+      
+      const totalAccWei = await contract.totalAccumulated();
+      const totalSadWei = await contract.totalSadaqah();
+      const totalZakWei = await contract.totalZakat();
+      const uniqueDonors = await contract.totalDonorsCount();
+      const totalDons = await contract.totalDonationsCount();
+
+      const ethAccumulated = ethers.formatEther(totalAccWei);
+      
+      // Estimate poor families aided ($100 per family estimate)
+      const totalUsdVal = parseFloat(ethAccumulated) * ethPrice;
+      const familiesAided = Math.floor(totalUsdVal / 100);
+
+      setStats({
+        totalAccumulated: parseFloat(ethAccumulated).toFixed(4),
+        totalSadaqah: parseFloat(ethers.formatEther(totalSadWei)).toFixed(4),
+        totalZakat: parseFloat(ethers.formatEther(totalZakWei)).toFixed(4),
+        donorsCount: Number(uniqueDonors),
+        donationsCount: Number(totalDons),
+        poorFamiliesAided: familiesAided
+      });
+
+      // Load recent donations
       try {
-        const contract = new ethers.Contract(address, SADAQAH_ZAKAT_ABI, provider);
-        
-        const totalAccWei = await contract.totalAccumulated();
-        const totalSadWei = await contract.totalSadaqah();
-        const totalZakWei = await contract.totalZakat();
-        const uniqueDonors = await contract.totalDonorsCount();
-        const totalDons = await contract.totalDonationsCount();
-
-        const ethAccumulated = ethers.formatEther(totalAccWei);
-        
-        // Estimate poor families aided ($100 per family estimate)
-        const totalUsdVal = parseFloat(ethAccumulated) * ethPrice;
-        const familiesAided = Math.floor(totalUsdVal / 100);
-
-        setStats({
-          totalAccumulated: parseFloat(ethAccumulated).toFixed(4),
-          totalSadaqah: parseFloat(ethers.formatEther(totalSadWei)).toFixed(4),
-          totalZakat: parseFloat(ethers.formatEther(totalZakWei)).toFixed(4),
-          donorsCount: Number(uniqueDonors),
-          donationsCount: Number(totalDons),
-          poorFamiliesAided: familiesAided
-        });
-
-        // Load recent donations
-        try {
-          const recent = await contract.getRecentDonations(6);
-          const formatted = recent.map((item: any) => ({
-            donor: item.donor,
-            amount: parseFloat(ethers.formatEther(item.amount)).toFixed(4),
-            timestamp: new Date(Number(item.timestamp) * 1000).toLocaleDateString(),
-            isZakat: item.isZakat
-          }));
-          setRecentDonations(formatted);
-        } catch (e) {
-          console.warn("Failed to fetch recent donations from contract", e);
-        }
-
-      } catch (err) {
-        console.error("Error loading contract variables:", err);
-        loadMockStats();
+        const recent = await contract.getRecentDonations(6);
+        const formatted = recent.map((item: any) => ({
+          donor: item.donor,
+          amount: parseFloat(ethers.formatEther(item.amount)).toFixed(4),
+          timestamp: new Date(Number(item.timestamp) * 1000).toLocaleDateString(),
+          isZakat: item.isZakat
+        }));
+        setRecentDonations(formatted);
+      } catch (e) {
+        console.warn("Failed to fetch recent donations from contract", e);
       }
-    } else {
+
+    } catch (err) {
+      console.error("Error loading contract variables:", err);
       loadMockStats();
     }
   };
@@ -183,46 +189,8 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
 
     // Check if wallet is connected and on proper network
     if (!signer || !account) {
-      // Mock simulation mode
-      setTimeout(() => {
-        const fakeTx = "0x" + Math.random().toString(16).substring(2, 10) + "..." + Math.random().toString(16).substring(2, 6);
-        setTransactionHash(fakeTx);
-        
-        // Add to mock stats
-        const donatedVal = parseFloat(amountInEth);
-        const isZakatType = donationType === "zakat";
-        
-        setStats(prev => {
-          const newTotal = (parseFloat(prev.totalAccumulated) + donatedVal).toFixed(4);
-          const newSadaqah = isZakatType ? prev.totalSadaqah : (parseFloat(prev.totalSadaqah) + donatedVal).toFixed(4);
-          const newZakat = isZakatType ? (parseFloat(prev.totalZakat) + donatedVal).toFixed(4) : prev.totalZakat;
-          return {
-            totalAccumulated: newTotal,
-            totalSadaqah: newSadaqah,
-            totalZakat: newZakat,
-            donorsCount: prev.donorsCount + 1,
-            donationsCount: prev.donationsCount + 1,
-            poorFamiliesAided: Math.floor((parseFloat(newTotal) * ethPrice) / 100)
-          };
-        });
-
-        // Add to recent feed
-        setRecentDonations(prev => [
-          {
-            donor: account ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}` : "0xYour...Wallet",
-            amount: parseFloat(amountInEth).toFixed(4),
-            timestamp: "Just now",
-            isZakat: isZakatType,
-            txHash: fakeTx
-          },
-          ...prev.slice(0, 5)
-        ]);
-
-        setSuccessMessage(`Simulated donation of ${amountInEth} ETH received. JazakAllahu Khairan!`);
-        setIsLoading(false);
-        setCustomAmount("");
-        triggerConfetti();
-      }, 2000);
+      setErrorMessage("Please connect your wallet to make a donation.");
+      setIsLoading(false);
       return;
     }
 
@@ -292,7 +260,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-8 p-0 md:p-4">
+    <section className="flex flex-col gap-8 p-0 md:p-4" aria-label="About and Donate">
       {/* 1. Header Block with status indicator */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#33261a]">
         <div>
@@ -318,6 +286,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
               
               {chainId !== 8453 && chainId !== 84532 && (
                 <button
+                  id="switch-to-base-btn"
                   onClick={() => switchNetwork(8453)}
                   className="px-3 py-1.5 rounded-xl bg-amber-950/80 border border-amber-800 text-amber-300 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 hover:bg-amber-900 transition-all justify-center"
                 >
@@ -387,6 +356,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
             {/* Donation Type Toggles */}
             <div className="charity-toggle-wrap">
               <button
+                id="donation-type-sadaqah"
                 type="button"
                 onClick={() => setDonationType("sadaqah")}
                 className={`charity-toggle-btn ${donationType === "sadaqah" ? "active" : ""}`}
@@ -395,6 +365,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
                 <span>Sadaqah</span>
               </button>
               <button
+                id="donation-type-zakat"
                 type="button"
                 onClick={() => setDonationType("zakat")}
                 className={`charity-toggle-btn ${donationType === "zakat" ? "active" : ""}`}
@@ -415,6 +386,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
                   return (
                     <button
                       key={amount}
+                      id={`quick-donate-${amount}`}
                       type="button"
                       onClick={() => handleQuickDonate(amount)}
                       disabled={isLoading}
@@ -431,11 +403,12 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
             {/* Custom donation form */}
             <form onSubmit={handleCustomDonateSubmit} className="space-y-4">
               <div className="space-y-2">
-                <label className="block text-xs font-semibold text-[#8c6b4a]">
+                <label htmlFor="custom-donation-amount" className="block text-xs font-semibold text-[#8c6b4a]">
                   Or Enter Custom Amount (ETH)
                 </label>
                 <div className="custom-input-wrap">
                   <input
+                    id="custom-donation-amount"
                     type="number"
                     step="0.0001"
                     min="0.0001"
@@ -487,6 +460,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
               )}
 
               <button
+                id="submit-donation-btn"
                 type="submit"
                 disabled={isLoading || !customAmount}
                 className="gold-button w-full justify-center text-sm relative py-4 mt-2"
@@ -699,6 +673,6 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
         </div>
       </div>
 
-    </div>
+    </section>
   );
 };

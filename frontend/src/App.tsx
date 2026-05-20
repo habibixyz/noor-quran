@@ -34,6 +34,36 @@ function App() {
     injected: false
   });
 
+  // Dynamic SEO Update based on activeTab
+  useEffect(() => {
+    let title = "Noor Quran - Premium Reader & AI Semantic Search";
+    let description = "Discover the Quran with Noor Quran Reader. Featuring an elegant distraction-free interactive reader, translation toggles, audio recitations, and AI-powered semantic search to explore verses by their inner concepts.";
+
+    if (activeTab === "reader") {
+      title = "Noor Quran - Premium Interactive Reader";
+      description = "Read the Quran with our elegant distraction-free interactive reader. Features translation toggles and beautiful audio recitations.";
+    } else if (activeTab === "search") {
+      title = "Noor Quran - AI Semantic Search";
+      description = "Explore the Quran using advanced AI-powered semantic search. Find verses by their underlying concepts, themes, and meanings.";
+    } else if (activeTab === "about") {
+      title = "Noor Quran - Sadaqah & Zakat";
+      description = "Support the preservation of Al-Quran on-chain. Contribute via Sadaqah & Zakat on the Base Network.";
+    }
+
+    document.title = title;
+    
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description);
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      metaDescription.setAttribute('content', description);
+      document.head.appendChild(metaDescription);
+    }
+  }, [activeTab]);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsMobile(window.innerWidth < 768);
@@ -251,8 +281,9 @@ function App() {
 
           {/* Desktop Tab Selection (Hidden on Mobile) */}
           {!isMobile && (
-            <nav className="flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold">
+            <nav className="flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold" aria-label="Main Navigation">
               <button
+                id="nav-tab-reader"
                 onClick={() => setActiveTab("reader")}
                 className={`nav-tab ${activeTab === "reader" ? "active" : ""}`}
               >
@@ -260,6 +291,7 @@ function App() {
                 <span>Interactive Reader</span>
               </button>
               <button
+                id="nav-tab-search"
                 onClick={() => setActiveTab("search")}
                 className={`nav-tab ${activeTab === "search" ? "active" : ""}`}
               >
@@ -267,6 +299,7 @@ function App() {
                 <span>Search Quran</span>
               </button>
               <button
+                id="nav-tab-about"
                 onClick={() => setActiveTab("about")}
                 className={`nav-tab ${activeTab === "about" ? "active" : ""}`}
               >
@@ -288,6 +321,7 @@ function App() {
               </div>
             ) : (
               <button
+                id="header-connect-wallet-btn"
                 onClick={() => setShowWalletModal(true)}
                 className="gold-button flex items-center gap-1 py-1 px-2.5 text-[10px] md:text-xs font-bold"
               >
@@ -304,8 +338,9 @@ function App() {
             className="fixed bottom-0 left-0 right-0 z-50 glass-panel bg-[var(--color-bg-dark)]/95 backdrop-blur-xl pb-safe"
             style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50, borderRadius: '16px 16px 0 0' }}
           >
-            <div className="flex justify-around p-2">
+            <nav className="flex justify-around p-2" aria-label="Mobile Navigation">
               <button
+                id="mobile-nav-reader"
                 onClick={() => setActiveTab("reader")}
                 className={`mobile-nav-btn ${activeTab === "reader" ? "active" : ""}`}
               >
@@ -313,6 +348,7 @@ function App() {
                 <span className="text-xs font-bold">Reader</span>
               </button>
               <button
+                id="mobile-nav-search"
                 onClick={() => setActiveTab("search")}
                 className={`mobile-nav-btn ${activeTab === "search" ? "active" : ""}`}
               >
@@ -320,13 +356,14 @@ function App() {
                 <span className="text-xs font-bold">Search</span>
               </button>
               <button
+                id="mobile-nav-about"
                 onClick={() => setActiveTab("about")}
                 className={`mobile-nav-btn ${activeTab === "about" ? "active" : ""}`}
               >
                 <Heart size={18} />
                 <span className="text-xs font-bold">Charity</span>
               </button>
-            </div>
+            </nav>
           </div>
         )}
 
@@ -377,8 +414,10 @@ function App() {
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-md font-bold text-white">Connect Web3 Wallet</h3>
               <button
+                id="close-wallet-modal-btn"
                 onClick={() => setShowWalletModal(false)}
                 className="text-[#8c6b4a] hover:text-white font-bold p-1 text-sm cursor-pointer"
+                aria-label="Close wallet modal"
               >
                 ✕
               </button>
@@ -391,6 +430,7 @@ function App() {
             <div className="space-y-2.5">
               {/* Rabby Wallet Option */}
               <button
+                id="wallet-option-rabby"
                 onClick={() => connectWallet("rabby")}
                 disabled={isConnecting}
                 className="w-full p-3 rounded-xl border border-[var(--color-glass-border)] bg-[#1f1810] hover:border-[var(--color-gold)] flex items-center justify-between text-left transition-all group disabled:opacity-50 cursor-pointer"
@@ -413,6 +453,7 @@ function App() {
 
               {/* MetaMask Option */}
               <button
+                id="wallet-option-metamask"
                 onClick={() => connectWallet("metamask")}
                 disabled={isConnecting}
                 className="w-full p-3 rounded-xl border border-[var(--color-glass-border)] bg-[#1f1810] hover:border-[var(--color-gold)] flex items-center justify-between text-left transition-all group disabled:opacity-50 cursor-pointer"
@@ -435,6 +476,7 @@ function App() {
 
               {/* Coinbase Wallet Option */}
               <button
+                id="wallet-option-coinbase"
                 onClick={() => connectWallet("coinbase")}
                 disabled={isConnecting}
                 className="w-full p-3 rounded-xl border border-[var(--color-glass-border)] bg-[#1f1810] hover:border-[var(--color-gold)] flex items-center justify-between text-left transition-all group disabled:opacity-50 cursor-pointer"
@@ -458,6 +500,7 @@ function App() {
               {/* Standard Injected Wallet */}
               {!availableWallets.rabby && !availableWallets.metaMask && !availableWallets.coinbase && (
                 <button
+                  id="wallet-option-browser"
                   onClick={() => connectWallet("browser")}
                   disabled={isConnecting || !availableWallets.injected}
                   className="w-full p-3 rounded-xl border border-[var(--color-glass-border)] bg-[#1f1810] hover:border-[var(--color-gold)] flex items-center justify-between text-left transition-all group disabled:opacity-50 cursor-pointer"

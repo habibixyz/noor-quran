@@ -209,7 +209,7 @@ export const SemanticSearch: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-6 p-0 md:p-4">
+    <section className="flex flex-col gap-6 p-0 md:p-4" aria-label="Semantic Search">
       {/* Search Input Panel */}
       <div className="glass-panel p-6 flex flex-col gap-4 glowing-active">
         <div>
@@ -224,7 +224,9 @@ export const SemanticSearch: React.FC = () => {
 
         {/* Search Bar */}
         <div className="flex items-center gap-2 bg-[#16110b] border border-[var(--color-glass-border)] rounded-xl p-1.5 focus-within:border-[var(--color-gold)] transition-all">
+          <label htmlFor="semantic-search-input" className="sr-only">Search</label>
           <input
+            id="semantic-search-input"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -238,9 +240,11 @@ export const SemanticSearch: React.FC = () => {
             className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
           />
           <button
+            id="semantic-search-submit"
             onClick={() => handleSearch(query)}
             disabled={isLoading || !query.trim()}
             className="bg-[#33261a] hover:bg-[#4d3926] text-[var(--color-gold)] font-bold rounded-lg p-2.5 flex items-center justify-center transition-all disabled:opacity-50"
+            aria-label="Submit Search"
           >
             <Search size={18} />
           </button>
@@ -255,6 +259,7 @@ export const SemanticSearch: React.FC = () => {
             {suggestedTopics.map((topic, idx) => (
               <button
                 key={idx}
+                id={`topic-btn-${idx}`}
                 onClick={() => setQuery(topic.query)}
                 className="text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-[#33261a] bg-[#1f1810] hover:bg-[#33261a] text-[#b39a7d] hover:text-[var(--color-gold)] transition-all"
               >
@@ -303,8 +308,10 @@ export const SemanticSearch: React.FC = () => {
                     </span>
                   </div>
                   <button
+                    id={`play-pause-btn-${result.id}`}
                     onClick={() => handlePlayPause(result)}
                     className="text-[var(--color-gold)] hover:text-white bg-[#33261a] hover:bg-[#4d3926] p-1.5 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+                    aria-label="Play/Pause verse audio"
                   >
                     {isPlaying && playingType === "verse" && playingSurahId === result.surah_id && playingVerseNumber === result.verse_number ? (
                       <Pause size={14} className="animate-pulse" />
@@ -330,12 +337,14 @@ export const SemanticSearch: React.FC = () => {
                 {/* Action Buttons */}
                 <div className="flex gap-2">
                   <button
+                    id={`copy-btn-${result.id}`}
                     onClick={() => copyToClipboard(`${result.text_uthmani}\n\n"${result.translation}" - Quran ${result.verse_key}`)}
                     className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                   >
                     <Copy size={13} /> Copy Verse
                   </button>
                   <button
+                    id={`share-btn-${result.id}`}
                     onClick={() => shareVerse(result)}
                     className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                   >
@@ -357,6 +366,6 @@ export const SemanticSearch: React.FC = () => {
       )}
 
 
-    </div>
+    </section>
   );
 };
