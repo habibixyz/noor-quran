@@ -664,6 +664,41 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
         </div>
       </div>
 
+      {/* Disclaimer & Credits */}
+      <div className="premium-card" style={{ marginTop: "16px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          <h4 className="text-xs uppercase font-extrabold text-[var(--color-gold-light)] flex items-center gap-1">
+            <ShieldCheck size={12} className="text-[var(--color-gold)]" />
+            <span>Disclaimer & Credits</span>
+          </h4>
+
+          <div className="text-[11px] text-[#8c6b4a] leading-relaxed" style={{ lineHeight: "1.7" }}>
+            <p style={{ marginBottom: "8px" }}>
+              All Quranic text is the sacred word of <strong className="text-[#b39a7d]">Allah ﷻ</strong> and belongs to no one. 
+              This platform claims no ownership over the Holy Quran.
+            </p>
+            <p style={{ marginBottom: "8px" }}>
+              Translations are provided by their respective scholars. Audio recitations are by their respective reciters 
+              and sourced from publicly available repositories.
+            </p>
+            <p>
+              This is a digital reader and on-chain preservation tool — built with reverence and humility.
+            </p>
+          </div>
+
+          <div className="h-[1px] bg-[#33261a]"></div>
+
+          <div className="text-center" style={{ paddingTop: "4px" }}>
+            <div className="text-[10px] text-[#6b5436] font-semibold tracking-wide">
+              Noor Quran Platform
+            </div>
+            <div className="text-[9px] text-[#4d3926] mt-1">
+              Preserving Al-Quran On-chain · Base Network
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Search, Play, Pause, AlertCircle, Copy, Share2 } from "lucide-react";
+import { useAudio } from "../context/AudioContext";
 import { surahList, quranTexts } from "../data/quranData";
 
 const cleanTranslationText = (text: string): string => {
@@ -29,9 +30,7 @@ export const SemanticSearch: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   
-  // Audio state
-  const [playingId, setPlayingId] = useState<number | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const { isPlaying, playingType, playingSurahId, playingVerseNumber, playVerse } = useAudio();
 
   const suggestedTopics = [
     { label: "Mercy & Compassion", query: "mercy and forgiveness of Allah" },
@@ -137,40 +136,7 @@ export const SemanticSearch: React.FC = () => {
   };
 
   const handlePlayPause = (result: SearchResult) => {
-    if (!result.audio_url && !result.verse_key) return;
-
-    // Use official Quran.com audio CDN if backend did not supply it
-    const url = result.audio_url || (() => {
-      const [sId, vId] = result.verse_key.split(":");
-      const paddedSurah = String(sId).padStart(3, "0");
-      const paddedVerse = String(vId).padStart(3, "0");
-      return `https://verses.quran.com/Alafasy/mp3/${paddedSurah}${paddedVerse}.mp3`;
-    })();
-
-    if (playingId === result.id) {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = "";
-        audioRef.current.load(); // Release media socket cleanly
-      }
-      setPlayingId(null);
-    } else {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = "";
-        audioRef.current.load(); // Cleanly dump previous loading stream
-      }
-      
-      if (audioRef.current) {
-        audioRef.current.src = url;
-        audioRef.current.load(); // Force pre-buffering on mobile
-        audioRef.current.play().then(() => {
-          setPlayingId(result.id);
-        }).catch((err) => {
-          console.error("Audio playback error:", err);
-        });
-      }
-    }
+    playVerse(result.surah_id, result.verse_number);
   };
 
   const copyToClipboard = (text: string) => {
@@ -284,7 +250,11 @@ export const SemanticSearch: React.FC = () => {
                     onClick={() => handlePlayPause(result)}
                     className="text-[var(--color-gold)] hover:text-white bg-[#33261a] hover:bg-[#4d3926] p-1.5 rounded-full w-8 h-8 flex items-center justify-center transition-colors"
                   >
-                    {playingId === result.id ? <Pause size={14} className="animate-pulse" /> : <Play size={14} />}
+                    {isPlaying && playingType === "verse" && playingSurahId === result.surah_id && playingVerseNumber === result.verse_number ? (
+                      <Pause size={14} className="animate-pulse" />
+                    ) : (
+                      <Play size={14} />
+                    )}
                   </button>
                 </div>
 
@@ -330,11 +300,7 @@ export const SemanticSearch: React.FC = () => {
         </div>
       )}
 
-      <audio
-        ref={audioRef}
-        onEnded={() => setPlayingId(null)}
-        className="hidden"
-      />
+
     </div>
   );
 };

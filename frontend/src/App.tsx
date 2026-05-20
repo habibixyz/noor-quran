@@ -5,10 +5,14 @@ import { AboutAndDonate } from "./components/AboutAndDonate";
 import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight } from "lucide-react";
 import { ethers } from "ethers";
 import { NETWORKS } from "./config";
+import { AudioProvider, useAudio } from "./context/AudioContext";
+import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
 
 function App() {
   const [activeTab, setActiveTab] = useState<"reader" | "search" | "about">("reader");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
+  const { playingType } = useAudio();
+  const audioIsActive = playingType !== null;
 
   // Wallet state
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
@@ -325,7 +329,7 @@ function App() {
         )}
 
         {/* Main Content Render */}
-        <main className="flex-grow py-2 md:py-4">
+        <main className="flex-grow py-2 md:py-4" style={{ paddingBottom: isMobile ? (audioIsActive ? "180px" : "80px") : undefined }}>
           {activeTab === "reader" ? (
             <QuranReader />
           ) : activeTab === "search" ? (
@@ -343,19 +347,26 @@ function App() {
           )}
         </main>
 
-        {/* Elegant Footer */}
-        <footer className="glass-panel mb-4 p-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8c6b4a]">
-          <div className="flex items-center gap-1.5">
-            <span>© 2026 Noor Quran Platform</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1 text-center md:text-left">
-              <Heart size={12} className="text-rose-500 fill-rose-500 animate-pulse shrink-0 inline-block mr-1" />
-              <span>Preserving Al-Quran On-chain on Base Network</span>
+        {/* Elegant Footer - hidden on mobile to maximize scroll space */}
+        {!isMobile && (
+          <footer className="glass-panel mb-4 p-6 flex flex-col gap-3 text-xs text-[#8c6b4a]">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                <Heart size={12} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />
+                <span>Preserving Al-Quran On-chain on Base Network</span>
+              </div>
+              <span className="text-[10px] text-[#6b5436]">Noor Quran Platform · Built with reverence</span>
             </div>
-          </div>
-        </footer>
+            <div className="h-[1px] bg-[#33261a]"></div>
+            <div className="text-[10px] text-[#6b5436] leading-relaxed text-center">
+              All Quranic text is the word of Allah ﷻ and belongs to no one. Translations are by their respective scholars.
+              Audio recitations are provided by their respective reciters. This platform is a digital reader tool only.
+            </div>
+          </footer>
+        )}
       </div>
+
+      <GlobalAudioPlayer />
 
       {/* GLOBAL WALLET SELECTION MODAL */}
       {showWalletModal && (
@@ -478,4 +489,10 @@ function App() {
   );
 }
 
-export default App;
+export default function AppWithProvider() {
+  return (
+    <AudioProvider>
+      <App />
+    </AudioProvider>
+  );
+}

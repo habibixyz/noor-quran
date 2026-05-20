@@ -5,6 +5,7 @@ export interface SurahData {
   versesCount: number;
   type: "Meccan" | "Medinan";
   englishMeaning: string;
+  altName?: string;
 }
 
 export interface Verse {
@@ -15,8 +16,8 @@ export interface Verse {
 
 // Complete list of all 114 Surahs with metadata and English meanings
 export const surahList: SurahData[] = [
-  { index: 1, name: "الفاتحة", englishName: "Al-Fatihah", versesCount: 7, type: "Meccan", englishMeaning: "The Opening" },
-  { index: 2, name: "البقرة", englishName: "Al-Baqarah", versesCount: 286, type: "Medinan", englishMeaning: "The Cow" },
+  { index: 1, name: "الفاتحة", englishName: "Al-Fatihah", versesCount: 7, type: "Meccan", englishMeaning: "The Opening", altName: "Fatiha Sharif" },
+  { index: 2, name: "البقرة", englishName: "Al-Baqarah", versesCount: 286, type: "Medinan", englishMeaning: "The Cow", altName: "Surah Baqarah" },
   { index: 3, name: "آل عمران", englishName: "Ali 'Imran", versesCount: 200, type: "Medinan", englishMeaning: "Family of Imran" },
   { index: 4, name: "النساء", englishName: "An-Nisa", versesCount: 176, type: "Medinan", englishMeaning: "The Women" },
   { index: 5, name: "المائدة", englishName: "Al-Ma'idah", versesCount: 120, type: "Medinan", englishMeaning: "The Table Spread" },
@@ -32,7 +33,7 @@ export const surahList: SurahData[] = [
   { index: 15, name: "الحجر", englishName: "Al-Hijr", versesCount: 99, type: "Meccan", englishMeaning: "The Rocky Tract" },
   { index: 16, name: "النحل", englishName: "An-Nahl", versesCount: 128, type: "Meccan", englishMeaning: "The Bee" },
   { index: 17, name: "الإسراء", englishName: "Al-Isra", versesCount: 111, type: "Meccan", englishMeaning: "The Night Journey" },
-  { index: 18, name: "الكهف", englishName: "Al-Kahf", versesCount: 110, type: "Meccan", englishMeaning: "The Cave" },
+  { index: 18, name: "الكهف", englishName: "Al-Kahf", versesCount: 110, type: "Meccan", englishMeaning: "The Cave", altName: "Kahf Sharif" },
   { index: 19, name: "مريم", englishName: "Maryam", versesCount: 98, type: "Meccan", englishMeaning: "Mary" },
   { index: 20, name: "طه", englishName: "Taha", versesCount: 135, type: "Meccan", englishMeaning: "Ta-Ha" },
   { index: 21, name: "النبياء", englishName: "Al-Anbiya", versesCount: 112, type: "Meccan", englishMeaning: "The Prophets" },
@@ -50,7 +51,7 @@ export const surahList: SurahData[] = [
   { index: 33, name: "الأحزاب", englishName: "Al-Ahzab", versesCount: 73, type: "Medinan", englishMeaning: "The Combined Forces" },
   { index: 34, name: "سبأ", englishName: "Saba", versesCount: 54, type: "Meccan", englishMeaning: "Sheba" },
   { index: 35, name: "فاطر", englishName: "Fatir", versesCount: 45, type: "Meccan", englishMeaning: "Originator" },
-  { index: 36, name: "يس", englishName: "Ya-Sin", versesCount: 83, type: "Meccan", englishMeaning: "Ya-Sin" },
+  { index: 36, name: "يس", englishName: "Ya-Sin", versesCount: 83, type: "Meccan", englishMeaning: "Ya-Sin", altName: "Yaseen Sharif" },
   { index: 37, name: "الصافات", englishName: "As-Saffat", versesCount: 182, type: "Meccan", englishMeaning: "Those who set the Ranks" },
   { index: 38, name: "ص", englishName: "Sad", versesCount: 88, type: "Meccan", englishMeaning: "The Letter Sad" },
   { index: 39, name: "الزمر", englishName: "Az-Zumar", versesCount: 75, type: "Meccan", englishMeaning: "The Troops" },
@@ -62,15 +63,15 @@ export const surahList: SurahData[] = [
   { index: 45, name: "الجاثية", englishName: "Al-Jathiyah", versesCount: 37, type: "Meccan", englishMeaning: "The Crouching" },
   { index: 46, name: "الأحقاف", englishName: "Al-Ahqaf", versesCount: 35, type: "Meccan", englishMeaning: "The Wind-Curved Sandhills" },
   { index: 47, name: "محمد", englishName: "Muhammad", versesCount: 38, type: "Medinan", englishMeaning: "Muhammad" },
-  { index: 48, name: "الفتح", englishName: "Al-Fath", versesCount: 29, type: "Medinan", englishMeaning: "The Victory" },
+  { index: 48, name: "الفتح", englishName: "Al-Fath", versesCount: 29, type: "Medinan", englishMeaning: "The Victory", altName: "Surah Fath" },
   { index: 49, name: "الحجرات", englishName: "Al-Hujurat", versesCount: 18, type: "Medinan", englishMeaning: "The Dwellings" },
   { index: 50, name: "ق", englishName: "Qaf", versesCount: 45, type: "Meccan", englishMeaning: "The Letter Qaf" },
   { index: 51, name: "الذاريات", englishName: "Adh-Dhariyat", versesCount: 60, type: "Meccan", englishMeaning: "The Winnowing Winds" },
   { index: 52, name: "الطور", englishName: "At-Tur", versesCount: 49, type: "Meccan", englishMeaning: "The Mount" },
   { index: 53, name: "النجم", englishName: "An-Najm", versesCount: 62, type: "Meccan", englishMeaning: "The Star" },
   { index: 54, name: "القمر", englishName: "Al-Qamar", versesCount: 55, type: "Meccan", englishMeaning: "The Moon" },
-  { index: 55, name: "الرحمن", englishName: "Ar-Rahman", versesCount: 78, type: "Medinan", englishMeaning: "The Beneficent" },
-  { index: 56, name: "الواقعة", englishName: "Al-Waqi'ah", versesCount: 96, type: "Meccan", englishMeaning: "The Inevitable" },
+  { index: 55, name: "الرحمن", englishName: "Ar-Rahman", versesCount: 78, type: "Medinan", englishMeaning: "The Beneficent", altName: "Rahman Sharif" },
+  { index: 56, name: "الواقعة", englishName: "Al-Waqi'ah", versesCount: 96, type: "Meccan", englishMeaning: "The Inevitable", altName: "Waqiah Sharif" },
   { index: 57, name: "الحديد", englishName: "Al-Hadid", versesCount: 29, type: "Medinan", englishMeaning: "The Iron" },
   { index: 58, name: "المجادلة", englishName: "Al-Mujadilah", versesCount: 22, type: "Medinan", englishMeaning: "The Pleading Woman" },
   { index: 59, name: "الحشر", englishName: "Al-Hashr", versesCount: 24, type: "Medinan", englishMeaning: "The Exile" },
@@ -81,13 +82,13 @@ export const surahList: SurahData[] = [
   { index: 64, name: "التغابن", englishName: "At-Taghabun", versesCount: 18, type: "Medinan", englishMeaning: "Mutual Disillusion" },
   { index: 65, name: "الطلاق", englishName: "At-Talaq", versesCount: 12, type: "Medinan", englishMeaning: "The Divorce" },
   { index: 66, name: "التحريم", englishName: "At-Tahrim", versesCount: 12, type: "Medinan", englishMeaning: "The Prohibition" },
-  { index: 67, name: "الملك", englishName: "Al-Mulk", versesCount: 30, type: "Meccan", englishMeaning: "The Sovereignty" },
+  { index: 67, name: "الملك", englishName: "Al-Mulk", versesCount: 30, type: "Meccan", englishMeaning: "The Sovereignty", altName: "Mulk Sharif" },
   { index: 68, name: "القلم", englishName: "Al-Qalam", versesCount: 52, type: "Meccan", englishMeaning: "The Pen" },
   { index: 69, name: "الحاقة", englishName: "Al-Haqqah", versesCount: 52, type: "Meccan", englishMeaning: "The Reality" },
   { index: 70, name: "المعارج", englishName: "Al-Ma'arij", versesCount: 44, type: "Meccan", englishMeaning: "The Ascending Stairways" },
   { index: 71, name: "نوح", englishName: "Nuh", versesCount: 28, type: "Meccan", englishMeaning: "Noah" },
   { index: 72, name: "الجن", englishName: "Al-Jinn", versesCount: 28, type: "Meccan", englishMeaning: "The Jinn" },
-  { index: 73, name: "المزمل", englishName: "Al-Muzzammil", versesCount: 20, type: "Meccan", englishMeaning: "The Enshrouded One" },
+  { index: 73, name: "المزمل", englishName: "Al-Muzzammil", versesCount: 20, type: "Meccan", englishMeaning: "The Enshrouded One", altName: "Muzammil Sharif" },
   { index: 74, name: "المدثر", englishName: "Al-Muddaththir", versesCount: 56, type: "Meccan", englishMeaning: "The Cloaked One" },
   { index: 75, name: "القيامة", englishName: "Al-Qiyamah", versesCount: 40, type: "Meccan", englishMeaning: "The Resurrection" },
   { index: 76, name: "الإنسان", englishName: "Al-Insan", versesCount: 31, type: "Medinan", englishMeaning: "The Man" },
@@ -126,9 +127,9 @@ export const surahList: SurahData[] = [
   { index: 109, name: "الكافرون", englishName: "Al-Kafirun", versesCount: 6, type: "Meccan", englishMeaning: "The Disbelievers" },
   { index: 110, name: "النصر", englishName: "An-Nasr", versesCount: 3, type: "Medinan", englishMeaning: "The Help" },
   { index: 111, name: "المسد", englishName: "Al-Masad", versesCount: 5, type: "Meccan", englishMeaning: "The Palm Fiber" },
-  { index: 112, name: "الإخلاص", englishName: "Al-Ikhlas", versesCount: 4, type: "Meccan", englishMeaning: "The Sincerity" },
-  { index: 113, name: "الفلق", englishName: "Al-Falaq", versesCount: 5, type: "Meccan", englishMeaning: "The Daybreak" },
-  { index: 114, name: "الناس", englishName: "An-Nas", versesCount: 6, type: "Meccan", englishMeaning: "Mankind" }
+  { index: 112, name: "الإخلاص", englishName: "Al-Ikhlas", versesCount: 4, type: "Meccan", englishMeaning: "The Sincerity", altName: "Ikhlas Sharif / Qul Hu" },
+  { index: 113, name: "الفلق", englishName: "Al-Falaq", versesCount: 5, type: "Meccan", englishMeaning: "The Daybreak", altName: "Falaq Sharif" },
+  { index: 114, name: "الناس", englishName: "An-Nas", versesCount: 6, type: "Meccan", englishMeaning: "Mankind", altName: "Naas Sharif" }
 ];
 
 // In-app embedded database of Surah texts (Arabic and English translation)

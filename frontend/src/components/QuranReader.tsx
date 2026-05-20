@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { surahList, getSurahVerses } from "../data/quranData";
 import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown } from "lucide-react";
+import { useAudio, LANGUAGE_OPTIONS, RECITER_OPTIONS } from "../context/AudioContext";
 
 interface Verse {
   id: number;
@@ -8,22 +9,6 @@ interface Verse {
   text_uthmani: string;
   translation: string;
   audio_url?: string;
-}
-
-interface LanguageOption {
-  code: string;
-  name: string;
-  nativeName: string;
-  translationId: number;
-}
-
-interface ReciterOption {
-  id: string;
-  name: string;
-  style: string;
-  reciterId: number;
-  surahAudioPattern: (surahId: number) => string;
-  verseAudioPattern: (surahId: number, verseNum: number) => string;
 }
 
 const cleanTranslationText = (text: string): string => {
@@ -35,62 +20,6 @@ const cleanTranslationText = (text: string): string => {
     .trim();
 };
 
-const LANGUAGE_OPTIONS: LanguageOption[] = [
-  { code: "en", name: "English (Sahih)", nativeName: "English", translationId: 85 },
-  { code: "es", name: "Spanish", nativeName: "Español", translationId: 83 },
-  { code: "fr", name: "French", nativeName: "Français", translationId: 136 },
-  { code: "ur", name: "Urdu", nativeName: "اردو", translationId: 158 },
-  { code: "tr", name: "Turkish", nativeName: "Türkçe", translationId: 77 },
-  { code: "id", name: "Indonesian", nativeName: "Bahasa Indonesia", translationId: 33 },
-  { code: "ru", name: "Russian", nativeName: "Русский", translationId: 45 },
-  { code: "bn", name: "Bengali", nativeName: "বাংলা", translationId: 161 },
-  { code: "zh", name: "Chinese", nativeName: "中文", translationId: 109 },
-  { code: "de", name: "German", nativeName: "Deutsch", translationId: 27 },
-];
-
-const RECITER_OPTIONS: ReciterOption[] = [
-  { 
-    id: "alafasy", 
-    name: "Mishary Alafasy", 
-    style: "Murattal", 
-    reciterId: 7,
-    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${s}.mp3`,
-    verseAudioPattern: (s, v) => `https://verses.quran.com/Alafasy/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
-  },
-  { 
-    id: "sudais", 
-    name: "Abdul Rahman Al-Sudais", 
-    style: "Murattal", 
-    reciterId: 3,
-    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.sudais/${s}.mp3`,
-    verseAudioPattern: (s, v) => `https://verses.quran.com/Sudais/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
-  },
-  { 
-    id: "muaiqly", 
-    name: "Maher Al-Muaiqly", 
-    style: "Murattal", 
-    reciterId: 12,
-    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.mahermuaiqly/${s}.mp3`,
-    verseAudioPattern: (s, v) => `https://verses.quran.com/MaherAlMuaiqly/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
-  },
-  { 
-    id: "ghamadi", 
-    name: "Saad Al-Ghamdi", 
-    style: "Murattal", 
-    reciterId: 5,
-    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/ar.ghaamidi/${s}.mp3`,
-    verseAudioPattern: (s, v) => `https://verses.quran.com/Ghamadi/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
-  },
-  { 
-    id: "english", 
-    name: "English translation (Ibrahim Walk)", 
-    style: "Translation Audio", 
-    reciterId: 12,
-    surahAudioPattern: (s) => `https://cdn.islamic.network/quran/audio-surah/128/en.walk/${s}.mp3`,
-    verseAudioPattern: (s, v) => `https://verses.quran.com/IbrahimWalk/mp3/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`
-  }
-];
-
 export const QuranReader: React.FC = () => {
   const [selectedSurah, setSelectedSurah] = useState<number>(1);
   const [verses, setVerses] = useState<Verse[]>([]);
@@ -98,65 +27,24 @@ export const QuranReader: React.FC = () => {
   const [showGlobalTranslation, setShowGlobalTranslation] = useState<boolean>(true);
   const [individualToggles, setIndividualToggles] = useState<Record<number, boolean>>({});
 
-  // Translation & Recitation settings state
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(
-    () => {
-      const saved = localStorage.getItem("quran_language");
-      if (saved) {
-        try {
-          const parsed = JSON.parse(saved);
-          const matched = LANGUAGE_OPTIONS.find(l => l.translationId === parsed.translationId);
-          if (matched) return matched;
-        } catch (e) {}
-      }
-      return LANGUAGE_OPTIONS[0]; // English
-    }
-  );
-
-  const [selectedReciter, setSelectedReciter] = useState<ReciterOption>(
-    () => {
-      const saved = localStorage.getItem("quran_reciter");
-      if (saved) {
-        const matched = RECITER_OPTIONS.find(r => r.id === saved);
-        if (matched) return matched;
-      }
-      return RECITER_OPTIONS[0]; // Alafasy
-    }
-  );
+  const {
+    selectedLanguage,
+    setSelectedLanguage,
+    selectedReciter,
+    setSelectedReciter,
+    isPlaying,
+    playingType,
+    playingSurahId,
+    playingVerseNumber,
+    playSurah,
+    playVerse,
+  } = useAudio();
 
   const [showSettingsDropdown, setShowSettingsDropdown] = useState<boolean>(false);
   const [activeSettingsTab, setActiveSettingsTab] = useState<"language" | "audio">("language");
-  
-  // Audio state (Surah level)
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [audioUrl, setAudioUrl] = useState<string>("");
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  // Audio state (Verse level)
-  const [playingVerseNum, setPlayingVerseNum] = useState<number | null>(null);
-  const verseAudioRef = useRef<HTMLAudioElement | null>(null);
 
   // Mobile UX State
   const [isMobileListOpen, setIsMobileListOpen] = useState<boolean>(false);
-
-  // Listen for recitation settings changes to dynamically rebuild audio source
-  useEffect(() => {
-    setAudioUrl(selectedReciter.surahAudioPattern(selectedSurah));
-    
-    // Stop surah audio and verse audio if they are playing
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
-      audioRef.current.load();
-      setIsPlaying(false);
-    }
-    if (verseAudioRef.current) {
-      verseAudioRef.current.pause();
-      verseAudioRef.current.src = "";
-      verseAudioRef.current.load();
-      setPlayingVerseNum(null);
-    }
-  }, [selectedReciter, selectedSurah]);
 
   useEffect(() => {
     let isMounted = true;
@@ -164,22 +52,6 @@ export const QuranReader: React.FC = () => {
     
     // Clear individual verse toggles when switching Surah
     setIndividualToggles({});
-    
-    // Stop surah audio and fully release socket/threads
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
-      audioRef.current.load();
-      setIsPlaying(false);
-    }
-
-    // Stop verse audio and fully release socket/threads
-    if (verseAudioRef.current) {
-      verseAudioRef.current.pause();
-      verseAudioRef.current.src = "";
-      verseAudioRef.current.load();
-      setPlayingVerseNum(null);
-    }
 
     // Fetch dynamic Surah data directly from the public Quran.com API with selected translation
     fetch(`https://api.quran.com/api/v4/verses/by_chapter/${selectedSurah}?language=en&words=false&translations=${selectedLanguage.translationId}&fields=text_uthmani&per_page=300`)
@@ -233,74 +105,12 @@ export const QuranReader: React.FC = () => {
 
   // Surah Audio Playback
   const handlePlayPause = () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
-      audioRef.current.load(); // Cleanly dump the large Surah stream
-      setIsPlaying(false);
-    } else {
-      // Pause and release any active verse audio first to prevent overlap/socket contention
-      if (verseAudioRef.current) {
-        verseAudioRef.current.pause();
-        verseAudioRef.current.src = "";
-        verseAudioRef.current.load();
-        setPlayingVerseNum(null);
-      }
-
-      // Explicitly load the media source to satisfy strict mobile browser autoplay/stream models
-      audioRef.current.src = audioUrl;
-      audioRef.current.load();
-
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch((err) => {
-        console.error("Surah audio playback error:", err);
-      });
-    }
+    playSurah(selectedSurah);
   };
 
   // Verse Audio Playback
   const playVerseAudio = (verse: Verse) => {
-    // If already playing this verse, pause and release it
-    if (playingVerseNum === verse.verse_number) {
-      if (verseAudioRef.current) {
-        verseAudioRef.current.pause();
-        verseAudioRef.current.src = "";
-        verseAudioRef.current.load();
-      }
-      setPlayingVerseNum(null);
-      return;
-    }
-
-    // Stop and fully dump any surah-level playing audio
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = "";
-      audioRef.current.load();
-      setIsPlaying(false);
-    }
-
-    // Stop and fully dump currently playing verse audio before swapping source
-    if (verseAudioRef.current) {
-      verseAudioRef.current.pause();
-      verseAudioRef.current.src = "";
-      verseAudioRef.current.load();
-    }
-
-    // Resolve audio URL based on selected reciter
-    const url = selectedReciter.verseAudioPattern(selectedSurah, verse.verse_number);
-
-    if (verseAudioRef.current) {
-      verseAudioRef.current.src = url;
-      verseAudioRef.current.load(); // Force pre-buffering on mobile
-      verseAudioRef.current.play().then(() => {
-        setPlayingVerseNum(verse.verse_number);
-      }).catch((err) => {
-        console.error("Verse audio playback error:", err);
-      });
-    }
+    playVerse(selectedSurah, verse.verse_number);
   };
 
   const copyToClipboard = (text: string) => {
@@ -369,10 +179,7 @@ export const QuranReader: React.FC = () => {
               return (
                 <button
                   key={lang.code}
-                  onClick={() => {
-                    setSelectedLanguage(lang);
-                    localStorage.setItem("quran_language", JSON.stringify(lang));
-                  }}
+                  onClick={() => setSelectedLanguage(lang)}
                   className={`w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all ${
                     isSelected
                       ? "bg-[#241c12] border-[var(--color-gold)] shadow-[0_0_12px_rgba(201,168,76,0.15)]"
@@ -412,10 +219,7 @@ export const QuranReader: React.FC = () => {
               return (
                 <button
                   key={reciter.id}
-                  onClick={() => {
-                    setSelectedReciter(reciter);
-                    localStorage.setItem("quran_reciter", reciter.id);
-                  }}
+                  onClick={() => setSelectedReciter(reciter)}
                   className={`w-full flex items-center justify-between p-3 rounded-xl border text-left transition-all ${
                     isSelected
                       ? "bg-[#241c12] border-[var(--color-gold)] shadow-[0_0_12px_rgba(201,168,76,0.15)]"
@@ -511,7 +315,7 @@ export const QuranReader: React.FC = () => {
                   </span>
                   <div>
                     <div className="font-semibold text-sm">{surah.englishName}</div>
-                    <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}</div>
+                    <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}{surah.altName ? ` · ${surah.altName}` : ""}</div>
                   </div>
                 </div>
                 <div className="text-right hidden xl:block">
@@ -595,7 +399,7 @@ export const QuranReader: React.FC = () => {
               className="bg-[#33261a] text-[#c9a84c] border border-[#4d3926] text-xs md:text-sm py-2 px-3 md:px-4 flex-1 md:flex-none justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#4d3926]"
               title="Listen to beautiful audio recitation"
             >
-              {isPlaying ? (
+              {isPlaying && playingType === "surah" && playingSurahId === selectedSurah ? (
                 <>
                   <Pause size={16} className="text-[#c9a84c] animate-pulse" />
                   <span>Pause Surah Recitation</span>
@@ -607,17 +411,6 @@ export const QuranReader: React.FC = () => {
                 </>
               )}
             </button>
-            <audio
-              ref={audioRef}
-              src={audioUrl}
-              onEnded={() => setIsPlaying(false)}
-              className="hidden"
-            />
-            <audio
-              ref={verseAudioRef}
-              onEnded={() => setPlayingVerseNum(null)}
-              className="hidden"
-            />
           </div>
         </div>
 
@@ -694,7 +487,7 @@ export const QuranReader: React.FC = () => {
                       onClick={() => playVerseAudio(verse)}
                       className="bg-[#33261a] border border-[#33261a] rounded-md text-[var(--color-gold)] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                     >
-                      {playingVerseNum === verse.verse_number ? (
+                      {isPlaying && playingType === "verse" && playingSurahId === selectedSurah && playingVerseNumber === verse.verse_number ? (
                         <>
                           <Pause size={13} className="animate-pulse" /> Stop Audio
                         </>
@@ -760,7 +553,7 @@ export const QuranReader: React.FC = () => {
                     </span>
                     <div>
                       <div className="font-semibold text-sm">{surah.englishName}</div>
-                      <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}</div>
+                      <div className="text-[10px] text-[#8c6b4a]">{surah.englishMeaning}{surah.altName ? ` · ${surah.altName}` : ""}</div>
                     </div>
                   </div>
                   <div className="text-right">
