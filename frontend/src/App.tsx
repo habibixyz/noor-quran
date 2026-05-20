@@ -7,6 +7,7 @@ import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
 import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
+import { BackgroundAnimation } from "./components/BackgroundAnimation";
 
 function App() {
   const [activeTab, setActiveTab] = useState<"reader" | "search" | "about">("reader");
@@ -227,9 +228,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between pb-28 md:pb-4" style={{ background: 'var(--color-bg-deep)' }}>
+    <div className="min-h-screen flex flex-col justify-between pb-28 md:pb-4 relative" style={{ background: 'var(--color-bg-deep)' }}>
+      <BackgroundAnimation />
       {/* Main Structural Wrapper Container */}
-      <div className="max-w-7xl w-full mx-auto px-4 md:px-6 flex-grow flex flex-col gap-4">
+      <div className="max-w-7xl w-full mx-auto px-4 md:px-6 flex-grow flex flex-col gap-4 relative z-10">
         {/* Main Header / Navigation */}
         <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90">
           {/* Brand Logo */}

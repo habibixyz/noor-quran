@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Search, Play, Pause, AlertCircle, Copy, Share2 } from "lucide-react";
 import { useAudio } from "../context/AudioContext";
-import { surahList, quranTexts } from "../data/quranData";
+import { surahList, quranTexts, getSurahVerses } from "../data/quranData";
 
 const cleanTranslationText = (text: string): string => {
   if (!text) return "";
@@ -40,6 +40,19 @@ export const SemanticSearch: React.FC = () => {
     { label: "Light & Guidance", query: "light and path of righteousness guidance" },
   ];
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (query.trim()) {
+        handleSearch(query);
+      } else {
+        setResults([]);
+        setError(null);
+      }
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [query]);
+
   const handleSearch = async (searchQuery: string) => {
     if (!searchQuery.trim()) return;
     setIsLoading(true);
@@ -63,73 +76,111 @@ export const SemanticSearch: React.FC = () => {
     }
 
     try {
-      const res = await fetch(`https://api.quran.com/api/v4/search?q=${encodeURIComponent(searchQuery)}&size=20`);
-      if (!res.ok) {
-        throw new Error("Failed to perform search. Please check your network connection.");
-      }
-      const data = await res.json();
-      
-      const resultsData = (data.search?.results || []).map((v: any, idx: number) => {
-        const verseKey = v.verse_key;
-        const [sId, vId] = verseKey.split(":");
-        const surahId = parseInt(sId);
-        const verseNum = parseInt(vId);
-        
-        // Find Surah Name from our local surahList
-        const surah = surahList.find(s => s.index === surahId);
-        const surahName = surah ? surah.englishName : `Surah ${surahId}`;
-        
-        // Find translation text
-        let translationText = "";
-        if (v.translations && v.translations.length > 0) {
-          const preferred = v.translations.find((t: any) => t.resource_id === translationId);
-          translationText = preferred ? preferred.text : v.translations[0].text;
-        }
-        
-        return {
-          id: v.verse_id || idx,
-          surah_id: surahId,
-          verse_number: verseNum,
-          verse_key: verseKey,
-          text_uthmani: v.text,
-          translation: cleanTranslationText(translationText),
-          surah_name: surahName
-        };
-      });
-      
-      setResults(resultsData);
-    } catch (err: any) {
-      console.warn("Public Search API failed, falling back to local database search:", err);
-      
-      // Fallback search: search in our local database
       const queryLower = searchQuery.toLowerCase();
-      const localResults: SearchResult[] = [];
       
-      Object.entries(quranTexts).forEach(([surahIdx, verses]) => {
-        const surahId = parseInt(surahIdx);
-        const surah = surahList.find(s => s.index === surahId);
-        const surahName = surah ? surah.englishName : `Surah ${surahId}`;
-        
-        verses.forEach((v) => {
-          // If searching english and chosen language matches English
-          const matchesEnglish = langCode === "en" && v.english.toLowerCase().includes(queryLower);
-          const matchesArabic = v.arabic.includes(queryLower);
+      // 1. Search for Surah names in local surahList
+      const surahNameMatches: SearchResult[] = [];
+      surahList.forEach(surah => {
+        const nameMatches = surah.name.includes(queryLower) || 
+                            surah.englishName.toLowerCase().includes(queryLower) || 
+                            (surah.altName && surah.altName.toLowerCase().includes(queryLower)) ||
+                            surah.englishMeaning.toLowerCase().includes(queryLower);
+        if (nameMatches) {
+          // If it matches a Surah name, get its first verses
+          const verses = getSurahVerses(surah.index);
+          const versesToInclude = verses.slice(0, 3);
           
-          if (matchesEnglish || matchesArabic) {
-            localResults.push({
-              id: surahId * 1000 + v.verseNumber,
-              surah_id: surahId,
+          versesToInclude.forEach(v => {
+            surahNameMatches.push({
+              id: surah.index * 1000 + v.verseNumber,
+              surah_id: surah.index,
               verse_number: v.verseNumber,
-              verse_key: `${surahId}:${v.verseNumber}`,
+              verse_key: `${surah.index}:${v.verseNumber}`,
               text_uthmani: v.arabic,
-              translation: langCode === "en" ? v.english : "", // Skip translation if language is beyond English
-              surah_name: surahName
+              translation: langCode === "en" ? v.english : "",
+              surah_name: surah.englishName
             });
-          }
-        });
+          });
+        }
       });
+
+      // 2. Fetch from standard API
+      let apiResults: SearchResult[] = [];
+      try {
+        const res = await fetch(`https://api.quran.com/api/v4/search?q=${encodeURIComponent(searchQuery)}&size=20`);
+        if (res.ok) {
+          const data = await res.json();
+          apiResults = (data.search?.results || []).map((v: any, idx: number) => {
+            const verseKey = v.verse_key;
+            const [sId, vId] = verseKey.split(":");
+            const surahId = parseInt(sId);
+            const verseNum = parseInt(vId);
+            
+            const surah = surahList.find(s => s.index === surahId);
+            const surahName = surah ? surah.englishName : `Surah ${surahId}`;
+            
+            let translationText = "";
+            if (v.translations && v.translations.length > 0) {
+              const preferred = v.translations.find((t: any) => t.resource_id === translationId);
+              translationText = preferred ? preferred.text : v.translations[0].text;
+            }
+            
+            return {
+              id: v.verse_id || idx,
+              surah_id: surahId,
+              verse_number: verseNum,
+              verse_key: verseKey,
+              text_uthmani: v.text,
+              translation: cleanTranslationText(translationText),
+              surah_name: surahName
+            };
+          });
+        }
+      } catch (e) {
+        console.warn("Public Search API failed:", e);
+      }
       
-      setResults(localResults);
+      // 3. If API returned nothing (or failed), fallback to local text search
+      let localTextResults: SearchResult[] = [];
+      if (apiResults.length === 0) {
+        Object.entries(quranTexts).forEach(([surahIdx, verses]) => {
+          const surahId = parseInt(surahIdx);
+          const surah = surahList.find(s => s.index === surahId);
+          const surahName = surah ? surah.englishName : `Surah ${surahId}`;
+          
+          verses.forEach((v) => {
+            const matchesEnglish = langCode === "en" && v.english.toLowerCase().includes(queryLower);
+            const matchesArabic = v.arabic.includes(queryLower);
+            
+            if (matchesEnglish || matchesArabic) {
+              if (!surahNameMatches.find(m => m.surah_id === surahId && m.verse_number === v.verseNumber)) {
+                localTextResults.push({
+                  id: surahId * 1000 + v.verseNumber,
+                  surah_id: surahId,
+                  verse_number: v.verseNumber,
+                  verse_key: `${surahId}:${v.verseNumber}`,
+                  text_uthmani: v.arabic,
+                  translation: langCode === "en" ? v.english : "",
+                  surah_name: surahName
+                });
+              }
+            }
+          });
+        });
+      }
+      
+      // 4. Combine results
+      const finalResults = [...surahNameMatches, ...apiResults, ...localTextResults];
+      
+      // Filter out duplicates by verse_key
+      const uniqueResults = finalResults.filter((result, index, self) => 
+        index === self.findIndex(r => r.verse_key === result.verse_key)
+      );
+      
+      setResults(uniqueResults);
+    } catch (err: any) {
+      console.error("Search failed completely:", err);
+      setError("An unexpected error occurred during search.");
     } finally {
       setIsLoading(false);
     }
@@ -177,7 +228,12 @@ export const SemanticSearch: React.FC = () => {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSearch(query)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                handleSearch(query);
+              }
+            }}
             placeholder="Type a word or phrase e.g., 'patience', 'charity', 'forgiveness'..."
             className="flex-grow bg-transparent px-3 py-2 text-sm text-[#f0e8d0] placeholder-[#8c6b4a] outline-none"
           />
@@ -199,7 +255,7 @@ export const SemanticSearch: React.FC = () => {
             {suggestedTopics.map((topic, idx) => (
               <button
                 key={idx}
-                onClick={() => handleSearch(topic.query)}
+                onClick={() => setQuery(topic.query)}
                 className="text-[11px] font-semibold px-3 py-1.5 rounded-lg border border-[#33261a] bg-[#1f1810] hover:bg-[#33261a] text-[#b39a7d] hover:text-[var(--color-gold)] transition-all"
               >
                 {topic.label}
