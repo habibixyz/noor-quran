@@ -1,10 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useRef, useCallback } from "react";
-import { surahList, surahStartAyah } from "../data/quranData";
+import { surahList } from "../data/quranData";
 
-// Converts surahId + verseNum to global ayah number (1–6236)
-// Required for cdn.islamic.network/quran/audio/{bitrate}/{edition}/{globalAyah}.mp3
-const globalAyah = (surahId: number, verseNum: number): number =>
-  surahStartAyah[surahId] + verseNum - 1;
+
 
 export interface LanguageOption {
   code: string;
