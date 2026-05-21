@@ -52,7 +52,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   });
 
   // Recent Donations Feed
-  const [recentDonations, setRecentDonations] = useState<DonationRecord[]>([]);
+  const [recentDonations, setRecentDonations] = useState<DonationRecord[] | null>([]);
 
   // Donation Form
   const [paymentMethod, setPaymentMethod] = useState<"crypto" | "paypal">("crypto");
@@ -132,19 +132,22 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
       // Load recent donations
       try {
         const recent = await contract.getRecentDonations(6);
+        console.log("[Noor] Recent donations raw:", recent);
         const formatted = recent.map((item: any) => ({
-          donor: item.donor,
-          amount: parseFloat(ethers.formatEther(item.amount)).toFixed(4),
-          timestamp: new Date(Number(item.timestamp) * 1000).toLocaleDateString(),
-          isZakat: item.isZakat
+          // ethers.js structs expose both named props AND positional indices — use ?? fallback
+          donor: item.donor ?? item[0],
+          amount: parseFloat(ethers.formatEther(item.amount ?? item[1])).toFixed(4),
+          timestamp: new Date(Number(item.timestamp ?? item[2]) * 1000).toLocaleDateString(),
+          isZakat: item.isZakat ?? item[3]
         }));
         setRecentDonations(formatted);
       } catch (e) {
-        console.warn("Failed to fetch recent donations from contract", e);
+        console.error("[Noor] getRecentDonations failed:", e);
+        setRecentDonations(null);
       }
 
     } catch (err) {
-      console.error("Error loading contract variables:", err);
+      console.error("[Noor] Error loading contract stats — RPC may be rate-limited or contract ABI mismatch:", err);
       loadMockStats();
     }
   };
@@ -715,7 +718,9 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
             </h4>
 
             <div className="space-y-2">
-              {recentDonations.length === 0 ? (
+              {recentDonations === null ? (
+                <div className="text-[10px] text-rose-400/70 text-center py-4">?? Could not load feed.</div>
+              ) : recentDonations.length === 0 ? (
                 <div className="text-[10px] text-[#8c6b4a] text-center py-4">No donations recorded yet</div>
               ) : (
                 recentDonations.map((item, index) => (
@@ -738,42 +743,6 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
 
         </div>
       </div>
-
-      {/* Disclaimer & Credits */}
-      <div className="premium-card" style={{ marginTop: "16px" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          <h4 className="text-xs uppercase font-extrabold text-[var(--color-gold-light)] flex items-center gap-1">
-            <ShieldCheck size={12} className="text-[var(--color-gold)]" />
-            <span>Disclaimer & Credits</span>
-          </h4>
-
-          <div className="text-[11px] text-[#8c6b4a] leading-relaxed" style={{ lineHeight: "1.7" }}>
-            <p style={{ marginBottom: "8px" }}>
-              All Quranic text is the sacred word of <strong className="text-[#b39a7d]">Allah ﷻ</strong> and belongs to no one. 
-              This platform claims no ownership over the Holy Quran.
-            </p>
-            <p style={{ marginBottom: "8px" }}>
-              Translations are provided by their respective scholars. Audio recitations are by their respective reciters 
-              and sourced from publicly available repositories.
-            </p>
-            <p>
-              This is a digital reader and on-chain preservation tool — built with reverence and humility.
-            </p>
-          </div>
-
-          <div className="h-[1px] bg-[#33261a]"></div>
-
-          <div className="text-center" style={{ paddingTop: "4px" }}>
-            <div className="text-[10px] text-[#6b5436] font-semibold tracking-wide">
-              Noor Quran Platform
-            </div>
-            <div className="text-[9px] text-[#4d3926] mt-1">
-              Preserving Al-Quran On-chain · Base Network
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
   );
 };

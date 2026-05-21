@@ -386,23 +386,22 @@ function App() {
           )}
         </main>
 
-        {/* Elegant Footer - hidden on mobile to maximize scroll space */}
-        {!isMobile && (
-          <footer className="glass-panel mb-4 p-6 flex flex-col gap-3 text-xs text-[#8c6b4a]">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-              <div className="flex items-center gap-1.5">
-                <Heart size={12} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />
-                <span>Preserving Al-Quran On-chain on Base Network</span>
-              </div>
-              <span className="text-[10px] text-[#6b5436]">Noor Quran Platform · Built with reverence</span>
+        {/* Unified Footer — visible on all devices */}
+        <footer className="glass-panel p-4 mb-4 flex flex-col gap-2 text-center" style={{ marginBottom: isMobile ? '90px' : '16px' }}>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div className="flex items-center gap-1.5 text-[11px] text-[#8c6b4a]">
+              <Heart size={11} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />
+              <span>Preserving Al-Quran On-chain · Base Network</span>
             </div>
-            <div className="h-[1px] bg-[#33261a]"></div>
-            <div className="text-[10px] text-[#6b5436] leading-relaxed text-center">
-              All Quranic text is the word of Allah ﷻ and belongs to no one. Translations are by their respective scholars.
-              Audio recitations are provided by their respective reciters. This platform is a digital reader tool only.
-            </div>
-          </footer>
-        )}
+            <span className="text-[10px] text-[#6b5436] font-semibold">Noor Quran Platform · Built with reverence</span>
+          </div>
+          <div className="h-[1px] bg-[#33261a]"></div>
+          <p className="text-[10px] text-[#6b5436] leading-relaxed">
+            All Quranic text is the sacred word of <strong className="text-[#8c6b4a]">Allah ﷻ</strong> and belongs to no one. This platform claims no ownership over the Holy Quran.
+            Translations are displayed as authored by their respective scholars. Audio recitations are by their respective reciters, sourced from publicly available repositories.
+            The Arabic text is the sole authoritative source.
+          </p>
+        </footer>
       </div>
 
       <GlobalAudioPlayer />

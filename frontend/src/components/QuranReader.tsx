@@ -525,6 +525,7 @@ export const QuranReader: React.FC = () => {
                 </div>
               );
             })}
+
           </div>
         )}
       </div>

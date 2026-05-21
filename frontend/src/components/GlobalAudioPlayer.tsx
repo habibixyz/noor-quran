@@ -79,7 +79,11 @@ export const GlobalAudioPlayer: React.FC = () => {
             </div>
             <div className="min-w-0">
               <div className="text-xs font-bold text-white truncate">
-                {playingType === "surah" ? `Surah ${surahName} (Full)` : `${surahName} - Verse ${playingVerseNumber}`}
+                {playingType === "surah"
+                  ? playingVerseNumber
+                    ? `Surah ${surahName} — Verse ${playingVerseNumber}`
+                    : `Surah ${surahName} (Full)`
+                  : `${surahName} — Verse ${playingVerseNumber}`}
               </div>
               <div className="text-[9px] text-[#8c6b4a] font-semibold truncate mt-0.5">
                 Reciter: {selectedReciter.name}

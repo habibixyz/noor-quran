@@ -132,6 +132,21 @@ export const surahList: SurahData[] = [
   { index: 114, name: "الناس", englishName: "An-Nas", versesCount: 6, type: "Meccan", englishMeaning: "Mankind", altName: "Naas Sharif" }
 ];
 
+/**
+ * Maps surahIndex (1–114) to the global ayah number of its FIRST verse.
+ * Used to compute: globalAyah = surahStartAyah[surahId] + (verseNum - 1)
+ * Required for cdn.islamic.network/quran/audio/{bitrate}/{edition}/{globalAyah}.mp3
+ */
+export const surahStartAyah: Record<number, number> = (() => {
+  const map: Record<number, number> = {};
+  let running = 1;
+  for (const s of surahList) {
+    map[s.index] = running;
+    running += s.versesCount;
+  }
+  return map;
+})();
+
 // In-app embedded database of Surah texts (Arabic and English translation)
 export const quranTexts: Record<number, Verse[]> = {
   // Surah 1: Al-Fatihah
