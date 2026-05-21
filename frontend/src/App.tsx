@@ -368,7 +368,7 @@ function App() {
         )}
 
         {/* Main Content Render */}
-        <main className="flex-grow py-2 md:py-4" style={{ paddingBottom: isMobile ? (audioIsActive ? "180px" : "80px") : undefined }}>
+        <main className="flex-grow py-2 md:py-4" style={{ paddingBottom: isMobile ? (audioIsActive ? "212px" : "80px") : undefined }}>
           {activeTab === "reader" ? (
             <QuranReader />
           ) : activeTab === "search" ? (
@@ -387,7 +387,7 @@ function App() {
         </main>
 
         {/* Unified Footer — visible on all devices */}
-        <footer className="glass-panel p-4 mb-4 flex flex-col gap-2 text-center" style={{ marginBottom: isMobile ? '90px' : '16px' }}>
+        <footer className="glass-panel p-4 mb-4 flex flex-col gap-2 text-center" style={{ marginBottom: isMobile ? (audioIsActive ? '216px' : '84px') : '16px' }}>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
             <div className="flex items-center gap-1.5 text-[11px] text-[#8c6b4a]">
               <Heart size={11} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />

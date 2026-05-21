@@ -42,40 +42,54 @@ export const GlobalAudioPlayer: React.FC = () => {
 
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
 
+  // Mobile: dock flush above bottom nav (64px tall), full-width, no side padding
+  // Desktop: centred floating card
+  const mobilePlayerStyle: React.CSSProperties = {
+    position: "fixed",
+    bottom: "64px",          // sits right on top of the 64px bottom nav
+    left: 0,
+    right: 0,
+    zIndex: 49,
+    padding: "0",
+    boxSizing: "border-box" as const,
+  };
+
+  const desktopPlayerStyle: React.CSSProperties = {
+    position: "fixed",
+    bottom: "16px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    zIndex: 49,
+    width: "100%",
+    maxWidth: "540px",
+    padding: "0 16px",
+    boxSizing: "border-box" as const,
+  };
+
   return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: isMobile ? "72px" : "16px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 45,
-        width: "100%",
-        maxWidth: "540px",
-        padding: "0 16px",
-        boxSizing: "border-box",
-      }}
-    >
+    <div style={isMobile ? mobilePlayerStyle : desktopPlayerStyle}>
       <div
-        className="glass-panel"
         style={{
-          padding: "14px",
+          padding: "12px 16px",
           display: "flex",
           flexDirection: "column",
-          gap: "10px",
-          background: "rgba(10, 7, 3, 0.95)",
+          gap: "8px",
+          background: "rgba(10, 7, 3, 0.97)",
           backdropFilter: "blur(24px)",
-          border: "1px solid rgba(201, 168, 76, 0.2)",
-          boxShadow: "0 10px 40px rgba(0,0,0,0.65)",
-          borderRadius: "16px",
+          borderTop: "1px solid rgba(201, 168, 76, 0.25)",
+          borderLeft: isMobile ? "none" : "1px solid rgba(201, 168, 76, 0.2)",
+          borderRight: isMobile ? "none" : "1px solid rgba(201, 168, 76, 0.2)",
+          borderBottom: isMobile ? "none" : "1px solid rgba(201, 168, 76, 0.2)",
+          boxShadow: "0 -4px 24px rgba(0,0,0,0.5)",
+          borderRadius: isMobile ? "0" : "16px",
         }}
       >
         {/* Info & Main Controls */}
         <div className="flex items-center justify-between gap-3">
           {/* Audio Info */}
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 rounded-xl bg-[var(--color-bg-light)] border border-[var(--color-gold)]/10 flex items-center justify-center text-[var(--color-gold)] shrink-0">
-              <Volume2 size={16} className={isPlaying ? "animate-pulse" : ""} />
+            <div className="w-8 h-8 rounded-xl bg-[var(--color-bg-light)] border border-[var(--color-gold)]/10 flex items-center justify-center text-[var(--color-gold)] shrink-0">
+              <Volume2 size={14} className={isPlaying ? "animate-pulse" : ""} />
             </div>
             <div className="min-w-0">
               <div className="text-xs font-bold text-white truncate">
@@ -109,10 +123,10 @@ export const GlobalAudioPlayer: React.FC = () => {
           </div>
         </div>
 
-        {/* Progress seekbar bar */}
+        {/* Progress seekbar */}
         <div className="flex items-center gap-2 text-[9px] font-mono text-[#8c6b4a] w-full">
           <span className="shrink-0">{formatTime(currentTime)}</span>
-          <div className="relative flex-grow h-1 bg-[#120d08] rounded-full overflow-hidden cursor-pointer group">
+          <div className="relative flex-grow h-1 bg-[#120d08] rounded-full overflow-hidden cursor-pointer">
             <input
               type="range"
               min="0"
