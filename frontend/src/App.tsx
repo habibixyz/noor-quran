@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { QuranReader } from "./components/QuranReader";
 import { SemanticSearch } from "./components/SemanticSearch";
 import { AboutAndDonate } from "./components/AboutAndDonate";
-import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight } from "lucide-react";
+import { UmrahCompanion } from "./components/UmrahCompanion";
+import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass } from "lucide-react";
 import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
@@ -10,7 +11,7 @@ import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
 import { BackgroundAnimation } from "./components/BackgroundAnimation";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<"reader" | "search" | "about">("reader");
+  const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("umrah");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
   const { playingType } = useAudio();
   const audioIsActive = playingType !== null;
@@ -45,6 +46,9 @@ function App() {
     } else if (activeTab === "search") {
       title = "Noor Quran - AI Semantic Search";
       description = "Explore the Quran using advanced AI-powered semantic search. Find verses by their underlying concepts, themes, and meanings.";
+    } else if (activeTab === "umrah") {
+      title = "Noor Quran - Premium Umrah & Hajj Companion";
+      description = "Prepare for your sacred pilgrimage with our interactive Tawaf counters, Sunnah guides, check lists, and AI Umrah assistant.";
     } else if (activeTab === "about") {
       title = "Noor Quran - Sadaqah & Zakat";
       description = "Support the preservation of Al-Quran on-chain. Contribute via Sadaqah & Zakat on the Base Network.";
@@ -280,34 +284,40 @@ function App() {
           </div>
 
           {/* Desktop Tab Selection (Hidden on Mobile) */}
-          {!isMobile && (
-            <nav className="flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold" aria-label="Main Navigation">
-              <button
-                id="nav-tab-reader"
-                onClick={() => setActiveTab("reader")}
-                className={`nav-tab ${activeTab === "reader" ? "active" : ""}`}
-              >
-                <BookOpen size={14} />
-                <span>Interactive Reader</span>
-              </button>
-              <button
-                id="nav-tab-search"
-                onClick={() => setActiveTab("search")}
-                className={`nav-tab ${activeTab === "search" ? "active" : ""}`}
-              >
-                <Search size={14} />
-                <span>Search Quran</span>
-              </button>
-              <button
-                id="nav-tab-about"
-                onClick={() => setActiveTab("about")}
-                className={`nav-tab ${activeTab === "about" ? "active" : ""}`}
-              >
-                <Heart size={14} />
-                <span>Sadaqah &amp; Zakat</span>
-              </button>
-            </nav>
-          )}
+          <nav className="hidden md:flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold" aria-label="Main Navigation">
+            <button
+              id="nav-tab-reader"
+              onClick={() => setActiveTab("reader")}
+              className={`nav-tab ${activeTab === "reader" ? "active" : ""}`}
+            >
+              <BookOpen size={14} />
+              <span>Interactive Reader</span>
+            </button>
+            <button
+              id="nav-tab-search"
+              onClick={() => setActiveTab("search")}
+              className={`nav-tab ${activeTab === "search" ? "active" : ""}`}
+            >
+              <Search size={14} />
+              <span>Search Quran</span>
+            </button>
+            <button
+              id="nav-tab-umrah"
+              onClick={() => setActiveTab("umrah")}
+              className={`nav-tab ${activeTab === "umrah" ? "active" : ""}`}
+            >
+              <Compass size={14} />
+              <span>Umrah Companion</span>
+            </button>
+            <button
+              id="nav-tab-about"
+              onClick={() => setActiveTab("about")}
+              className={`nav-tab ${activeTab === "about" ? "active" : ""}`}
+            >
+              <Heart size={14} />
+              <span>Sadaqah &amp; Zakat</span>
+            </button>
+          </nav>
 
           {/* Wallet connection status in Header */}
           <div className="flex items-center gap-2">
@@ -333,39 +343,45 @@ function App() {
         </header>
 
         {/* Mobile Bottom Navigation Bar */}
-        {isMobile && (
-          <div 
-            className="fixed bottom-0 left-0 right-0 z-50 glass-panel bg-[var(--color-bg-dark)]/95 backdrop-blur-xl pb-safe"
-            style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50, borderRadius: '16px 16px 0 0' }}
-          >
-            <nav className="flex justify-around p-2" aria-label="Mobile Navigation">
-              <button
-                id="mobile-nav-reader"
-                onClick={() => setActiveTab("reader")}
-                className={`mobile-nav-btn ${activeTab === "reader" ? "active" : ""}`}
-              >
-                <BookOpen size={18} />
-                <span className="text-xs font-bold">Reader</span>
-              </button>
-              <button
-                id="mobile-nav-search"
-                onClick={() => setActiveTab("search")}
-                className={`mobile-nav-btn ${activeTab === "search" ? "active" : ""}`}
-              >
-                <Search size={18} />
-                <span className="text-xs font-bold">Search</span>
-              </button>
-              <button
-                id="mobile-nav-about"
-                onClick={() => setActiveTab("about")}
-                className={`mobile-nav-btn ${activeTab === "about" ? "active" : ""}`}
-              >
-                <Heart size={18} />
-                <span className="text-xs font-bold">Charity</span>
-              </button>
-            </nav>
-          </div>
-        )}
+        <div 
+          className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-panel bg-[var(--color-bg-dark)]/95 backdrop-blur-xl pb-safe"
+          style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50, borderRadius: '16px 16px 0 0' }}
+        >
+          <nav className="flex justify-around p-2" aria-label="Mobile Navigation">
+            <button
+              id="mobile-nav-reader"
+              onClick={() => setActiveTab("reader")}
+              className={`mobile-nav-btn ${activeTab === "reader" ? "active" : ""}`}
+            >
+              <BookOpen size={18} />
+              <span className="text-xs font-bold">Reader</span>
+            </button>
+            <button
+              id="mobile-nav-search"
+              onClick={() => setActiveTab("search")}
+              className={`mobile-nav-btn ${activeTab === "search" ? "active" : ""}`}
+            >
+              <Search size={18} />
+              <span className="text-xs font-bold">Search</span>
+            </button>
+            <button
+              id="mobile-nav-umrah"
+              onClick={() => setActiveTab("umrah")}
+              className={`mobile-nav-btn ${activeTab === "umrah" ? "active" : ""}`}
+            >
+              <Compass size={18} />
+              <span className="text-xs font-bold">Umrah</span>
+            </button>
+            <button
+              id="mobile-nav-about"
+              onClick={() => setActiveTab("about")}
+              className={`mobile-nav-btn ${activeTab === "about" ? "active" : ""}`}
+            >
+              <Heart size={18} />
+              <span className="text-xs font-bold">Charity</span>
+            </button>
+          </nav>
+        </div>
 
         {/* Main Content Render */}
         <main className="flex-grow py-2 md:py-4" style={{ paddingBottom: isMobile ? (audioIsActive ? "212px" : "80px") : undefined }}>
@@ -373,6 +389,8 @@ function App() {
             <QuranReader />
           ) : activeTab === "search" ? (
             <SemanticSearch />
+          ) : activeTab === "umrah" ? (
+            <UmrahCompanion />
           ) : (
             <AboutAndDonate
               provider={provider}

@@ -7,7 +7,7 @@ async function main() {
 
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contract with account:", deployer.address);
-  
+
   const balanceBefore = await deployer.provider.getBalance(deployer.address);
   console.log("Account balance:", ethers.formatEther(balanceBefore), "ETH");
 
@@ -17,7 +17,7 @@ async function main() {
   const sadaqahZakat = await SadaqahZakatFactory.deploy();
   await sadaqahZakat.waitForDeployment();
   const contractAddress = await sadaqahZakat.getAddress();
-  
+
   console.log("✔ SadaqahZakat contract deployed successfully!");
   console.log("Contract Address:", contractAddress);
 

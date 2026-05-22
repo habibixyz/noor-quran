@@ -51,12 +51,13 @@ input {
   font-family: inherit;
 }
 
-body {
+html, body {
   background-color: var(--color-bg-deep);
   color: var(--color-text-light);
   font-family: var(--font-sans);
   min-height: 100vh;
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden !important;
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
@@ -506,6 +507,16 @@ body {
   background: rgba(201, 168, 76, 0.08) !important;
 }
 
+/* AI Assistant Chat Panel height */
+.assistant-chat-panel {
+  height: 520px !important;
+}
+@media (max-width: 767px) {
+  .assistant-chat-panel {
+    height: 420px !important;
+  }
+}
+
 /* Premium Card Upgrades */
 .premium-card {
   background: linear-gradient(145deg, #1f1810 0%, #17120c 100%) !important;
@@ -749,8 +760,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
   .lg\:col-span-1 { grid-column: span 1 / span 1 !important; }
+  .lg\:col-span-2 { grid-column: span 2 / span 2 !important; }
   .lg\:col-span-3 { grid-column: span 3 / span 3 !important; }
   .lg\:block { display: block !important; }
   .lg\:hidden { display: none !important; }
@@ -769,4 +782,542 @@ body {
 
 /* Screen reader only */
 .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border-width: 0 !important; }
+
+/* Timeline Step Number Styling */
+.timeline-step-number {
+  position: absolute !important;
+  top: 6px !important;
+  left: -31px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  border: 2px solid #33261a !important;
+  background-color: #1c140c !important;
+  color: #8c6b4a !important;
+  z-index: 10 !important;
+  transition: var(--transition-smooth) !important;
+}
+.timeline-step-number.active {
+  background-color: var(--color-gold) !important;
+  color: #011309 !important;
+  border-color: var(--color-gold) !important;
+}
+@media (min-width: 768px) {
+  .timeline-step-number {
+    left: -39px !important;
+  }
+}
+
+/* Checklist Progress Container */
+.checklist-progress-container {
+  width: 100% !important;
+  flex-shrink: 0 !important;
+}
+@media (min-width: 768px) {
+  .checklist-progress-container {
+    width: 240px !important;
+  }
+}
+
+/* Premium Progress Bar Styling */
+.premium-progress-track {
+  width: 100% !important;
+  height: 6px !important;
+  background-color: #120d08 !important;
+  border: 1px solid var(--color-glass-border) !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.premium-progress-fill {
+  height: 100% !important;
+  background: linear-gradient(90deg, var(--color-gold-dark) 0%, var(--color-gold) 100%) !important;
+  border-radius: 9999px !important;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Companion Header Layout Adjustments */
+.companion-card-weather {
+  width: calc(50% - 5px) !important;
+}
+.companion-card-time {
+  width: calc(50% - 5px) !important;
+}
+.companion-refresh-btn {
+  width: 100% !important;
+  height: 42px !important;
+}
+
+@media (min-width: 768px) {
+  .companion-card-weather {
+    width: 140px !important;
+  }
+  .companion-card-time {
+    width: 165px !important;
+  }
+  .companion-refresh-btn {
+    width: 42px !important;
+  }
+}
+
+/* Live Pocket Companion Phone Mockup Styles */
+.companion-phone-wrapper {
+  position: relative !important;
+  width: 290px !important;
+  height: 590px !important;
+  border-radius: 40px !important;
+  border: 8px solid #1c140c !important;
+  background-color: #0c0905 !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(201,168,76,0.06) !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  will-change: transform !important;
+}
+
+.companion-phone-wrapper:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 45px rgba(201,168,76,0.15) !important;
+  border-color: #2b1f13 !important;
+}
+
+.companion-phone-reflection {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 50%, transparent 50%, transparent 100%) !important;
+}
+
+.companion-phone-notch {
+  position: absolute !important;
+  top: 8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90px !important;
+  height: 18px !important;
+  background-color: #000000 !important;
+  border-radius: 9999px !important;
+  z-index: 40 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 10px !important;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.1) !important;
+}
+
+.companion-phone-notch-camera {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #111111 !important;
+  border: 1px solid rgba(30, 58, 138, 0.4) !important;
+}
+
+.companion-phone-notch-sensor {
+  width: 3px !important;
+  height: 3px !important;
+  border-radius: 50% !important;
+  background-color: #10b981 !important;
+  animation: pulse-sensor 2s infinite !important;
+}
+
+@keyframes pulse-sensor {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.companion-phone-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0.6 !important;
+  z-index: 0 !important;
+}
+
+.companion-phone-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to bottom, rgba(11,8,5,0.65) 0%, rgba(11,8,5,0.2) 40%, rgba(11,8,5,0.95) 100%) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.companion-phone-status-bar {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 32px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  z-index: 30 !important;
+  color: rgba(255,255,255,0.9) !important;
+  font-family: monospace !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+}
+
+.companion-phone-status-bar svg {
+  width: 10px !important;
+  height: 10px !important;
+  fill: currentColor !important;
+}
+
+.companion-phone-battery-track {
+  width: 16px !important;
+  height: 8px !important;
+  border: 1px solid rgba(255,255,255,0.6) !important;
+  border-radius: 2px !important;
+  padding: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.companion-phone-battery-fill {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #10b981 !important;
+  border-radius: 1px !important;
+}
+
+.companion-phone-content {
+  position: absolute !important;
+  inset: 0 !important;
+  padding-top: 36px !important;
+  padding-bottom: 8px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  z-index: 10 !important;
+  overflow-y: auto !important;
+}
+
+.companion-phone-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.companion-phone-app-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.companion-phone-app-title span {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #ffffff !important;
+}
+
+.companion-phone-status-badge {
+  font-size: 8px !important;
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+  padding: 2px 6px !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.companion-phone-badge-ping {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background-color: #34d399 !important;
+  animation: badge-ping 1.5s infinite !important;
+}
+
+@keyframes badge-ping {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.companion-phone-main {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 10px 0 !important;
+}
+
+.companion-phone-card {
+  background-color: rgba(18, 13, 8, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+}
+
+.companion-phone-card-title {
+  font-size: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 800 !important;
+  color: #8c6b4a !important;
+}
+
+.companion-phone-grid-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+.companion-phone-subcard {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.companion-phone-subcard-label {
+  font-size: 7px !important;
+  text-transform: uppercase !important;
+  color: #8c6b4a !important;
+}
+
+.companion-phone-subcard-value {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  font-family: monospace !important;
+  margin-top: 2px !important;
+}
+
+.companion-phone-subcard-value span {
+  font-size: 9px !important;
+  color: #8c6b4a !important;
+  font-weight: 400 !important;
+}
+
+.companion-phone-progress-bar {
+  width: 100% !important;
+  height: 4px !important;
+  background-color: #1a130c !important;
+  border-radius: 9999px !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+.companion-phone-progress-fill-gold {
+  height: 100% !important;
+  background-color: var(--color-gold) !important;
+  border-radius: 9999px !important;
+  transition: width 0.3s ease !important;
+}
+
+.companion-phone-progress-fill-orange {
+  height: 100% !important;
+  background-color: #f59e0b !important;
+  border-radius: 9999px !important;
+  transition: width 0.3s ease !important;
+}
+
+.companion-phone-weather-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  padding: 6px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.companion-phone-weather-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.companion-phone-weather-city {
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  font-size: 8px !important;
+}
+
+.companion-phone-weather-temp {
+  color: #b39a7d !important;
+  font-size: 8px !important;
+}
+
+.companion-phone-compass-disc {
+  position: relative !important;
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+.companion-phone-compass-needle {
+  position: absolute !important;
+  width: 2px !important;
+  height: 44px !important;
+  background: linear-gradient(to bottom, var(--color-gold) 0%, var(--color-gold) 50%, transparent 50%, transparent 100%) !important;
+  border-radius: 9999px !important;
+  transform-origin: center !important;
+}
+
+.companion-phone-compass-center {
+  position: absolute !important;
+  top: -4px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: var(--color-gold) !important;
+  box-shadow: 0 0 8px rgba(201,168,76,0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.companion-phone-compass-dot {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+}
+
+.companion-phone-permit-card {
+  background: linear-gradient(135deg, #21160d 0%, #120a05 100%) !important;
+  border: 1px solid rgba(201, 168, 76, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.companion-phone-permit-shine {
+  position: absolute !important;
+  right: -32px !important;
+  top: -32px !important;
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  background-color: rgba(201, 168, 76, 0.05) !important;
+  filter: blur(16px) !important;
+}
+
+.companion-phone-permit-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  text-align: left !important;
+}
+
+.companion-phone-permit-badge {
+  font-size: 7px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  color: #f59e0b !important;
+}
+
+.companion-phone-permit-title {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.companion-phone-permit-date {
+  font-size: 7px !important;
+  font-family: monospace !important;
+  color: #b39a7d !important;
+}
+
+.companion-phone-qr {
+  width: 32px !important;
+  height: 32px !important;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%) !important;
+  border-radius: 6px !important;
+  padding: 4px !important;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.2) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-content: space-between !important;
+  flex-shrink: 0 !important;
+}
+
+.companion-phone-qr-pixel {
+  width: 6px !important;
+  height: 6px !important;
+  background-color: #000000 !important;
+  border-radius: 1px !important;
+}
+
+.companion-phone-qr-bar {
+  width: 14px !important;
+  height: 4px !important;
+  background-color: #000000 !important;
+  border-radius: 1px !important;
+  margin-top: 2px !important;
+}
+
+.companion-phone-footer {
+  height: 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 8px !important;
+  color: #8c6b4a !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+  padding-top: 6px !important;
+}
+
+.companion-phone-footer-active {
+  color: var(--color-gold) !important;
+  font-weight: bold !important;
+}
+
+.companion-phone-home-indicator {
+  position: absolute !important;
+  bottom: 4px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80px !important;
+  height: 4px !important;
+  background-color: rgba(255,255,255,0.2) !important;
+  border-radius: 2px !important;
+  z-index: 40 !important;
+}
 

@@ -3,11 +3,11 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, text
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 import requests
 
-load_dotenv()
+load_dotenv(find_dotenv())
 
 app = FastAPI(title="Noor Quran API")
 
@@ -466,9 +466,110 @@ async def prefetch_all_surahs():
                 except Exception as ex:
                     print(f"Error prefetching Surah {surah_id}: {ex}")
                     await asyncio.sleep(2.0)
-        print("✓ Background Task: Cache pre-fetching completed! All 114 Surahs fully cached offline.")
+        print("[SUCCESS] Background Task: Cache pre-fetching completed! All 114 Surahs fully cached offline.")
     except Exception as e:
         print("Error in background prefetch task:", e)
+
+# --- EMAIL SUBMISSIONS ROUTER ---
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import smtplib
+
+SMTP_HOST = os.getenv("SMTP_HOST", "")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_USER = os.getenv("SMTP_USER", "")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
+EMAIL_TO = os.getenv("EMAIL_TO", "arnoldkhan7866@gmail.com")
+WEB3FORMS_KEY = os.getenv("WEB3FORMS_KEY", "")
+
+def send_lead_email(subject: str, content: str):
+    # 1. Try standard SMTP if credentials are configured
+    if SMTP_HOST and SMTP_USER and SMTP_PASSWORD:
+        try:
+            msg = MIMEMultipart()
+            msg["From"] = SMTP_USER
+            msg["To"] = EMAIL_TO
+            msg["Subject"] = subject
+            msg.attach(MIMEText(content, "plain"))
+            
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+                server.starttls()
+                server.login(SMTP_USER, SMTP_PASSWORD)
+                server.send_message(msg)
+            print("[SUCCESS] Email sent successfully via SMTP.")
+            return True
+        except Exception as e:
+            print(f"SMTP sending failed: {e}")
+            
+    # 2. Try Web3Forms if key is set (convenient free alternative for serverless hosts)
+    if WEB3FORMS_KEY:
+        try:
+            payload = {
+                "access_key": WEB3FORMS_KEY,
+                "subject": subject,
+                "from_name": "Noor Quran Leads",
+                "message": content
+            }
+            res = requests.post("https://api.web3forms.com/submit", json=payload, timeout=5.0)
+            if res.status_code == 200:
+                print("[SUCCESS] Email sent successfully via Web3Forms.")
+                return True
+            else:
+                print(f"Web3Forms returned status {res.status_code}: {res.text}")
+        except Exception as e:
+            print(f"Web3Forms sending failed: {e}")
+            
+    # 3. Fallback: Log the details
+    print(f"WARN: No active email configuration (SMTP or Web3Forms) found. Lead subject: {subject}\n{content}")
+    return False
+
+@app.post("/api/submit-lead")
+async def handle_submit_lead(request: Request):
+    """Securely accept leads from the frontend and email them to the site owner"""
+    try:
+        data = await request.json()
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid JSON payload")
+        
+    lead_type = data.get("type", "pilgrim")
+    package_name = data.get("packageName", "")
+    name = data.get("name", "N/A")
+    email = data.get("email", "N/A")
+    whatsapp = data.get("whatsapp", "N/A")
+    travel_month = data.get("travelMonth", "N/A")
+    budget = data.get("budget", "N/A")
+    notes = data.get("notes", "N/A")
+    
+    if lead_type == "agency":
+        subject = f"[Agency Signup] {name} has registered on Noor Quran"
+        content = (
+            f"Dear Administrator,\n\n"
+            f"A new travel agency partner registration has been submitted:\n\n"
+            f"Agency / Contact Name: {name}\n"
+            f"Email Address: {email}\n"
+            f"WhatsApp Contact: {whatsapp}\n"
+            f"Operational Base: {travel_month}\n"
+            f"License Status: {budget}\n\n"
+            f"Agency Profile / Description:\n{notes}\n\n"
+            f"Please review their credentials and contact them directly to activate their account."
+        )
+    else:
+        subject = f"[Pilgrim Lead] {name} requested custom quotes"
+        content = (
+            f"Dear Administrator,\n\n"
+            f"A new pilgrim custom trip estimate lead has been submitted:\n\n"
+            f"Pilgrim Name: {name}\n"
+            f"Email Address: {email}\n"
+            f"WhatsApp Contact: {whatsapp}\n"
+            f"Estimated Package: {package_name}\n"
+            f"Proposed Travel Month: {travel_month}\n"
+            f"Preferred Budget Level: {budget}\n\n"
+            f"Pilgrim Request / Notes:\n{notes}\n\n"
+            f"You can contact this pilgrim directly via WhatsApp or forward their plan to registered partners."
+        )
+        
+    success = send_lead_email(subject, content)
+    return {"status": "success", "emailed": success}
 
 @app.on_event("startup")
 async def startup_event():
