@@ -1281,8 +1281,7 @@ export const UmrahCompanion: React.FC = () => {
 
           {/* Quick suggestions block */}
           <div 
-            className="px-3.5 py-2 bg-[#120d08]/60 border-t border-[#33261a]/50 flex gap-1.5 overflow-x-auto shrink-0 custom-scrollbar w-full"
-            style={{ minWidth: 0 }}
+            className="px-3.5 py-2 bg-[#120d08]/60 border-t border-[#33261a]/50 flex flex-wrap gap-1.5 shrink-0 w-full"
           >
             <button
               onClick={() => { handleQuickQuestion("What breaks my Ihram?"); playBeep(800, 0.03); }}
