@@ -30,7 +30,7 @@ export const SemanticSearch: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   
-  const { isPlaying, playingType, playingSurahId, playingVerseNumber, playVerse } = useAudio();
+  const { isPlaying, playingType, playingSurahId, playingVerseNumber, playVerse, selectedLanguage } = useAudio();
 
   const suggestedTopics = [
     { label: "Mercy & Compassion", query: "mercy and forgiveness of Allah" },
@@ -51,7 +51,7 @@ export const SemanticSearch: React.FC = () => {
     }, 600);
 
     return () => clearTimeout(timer);
-  }, [query]);
+  }, [query, selectedLanguage]);
 
   const handleSearch = async (searchQuery: string) => {
     if (!searchQuery.trim()) return;
@@ -59,21 +59,9 @@ export const SemanticSearch: React.FC = () => {
     setError(null);
     setQuery(searchQuery);
 
-    // Read the user's selected language preference from LocalStorage
-    const savedLang = localStorage.getItem("quran_language");
-    let translationId = 85;
-    let langCode = "en";
-    if (savedLang) {
-      try {
-        const parsed = JSON.parse(savedLang);
-        if (parsed.translationId) {
-          translationId = parsed.translationId;
-        }
-        if (parsed.code) {
-          langCode = parsed.code;
-        }
-      } catch (e) {}
-    }
+    const translationId = selectedLanguage.translationId;
+    const langCode = selectedLanguage.code;
+
 
     try {
       const queryLower = searchQuery.toLowerCase();
