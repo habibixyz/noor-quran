@@ -23,6 +23,7 @@ export interface ReciterOption {
 
 export const LANGUAGE_OPTIONS: LanguageOption[] = [
   { code: "en", name: "English (Sahih)", nativeName: "English", translationId: 85 },
+  { code: "roman", name: "Roman English (Urdu)", nativeName: "Roman English", translationId: 831 },
   { code: "hi", name: "Hindi", nativeName: "हिन्दी", translationId: 122 },
   { code: "mr", name: "Marathi", nativeName: "मराठी", translationId: 226 },
   { code: "ur", name: "Urdu", nativeName: "اردو", translationId: 158 },

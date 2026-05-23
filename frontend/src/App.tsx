@@ -11,7 +11,7 @@ import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
 import { BackgroundAnimation } from "./components/BackgroundAnimation";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("umrah");
+  const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("reader");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
   const { playingType } = useAudio();
   const audioIsActive = playingType !== null;

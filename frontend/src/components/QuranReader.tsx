@@ -81,7 +81,7 @@ export const QuranReader: React.FC = () => {
             id: idx,
             verse_number: v.verseNumber,
             text_uthmani: v.arabic,
-            translation: selectedLanguage.code === "en" ? v.english : ""
+            translation: (selectedLanguage.code === "en" || selectedLanguage.code === "roman") ? v.english : ""
           }));
           setVerses(mappedLocal);
           setIsLoading(false);
@@ -187,9 +187,13 @@ export const QuranReader: React.FC = () => {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className={`w-8 h-8 flex items-center justify-center rounded-lg text-[10px] font-bold transition-all ${
-                      isSelected ? "bg-[var(--color-gold)] text-[#16110b]" : "bg-[#33261a] text-[#8c6b4a]"
-                    }`}>
+                    <div 
+                      className="h-8 px-2 min-w-8 flex items-center justify-center rounded-lg text-[10px] font-bold transition-all shrink-0"
+                      style={{
+                        backgroundColor: isSelected ? "var(--color-gold)" : "#33261a",
+                        color: isSelected ? "#16110b" : "#8c6b4a"
+                      }}
+                    >
                       {lang.code.toUpperCase()}
                     </div>
                     <div>
