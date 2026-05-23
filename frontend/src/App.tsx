@@ -267,7 +267,7 @@ function App() {
       {/* Main Structural Wrapper Container */}
       <div className="max-w-7xl w-full mx-auto px-4 md:px-6 flex-grow flex flex-col gap-4 relative z-10">
         {/* Main Header / Navigation */}
-        <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90">
+        <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90 relative">
           {/* Brand Logo */}
           <div className="flex items-center gap-2 md:gap-3">
             <div className="relative w-7 h-7 md:w-10 md:h-10 rounded-xl border-2 border-[var(--color-gold)] p-0.5 shadow-md flex items-center justify-center shrink-0">
@@ -284,7 +284,7 @@ function App() {
           </div>
 
           {/* Desktop Tab Selection (Hidden on Mobile) */}
-          <nav className="hidden md:flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold" aria-label="Main Navigation">
+          <nav className="hidden md:flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold header-nav-centered" aria-label="Main Navigation">
             <button
               id="nav-tab-reader"
               onClick={() => setActiveTab("reader")}
@@ -320,26 +320,28 @@ function App() {
           </nav>
 
           {/* Wallet connection status in Header */}
-          <div className="flex items-center gap-2">
-            {account ? (
-              <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-[var(--color-bg-deep)] border border-emerald-950 text-[10px] md:text-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                <span className="font-mono font-bold text-[var(--color-gold-light)]">
-                  {account.substring(0, 4)}...{account.substring(account.length - 4)}
-                </span>
-                <span className="hidden lg:inline text-[#8c6b4a]">({walletBalance} ETH)</span>
-              </div>
-            ) : (
-              <button
-                id="header-connect-wallet-btn"
-                onClick={() => setShowWalletModal(true)}
-                className="gold-button flex items-center gap-1 py-1 px-2.5 text-[10px] md:text-xs font-bold"
-              >
-                <Wallet size={12} />
-                <span>Connect</span>
-              </button>
-            )}
-          </div>
+          {activeTab === "about" && (
+            <div className="flex items-center gap-2 ml-auto">
+              {account ? (
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-[var(--color-bg-deep)] border border-emerald-950 text-[10px] md:text-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span className="font-mono font-bold text-[var(--color-gold-light)]">
+                    {account.substring(0, 4)}...{account.substring(account.length - 4)}
+                  </span>
+                  <span className="hidden lg:inline text-[#8c6b4a]">({walletBalance} ETH)</span>
+                </div>
+              ) : (
+                <button
+                  id="header-connect-wallet-btn"
+                  onClick={() => setShowWalletModal(true)}
+                  className="gold-button flex items-center gap-1 py-1 px-2.5 text-[10px] md:text-xs font-bold"
+                >
+                  <Wallet size={12} />
+                  <span>Connect</span>
+                </button>
+              )}
+            </div>
+          )}
         </header>
 
         {/* Mobile Bottom Navigation Bar */}

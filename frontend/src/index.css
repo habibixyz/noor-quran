@@ -1370,5 +1370,15 @@ html, body {
   }
 }
 
+/* Centered Navigation Menu for Desktop Header */
+@media (min-width: 768px) {
+  .header-nav-centered {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    top: 50% !important;
+  }
+}
+
 
 
