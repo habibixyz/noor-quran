@@ -1335,40 +1335,7 @@ html, body {
   padding-right: env(safe-area-inset-right, 0px) !important;
 }
 
-/* Reader Settings Customization Panel & Bottom Sheet (Mobile) */
-.settings-dropdown-container {
-  position: absolute !important;
-  right: 0 !important;
-  top: 100% !important;
-  margin-top: 8px !important;
-  width: 320px !important;
-  z-index: 50 !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
-}
 
-@media (max-width: 767px) {
-  .settings-dropdown-container {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    border-radius: 20px 20px 0 0 !important;
-    z-index: 100 !important;
-    margin-top: 0 !important;
-    box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.6) !important;
-    animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 
 /* Centered Navigation Menu for Desktop Header */
 @media (min-width: 768px) {
