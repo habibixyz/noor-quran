@@ -462,7 +462,7 @@ export const QuranReader: React.FC = () => {
 
         {/* Quran Text Scroll */}
         {!isLoading && (
-          <div className="flex flex-col gap-4 max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar">
+          <div className="flex flex-col gap-4 pr-2">
             {verses.map((verse) => {
               const hasIndividualToggle = individualToggles[verse.verse_number] !== undefined;
               const isTranslationVisible = hasIndividualToggle 
