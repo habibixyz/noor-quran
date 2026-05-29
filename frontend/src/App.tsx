@@ -17,7 +17,6 @@ function App() {
   const audioIsActive = playingType !== null;
 
   // Farcaster State
-  const [farcasterUser, setFarcasterUser] = useState<any>(null);
   const [isMiniApp, setIsMiniApp] = useState<boolean>(false);
   const [safeAreaInsets, setSafeAreaInsets] = useState<any>(null);
   const [isAppAdded, setIsAppAdded] = useState<boolean>(false);
@@ -117,9 +116,7 @@ function App() {
 
           const context = await sdk.context;
           if (context) {
-            if (context.user) {
-              setFarcasterUser(context.user);
-            }
+            // user pfp display removed — not storing user object
             if (context.client?.safeAreaInsets) {
               setSafeAreaInsets(context.client.safeAreaInsets);
             }
@@ -420,20 +417,7 @@ function App() {
 
           {/* Wallet and Farcaster User Info in Header */}
           <div className="flex items-center gap-2.5 ml-auto">
-            {farcasterUser && (
-              <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-purple-950/40 border border-purple-500/30 text-xs">
-                {farcasterUser.pfpUrl ? (
-                  <img
-                    src={farcasterUser.pfpUrl}
-                    alt={farcasterUser.username || "Farcaster User"}
-                    className="w-5 h-5 rounded-full object-cover border border-purple-400 shrink-0"
-                  />
-                ) : (
-                  <div className="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center font-bold text-[10px] text-white shrink-0">FC</div>
-                )}
-                <span className="font-semibold text-purple-200 hidden sm:inline">@{farcasterUser.username}</span>
-              </div>
-            )}
+            {/* Farcaster user pfp intentionally removed */}
 
             {/* Add to Farcaster button — only when inside Warpcast and not yet added */}
             {isMiniApp && !isAppAdded && (
