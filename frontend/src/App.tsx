@@ -93,24 +93,13 @@ function App() {
     checkAvailableWallets();
 
     const initFarcaster = async () => {
-      // Always attempt ready() so the splash is dismissed in all contexts
-      // (Warpcast preview, dev tools, and full mini-app mode).
-      const callReady = async () => {
-        try {
-          await sdk.actions.ready();
-        } catch {
-          // Ignore errors in non-Farcaster environments
-        }
-      };
-
+      // Note: sdk.actions.ready() is already fired in main.tsx before
+      // React mounts — no need to call it again here.
       try {
         const inMiniApp = await sdk.isInMiniApp();
         setIsMiniApp(inMiniApp);
         
         if (inMiniApp) {
-          // Dismiss host splash immediately once the React shell is up
-          await callReady();
-
           const context = await sdk.context;
           if (context) {
             if (context.user) {
@@ -154,15 +143,10 @@ function App() {
             setupProvider();
           }
         } else {
-          // Not detected as mini-app — still call ready() as a fallback
-          // in case the Warpcast preview/dev-tools env doesn't set the flag
-          await callReady();
           setupProvider();
         }
       } catch (err) {
         console.warn("Farcaster SDK initialization failed:", err);
-        // Last-resort fallback: dismiss splash unconditionally
-        await callReady();
         setupProvider();
       }
     };
@@ -346,6 +330,11 @@ function App() {
 
   const containerStyle = {
     background: 'var(--color-bg-deep)',
+    // Force full viewport width — prevents partial-column layout in Farcaster frame
+    width: '100vw',
+    maxWidth: '100vw',
+    minHeight: '100dvh',
+    overflowX: 'hidden' as const,
     paddingTop: safeAreaInsets ? `${safeAreaInsets.top}px` : undefined,
     paddingBottom: safeAreaInsets ? `${safeAreaInsets.bottom}px` : undefined,
     paddingLeft: safeAreaInsets ? `${safeAreaInsets.left}px` : undefined,
