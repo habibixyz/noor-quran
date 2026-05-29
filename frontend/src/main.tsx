@@ -2,14 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { sdk } from '@farcaster/frame-sdk'
 
-// ⚡ Fire ready() IMMEDIATELY — before React even mounts.
-// This is the earliest possible moment to dismiss the Warpcast splash.
-// Warpcast shows the imageUrl/splash panel until this resolves.
-sdk.actions.ready().catch(() => {
-  // Silently ignore — not in a Farcaster context
-});
+// Do NOT call sdk.actions.ready() here — the SDK's postMessage channel
+// is not established until after the document fully loads and the iframe
+// handshake completes. Call it inside a React useEffect instead.
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

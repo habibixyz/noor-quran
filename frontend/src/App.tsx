@@ -75,6 +75,17 @@ function App() {
     }
   }, [activeTab]);
 
+  // ─── EFFECT 1: Dismiss Farcaster splash immediately on mount ───────────────
+  // This MUST be the first useEffect so it fires before any async operations.
+  // The Farcaster SDK communicates via postMessage after the document loads;
+  // calling ready() here (after first render) is the correct pattern.
+  useEffect(() => {
+    sdk.actions.ready().catch(() => {
+      // Not in a Farcaster context — safe to ignore
+    });
+  }, []);
+
+  // ─── EFFECT 2: Mobile detection ─────────────────────────────────────────────
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsMobile(window.innerWidth < 768);
@@ -89,17 +100,21 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // ─── EFFECT 3: Farcaster context + wallet init ───────────────────────────────
   useEffect(() => {
     checkAvailableWallets();
 
     const initFarcaster = async () => {
-      // Note: sdk.actions.ready() is already fired in main.tsx before
-      // React mounts — no need to call it again here.
       try {
         const inMiniApp = await sdk.isInMiniApp();
         setIsMiniApp(inMiniApp);
         
         if (inMiniApp) {
+          // ready() was already fired in Effect 1 above, but call again here
+          // as a safety net in case the first call resolved before Warpcast
+          // was listening (race condition on slow devices).
+          sdk.actions.ready().catch(() => {});
+
           const context = await sdk.context;
           if (context) {
             if (context.user) {
