@@ -7,9 +7,10 @@
   "frame": {
     "version": "1",
     "name": "Noor Quran",
-    "iconUrl": "https://onchain-quran.vercel.app/favicon.svg",
+    "iconUrl": "https://onchain-quran.vercel.app/splash-200.png",
     "homeUrl": "https://onchain-quran.vercel.app/",
-    "imageUrl": "https://onchain-quran.vercel.app/og-image.png",
+    "imageUrl": "https://onchain-quran.vercel.app/og-image-3x2.png",
+    "splashImageUrl": "https://onchain-quran.vercel.app/splash-200.png",
     "splashBackgroundColor": "#16110b"
   }
 }

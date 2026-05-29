@@ -1349,3 +1349,12 @@ html, body {
 
 
 
+
+/* Farcaster mini-app: guarantee full viewport width so the app shell
+   never renders as a partial column beside the embed/splash panel */
+#root {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}

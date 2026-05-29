@@ -15,15 +15,17 @@
     <link rel="canonical" href="https://onchain-quran.vercel.app/" />
 
     <!-- Farcaster Frame v2 / Mini App Metadata -->
-    <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://onchain-quran.vercel.app/og-image.png","button":{"title":"Read Quran","action":{"type":"launch_frame"}}}' />
-    <meta name="fc:frame" content='{"version":"next","imageUrl":"https://onchain-quran.vercel.app/og-image.png","button":{"title":"Read Quran","action":{"type":"launch_frame"}}}' />
+    <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://onchain-quran.vercel.app/og-image-3x2.png","button":{"title":"Read Quran","action":{"type":"launch_frame","name":"Noor Quran","splashImageUrl":"https://onchain-quran.vercel.app/splash-200.png","splashBackgroundColor":"#16110b"}}}' />
+    <meta name="fc:frame" content='{"version":"next","imageUrl":"https://onchain-quran.vercel.app/og-image-3x2.png","button":{"title":"Read Quran","action":{"type":"launch_frame","name":"Noor Quran","splashImageUrl":"https://onchain-quran.vercel.app/splash-200.png","splashBackgroundColor":"#16110b"}}}' />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://onchain-quran.vercel.app/" />
     <meta property="og:title" content="Noor Quran - Premium Reader & AI Semantic Search" />
     <meta property="og:description" content="An elegant, distraction-free reading experience with translation controls, audio recitation, and advanced semantic AI search to explore Quranic topics." />
-    <meta property="og:image" content="https://onchain-quran.vercel.app/og-image.png" />
+    <meta property="og:image" content="https://onchain-quran.vercel.app/og-image-3x2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
     <meta property="og:site_name" content="Noor Quran" />
 
     <!-- Twitter -->
@@ -31,7 +33,7 @@
     <meta property="twitter:url" content="https://onchain-quran.vercel.app/" />
     <meta property="twitter:title" content="Noor Quran - Premium Reader & AI Semantic Search" />
     <meta property="twitter:description" content="An elegant, distraction-free reading experience with translation controls, audio recitation, and advanced semantic AI search to explore Quranic topics." />
-    <meta property="twitter:image" content="https://onchain-quran.vercel.app/og-image.png" />
+    <meta property="twitter:image" content="https://onchain-quran.vercel.app/og-image-3x2.png" />
 
     <!-- PWA & Mobile Optimization -->
     <meta name="theme-color" content="#16110b" />
@@ -60,6 +62,14 @@
     </script>
   </head>
   <body>
+    <style>
+      html, body, #root {
+        width: 100%;
+        max-width: 100vw;
+        min-height: 100dvh;
+        overflow-x: hidden;
+      }
+    </style>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

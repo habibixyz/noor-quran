@@ -93,12 +93,24 @@ function App() {
     checkAvailableWallets();
 
     const initFarcaster = async () => {
+      // Always attempt ready() so the splash is dismissed in all contexts
+      // (Warpcast preview, dev tools, and full mini-app mode).
+      const callReady = async () => {
+        try {
+          await sdk.actions.ready();
+        } catch {
+          // Ignore errors in non-Farcaster environments
+        }
+      };
+
       try {
         const inMiniApp = await sdk.isInMiniApp();
         setIsMiniApp(inMiniApp);
         
         if (inMiniApp) {
-          sdk.actions.ready();
+          // Dismiss host splash immediately once the React shell is up
+          await callReady();
+
           const context = await sdk.context;
           if (context) {
             if (context.user) {
@@ -142,10 +154,15 @@ function App() {
             setupProvider();
           }
         } else {
+          // Not detected as mini-app — still call ready() as a fallback
+          // in case the Warpcast preview/dev-tools env doesn't set the flag
+          await callReady();
           setupProvider();
         }
       } catch (err) {
         console.warn("Farcaster SDK initialization failed:", err);
+        // Last-resort fallback: dismiss splash unconditionally
+        await callReady();
         setupProvider();
       }
     };
