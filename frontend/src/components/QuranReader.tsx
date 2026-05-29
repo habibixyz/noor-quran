@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { surahList, getSurahVerses } from "../data/quranData";
 import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown } from "lucide-react";
 import { useAudio, LANGUAGE_OPTIONS, RECITER_OPTIONS } from "../context/AudioContext";
+import { sdk } from "@farcaster/frame-sdk";
 
 interface Verse {
   id: number;
@@ -26,6 +27,7 @@ export const QuranReader: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [showGlobalTranslation, setShowGlobalTranslation] = useState<boolean>(true);
   const [individualToggles, setIndividualToggles] = useState<Record<number, boolean>>({});
+  // intentionally blank — inNarrowFrame removed, layout is always single column
 
   const {
     selectedLanguage,
@@ -118,13 +120,24 @@ export const QuranReader: React.FC = () => {
     alert("Verse copied to clipboard!");
   };
 
-  const shareVerse = (verse: Verse) => {
+  const shareVerse = async (verse: Verse) => {
     const textToShare = `"${verse.translation}" - Quran ${selectedSurah}:${verse.verse_number} (${activeSurahDetails.englishName})`;
+    const shareUrl = `https://onchain-quran.vercel.app/`;
+    try {
+      const inMiniApp = await sdk.isInMiniApp();
+      if (inMiniApp) {
+        await sdk.actions.composeCast({
+          text: `📖 ${verse.text_uthmani}\n\n"${verse.translation}"\n\n— Quran ${selectedSurah}:${verse.verse_number} (${activeSurahDetails.englishName})`,
+          embeds: [shareUrl],
+        });
+        return;
+      }
+    } catch {/* fall through */}
     if (navigator.share) {
       navigator.share({
         title: `Quran ${selectedSurah}:${verse.verse_number}`,
         text: textToShare,
-        url: window.location.href
+        url: shareUrl
       }).catch(console.error);
     } else {
       navigator.clipboard.writeText(textToShare);
@@ -274,9 +287,9 @@ export const QuranReader: React.FC = () => {
   );
 
   return (
-    <article className="grid grid-cols-1 lg:grid-cols-4 gap-6 p-0 md:p-4 relative" aria-label="Quran Reader">
-      {/* Side Menu / Sidebar - Hidden on mobile, shown on desktop */}
-      <div className="lg:col-span-1 hidden lg:flex flex-col gap-4">
+    <article className="flex flex-col gap-4 p-0 relative" aria-label="Quran Reader">
+      {/* Sidebar hidden at all sizes — surah browsing via Browse Chapters modal */}
+      <div className="hidden">
         {/* Current Surah Card */}
         <div className="glass-panel p-4 flex flex-col gap-2">
           <div className="text-[10px] font-bold tracking-widest text-[#8c6b4a] uppercase flex items-center gap-2 mb-2">
@@ -346,8 +359,8 @@ export const QuranReader: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="lg:col-span-3 flex flex-col gap-4 md:gap-6">
+      {/* Main Content Area — always full width */}
+      <div className="flex flex-col gap-4">
         {/* Header Ribbon / Audio Controller */}
         <div className="glass-panel p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 glowing-active relative z-40">
           <div>
@@ -514,9 +527,9 @@ export const QuranReader: React.FC = () => {
                     <button
                       id={`share-verse-btn-${verse.verse_number}`}
                       onClick={() => shareVerse(verse)}
-                      className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
+                      className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-purple-400 hover:border-purple-800/60"
                     >
-                      <Share2 size={13} /> Share
+                      <Share2 size={13} /> Cast
                     </button>
                     <button
                       id={`copy-verse-btn-${verse.verse_number}`}

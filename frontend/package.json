@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@farcaster/frame-sdk": "^0.2.0",
     "@paypal/react-paypal-js": "^9.2.0",
     "canvas-confetti": "^1.9.4",
     "ethers": "^6.16.0",

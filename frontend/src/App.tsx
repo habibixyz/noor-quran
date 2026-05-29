@@ -8,13 +8,20 @@ import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
 import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
-import { BackgroundAnimation } from "./components/BackgroundAnimation";
+import { sdk } from "@farcaster/frame-sdk";
 
 function App() {
   const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("reader");
   const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
   const { playingType } = useAudio();
   const audioIsActive = playingType !== null;
+
+  // Farcaster State
+  const [farcasterUser, setFarcasterUser] = useState<any>(null);
+  const [isMiniApp, setIsMiniApp] = useState<boolean>(false);
+  const [safeAreaInsets, setSafeAreaInsets] = useState<any>(null);
+  const [isAppAdded, setIsAppAdded] = useState<boolean>(false);
+  const [showWelcomeBanner, setShowWelcomeBanner] = useState<boolean>(false);
 
   // Wallet state
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
@@ -84,7 +91,66 @@ function App() {
 
   useEffect(() => {
     checkAvailableWallets();
-    setupProvider();
+
+    const initFarcaster = async () => {
+      try {
+        const inMiniApp = await sdk.isInMiniApp();
+        setIsMiniApp(inMiniApp);
+        
+        if (inMiniApp) {
+          sdk.actions.ready();
+          const context = await sdk.context;
+          if (context) {
+            if (context.user) {
+              setFarcasterUser(context.user);
+            }
+            if (context.client?.safeAreaInsets) {
+              setSafeAreaInsets(context.client.safeAreaInsets);
+            }
+            // Track whether the user has already added this mini app
+            const alreadyAdded = context.client?.added ?? false;
+            setIsAppAdded(alreadyAdded);
+            if (!alreadyAdded) {
+              // Show welcome banner to prompt them to add the app
+              setShowWelcomeBanner(true);
+            }
+          }
+          
+          // Automatically connect the Farcaster wallet provider
+          if (sdk.wallet?.ethProvider) {
+            try {
+              const tempProvider = new ethers.BrowserProvider(sdk.wallet.ethProvider as any);
+              setProvider(tempProvider);
+              const network = await tempProvider.getNetwork();
+              const currentChainId = Number(network.chainId);
+              setChainId(currentChainId);
+              
+              const accounts = await tempProvider.listAccounts();
+              if (accounts.length > 0) {
+                setAccount(accounts[0].address);
+                const tempSigner = await tempProvider.getSigner();
+                setSigner(tempSigner);
+                const balance = await tempProvider.getBalance(accounts[0].address);
+                setWalletBalance(parseFloat(ethers.formatEther(balance)).toFixed(4));
+              }
+              setActiveWalletName("Farcaster Wallet");
+            } catch (err) {
+              console.warn("Farcaster wallet provider setup failed, falling back:", err);
+              setupProvider();
+            }
+          } else {
+            setupProvider();
+          }
+        } else {
+          setupProvider();
+        }
+      } catch (err) {
+        console.warn("Farcaster SDK initialization failed:", err);
+        setupProvider();
+      }
+    };
+
+    initFarcaster();
 
     // Listen for chain changes or account changes
     if (window.ethereum) {
@@ -261,11 +327,18 @@ function App() {
     }
   };
 
+  const containerStyle = {
+    background: 'var(--color-bg-deep)',
+    paddingTop: safeAreaInsets ? `${safeAreaInsets.top}px` : undefined,
+    paddingBottom: safeAreaInsets ? `${safeAreaInsets.bottom}px` : undefined,
+    paddingLeft: safeAreaInsets ? `${safeAreaInsets.left}px` : undefined,
+    paddingRight: safeAreaInsets ? `${safeAreaInsets.right}px` : undefined,
+  };
+
   return (
-    <div className="min-h-screen flex flex-col justify-between pb-28 md:pb-4 relative" style={{ background: 'var(--color-bg-deep)' }}>
-      <BackgroundAnimation />
-      {/* Main Structural Wrapper Container */}
-      <div className="max-w-7xl w-full mx-auto px-4 md:px-6 flex-grow flex flex-col gap-4 relative z-10">
+    <div className="min-h-screen flex flex-col justify-between relative" style={containerStyle}>
+      {/* Main Structural Wrapper Container - full width always */}
+      <div className="w-full px-3 flex-grow flex flex-col gap-4 relative z-10">
         {/* Main Header / Navigation */}
         <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90 relative">
           {/* Brand Logo */}
@@ -276,15 +349,20 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-sm md:text-2xl font-bold tracking-tight text-white flex items-center gap-1">
+              <h1 className="text-sm md:text-2xl font-bold tracking-tight text-white flex items-center gap-1.5">
                 <span className="hidden sm:inline">Premium</span>
                 <span className="text-[var(--color-gold)] font-semibold">Quran</span>
+                {isMiniApp && (
+                  <span className="text-[9px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1.5 py-0.5 rounded-md uppercase tracking-wider shrink-0">
+                    Farcaster
+                  </span>
+                )}
               </h1>
             </div>
           </div>
 
-          {/* Desktop Tab Selection (Hidden on Mobile) */}
-          <nav className="hidden md:flex gap-1.5 p-1 bg-[#1c140c] rounded-xl border border-[var(--color-glass-border)] text-xs font-bold header-nav-centered" aria-label="Main Navigation">
+          {/* Desktop Tab Selection — always hidden, bottom nav is used everywhere */}
+          <nav className="hidden" aria-label="Main Navigation">
             <button
               id="nav-tab-reader"
               onClick={() => setActiveTab("reader")}
@@ -319,35 +397,78 @@ function App() {
             </button>
           </nav>
 
-          {/* Wallet connection status in Header */}
-          {activeTab === "about" && (
-            <div className="flex items-center gap-2 ml-auto">
-              {account ? (
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-[var(--color-bg-deep)] border border-emerald-950 text-[10px] md:text-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                  <span className="font-mono font-bold text-[var(--color-gold-light)]">
-                    {account.substring(0, 4)}...{account.substring(account.length - 4)}
-                  </span>
-                  <span className="hidden lg:inline text-[#8c6b4a]">({walletBalance} ETH)</span>
-                </div>
-              ) : (
-                <button
-                  id="header-connect-wallet-btn"
-                  onClick={() => setShowWalletModal(true)}
-                  className="gold-button flex items-center gap-1 py-1 px-2.5 text-[10px] md:text-xs font-bold"
-                >
-                  <Wallet size={12} />
-                  <span>Connect</span>
-                </button>
-              )}
-            </div>
-          )}
+          {/* Wallet and Farcaster User Info in Header */}
+          <div className="flex items-center gap-2.5 ml-auto">
+            {farcasterUser && (
+              <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-purple-950/40 border border-purple-500/30 text-xs">
+                {farcasterUser.pfpUrl ? (
+                  <img
+                    src={farcasterUser.pfpUrl}
+                    alt={farcasterUser.username || "Farcaster User"}
+                    className="w-5 h-5 rounded-full object-cover border border-purple-400 shrink-0"
+                  />
+                ) : (
+                  <div className="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center font-bold text-[10px] text-white shrink-0">FC</div>
+                )}
+                <span className="font-semibold text-purple-200 hidden sm:inline">@{farcasterUser.username}</span>
+              </div>
+            )}
+
+            {/* Add to Farcaster button — only when inside Warpcast and not yet added */}
+            {isMiniApp && !isAppAdded && (
+              <button
+                id="add-to-farcaster-btn"
+                onClick={async () => {
+                  try {
+                    await sdk.actions.addMiniApp();
+                    setIsAppAdded(true);
+                    setShowWelcomeBanner(false);
+                  } catch {/* user dismissed */}
+                }}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-purple-600/20 border border-purple-500/50 text-purple-200 text-[10px] font-bold hover:bg-purple-600/40 transition-all"
+              >
+                <span>⊕</span>
+                <span className="hidden sm:inline">Add App</span>
+              </button>
+            )}
+
+            {activeTab === "about" && (
+              <div className="flex items-center gap-2">
+                {account ? (
+                  <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-[var(--color-bg-deep)] border border-emerald-950 text-[10px] md:text-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span className="font-mono font-bold text-[var(--color-gold-light)]">
+                      {account.substring(0, 4)}...{account.substring(account.length - 4)}
+                    </span>
+                    <span className="hidden lg:inline text-[#8c6b4a]">({walletBalance} ETH)</span>
+                  </div>
+                ) : (
+                  <button
+                    id="header-connect-wallet-btn"
+                    onClick={() => setShowWalletModal(true)}
+                    className="gold-button flex items-center gap-1 py-1 px-2.5 text-[10px] md:text-xs font-bold"
+                  >
+                    <Wallet size={12} />
+                    <span>Connect</span>
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </header>
 
-        {/* Mobile Bottom Navigation Bar */}
+        {/* Bottom Navigation Bar — always visible at all screen sizes */}
         <div 
-          className="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-panel bg-[var(--color-bg-dark)]/95 backdrop-blur-xl pb-safe"
-          style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 50, borderRadius: '16px 16px 0 0' }}
+          className="fixed bottom-0 left-0 right-0 z-50 glass-panel bg-[var(--color-bg-dark)]/95 backdrop-blur-xl"
+          style={{ 
+            position: 'fixed', 
+            bottom: 0, 
+            left: 0, 
+            right: 0, 
+            zIndex: 50, 
+            borderRadius: '16px 16px 0 0',
+            paddingBottom: safeAreaInsets ? `${safeAreaInsets.bottom}px` : '4px'
+          }}
         >
           <nav className="flex justify-around p-2" aria-label="Mobile Navigation">
             <button
@@ -386,7 +507,57 @@ function App() {
         </div>
 
         {/* Main Content Render */}
-        <main className="flex-grow py-2 md:py-4" style={{ paddingBottom: isMobile ? (audioIsActive ? "212px" : "80px") : undefined }}>
+        <main className="flex-grow py-2" style={{ paddingBottom: audioIsActive ? '212px' : '80px' }}>
+
+          {/* Farcaster Welcome Banner — shown on first load inside Warpcast */}
+          {showWelcomeBanner && isMiniApp && (
+            <div
+              id="farcaster-welcome-banner"
+              className="relative mb-4 rounded-2xl overflow-hidden border border-purple-500/30"
+              style={{
+                background: 'linear-gradient(135deg, #1a0a2e 0%, #16110b 60%, #1a0a2e 100%)',
+              }}
+            >
+              {/* Decorative glow */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-purple-600/20 blur-2xl rounded-full" />
+              <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 md:p-5">
+                <div className="text-4xl shrink-0">🕌</div>
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-base font-bold text-white flex items-center gap-2 flex-wrap">
+                    Welcome to Noor Quran
+                    <span className="text-[10px] font-semibold bg-purple-500/25 text-purple-300 border border-purple-500/40 px-1.5 py-0.5 rounded-md tracking-wider">FARCASTER MINI APP</span>
+                  </h2>
+                  <p className="text-xs text-purple-200/80 mt-1 leading-relaxed">
+                    Read, listen &amp; cast Quranic verses directly inside Warpcast. Add this app to keep it in your launcher.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    id="banner-add-app-btn"
+                    onClick={async () => {
+                      try {
+                        await sdk.actions.addMiniApp();
+                        setIsAppAdded(true);
+                        setShowWelcomeBanner(false);
+                      } catch {/* dismissed */}
+                    }}
+                    className="px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all flex items-center gap-1.5 shrink-0"
+                  >
+                    <span>⊕</span> Add to Farcaster
+                  </button>
+                  <button
+                    id="banner-dismiss-btn"
+                    onClick={() => setShowWelcomeBanner(false)}
+                    className="p-1.5 rounded-lg text-purple-300/60 hover:text-purple-200 transition-colors"
+                    aria-label="Dismiss banner"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {activeTab === "reader" ? (
             <QuranReader />
           ) : activeTab === "search" ? (

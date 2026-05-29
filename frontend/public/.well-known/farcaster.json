@@ -1,0 +1,15 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjQyODkzMSwidHlwZSI6ImF1dGgiLCJrZXkiOiIweGU2N0NDRkZBQzZCNDg5MThDRUIxM0YwYUZEMTdDNEQ5ZjFFYUQxODQifQ",
+    "payload": "eyJkb21haW4iOiJvbmNoYWluLXF1cmFuLnZlcmNlbC5hcHAifQ",
+    "signature": "acCddaZTs99gVqQiQ8hkQpNXFxmIkhaRpYOcm+2pJYESRwX96hOIcnjf+p4lLyNHKGMWjE/O4CA0Z8FDQfkaqRw="
+  },
+  "frame": {
+    "version": "1",
+    "name": "Noor Quran",
+    "iconUrl": "https://onchain-quran.vercel.app/favicon.svg",
+    "homeUrl": "https://onchain-quran.vercel.app/",
+    "imageUrl": "https://onchain-quran.vercel.app/og-image.png",
+    "splashBackgroundColor": "#16110b"
+  }
+}

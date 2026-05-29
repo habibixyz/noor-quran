@@ -13,10 +13,23 @@
       }
     }
   ],
+  "headers": [
+    {
+      "source": "/.well-known/farcaster.json",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "api/index.py"
+    },
+    {
+      "src": "/.well-known/farcaster.json",
+      "dest": "/.well-known/farcaster.json"
     },
     {
       "handle": "filesystem"
