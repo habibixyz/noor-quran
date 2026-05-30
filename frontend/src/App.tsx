@@ -3,7 +3,7 @@ import { QuranReader } from "./components/QuranReader";
 import { SemanticSearch } from "./components/SemanticSearch";
 import { AboutAndDonate } from "./components/AboutAndDonate";
 import { UmrahCompanion } from "./components/UmrahCompanion";
-import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass } from "lucide-react";
+import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass, Share2 } from "lucide-react";
 import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
@@ -412,6 +412,23 @@ function App() {
           {/* Wallet and Farcaster User Info in Header */}
           <div className="flex items-center gap-2.5 ml-auto">
             {/* Farcaster user pfp intentionally removed */}
+
+            {/* Share App button */}
+            <button
+              id="share-app-btn"
+              onClick={() => {
+                const shareUrl = "https://warpcast.com/~/compose?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖&embeds[]=https://quranonbase.vercel.app";
+                if (isMiniApp) {
+                  sdk.actions.openUrl(shareUrl);
+                } else {
+                  window.open(shareUrl, "_blank", "noopener,noreferrer");
+                }
+              }}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-purple-600/20 border border-purple-500/50 text-purple-200 text-[10px] font-bold hover:bg-purple-600/40 transition-all cursor-pointer"
+            >
+              <Share2 size={12} />
+              <span>Share</span>
+            </button>
 
             {/* Add to Farcaster button — only when inside Warpcast and not yet added */}
             {isMiniApp && !isAppAdded && (
