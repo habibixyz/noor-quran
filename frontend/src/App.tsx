@@ -20,6 +20,7 @@ function App() {
   const [safeAreaInsets, setSafeAreaInsets] = useState<any>(null);
   const [isAppAdded, setIsAppAdded] = useState<boolean>(false);
   const [showWelcomeBanner, setShowWelcomeBanner] = useState<boolean>(false);
+  const [showShareMenu, setShowShareMenu] = useState<boolean>(false);
 
   // Wallet state
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
@@ -72,6 +73,19 @@ function App() {
       document.head.appendChild(metaDescription);
     }
   }, [activeTab]);
+
+  // Click outside to close share menu
+  useEffect(() => {
+    if (!showShareMenu) return;
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("#share-app-btn-container")) {
+        setShowShareMenu(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [showShareMenu]);
 
   // ─── EFFECT 1: Dismiss Farcaster splash immediately on mount ───────────────
   // This MUST be the first useEffect so it fires before any async operations.
@@ -363,10 +377,9 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-sm md:text-2xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                <span className="hidden sm:inline">Premium</span>
-                <span className="text-[var(--color-gold)] font-semibold">Quran</span>
-                <span className="text-[10px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1.5 py-0.5 rounded-md tracking-normal shrink-0">
+              <h1 className="text-xs sm:text-sm md:text-2xl font-bold tracking-tight text-white flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1.5">
+                <span className="text-[var(--color-gold)] font-semibold leading-tight">Quran</span>
+                <span className="text-[8px] sm:text-[10px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1 py-0.2 sm:px-1.5 sm:py-0.5 rounded-md tracking-normal shrink-0 w-max">
                   on Farcaster
                 </span>
               </h1>
@@ -413,22 +426,100 @@ function App() {
           <div className="flex items-center gap-2.5 ml-auto">
             {/* Farcaster user pfp intentionally removed */}
 
-            {/* Share App button */}
-            <button
-              id="share-app-btn"
-              onClick={() => {
-                const shareUrl = "https://warpcast.com/~/compose?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖&embeds[]=https://quranonbase.vercel.app";
-                if (isMiniApp) {
-                  sdk.actions.openUrl(shareUrl);
-                } else {
-                  window.open(shareUrl, "_blank", "noopener,noreferrer");
-                }
-              }}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-purple-600/20 border border-purple-500/50 text-purple-200 text-[10px] font-bold hover:bg-purple-600/40 transition-all cursor-pointer"
-            >
-              <Share2 size={12} />
-              <span>Share</span>
-            </button>
+            {/* Share App container with Dropdown */}
+            <div id="share-app-btn-container" className="relative">
+              <button
+                id="share-app-btn"
+                onClick={() => setShowShareMenu(!showShareMenu)}
+                className="flex items-center gap-1 px-2 py-1 md:px-2.5 md:py-1.5 rounded-xl bg-purple-600/20 border border-purple-500/50 text-purple-200 text-[10px] font-bold hover:bg-purple-600/40 transition-all cursor-pointer"
+              >
+                <Share2 size={11} />
+                <span>Share</span>
+              </button>
+              {showShareMenu && (
+                <div className="absolute right-0 top-full mt-1.5 w-44 rounded-xl border border-[#33261a] bg-[#16110b]/95 backdrop-blur-xl p-1 shadow-2xl z-50 flex flex-col gap-1">
+                  <button
+                    onClick={() => {
+                      const shareUrl = "https://warpcast.com/~/compose?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖&embeds[]=https://quranonbase.vercel.app";
+                      if (isMiniApp) {
+                        sdk.actions.openUrl(shareUrl);
+                      } else {
+                        window.open(shareUrl, "_blank", "noopener,noreferrer");
+                      }
+                      setShowShareMenu(false);
+                    }}
+                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-purple-200 hover:bg-purple-500/20 rounded-lg transition-colors w-full cursor-pointer"
+                  >
+                    <span>💬</span>
+                    <span>Warpcast / Farcaster</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      const twitterUrl = "https://twitter.com/intent/tweet?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖🕌 @base&url=https://quranonbase.vercel.app";
+                      window.open(twitterUrl, "_blank", "noopener,noreferrer");
+                      setShowShareMenu(false);
+                    }}
+                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-[#f0e8d0] hover:bg-white/5 rounded-lg transition-colors w-full cursor-pointer"
+                  >
+                    <span>𝕏</span>
+                    <span>Twitter / X</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      const whatsappUrl = "https://api.whatsapp.com/send?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖🕌 - https://quranonbase.vercel.app";
+                      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+                      setShowShareMenu(false);
+                    }}
+                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition-colors w-full cursor-pointer"
+                  >
+                    <span>🟢</span>
+                    <span>WhatsApp</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      const telegramUrl = "https://t.me/share/url?url=https://quranonbase.vercel.app&text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖🕌";
+                      window.open(telegramUrl, "_blank", "noopener,noreferrer");
+                      setShowShareMenu(false);
+                    }}
+                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-sky-400 hover:bg-sky-500/10 rounded-lg transition-colors w-full cursor-pointer"
+                  >
+                    <span>✈️</span>
+                    <span>Telegram</span>
+                  </button>
+                  {navigator.share && (
+                    <button
+                      onClick={async () => {
+                        try {
+                          await navigator.share({
+                            title: "Noor Quran",
+                            text: "Read, listen and support the Holy Quran on-chain with Noor Quran! 📖🕌",
+                            url: "https://quranonbase.vercel.app",
+                          });
+                        } catch (err) {
+                          console.error("Error sharing:", err);
+                        }
+                        setShowShareMenu(false);
+                      }}
+                      className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-amber-200 hover:bg-amber-500/10 border-t border-[#33261a] rounded-lg transition-colors w-full cursor-pointer pt-2 mt-1"
+                    >
+                      <span>📤</span>
+                      <span>System Share</span>
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("https://quranonbase.vercel.app");
+                      alert("Link copied to clipboard!");
+                      setShowShareMenu(false);
+                    }}
+                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-[var(--color-gold)] hover:bg-[#33261a]/30 border-t border-[#33261a] rounded-lg transition-colors w-full cursor-pointer pt-2 mt-1"
+                  >
+                    <span>📋</span>
+                    <span>Copy Link</span>
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Add to Farcaster button — only when inside Warpcast and not yet added */}
             {isMiniApp && !isAppAdded && (
@@ -453,15 +544,15 @@ function App() {
                 {account ? (
                   <button
                     onClick={disconnectWallet}
-                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[var(--color-bg-deep)] hover:bg-[#331111]/30 hover:border-red-950 border border-emerald-950 text-[10px] md:text-xs group transition-all cursor-pointer"
+                    className="flex items-center gap-1 px-2 py-1 md:px-2.5 md:py-1 rounded-xl bg-[var(--color-bg-deep)] hover:bg-[#331111]/30 hover:border-red-950 border border-emerald-950 text-[10px] md:text-xs group transition-all cursor-pointer"
                     title="Disconnect Wallet"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:bg-red-500 transition-colors shrink-0"></span>
+                    <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-emerald-500 group-hover:bg-red-500 transition-colors shrink-0"></span>
                     <span className="font-mono font-bold text-[var(--color-gold-light)] group-hover:text-red-400 transition-colors">
                       {account.substring(0, 4)}...{account.substring(account.length - 4)}
                     </span>
                     <span className="hidden lg:inline text-[#8c6b4a] group-hover:text-red-300">({walletBalance} ETH)</span>
-                    <span className="text-[9px] text-[#8c6b4a] group-hover:text-red-400 ml-1 border border-transparent group-hover:border-red-950 px-1 rounded transition-all">Disconnect</span>
+                    <span className="hidden sm:inline text-[9px] text-[#8c6b4a] group-hover:text-red-400 ml-1 border border-transparent group-hover:border-red-950 px-1 rounded transition-all">Disconnect</span>
                   </button>
                 ) : (
                   <button
