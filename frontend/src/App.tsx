@@ -437,7 +437,7 @@ function App() {
                 <span>Share</span>
               </button>
               {showShareMenu && (
-                <div className="absolute right-0 top-full mt-1.5 w-44 rounded-xl border border-[#33261a] bg-[#16110b]/95 backdrop-blur-xl p-1 shadow-2xl z-50 flex flex-col gap-1">
+                <div className="share-dropdown-menu">
                   <button
                     onClick={() => {
                       const shareUrl = "https://warpcast.com/~/compose?text=Read, listen and support the Holy Quran on-chain with Noor Quran! 📖&embeds[]=https://quranonbase.vercel.app";
@@ -448,7 +448,7 @@ function App() {
                       }
                       setShowShareMenu(false);
                     }}
-                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-purple-200 hover:bg-purple-500/20 rounded-lg transition-colors w-full cursor-pointer"
+                    className="share-dropdown-item primary"
                   >
                     <span>💬</span>
                     <span>Warpcast / Farcaster</span>
@@ -459,7 +459,7 @@ function App() {
                       window.open(twitterUrl, "_blank", "noopener,noreferrer");
                       setShowShareMenu(false);
                     }}
-                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-[#f0e8d0] hover:bg-white/5 rounded-lg transition-colors w-full cursor-pointer"
+                    className="share-dropdown-item"
                   >
                     <span>𝕏</span>
                     <span>Twitter / X</span>
@@ -470,7 +470,7 @@ function App() {
                       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
                       setShowShareMenu(false);
                     }}
-                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition-colors w-full cursor-pointer"
+                    className="share-dropdown-item whatsapp"
                   >
                     <span>🟢</span>
                     <span>WhatsApp</span>
@@ -481,7 +481,7 @@ function App() {
                       window.open(telegramUrl, "_blank", "noopener,noreferrer");
                       setShowShareMenu(false);
                     }}
-                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-sky-400 hover:bg-sky-500/10 rounded-lg transition-colors w-full cursor-pointer"
+                    className="share-dropdown-item telegram"
                   >
                     <span>✈️</span>
                     <span>Telegram</span>
@@ -500,7 +500,7 @@ function App() {
                         }
                         setShowShareMenu(false);
                       }}
-                      className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-amber-200 hover:bg-amber-500/10 border-t border-[#33261a] rounded-lg transition-colors w-full cursor-pointer pt-2 mt-1"
+                      className="share-dropdown-item system-share"
                     >
                       <span>📤</span>
                       <span>System Share</span>
@@ -512,7 +512,7 @@ function App() {
                       alert("Link copied to clipboard!");
                       setShowShareMenu(false);
                     }}
-                    className="flex items-center gap-2 px-2.5 py-1.5 text-left text-[11px] text-[var(--color-gold)] hover:bg-[#33261a]/30 border-t border-[#33261a] rounded-lg transition-colors w-full cursor-pointer pt-2 mt-1"
+                    className="share-dropdown-item copy-link"
                   >
                     <span>📋</span>
                     <span>Copy Link</span>

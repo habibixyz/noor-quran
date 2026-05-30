@@ -1389,3 +1389,84 @@ body {
   overflow: hidden !important;
   display: block !important;
 }
+
+/* ==========================================================================
+   SHARE DROPDOWN STYLES
+   ========================================================================== */
+.share-dropdown-menu {
+  position: absolute !important;
+  right: 0 !important;
+  top: 100% !important;
+  margin-top: 6px !important;
+  width: 180px !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-glass-border) !important;
+  background-color: var(--color-bg-dark) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 6px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.share-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  text-align: left !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: var(--color-text-light) !important;
+  border-radius: 8px !important;
+  transition: var(--transition-smooth) !important;
+  width: 100% !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  border: none !important;
+  justify-content: flex-start !important;
+}
+
+.share-dropdown-item:hover {
+  background-color: var(--color-bg-light) !important;
+  color: var(--color-gold-light) !important;
+}
+
+.share-dropdown-item.primary {
+  color: #a855f7 !important;
+}
+.share-dropdown-item.primary:hover {
+  background-color: rgba(168, 85, 247, 0.15) !important;
+}
+
+.share-dropdown-item.whatsapp:hover {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+}
+
+.share-dropdown-item.telegram:hover {
+  background-color: rgba(14, 165, 233, 0.15) !important;
+  color: #0ea5e9 !important;
+}
+
+.share-dropdown-item.system-share {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 0px !important;
+  margin-top: 2px !important;
+  padding-top: 10px !important;
+}
+
+.share-dropdown-item.copy-link {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 0px !important;
+  margin-top: 2px !important;
+  padding-top: 10px !important;
+  color: var(--color-gold) !important;
+}
+.share-dropdown-item.copy-link:hover {
+  background-color: rgba(201, 168, 76, 0.15) !important;
+  color: var(--color-gold-light) !important;
+}
