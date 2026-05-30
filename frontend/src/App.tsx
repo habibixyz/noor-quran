@@ -12,7 +12,6 @@ import { sdk } from "@farcaster/frame-sdk";
 
 function App() {
   const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("reader");
-  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
   const { playingType } = useAudio();
   const audioIsActive = playingType !== null;
 
@@ -84,20 +83,7 @@ function App() {
     });
   }, []);
 
-  // ─── EFFECT 2: Mobile detection ─────────────────────────────────────────────
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth < 768);
-    }
-  }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // ─── EFFECT 3: Farcaster context + wallet init ───────────────────────────────
   useEffect(() => {
@@ -345,8 +331,9 @@ function App() {
     // Force full viewport width — prevents partial-column layout in Farcaster frame
     width: '100vw',
     maxWidth: '100vw',
-    minHeight: '100dvh',
-    overflowX: 'hidden' as const,
+    height: '100dvh',
+    maxHeight: '100dvh',
+    overflow: 'hidden' as const,
     paddingTop: safeAreaInsets ? `${safeAreaInsets.top}px` : undefined,
     paddingBottom: safeAreaInsets ? `${safeAreaInsets.bottom}px` : undefined,
     paddingLeft: safeAreaInsets ? `${safeAreaInsets.left}px` : undefined,
@@ -354,9 +341,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between relative" style={containerStyle}>
+    <div className="h-dvh max-h-dvh flex flex-col justify-between relative overflow-hidden" style={containerStyle}>
       {/* Main Structural Wrapper Container - full width always */}
-      <div className="w-full px-3 flex-grow flex flex-col gap-4 relative z-10">
+      <div className="w-full px-3 flex-grow flex flex-col gap-2 relative z-10 overflow-hidden h-full">
         {/* Main Header / Navigation */}
         <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90 relative">
           {/* Brand Logo */}
@@ -512,94 +499,94 @@ function App() {
         </div>
 
         {/* Main Content Render */}
-        <main className="flex-grow py-2" style={{ paddingBottom: audioIsActive ? '212px' : '80px' }}>
+        <main className="flex-grow overflow-y-auto custom-scrollbar px-1 py-2">
+          <div style={{ paddingBottom: audioIsActive ? '220px' : '100px' }}>
 
-          {/* Farcaster Welcome Banner — shown on first load inside Warpcast */}
-          {showWelcomeBanner && isMiniApp && (
-            <div
-              id="farcaster-welcome-banner"
-              className="relative mb-4 rounded-2xl overflow-hidden border border-purple-500/30"
-              style={{
-                background: 'linear-gradient(135deg, #1a0a2e 0%, #16110b 60%, #1a0a2e 100%)',
-              }}
-            >
-              {/* Decorative glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-purple-600/20 blur-2xl rounded-full" />
-              <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 md:p-5">
-                <div className="text-4xl shrink-0">🕌</div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-base font-bold text-white flex items-center gap-2 flex-wrap">
-                    Welcome to Noor Quran
-                    <span className="text-[10px] font-semibold bg-purple-500/25 text-purple-300 border border-purple-500/40 px-1.5 py-0.5 rounded-md tracking-wider">FARCASTER MINI APP</span>
-                  </h2>
-                  <p className="text-xs text-purple-200/80 mt-1 leading-relaxed">
-                    Read, listen &amp; cast Quranic verses directly inside Warpcast. Add this app to keep it in your launcher.
+            {/* Farcaster Welcome Banner — shown on first load inside Warpcast */}
+            {showWelcomeBanner && isMiniApp && (
+              <div
+                id="farcaster-welcome-banner"
+                className="relative mb-4 rounded-2xl overflow-hidden border border-purple-500/30"
+                style={{
+                  background: 'linear-gradient(135deg, #1a0a2e 0%, #16110b 60%, #1a0a2e 100%)',
+                }}
+              >
+                {/* Decorative glow */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-purple-600/20 blur-2xl rounded-full" />
+                <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 md:p-5">
+                  <div className="text-4xl shrink-0">🕌</div>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-base font-bold text-white flex items-center gap-2 flex-wrap">
+                      Welcome to Noor Quran
+                      <span className="text-[10px] font-semibold bg-purple-500/25 text-purple-300 border border-purple-500/40 px-1.5 py-0.5 rounded-md tracking-wider">FARCASTER MINI APP</span>
+                    </h2>
+                    <p className="text-xs text-purple-200/80 mt-1 leading-relaxed">
+                      Read, listen &amp; cast Quranic verses directly inside Warpcast. Add this app to keep it in your launcher.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      id="banner-add-app-btn"
+                      onClick={async () => {
+                        try {
+                          await sdk.actions.addMiniApp();
+                          setIsAppAdded(true);
+                          setShowWelcomeBanner(false);
+                        } catch {/* dismissed */}
+                      }}
+                      className="px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all flex items-center gap-1.5 shrink-0"
+                    >
+                      <span>⊕</span> Add to Farcaster
+                    </button>
+                    <button
+                      id="banner-dismiss-btn"
+                      onClick={() => setShowWelcomeBanner(false)}
+                      className="p-1.5 rounded-lg text-purple-300/60 hover:text-purple-200 transition-colors"
+                      aria-label="Dismiss banner"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "reader" ? (
+              <QuranReader />
+            ) : activeTab === "search" ? (
+              <SemanticSearch />
+            ) : activeTab === "umrah" ? (
+              <UmrahCompanion />
+            ) : (
+              <>
+                <AboutAndDonate
+                  provider={provider}
+                  signer={signer}
+                  account={account}
+                  chainId={chainId}
+                  walletBalance={walletBalance}
+                  activeWalletName={activeWalletName}
+                  switchNetwork={switchNetwork}
+                />
+                <footer className="glass-panel p-4 mt-6 mb-4 flex flex-col gap-2 text-center">
+                  <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <div className="flex items-center gap-1.5 text-[11px] text-[#8c6b4a]">
+                      <Heart size={11} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />
+                      <span>Preserving Al-Quran On-chain · Base Network</span>
+                    </div>
+                    <span className="text-[10px] text-[#6b5436] font-semibold">Noor Quran Platform · Built with reverence</span>
+                  </div>
+                  <div className="h-[1px] bg-[#33261a]"></div>
+                  <p className="text-[10px] text-[#6b5436] leading-relaxed">
+                    All Quranic text is the sacred word of <strong className="text-[#8c6b4a]">Allah ﷻ</strong> and belongs to no one. This platform claims no ownership over the Holy Quran.
+                    Translations are displayed as authored by their respective scholars. Audio recitations are by their respective reciters, sourced from publicly available repositories.
+                    The Arabic text is the sole authoritative source.
                   </p>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    id="banner-add-app-btn"
-                    onClick={async () => {
-                      try {
-                        await sdk.actions.addMiniApp();
-                        setIsAppAdded(true);
-                        setShowWelcomeBanner(false);
-                      } catch {/* dismissed */}
-                    }}
-                    className="px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-all flex items-center gap-1.5 shrink-0"
-                  >
-                    <span>⊕</span> Add to Farcaster
-                  </button>
-                  <button
-                    id="banner-dismiss-btn"
-                    onClick={() => setShowWelcomeBanner(false)}
-                    className="p-1.5 rounded-lg text-purple-300/60 hover:text-purple-200 transition-colors"
-                    aria-label="Dismiss banner"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeTab === "reader" ? (
-            <QuranReader />
-          ) : activeTab === "search" ? (
-            <SemanticSearch />
-          ) : activeTab === "umrah" ? (
-            <UmrahCompanion />
-          ) : (
-            <AboutAndDonate
-              provider={provider}
-              signer={signer}
-              account={account}
-              chainId={chainId}
-              walletBalance={walletBalance}
-              activeWalletName={activeWalletName}
-              switchNetwork={switchNetwork}
-            />
-          )}
+                </footer>
+              </>
+            )}
+          </div>
         </main>
-
-        {/* Footer — Charity tab only */}
-        {activeTab === "about" && (
-          <footer className="glass-panel p-4 mb-4 flex flex-col gap-2 text-center" style={{ marginBottom: isMobile ? (audioIsActive ? '216px' : '84px') : '16px' }}>
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
-              <div className="flex items-center gap-1.5 text-[11px] text-[#8c6b4a]">
-                <Heart size={11} className="text-rose-500 fill-rose-500 animate-pulse shrink-0" />
-                <span>Preserving Al-Quran On-chain · Base Network</span>
-              </div>
-              <span className="text-[10px] text-[#6b5436] font-semibold">Noor Quran Platform · Built with reverence</span>
-            </div>
-            <div className="h-[1px] bg-[#33261a]"></div>
-            <p className="text-[10px] text-[#6b5436] leading-relaxed">
-              All Quranic text is the sacred word of <strong className="text-[#8c6b4a]">Allah ﷻ</strong> and belongs to no one. This platform claims no ownership over the Holy Quran.
-              Translations are displayed as authored by their respective scholars. Audio recitations are by their respective reciters, sourced from publicly available repositories.
-              The Arabic text is the sole authoritative source.
-            </p>
-          </footer>
-        )}
       </div>
 
       <GlobalAudioPlayer />

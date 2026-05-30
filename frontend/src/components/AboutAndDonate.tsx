@@ -85,10 +85,56 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   };
 
 
-  // Load contract stats and recent donations
+  // Load contract stats and recent donations, with polling
   useEffect(() => {
     loadContractData();
-  }, [provider, chainId]);
+    
+    // Poll every 15 seconds to fetch updated contract state / donation list
+    const interval = setInterval(() => {
+      loadContractData();
+    }, 15000);
+    
+    return () => clearInterval(interval);
+  }, [provider, chainId, ethPrice]);
+
+  const fetchAndSetStats = async (contract: ethers.Contract) => {
+    const totalAccWei = await contract.totalAccumulated();
+    const totalSadWei = await contract.totalSadaqah();
+    const totalZakWei = await contract.totalZakat();
+    const uniqueDonors = await contract.totalDonorsCount();
+    const totalDons = await contract.totalDonationsCount();
+
+    const ethAccumulated = ethers.formatEther(totalAccWei);
+    
+    // Estimate poor families aided ($100 per family estimate)
+    const totalUsdVal = parseFloat(ethAccumulated) * ethPrice;
+    const familiesAided = Math.floor(totalUsdVal / 100);
+
+    setStats({
+      totalAccumulated: parseFloat(ethAccumulated).toFixed(4),
+      totalSadaqah: parseFloat(ethers.formatEther(totalSadWei)).toFixed(4),
+      totalZakat: parseFloat(ethers.formatEther(totalZakWei)).toFixed(4),
+      donorsCount: Number(uniqueDonors),
+      donationsCount: Number(totalDons),
+      poorFamiliesAided: familiesAided
+    });
+
+    // Load recent donations
+    try {
+      const recent = await contract.getRecentDonations(6);
+      console.log("[Noor] Recent donations raw:", recent);
+      const formatted = recent.map((item: any) => ({
+        donor: item.donor ?? item[0],
+        amount: parseFloat(ethers.formatEther(item.amount ?? item[1])).toFixed(4),
+        timestamp: new Date(Number(item.timestamp ?? item[2]) * 1000).toLocaleDateString(),
+        isZakat: item.isZakat ?? item[3]
+      }));
+      setRecentDonations(formatted);
+    } catch (e) {
+      console.error("[Noor] getRecentDonations failed:", e);
+      setRecentDonations([]);
+    }
+  };
 
   const loadContractData = async () => {
     const activeChain = chainId && (chainId === 8453 || chainId === 84532) ? chainId : DEFAULT_CHAIN_ID;
@@ -100,60 +146,46 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
       return;
     }
 
-    try {
-      // Use user's provider if connected and on correct network, otherwise use public read-only RPC
-      const activeProvider = (provider && (chainId === 8453 || chainId === 84532)) 
-        ? provider 
-        : new ethers.JsonRpcProvider(activeChain === 8453 ? NETWORKS.BASE_MAINNET.rpcUrl : NETWORKS.BASE_SEPOLIA.rpcUrl);
+    // Try list of RPCs for public fallback to avoid rate limiting
+    const publicRpcs = activeChain === 8453 
+      ? ["https://1rpc.io/base", "https://base.meowrpc.com", "https://gateway.tenderly.co/public/base", "https://mainnet.base.org"]
+      : ["https://sepolia.base.org", "https://base-sepolia.blockpi.network/v1/rpc/public"];
 
-      const contract = new ethers.Contract(address, SADAQAH_ZAKAT_ABI, activeProvider);
-      
-      const totalAccWei = await contract.totalAccumulated();
-      const totalSadWei = await contract.totalSadaqah();
-      const totalZakWei = await contract.totalZakat();
-      const uniqueDonors = await contract.totalDonorsCount();
-      const totalDons = await contract.totalDonationsCount();
-
-      const ethAccumulated = ethers.formatEther(totalAccWei);
-      
-      // Estimate poor families aided ($100 per family estimate)
-      const totalUsdVal = parseFloat(ethAccumulated) * ethPrice;
-      const familiesAided = Math.floor(totalUsdVal / 100);
-
-      setStats({
-        totalAccumulated: parseFloat(ethAccumulated).toFixed(4),
-        totalSadaqah: parseFloat(ethers.formatEther(totalSadWei)).toFixed(4),
-        totalZakat: parseFloat(ethers.formatEther(totalZakWei)).toFixed(4),
-        donorsCount: Number(uniqueDonors),
-        donationsCount: Number(totalDons),
-        poorFamiliesAided: familiesAided
-      });
-
-      // Load recent donations
+    let success = false;
+    
+    // If provider is already connected and on the active chain, use that provider directly
+    if (provider && (chainId === 8453 || chainId === 84532) && chainId === activeChain) {
       try {
-        const recent = await contract.getRecentDonations(6);
-        console.log("[Noor] Recent donations raw:", recent);
-        const formatted = recent.map((item: any) => ({
-          // ethers.js structs expose both named props AND positional indices — use ?? fallback
-          donor: item.donor ?? item[0],
-          amount: parseFloat(ethers.formatEther(item.amount ?? item[1])).toFixed(4),
-          timestamp: new Date(Number(item.timestamp ?? item[2]) * 1000).toLocaleDateString(),
-          isZakat: item.isZakat ?? item[3]
-        }));
-        setRecentDonations(formatted);
-      } catch (e) {
-        console.error("[Noor] getRecentDonations failed:", e);
-        setRecentDonations(null);
+        const contract = new ethers.Contract(address, SADAQAH_ZAKAT_ABI, provider);
+        await fetchAndSetStats(contract);
+        success = true;
+      } catch (err) {
+        console.warn("[Noor] Connected provider call failed, falling back to public RPCs:", err);
       }
+    }
 
-    } catch (err) {
-      console.error("[Noor] Error loading contract stats — RPC may be rate-limited or contract ABI mismatch:", err);
+    // Otherwise, loop through public RPCs until one succeeds
+    if (!success) {
+      for (const rpcUrl of publicRpcs) {
+        try {
+          const activeProvider = new ethers.JsonRpcProvider(rpcUrl);
+          const contract = new ethers.Contract(address, SADAQAH_ZAKAT_ABI, activeProvider);
+          await fetchAndSetStats(contract);
+          success = true;
+          break; // Exit RPC loop on success
+        } catch (err) {
+          console.warn(`[Noor] Public RPC ${rpcUrl} failed or rate-limited:`, err);
+        }
+      }
+    }
+
+    if (!success) {
+      console.error("[Noor] All RPC endpoints failed. Falling back to mock stats.");
       loadMockStats();
     }
   };
 
   const loadMockStats = () => {
-    // Elegant fallback simulation stats - starting from 0 for the start of the initiative
     setStats({
       totalAccumulated: "0.0000",
       totalSadaqah: "0.0000",

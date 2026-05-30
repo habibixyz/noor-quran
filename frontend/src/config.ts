@@ -29,7 +29,7 @@ export const CONTRACT_ADDRESSES = {
   },
   // Base Sepolia Testnet
   [NETWORKS.BASE_SEPOLIA.chainId]: {
-    sadaqahZakat: "0x264369B78a524D7dBa79f496B5541603Cc8d6DF0", // Replace with your Sepolia deployed address
+    sadaqahZakat: "0x264369b78a524d7dba79f496b5541603cc8d6df0", // Replace with your Sepolia deployed address
     noorQuran: "0xF2e391F09943B20e6fC3A7A40723A1aC9C0Dbf8a"  // Replace with your Sepolia deployed address
   }
 };

@@ -56,7 +56,7 @@ export const GlobalAudioPlayer: React.FC = () => {
 
   const desktopPlayerStyle: React.CSSProperties = {
     position: "fixed",
-    bottom: "16px",
+    bottom: "76px",
     left: "50%",
     transform: "translateX(-50%)",
     zIndex: 49,
