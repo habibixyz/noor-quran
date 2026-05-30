@@ -29,6 +29,7 @@ interface AboutAndDonateProps {
   walletBalance: string;
   activeWalletName: string;
   switchNetwork: (targetChainId: number) => Promise<void>;
+  disconnectWallet: () => void;
 }
 
 export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
@@ -39,6 +40,7 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   walletBalance,
   activeWalletName,
   switchNetwork,
+  disconnectWallet,
 }) => {
   // Contract state
   const [contractAddress, setContractAddress] = useState<string>("");
@@ -326,6 +328,13 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
                 <span className="text-[#8c6b4a]">({walletBalance} ETH)</span>
               </div>
               
+              <button
+                onClick={disconnectWallet}
+                className="px-3 py-1.5 rounded-xl bg-red-950/20 border border-red-900/60 hover:bg-red-950 hover:text-red-200 text-red-400 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 transition-all justify-center cursor-pointer"
+              >
+                Disconnect
+              </button>
+
               {chainId !== 8453 && chainId !== 84532 && (
                 <button
                   id="switch-to-base-btn"

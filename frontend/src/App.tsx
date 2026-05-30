@@ -326,6 +326,15 @@ function App() {
     }
   };
 
+  const disconnectWallet = () => {
+    setAccount("");
+    setProvider(null);
+    setSigner(null);
+    setChainId(null);
+    setWalletBalance("0.0");
+    setActiveWalletName("");
+  };
+
   const containerStyle = {
     background: 'var(--color-bg-deep)',
     // Force full viewport width — prevents partial-column layout in Farcaster frame
@@ -357,11 +366,9 @@ function App() {
               <h1 className="text-sm md:text-2xl font-bold tracking-tight text-white flex items-center gap-1.5">
                 <span className="hidden sm:inline">Premium</span>
                 <span className="text-[var(--color-gold)] font-semibold">Quran</span>
-                {isMiniApp && (
-                  <span className="text-[9px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1.5 py-0.5 rounded-md uppercase tracking-wider shrink-0">
-                    Farcaster
-                  </span>
-                )}
+                <span className="text-[10px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1.5 py-0.5 rounded-md tracking-normal shrink-0">
+                  on Farcaster
+                </span>
               </h1>
             </div>
           </div>
@@ -427,13 +434,18 @@ function App() {
             {activeTab === "about" && (
               <div className="flex items-center gap-2">
                 {account ? (
-                  <div className="flex items-center gap-1.5 px-2 py-1 rounded-xl bg-[var(--color-bg-deep)] border border-emerald-950 text-[10px] md:text-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                    <span className="font-mono font-bold text-[var(--color-gold-light)]">
+                  <button
+                    onClick={disconnectWallet}
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-[var(--color-bg-deep)] hover:bg-[#331111]/30 hover:border-red-950 border border-emerald-950 text-[10px] md:text-xs group transition-all cursor-pointer"
+                    title="Disconnect Wallet"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:bg-red-500 transition-colors shrink-0"></span>
+                    <span className="font-mono font-bold text-[var(--color-gold-light)] group-hover:text-red-400 transition-colors">
                       {account.substring(0, 4)}...{account.substring(account.length - 4)}
                     </span>
-                    <span className="hidden lg:inline text-[#8c6b4a]">({walletBalance} ETH)</span>
-                  </div>
+                    <span className="hidden lg:inline text-[#8c6b4a] group-hover:text-red-300">({walletBalance} ETH)</span>
+                    <span className="text-[9px] text-[#8c6b4a] group-hover:text-red-400 ml-1 border border-transparent group-hover:border-red-950 px-1 rounded transition-all">Disconnect</span>
+                  </button>
                 ) : (
                   <button
                     id="header-connect-wallet-btn"
@@ -567,6 +579,7 @@ function App() {
                   walletBalance={walletBalance}
                   activeWalletName={activeWalletName}
                   switchNetwork={switchNetwork}
+                  disconnectWallet={disconnectWallet}
                 />
                 <footer className="glass-panel p-4 mt-6 mb-4 flex flex-col gap-2 text-center">
                   <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
