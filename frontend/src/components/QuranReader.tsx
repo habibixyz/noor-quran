@@ -380,11 +380,11 @@ export const QuranReader: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 md:gap-3 mt-1 md:mt-0">
-            {/* Mobile-only Browse Chapters Button */}
+            {/* Browse Chapters Button */}
             <button
-              id="browse-surahs-mobile-btn"
+              id="browse-surahs-btn"
               onClick={() => setIsMobileListOpen(true)}
-              className="lg:hidden bg-[#c9a84c] text-[#16110b] border border-[#c9a84c] text-xs py-2 px-3 flex-1 justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#e8d5a3]"
+              className="bg-[#c9a84c] text-[#16110b] border border-[#c9a84c] text-xs py-2 px-3 flex-1 md:flex-none justify-center rounded-lg font-bold flex items-center gap-2 transition-all hover:bg-[#e8d5a3]"
             >
               <BookOpen size={15} />
               <span>Browse Chapters</span>
@@ -547,9 +547,9 @@ export const QuranReader: React.FC = () => {
         )}
       </div>
 
-      {/* Mobile Surah List Modal */}
+      {/* Surah List Modal */}
       {isMobileListOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md lg:hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="glass-panel w-full max-w-md max-h-[85vh] flex flex-col p-4 overflow-hidden animate-in fade-in zoom-in-95" style={{ background: 'var(--color-bg-dark)' }}>
             <div className="flex justify-between items-center pb-3 border-b border-[#33261a] mb-3">
               <h3 className="font-bold text-[var(--color-gold)] text-sm tracking-wide uppercase flex items-center gap-2">
