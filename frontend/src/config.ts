@@ -41,7 +41,7 @@ export const PAYPAL_CLIENT_ID = "Ac6_JxwBDHJKbgR6KYZGxMjWisowyEYf8yNitdBpCQzoRH-
 
 // Base Builder Code for EIP-8021 on-chain activity attribution (e.g., "bc_b7k3p9da")
 // Get your Builder Code from base.dev > Settings > Builder Codes
-export const BUILDER_CODE = import.meta.env.VITE_BUILDER_CODE || "";
+export const BUILDER_CODE = import.meta.env.VITE_BUILDER_CODE || "bc_39681pmy";
 
 // ABI definitions
 export const SADAQAH_ZAKAT_ABI = [
