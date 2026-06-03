@@ -39,6 +39,10 @@ export const DEFAULT_CHAIN_ID = NETWORKS.BASE_MAINNET.chainId;
 
 export const PAYPAL_CLIENT_ID = "Ac6_JxwBDHJKbgR6KYZGxMjWisowyEYf8yNitdBpCQzoRH-oZS5eKAWuPwTnjcC60ptJOD4qkg8_5aLh";
 
+// Base Builder Code for EIP-8021 on-chain activity attribution (e.g., "bc_b7k3p9da")
+// Get your Builder Code from base.dev > Settings > Builder Codes
+export const BUILDER_CODE = import.meta.env.VITE_BUILDER_CODE || "";
+
 // ABI definitions
 export const SADAQAH_ZAKAT_ABI = [
   "function donateSadaqah() external payable",

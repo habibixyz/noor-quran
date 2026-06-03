@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Heart, Coins, Award, ExternalLink, AlertCircle, CheckCircle2, ArrowRight, Info, Users, ShieldCheck, Sparkles } from "lucide-react";
-import { PAYPAL_CLIENT_ID, NETWORKS, CONTRACT_ADDRESSES, DEFAULT_CHAIN_ID, SADAQAH_ZAKAT_ABI } from "../config";
+import { PAYPAL_CLIENT_ID, NETWORKS, CONTRACT_ADDRESSES, DEFAULT_CHAIN_ID, SADAQAH_ZAKAT_ABI, BUILDER_CODE } from "../config";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import confetti from "canvas-confetti";
 
@@ -225,6 +225,21 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
     await executeDonation(customAmount);
   };
 
+  // Helper to generate EIP-8021 data suffix for Builder Code attribution
+  const getBuilderCodeSuffix = (builderCode: string): string => {
+    if (!builderCode) return "";
+    
+    // Convert builderCode string to hex bytes
+    const codeHex = Array.from(builderCode)
+      .map(c => c.charCodeAt(0).toString(16).padStart(2, '0'))
+      .join('');
+      
+    const lengthHex = (builderCode.length).toString(16).padStart(2, '0');
+    const eip8021Marker = "80218021802180218021802180218021";
+    
+    return `${lengthHex}${codeHex}00${eip8021Marker}`;
+  };
+
   const executeDonation = async (amountInEth: string) => {
     setIsLoading(true);
     setErrorMessage("");
@@ -257,10 +272,29 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
       const valueInWei = ethers.parseEther(amountInEth);
 
       let tx;
-      if (donationType === "sadaqah") {
-        tx = await contract.donateSadaqah({ value: valueInWei });
+      const suffix = getBuilderCodeSuffix(BUILDER_CODE);
+      
+      if (suffix) {
+        // EIP-8021 builder code tracking: populate transaction and append suffix to data
+        let populatedTx;
+        if (donationType === "sadaqah") {
+          populatedTx = await contract.donateSadaqah.populateTransaction({ value: valueInWei });
+        } else {
+          populatedTx = await contract.donateZakat.populateTransaction({ value: valueInWei });
+        }
+        
+        // Append suffix hex directly to transaction data
+        populatedTx.data = populatedTx.data + suffix;
+        
+        // Send the modified transaction using signer
+        tx = await signer.sendTransaction(populatedTx);
       } else {
-        tx = await contract.donateZakat({ value: valueInWei });
+        // Fallback to standard ethers transaction if no builder code is configured
+        if (donationType === "sadaqah") {
+          tx = await contract.donateSadaqah({ value: valueInWei });
+        } else {
+          tx = await contract.donateZakat({ value: valueInWei });
+        }
       }
 
       setTransactionHash(tx.hash);
