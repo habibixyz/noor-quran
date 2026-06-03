@@ -368,19 +368,17 @@ function App() {
       {/* Main Structural Wrapper Container - full width always */}
       <div className="w-full px-3 flex-grow flex flex-col gap-2 relative z-10 overflow-hidden h-full">
         {/* Main Header / Navigation */}
-        <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-40 backdrop-blur-xl bg-[var(--color-bg-dark)]/90 relative">
+        <header className="glass-panel mt-2 md:mt-4 px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center sticky top-2 z-50 backdrop-blur-xl bg-[var(--color-bg-dark)]/90 relative">
           {/* Brand Logo */}
           <div className="flex items-center gap-2 md:gap-3">
-            <div className="relative w-7 h-7 md:w-10 md:h-10 rounded-xl border-2 border-[var(--color-gold)] p-0.5 shadow-md flex items-center justify-center shrink-0">
-              <div className="w-full h-full rounded-[8px] bg-[var(--color-bg-deep)] flex items-center justify-center font-arabic text-sm md:text-xl text-[var(--color-gold)] star-rotate">
-                📖
-              </div>
+            <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-xl border-2 border-[var(--color-gold)] overflow-hidden shadow-md flex items-center justify-center shrink-0 bg-[var(--color-bg-deep)]">
+              <img src="/logo.jpg" alt="Noor Quran Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
               <h1 className="text-xs sm:text-sm md:text-2xl font-bold tracking-tight text-white flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1.5">
                 <span className="text-[var(--color-gold)] font-semibold leading-tight">Quran</span>
-                <span className="text-[8px] sm:text-[10px] font-sans font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1 py-0.2 sm:px-1.5 sm:py-0.5 rounded-md tracking-normal shrink-0 w-max">
-                  on Farcaster
+                <span className="text-[8px] sm:text-[10px] font-sans font-semibold bg-blue-600/25 text-blue-300 border border-blue-500/30 px-1.5 py-0.5 rounded-md tracking-normal shrink-0 w-max">
+                  on Base
                 </span>
               </h1>
             </div>

@@ -122,7 +122,7 @@ export const QuranReader: React.FC = () => {
 
   const shareVerse = async (verse: Verse) => {
     const textToShare = `"${verse.translation}" - Quran ${selectedSurah}:${verse.verse_number} (${activeSurahDetails.englishName})`;
-    const shareUrl = `https://onchain-quran.vercel.app/`;
+    const shareUrl = `https://quranonbase.vercel.app/`;
     try {
       const inMiniApp = await sdk.isInMiniApp();
       if (inMiniApp) {
