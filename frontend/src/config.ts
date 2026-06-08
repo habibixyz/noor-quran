@@ -25,12 +25,16 @@ export const CONTRACT_ADDRESSES = {
   // Base Mainnet
   [NETWORKS.BASE_MAINNET.chainId]: {
     sadaqahZakat: "0x6361faeDBFaBcC3bD724046fAa42790535CDd99d", // Newly deployed mainnet address
-    noorQuran: "0x40f78dA66783aa52495Ec922053D0a0fAAf4b28F"  // Newly deployed mainnet address
+    noorQuran: "0x40f78dA66783aa52495Ec922053D0a0fAAf4b28F",  // Newly deployed mainnet address
+    quranToken: "0x0000000000000000000000000000000000000000", // Deploy token on mainnet and replace
+    merkleAirdrop: "0x0000000000000000000000000000000000000000" // Deploy airdrop on mainnet and replace
   },
   // Base Sepolia Testnet
   [NETWORKS.BASE_SEPOLIA.chainId]: {
     sadaqahZakat: "0x264369b78a524d7dba79f496b5541603cc8d6df0", // Replace with your Sepolia deployed address
-    noorQuran: "0xF2e391F09943B20e6fC3A7A40723A1aC9C0Dbf8a"  // Replace with your Sepolia deployed address
+    noorQuran: "0xF2e391F09943B20e6fC3A7A40723A1aC9C0Dbf8a",  // Replace with your Sepolia deployed address
+    quranToken: "0x40f78dA66783aa52495Ec922053D0a0fAAf4b28F", // Newly deployed Base Sepolia token address
+    merkleAirdrop: "0x2795121859e91f8177E8DFdbCc20B4A6A26fdF57" // Newly deployed Base Sepolia airdrop address
   }
 };
 
@@ -60,3 +64,17 @@ export const NOOR_QURAN_ABI = [
   "function getSurah(uint256 surahId) external view returns (uint16, string, string, uint16, string, bytes32, address, uint256)",
   "function totalSadaqahRaised() external view returns (uint256)"
 ];
+
+export const QURAN_TOKEN_ABI = [
+  "function balanceOf(address account) external view returns (uint256)",
+  "function symbol() external view returns (string)",
+  "function decimals() external view returns (uint8)",
+  "function totalSupply() external view returns (uint256)"
+];
+
+export const MERKLE_AIRDROP_ABI = [
+  "function claim(address account, uint256 amount, bytes32[] calldata merkleProof) external",
+  "function hasClaimed(address account) external view returns (bool)",
+  "function merkleRoot() external view returns (bytes32)"
+];
+

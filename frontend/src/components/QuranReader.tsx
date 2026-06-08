@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { surahList, getSurahVerses } from "../data/quranData";
-import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown } from "lucide-react";
+import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown, Bookmark } from "lucide-react";
 import { useAudio, LANGUAGE_OPTIONS, RECITER_OPTIONS } from "../context/AudioContext";
 import { sdk } from "@farcaster/frame-sdk";
 
@@ -22,7 +22,21 @@ const cleanTranslationText = (text: string): string => {
 };
 
 export const QuranReader: React.FC = () => {
-  const [selectedSurah, setSelectedSurah] = useState<number>(1);
+  const [selectedSurah, setSelectedSurah] = useState<number>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("lastReadSurah");
+      if (saved) return parseInt(saved, 10);
+    }
+    return 1;
+  });
+  const [bookmarkedPosition, setBookmarkedPosition] = useState<{surah: number, verse: number} | null>(() => {
+    if (typeof window !== "undefined") {
+      const s = localStorage.getItem("bookmarkedSurah");
+      const v = localStorage.getItem("bookmarkedVerse");
+      if (s && v) return { surah: parseInt(s, 10), verse: parseInt(v, 10) };
+    }
+    return null;
+  });
   const [verses, setVerses] = useState<Verse[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [showGlobalTranslation, setShowGlobalTranslation] = useState<boolean>(true);
@@ -47,6 +61,12 @@ export const QuranReader: React.FC = () => {
 
   // Mobile UX State
   const [isMobileListOpen, setIsMobileListOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("lastReadSurah", selectedSurah.toString());
+    }
+  }, [selectedSurah]);
 
   useEffect(() => {
     let isMounted = true;
@@ -118,6 +138,12 @@ export const QuranReader: React.FC = () => {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     alert("Verse copied to clipboard!");
+  };
+
+  const handleBookmark = (verseNum: number) => {
+    localStorage.setItem("bookmarkedSurah", selectedSurah.toString());
+    localStorage.setItem("bookmarkedVerse", verseNum.toString());
+    setBookmarkedPosition({ surah: selectedSurah, verse: verseNum });
   };
 
   const shareVerse = async (verse: Verse) => {
@@ -452,6 +478,27 @@ export const QuranReader: React.FC = () => {
           </button>
         </div>
 
+        {/* Bookmark Resume Banner */}
+        {bookmarkedPosition && (bookmarkedPosition.surah !== selectedSurah) && (
+          <div className="glass-panel px-4 py-3 flex items-center justify-between border-l-4 border-l-[var(--color-gold)] bg-[#241c13]">
+            <div className="flex items-center gap-2 text-xs md:text-sm text-[#f0e8d0]">
+              <Bookmark size={16} className="text-[var(--color-gold)] fill-[var(--color-gold)]" />
+              <span>Resume reading from <strong>Surah {bookmarkedPosition.surah}, Verse {bookmarkedPosition.verse}</strong></span>
+            </div>
+            <button
+              onClick={() => {
+                setSelectedSurah(bookmarkedPosition.surah);
+                setTimeout(() => {
+                  document.getElementById(`verse-${bookmarkedPosition.verse}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 1000);
+              }}
+              className="text-xs font-bold px-3 py-1.5 rounded-lg bg-gradient-to-r from-[var(--color-gold-dark)] to-[var(--color-gold)] text-[#16110b] hover:from-[var(--color-gold)] hover:to-[var(--color-gold-light)] transition-all shadow-md"
+            >
+              Resume
+            </button>
+          </div>
+        )}
+
         {/* Loading State */}
         {isLoading && (
           <div className="glass-panel py-24 text-center text-[var(--color-gold)] animate-pulse flex flex-col items-center gap-3">
@@ -472,9 +519,10 @@ export const QuranReader: React.FC = () => {
               return (
                 <div
                   key={verse.verse_number}
+                  id={`verse-${verse.verse_number}`}
                   className={`bg-[var(--color-bg-dark)] border border-[var(--color-glass-border)] rounded-[14px] p-4 md:p-5 transition-all hover:border-[#4d3926] ${
                     isTranslationVisible ? "border-[#c9a84c]/20 bg-[#261c13]" : ""
-                  }`}
+                  } ${bookmarkedPosition?.surah === selectedSurah && bookmarkedPosition?.verse === verse.verse_number ? "ring-1 ring-[var(--color-gold)]/50" : ""}`}
                 >
                   {/* Verse Top */}
                   <div className="flex justify-between items-center mb-4">
@@ -532,11 +580,23 @@ export const QuranReader: React.FC = () => {
                       <Share2 size={13} /> Cast
                     </button>
                     <button
+                      id={`bookmark-verse-btn-${verse.verse_number}`}
+                      onClick={() => handleBookmark(verse.verse_number)}
+                      className={`bg-[#33261a] border border-[#33261a] rounded-md text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] ${
+                        bookmarkedPosition?.surah === selectedSurah && bookmarkedPosition?.verse === verse.verse_number
+                          ? "text-[var(--color-gold)] border-[var(--color-gold)]/30"
+                          : "text-[#8c6b4a] hover:text-[var(--color-gold)]"
+                      }`}
+                    >
+                      <Bookmark size={13} className={bookmarkedPosition?.surah === selectedSurah && bookmarkedPosition?.verse === verse.verse_number ? "fill-current" : ""} /> 
+                      <span className="hidden sm:inline">{bookmarkedPosition?.surah === selectedSurah && bookmarkedPosition?.verse === verse.verse_number ? "Saved" : "Bookmark"}</span>
+                    </button>
+                    <button
                       id={`copy-verse-btn-${verse.verse_number}`}
                       onClick={() => copyToClipboard(`${verse.text_uthmani}\n\n"${verse.translation}" - Quran ${selectedSurah}:${verse.verse_number}`)}
                       className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
                     >
-                      <Copy size={13} /> Copy
+                      <Copy size={13} /> <span className="hidden sm:inline">Copy</span>
                     </button>
                   </div>
                 </div>

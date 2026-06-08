@@ -8,6 +8,9 @@
     "test": "npx hardhat test",
     "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network baseSepolia",
     "deploy:mainnet": "npx hardhat run scripts/deploy.ts --network base",
+    "deploy-airdrop:sepolia": "npx hardhat run scripts/deployAirdrop.ts --network baseSepolia",
+    "deploy-airdrop:mainnet": "npx hardhat run scripts/deployAirdrop.ts --network base",
+    "generate-airdrop": "npx ts-node scripts/generateAirdrop.ts",
     "build": "cd frontend && npm install && npm run build"
   },
   "dependencies": {

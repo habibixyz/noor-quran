@@ -3,15 +3,17 @@ import { QuranReader } from "./components/QuranReader";
 import { SemanticSearch } from "./components/SemanticSearch";
 import { AboutAndDonate } from "./components/AboutAndDonate";
 import { UmrahCompanion } from "./components/UmrahCompanion";
-import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass, Share2 } from "lucide-react";
+import { AirdropClaim } from "./components/AirdropClaim";
+import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass, Share2, Gift } from "lucide-react";
 import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
 import { GlobalAudioPlayer } from "./components/GlobalAudioPlayer";
+import { LegalModal } from "./components/LegalModal";
 import { sdk } from "@farcaster/frame-sdk";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about">("reader");
+  const [activeTab, setActiveTab] = useState<"reader" | "search" | "umrah" | "about" | "airdrop">("reader");
   const { playingType } = useAudio();
   const audioIsActive = playingType !== null;
 
@@ -21,6 +23,7 @@ function App() {
   const [isAppAdded, setIsAppAdded] = useState<boolean>(false);
   const [showWelcomeBanner, setShowWelcomeBanner] = useState<boolean>(false);
   const [showShareMenu, setShowShareMenu] = useState<boolean>(false);
+  const [legalModalType, setLegalModalType] = useState<"privacy" | "terms" | null>(null);
 
   // Wallet state
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
@@ -58,6 +61,9 @@ function App() {
     } else if (activeTab === "about") {
       title = "Noor Quran - Sadaqah & Zakat";
       description = "Support the preservation of Al-Quran on-chain. Contribute via Sadaqah & Zakat on the Base Network.";
+    } else if (activeTab === "airdrop") {
+      title = "Noor Quran - QURAN Token Airdrop Claim";
+      description = "Claim your free QURAN tokens. Airdrop claim portal for active Farcaster and Base network users.";
     }
 
     document.title = title;
@@ -537,7 +543,7 @@ function App() {
               </button>
             )}
 
-            {activeTab === "about" && (
+            {(activeTab === "about" || activeTab === "airdrop") && (
               <div className="flex items-center gap-2">
                 {account ? (
                   <button
@@ -605,6 +611,7 @@ function App() {
               <Compass size={18} />
               <span className="text-xs font-bold">Umrah</span>
             </button>
+
             <button
               id="mobile-nav-about"
               onClick={() => setActiveTab("about")}
@@ -675,6 +682,17 @@ function App() {
               <SemanticSearch />
             ) : activeTab === "umrah" ? (
               <UmrahCompanion />
+            ) : activeTab === "airdrop" ? (
+              <AirdropClaim
+                provider={provider}
+                signer={signer}
+                account={account}
+                chainId={chainId}
+                walletBalance={walletBalance}
+                activeWalletName={activeWalletName}
+                switchNetwork={switchNetwork}
+                disconnectWallet={disconnectWallet}
+              />
             ) : (
               <>
                 <AboutAndDonate
@@ -701,6 +719,10 @@ function App() {
                     Translations are displayed as authored by their respective scholars. Audio recitations are by their respective reciters, sourced from publicly available repositories.
                     The Arabic text is the sole authoritative source.
                   </p>
+                  <div className="flex items-center justify-center gap-4 mt-2">
+                    <button onClick={() => setLegalModalType("privacy")} className="text-[10px] text-[var(--color-gold)] hover:text-white transition-colors underline">Privacy Policy</button>
+                    <button onClick={() => setLegalModalType("terms")} className="text-[10px] text-[var(--color-gold)] hover:text-white transition-colors underline">Terms & Conditions</button>
+                  </div>
                 </footer>
               </>
             )}
@@ -709,6 +731,11 @@ function App() {
       </div>
 
       <GlobalAudioPlayer />
+      <LegalModal 
+        isOpen={legalModalType !== null} 
+        onClose={() => setLegalModalType(null)} 
+        type={legalModalType || "privacy"} 
+      />
 
       {/* GLOBAL WALLET SELECTION MODAL */}
       {showWalletModal && (

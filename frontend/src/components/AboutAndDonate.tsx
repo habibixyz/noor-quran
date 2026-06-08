@@ -91,10 +91,10 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
   useEffect(() => {
     loadContractData();
     
-    // Poll every 15 seconds to fetch updated contract state / donation list
+    // Poll every 60 seconds to fetch updated contract state / donation list
     const interval = setInterval(() => {
       loadContractData();
-    }, 15000);
+    }, 60000);
     
     return () => clearInterval(interval);
   }, [provider, chainId, ethPrice]);
@@ -150,8 +150,8 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
 
     // Try list of RPCs for public fallback to avoid rate limiting
     const publicRpcs = activeChain === 8453 
-      ? ["https://1rpc.io/base", "https://base.meowrpc.com", "https://gateway.tenderly.co/public/base", "https://mainnet.base.org"]
-      : ["https://sepolia.base.org", "https://base-sepolia.blockpi.network/v1/rpc/public"];
+      ? ["https://mainnet.base.org", "https://base.llamarpc.com"]
+      : ["https://sepolia.base.org"];
 
     let success = false;
     
@@ -427,6 +427,56 @@ export const AboutAndDonate: React.FC<AboutAndDonateProps> = ({
               <Info size={16} className="text-[var(--color-gold)] shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold text-white">100% On-chain Transparency:</span> All funds reside securely in the smart contract deployed on the Base Layer-2 network (by Coinbase). Distribution records are written directly to the ledger, guaranteeing that every single cent goes directly to verified food, healthcare, and shelter allocations with near-zero gas transaction fees.
+              </div>
+            </div>
+          </div>
+
+          {/* Official Token Info section */}
+          <div className="premium-card space-y-4 bg-emerald-950/20 border-emerald-900/40">
+            <h3 className="text-lg font-bold text-emerald-400 flex items-center gap-2">
+              <Award size={18} />
+              <span>Support Us: Official QURAN Token</span>
+            </h3>
+            
+            <p className="text-xs md:text-sm text-[#f0e8d0] leading-relaxed">
+              To support the long-term sustainability and development of the Noor Quran project, we have launched the official <strong>QURAN</strong> token on the Base Network. A 1% transaction fee goes directly to the project treasury to fund ongoing operations.
+            </p>
+
+            <div className="premium-card premium-card-accent-gold p-4 bg-[#1a140d]/40 border border-[var(--color-gold)]/20">
+              <h4 className="font-bold text-[var(--color-gold)] flex items-center gap-1.5 mb-2 text-xs uppercase tracking-widest">
+                <ShieldCheck size={14} />
+                <span>Official Contract Address (Base)</span>
+              </h4>
+              <div className="flex items-center justify-between bg-[#000000] rounded px-3 py-2 border border-[#33261a]">
+                <code className="text-[11px] md:text-xs font-mono text-[var(--color-gold-light)] break-all">
+                  0x11755EF67cD123D1615449Ee44e0ccd9c03aE08f
+                </code>
+                <a 
+                  href="https://basescan.org/token/0x11755EF67cD123D1615449Ee44e0ccd9c03aE08f" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-[#8c6b4a] hover:text-white transition-colors shrink-0 ml-2 flex items-center gap-1"
+                >
+                  <span className="text-[10px] uppercase font-bold hidden md:inline">View</span>
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-[var(--color-gold)]/10">
+                <a 
+                  href="https://app.uniswap.org/swap?chain=base&inputCurrency=0x11755ef67cd123d1615449ee44e0ccd9c03ae08f&outputCurrency=NATIVE"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-white shadow-lg transition-all"
+                  style={{
+                    background: "linear-gradient(135deg, #ff007a 0%, #d80066 100%)",
+                    boxShadow: "0 4px 14px 0 rgba(255, 0, 122, 0.2)"
+                  }}
+                >
+                  <Sparkles size={16} className="text-pink-200" />
+                  <span>Buy / Sell QURAN on Uniswap</span>
+                  <ArrowRight size={16} />
+                </a>
               </div>
             </div>
           </div>
