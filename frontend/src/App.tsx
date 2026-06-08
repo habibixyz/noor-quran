@@ -3,8 +3,8 @@ import { QuranReader } from "./components/QuranReader";
 import { SemanticSearch } from "./components/SemanticSearch";
 import { AboutAndDonate } from "./components/AboutAndDonate";
 import { UmrahCompanion } from "./components/UmrahCompanion";
-import { AirdropClaim } from "./components/AirdropClaim";
-import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass, Share2, Gift } from "lucide-react";
+
+import { BookOpen, Search, Heart, Wallet, AlertCircle, ArrowRight, Compass, Share2 } from "lucide-react";
 import { ethers } from "ethers";
 import { NETWORKS } from "./config";
 import { AudioProvider, useAudio } from "./context/AudioContext";
@@ -682,17 +682,6 @@ function App() {
               <SemanticSearch />
             ) : activeTab === "umrah" ? (
               <UmrahCompanion />
-            ) : activeTab === "airdrop" ? (
-              <AirdropClaim
-                provider={provider}
-                signer={signer}
-                account={account}
-                chainId={chainId}
-                walletBalance={walletBalance}
-                activeWalletName={activeWalletName}
-                switchNetwork={switchNetwork}
-                disconnectWallet={disconnectWallet}
-              />
             ) : (
               <>
                 <AboutAndDonate
