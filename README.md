@@ -4,7 +4,7 @@ A premium, immersive, AI-powered Quran experience designed for the modern web.
 
 Noor Quran blends state-of-the-art web technologies and artificial intelligence to create a beautiful, distraction-free environment for spiritual reading, listening, and learning. It features a complete Quran Reader, a hybrid AI-powered Semantic Search engine, and an interactive digital Umrah Companion suite.
 
-**Live Demo**: [quranonbase.vercel.app](https://quranonbase.vercel.app/)
+**Live Demo**: pakquran.vercel.app/
 
 ---
 
