@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Elegant Premium Color Palette (from HTML mockup) */
+  /* Default Theme: Amber Gold (Current Default) */
   --color-bg-deep: #16110b;       /* Deepest Forest Green */
   --color-bg-dark: #1f1810;       /* Sidebar / Cards / Header */
   --color-bg-light: #33261a;      /* Borders / Active states */
@@ -23,6 +23,76 @@
   --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.08);
   --shadow-emerald: 0 4px 20px rgba(70, 45, 25, 0.3);
 }
+
+/* Theme overrides bound to body classes */
+body.theme-emerald-green {
+  --color-bg-deep: #05140e;       
+  --color-bg-dark: #0a2016;       
+  --color-bg-light: #123324;      
+  --color-emerald-glow: #1a4230;
+  
+  --color-gold-light: #d1ffd6;    
+  --color-gold: #38b48b;          
+  --color-gold-dark: #248a66;
+  
+  --color-text-light: #e3f9f0;    
+  --color-text-muted: #6e9f8a;    
+  --color-glass-bg: #0a2016;
+  --color-glass-border: #123324;
+  --shadow-gold: 0 4px 20px rgba(56, 180, 139, 0.08);
+}
+
+body.theme-midnight-blue {
+  --color-bg-deep: #060b13;       
+  --color-bg-dark: #0c1424;       
+  --color-bg-light: #16243d;      
+  --color-emerald-glow: #1e3357;
+  
+  --color-gold-light: #dbe4ff;    
+  --color-gold: #4f80e1;          
+  --color-gold-dark: #2d55b0;
+  
+  --color-text-light: #ecf0fa;    
+  --color-text-muted: #637da7;    
+  --color-glass-bg: #0c1424;
+  --color-glass-border: #16243d;
+  --shadow-gold: 0 4px 20px rgba(79, 128, 225, 0.08);
+}
+
+body.theme-warm-parchment {
+  --color-bg-deep: #faf7f2;       
+  --color-bg-dark: #f0eae1;       
+  --color-bg-light: #e3d9cc;      
+  --color-emerald-glow: #ebdcd0;
+  
+  --color-gold-light: #523f2d;    
+  --color-gold: #c5973e;          
+  --color-gold-dark: #967027;
+  
+  --color-text-light: #2c251e;    
+  --color-text-muted: #736453;    
+  --color-glass-bg: #f0eae1;
+  --color-glass-border: #e3d9cc;
+  --shadow-gold: 0 4px 20px rgba(197, 151, 62, 0.05);
+}
+
+/* Light Theme overrides for dark text visibility */
+body.theme-warm-parchment .text-white,
+body.theme-warm-parchment h1,
+body.theme-warm-parchment h2,
+body.theme-warm-parchment h3,
+body.theme-warm-parchment h4 {
+  color: #2c251e !important;
+}
+
+body.theme-warm-parchment .glass-panel {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.theme-warm-parchment input {
+  color: #2c251e !important;
+}
+
 
 * {
   box-sizing: border-box;
@@ -521,7 +591,7 @@ html, body {
 
 /* Premium Card Upgrades */
 .premium-card {
-  background: linear-gradient(145deg, #1f1810 0%, #17120c 100%) !important;
+  background: linear-gradient(145deg, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%) !important;
   border: 1px solid rgba(201, 168, 76, 0.1) !important;
   border-radius: 16px !important;
   padding: 16px !important;
@@ -549,7 +619,7 @@ html, body {
 .charity-toggle-wrap {
   display: flex !important;
   padding: 3px !important;
-  background: #120d08 !important;
+  background: var(--color-bg-deep) !important;
   border-radius: 12px !important;
   border: 1px solid var(--color-glass-border) !important;
   max-width: 260px !important;
@@ -570,7 +640,7 @@ html, body {
   cursor: pointer !important;
 }
 .charity-toggle-btn.active {
-  background: #2b1f14 !important;
+  background: var(--color-bg-light) !important;
   color: var(--color-gold) !important;
   border: 1px solid rgba(201, 168, 76, 0.15) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
@@ -591,7 +661,7 @@ html, body {
   padding: 12px 8px !important;
   border-radius: 12px !important;
   border: 1px solid rgba(201, 168, 76, 0.06) !important;
-  background: #1a140d !important;
+  background: var(--color-bg-dark) !important;
   color: var(--color-text-light) !important;
   display: flex !important;
   flex-direction: column !important;
@@ -603,7 +673,7 @@ html, body {
 }
 .quick-option-chip:hover {
   border-color: var(--color-gold) !important;
-  background: #241c12 !important;
+  background: var(--color-bg-light) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 12px rgba(201, 168, 76, 0.1) !important;
 }
@@ -703,7 +773,8 @@ html, body {
   top: 100% !important;
   margin-top: 0.5rem !important;
   z-index: 100 !important;
-  width: 18rem !important;
+  width: 25rem !important;
+  max-width: 95vw !important;
 }
 
 @media (max-width: 768px) {
@@ -1472,3 +1543,66 @@ body {
   background-color: rgba(201, 168, 76, 0.15) !important;
   color: var(--color-gold-light) !important;
 }
+
+/* Quran Search Input Styles */
+.quran-search-wrapper {
+  position: relative !important;
+  flex-grow: 1 !important;
+  width: 100% !important;
+}
+
+.quran-search-input {
+  width: 100% !important;
+  height: 2.50rem !important;
+  background-color: #120d08 !important;
+  border: 1px solid #33261a !important;
+  border-radius: 0.75rem !important;
+  padding-left: 2.50rem !important;
+  padding-right: 2.25rem !important;
+  font-size: 0.8rem !important;
+  color: #f0e8d0 !important;
+  outline: none !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.quran-search-input:focus {
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15) !important;
+}
+
+.quran-search-input::placeholder {
+  color: #8c6b4a !important;
+  opacity: 0.85 !important;
+}
+
+.quran-search-icon {
+  position: absolute !important;
+  left: 0.875rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #8c6b4a !important;
+  pointer-events: none !important;
+}
+
+.quran-search-clear {
+  position: absolute !important;
+  right: 0.875rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #8c6b4a !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  padding: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.quran-search-clear:hover {
+  color: #f0e8d0 !important;
+}
+

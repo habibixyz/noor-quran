@@ -68,6 +68,56 @@ export const RECITER_OPTIONS: ReciterOption[] = [
     verseAudioPattern: (s, v) =>
       `https://everyayah.com/data/Hudhaify_128kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
   },
+  {
+    id: "sudais",
+    name: "Abdurrahman As-Sudais",
+    style: "Murattal",
+    reciterId: 3,
+    hasSurahCdn: false,
+    surahAudioPattern: (s) => `https://everyayah.com/data/Abdurrahmaan_As-Sudais_192kbps/${String(s).padStart(3, "0")}001.mp3`,
+    verseAudioPattern: (s, v) =>
+      `https://everyayah.com/data/Abdurrahmaan_As-Sudais_192kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
+  },
+  {
+    id: "shuraym",
+    name: "Saood ash-Shuraym",
+    style: "Murattal",
+    reciterId: 4,
+    hasSurahCdn: false,
+    surahAudioPattern: (s) => `https://everyayah.com/data/Saood_ash-Shuraym_128kbps/${String(s).padStart(3, "0")}001.mp3`,
+    verseAudioPattern: (s, v) =>
+      `https://everyayah.com/data/Saood_ash-Shuraym_128kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
+  },
+  {
+    id: "ghamdi",
+    name: "Saad Al-Ghamdi",
+    style: "Murattal",
+    reciterId: 5,
+    hasSurahCdn: false,
+    surahAudioPattern: (s) => `https://everyayah.com/data/Saad_Al-Ghamdi_128kbps/${String(s).padStart(3, "0")}001.mp3`,
+    verseAudioPattern: (s, v) =>
+      `https://everyayah.com/data/Saad_Al-Ghamdi_128kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
+  },
+  {
+    id: "muaiqly",
+    name: "Maher Al-Muaiqly",
+    style: "Murattal",
+    reciterId: 8,
+    hasSurahCdn: false,
+    surahAudioPattern: (s) => `https://everyayah.com/data/MaherAlMuaiqly128kbps/${String(s).padStart(3, "0")}001.mp3`,
+    verseAudioPattern: (s, v) =>
+      `https://everyayah.com/data/MaherAlMuaiqly128kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
+  },
+  {
+    id: "rifai",
+    name: "Hani Ar-Rifai",
+    style: "Murattal",
+    reciterId: 9,
+    hasSurahCdn: false,
+    surahAudioPattern: (s) => `https://everyayah.com/data/Hani_Ar-Rifai_192kbps/${String(s).padStart(3, "0")}001.mp3`,
+    verseAudioPattern: (s, v) =>
+      `https://everyayah.com/data/Hani_Ar-Rifai_192kbps/${String(s).padStart(3, "0")}${String(v).padStart(3, "0")}.mp3`,
+  },
 ];
 
 export interface AudioContextType {
@@ -76,6 +126,10 @@ export interface AudioContextType {
   setSelectedLanguage: (lang: LanguageOption) => void;
   selectedReciter: ReciterOption;
   setSelectedReciter: (reciter: ReciterOption) => void;
+  playbackSpeed: number;
+  setPlaybackSpeed: (speed: number) => void;
+  repeatMode: "none" | "verse" | "surah";
+  setRepeatMode: (mode: "none" | "verse" | "surah") => void;
 
   // Playback state
   isPlaying: boolean;
@@ -125,7 +179,52 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
 
+  // Playback Speed & Repeat Modes (Hifz Tools)
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("quran_playback_speed");
+      return saved ? parseFloat(saved) : 1.0;
+    }
+    return 1.0;
+  });
+
+  const [repeatMode, setRepeatMode] = useState<"none" | "verse" | "surah" >(() => {
+    if (typeof window !== "undefined") {
+      return (localStorage.getItem("quran_repeat_mode") as any) || "none";
+    }
+    return "none";
+  });
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const repeatModeRef = useRef(repeatMode);
+  const playingTypeRef = useRef(playingType);
+  const playingSurahIdRef = useRef(playingSurahId);
+  const playingVerseNumberRef = useRef(playingVerseNumber);
+  const playbackSpeedRef = useRef(playbackSpeed);
+
+  useEffect(() => { repeatModeRef.current = repeatMode; }, [repeatMode]);
+  useEffect(() => { playingTypeRef.current = playingType; }, [playingType]);
+  useEffect(() => { playingSurahIdRef.current = playingSurahId; }, [playingSurahId]);
+  useEffect(() => { playingVerseNumberRef.current = playingVerseNumber; }, [playingVerseNumber]);
+  useEffect(() => { playbackSpeedRef.current = playbackSpeed; }, [playbackSpeed]);
+
+  const handleSetPlaybackSpeed = (speed: number) => {
+    setPlaybackSpeed(speed);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("quran_playback_speed", speed.toString());
+    }
+    if (audioRef.current) {
+      audioRef.current.playbackRate = speed;
+    }
+  };
+
+  const handleSetRepeatMode = (mode: "none" | "verse" | "surah") => {
+    setRepeatMode(mode);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("quran_repeat_mode", mode);
+    }
+  };
 
   // Sequential surah playback state (for reciters without surah-level CDN)
   const surahPlaybackRef = useRef<{
@@ -171,16 +270,73 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const audio = new Audio();
     audioRef.current = audio;
 
-    const handlePlay = () => setIsPlaying(true);
+    const handlePlay = () => {
+      setIsPlaying(true);
+      audio.playbackRate = playbackSpeedRef.current;
+    };
     const handlePause = () => setIsPlaying(false);
-    const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
+    const handleTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
+      // Safety net to keep playbackRate in sync
+      if (audio.playbackRate !== playbackSpeedRef.current) {
+        audio.playbackRate = playbackSpeedRef.current;
+      }
+    };
     const handleDurationChange = () => setDuration(audio.duration || 0);
+    
     const handleEnded = () => {
-      // Check if we are in sequential surah mode
+      // 1. If repeatMode is "verse", replay the active verse
+      if (repeatModeRef.current === "verse") {
+        if (playingTypeRef.current === "verse" && playingSurahIdRef.current !== null && playingVerseNumberRef.current !== null) {
+          audio.currentTime = 0;
+          audio.play().catch(console.error);
+          return;
+        } else if (surahPlaybackRef.current) {
+          const state = surahPlaybackRef.current;
+          const url = selectedReciterRef.current.verseAudioPattern(state.surahId, state.currentVerse);
+          audio.src = url;
+          audio.load();
+          audio.play().catch(console.error);
+          return;
+        }
+      }
+
+      // 2. Sequential Surah mode
       if (surahPlaybackRef.current) {
-        playNextVerse();
+        const state = surahPlaybackRef.current;
+        const nextVerse = state.currentVerse + 1;
+        
+        if (nextVerse > state.totalVerses) {
+          // Surah ended. If loop surah is active, loop back to verse 1
+          if (repeatModeRef.current === "surah") {
+            state.currentVerse = 1;
+            setPlayingVerseNumber(1);
+            const url = selectedReciterRef.current.verseAudioPattern(state.surahId, 1);
+            audio.src = url;
+            audio.load();
+            audio.play().catch(console.error);
+          } else {
+            surahPlaybackRef.current = null;
+            setIsPlaying(false);
+            setPlayingType(null);
+            setPlayingSurahId(null);
+            setPlayingVerseNumber(null);
+            setCurrentTime(0);
+            setDuration(0);
+          }
+        } else {
+          // Play next verse
+          state.currentVerse = nextVerse;
+          setPlayingVerseNumber(nextVerse);
+          const url = selectedReciterRef.current.verseAudioPattern(state.surahId, nextVerse);
+          audio.src = url;
+          audio.load();
+          audio.play().catch(console.error);
+        }
         return;
       }
+
+      // 3. Single verse completed
       setIsPlaying(false);
       setPlayingType(null);
       setPlayingSurahId(null);
@@ -354,6 +510,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setSelectedLanguage: handleSetLanguage,
         selectedReciter,
         setSelectedReciter: handleSetReciter,
+        playbackSpeed,
+        setPlaybackSpeed: handleSetPlaybackSpeed,
+        repeatMode,
+        setRepeatMode: handleSetRepeatMode,
         isPlaying,
         playingType,
         playingSurahId,

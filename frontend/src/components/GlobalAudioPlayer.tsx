@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAudio } from "../context/AudioContext";
 import { surahList } from "../data/quranData";
-import { Play, Pause, X, Volume2 } from "lucide-react";
+import { Play, Pause, X, Volume2, Repeat } from "lucide-react";
 
 export const GlobalAudioPlayer: React.FC = () => {
   const {
@@ -16,6 +16,10 @@ export const GlobalAudioPlayer: React.FC = () => {
     stopAudio,
     seekAudio,
     selectedReciter,
+    playbackSpeed,
+    setPlaybackSpeed,
+    repeatMode,
+    setRepeatMode,
   } = useAudio();
 
   const [isMobile, setIsMobile] = useState(
@@ -52,6 +56,19 @@ export const GlobalAudioPlayer: React.FC = () => {
     zIndex: 49,
     padding: "0",
     boxSizing: "border-box" as const,
+  };
+
+  const cycleSpeed = () => {
+    const speeds = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
+    const currentIndex = speeds.indexOf(playbackSpeed);
+    const nextIndex = (currentIndex + 1) % speeds.length;
+    setPlaybackSpeed(speeds[nextIndex]);
+  };
+
+  const cycleRepeat = () => {
+    if (repeatMode === "none") setRepeatMode("verse");
+    else if (repeatMode === "verse") setRepeatMode("surah");
+    else setRepeatMode("none");
   };
 
   const desktopPlayerStyle: React.CSSProperties = {
@@ -106,16 +123,46 @@ export const GlobalAudioPlayer: React.FC = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
+            {/* Speed Selector Button */}
+            <button
+              onClick={cycleSpeed}
+              className="px-2 py-1 rounded bg-[#33261a] hover:bg-[#4d3926] text-[var(--color-gold)] border border-[#4d3926] text-[10px] font-bold transition-all active:scale-95 cursor-pointer shrink-0"
+              title={`Change playback speed (current: ${playbackSpeed}x)`}
+            >
+              {playbackSpeed}x
+            </button>
+
+            {/* Repeat Mode Button */}
+            <button
+              onClick={cycleRepeat}
+              className={`w-7 h-7 rounded-full flex flex-col items-center justify-center transition-all border active:scale-95 relative cursor-pointer shrink-0 ${
+                repeatMode !== "none"
+                  ? "bg-[#241c12] border-[var(--color-gold)] text-[var(--color-gold)]"
+                  : "bg-[#33261a] border-[#4d3926] text-[#8c6b4a] hover:text-white"
+              }`}
+              title={`Repeat mode: ${repeatMode === "none" ? "Off" : repeatMode === "verse" ? "Repeat Verse" : "Repeat Surah"}`}
+            >
+              <Repeat size={13} />
+              {repeatMode !== "none" && (
+                <span 
+                  className="absolute -bottom-1 -right-1 bg-[var(--color-gold)] text-[#16110b] font-extrabold rounded-full flex items-center justify-center"
+                  style={{ fontSize: '7px', width: '10px', height: '10px' }}
+                >
+                  {repeatMode === "verse" ? "1" : "S"}
+                </span>
+              )}
+            </button>
+
             <button
               onClick={isPlaying ? pauseAudio : resumeAudio}
-              className="w-8 h-8 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-gold-light)] text-[#16110b] flex items-center justify-center transition-all shadow-md active:scale-95"
+              className="w-8 h-8 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-gold-light)] text-[#16110b] flex items-center justify-center transition-all shadow-md active:scale-95 cursor-pointer shrink-0"
             >
               {isPlaying ? <Pause size={14} /> : <Play size={14} className="ml-0.5" />}
             </button>
             <button
               onClick={stopAudio}
-              className="w-8 h-8 rounded-full bg-[#33261a] hover:bg-[#4d3926] text-[#8c6b4a] hover:text-white flex items-center justify-center transition-all border border-[#4d3926] active:scale-95"
+              className="w-8 h-8 rounded-full bg-[#33261a] hover:bg-[#4d3926] text-[#8c6b4a] hover:text-white flex items-center justify-center transition-all border border-[#4d3926] active:scale-95 cursor-pointer shrink-0"
               title="Stop playback"
             >
               <X size={14} />
