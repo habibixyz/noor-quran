@@ -26,11 +26,46 @@ export const GlobalAudioPlayer: React.FC = () => {
     typeof window !== "undefined" ? window.innerWidth < 768 : false
   );
 
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [isSwiping, setIsSwiping] = useState(false);
+  const touchStartRef = React.useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!isMobile) return;
+    const touch = e.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    setIsSwiping(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isMobile || !isSwiping) return;
+    const touch = e.touches[0];
+    const diffX = touch.clientX - touchStartRef.current.x;
+    setSwipeOffset(diffX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!isMobile || !isSwiping) return;
+    setIsSwiping(false);
+    
+    if (Math.abs(swipeOffset) > 120) {
+      const exitDirection = swipeOffset > 0 ? 1 : -1;
+      setSwipeOffset(exitDirection * window.innerWidth);
+      
+      setTimeout(() => {
+        stopAudio();
+        setSwipeOffset(0);
+      }, 200);
+    } else {
+      setSwipeOffset(0);
+    }
+  };
 
   if (!playingType || !playingSurahId) return null;
 
@@ -56,6 +91,9 @@ export const GlobalAudioPlayer: React.FC = () => {
     zIndex: 49,
     padding: "0",
     boxSizing: "border-box" as const,
+    transform: `translateX(${swipeOffset}px)`,
+    transition: isSwiping ? "none" : "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+    touchAction: "pan-y"
   };
 
   const cycleSpeed = () => {
@@ -84,7 +122,12 @@ export const GlobalAudioPlayer: React.FC = () => {
   };
 
   return (
-    <div style={isMobile ? mobilePlayerStyle : desktopPlayerStyle}>
+    <div 
+      style={isMobile ? mobilePlayerStyle : desktopPlayerStyle}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         style={{
           padding: "12px 16px",
