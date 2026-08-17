@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { surahList, getSurahVerses } from "../data/quranData";
-import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown, Bookmark, Info, Search as SearchIcon, Trash } from "lucide-react";
+import { BookOpen, Play, Pause, Share2, Copy, Sparkles, Globe, Volume2, ChevronDown, Bookmark, Info, Search as SearchIcon, Trash, ArrowUp } from "lucide-react";
 import { useAudio, LANGUAGE_OPTIONS, RECITER_OPTIONS } from "../context/AudioContext";
 import { juzList } from "../data/juzData";
 import { getDailyVerse } from "../data/dailyVerses";
@@ -145,9 +145,27 @@ export const QuranReader: React.FC<{ theme: string; setTheme: (theme: string) =>
     return false;
   });
 
+  const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
+
   useEffect(() => {
     setDailyVerse(getDailyVerse());
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleToggleTransliteration = () => {
     const nextVal = !showTransliteration;
@@ -1253,6 +1271,17 @@ export const QuranReader: React.FC<{ theme: string; setTheme: (theme: string) =>
             </div>
           </div>
         </div>
+      )}
+
+      {/* Floating Back to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-24 right-4 z-40 w-10 h-10 rounded-full bg-[var(--color-gold)] hover:bg-[var(--color-gold-light)] text-[#16110b] flex items-center justify-center shadow-lg hover:shadow-xl transition-all scale-100 active:scale-95 cursor-pointer animate-in fade-in duration-200"
+          title="Go to Top"
+        >
+          <ArrowUp size={18} />
+        </button>
       )}
     </article>
   );
