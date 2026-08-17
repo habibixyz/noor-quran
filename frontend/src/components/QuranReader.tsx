@@ -963,37 +963,41 @@ export const QuranReader: React.FC<{ theme: string; setTheme: (theme: string) =>
                       <button
                         id={`play-verse-btn-${verse.verse_number}`}
                         onClick={() => playVerseAudio(verse)}
-                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[var(--color-gold)] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer"
+                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[var(--color-gold)] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer sm:px-3 sm:py-1.5"
                         aria-label="Play verse audio"
                       >
                         {isPlaying && playingType === "verse" && playingSurahId === selectedSurah && playingVerseNumber === verse.verse_number ? (
                           <>
-                            <Pause size={13} className="animate-pulse" /> Stop Audio
+                            <Pause size={13} className="animate-pulse" />
+                            <span className="hidden sm:inline">Stop Audio</span>
                           </>
                         ) : (
                           <>
-                            <Play size={13} /> Play Verse
+                            <Play size={13} />
+                            <span className="hidden sm:inline">Play Verse</span>
                           </>
                         )}
                       </button>
                       <button
                         id={`tafsir-verse-btn-${verse.verse_number}`}
                         onClick={() => handleOpenTafsir(verse.verse_number)}
-                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[var(--color-gold)] cursor-pointer"
+                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[var(--color-gold)] cursor-pointer sm:px-3 sm:py-1.5"
                       >
-                        <BookOpen size={13} /> Tafsir
+                        <BookOpen size={13} />
+                        <span className="hidden sm:inline">Tafsir</span>
                       </button>
                       <button
                         id={`share-verse-btn-${verse.verse_number}`}
                         onClick={() => shareVerse(verse)}
-                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[var(--color-gold)] cursor-pointer"
+                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[var(--color-gold)] cursor-pointer sm:px-3 sm:py-1.5"
                       >
-                        <Share2 size={13} /> Share
+                        <Share2 size={13} />
+                        <span className="hidden sm:inline">Share</span>
                       </button>
                       <button
                         id={`bookmark-verse-btn-${verse.verse_number}`}
                         onClick={() => handleAddBookmark(selectedSurah, verse.verse_number)}
-                        className={`bg-[#33261a] border border-[#33261a] rounded-md text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] cursor-pointer ${
+                        className={`bg-[#33261a] border border-[#33261a] rounded-md text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] cursor-pointer sm:px-3 sm:py-1.5 ${
                           isBookmarked
                             ? "text-[var(--color-gold)] border-[var(--color-gold)]/30 font-bold"
                             : "text-[#8c6b4a] hover:text-[var(--color-gold)]"
@@ -1005,11 +1009,12 @@ export const QuranReader: React.FC<{ theme: string; setTheme: (theme: string) =>
                       <button
                         id={`copy-verse-btn-${verse.verse_number}`}
                         onClick={() => copyToClipboard(`${verse.text_uthmani}\n\n"${verse.translation}" - Quran ${selectedSurah}:${verse.verse_number}`)}
-                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer"
+                        className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer sm:px-3 sm:py-1.5"
                       >
-                      <Copy size={13} /> <span className="hidden sm:inline">Copy</span>
-                    </button>
-                  </div>
+                        <Copy size={13} />
+                        <span className="hidden sm:inline">Copy</span>
+                      </button>
+                    </div>
                 </div>
               );
               });

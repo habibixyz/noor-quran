@@ -327,16 +327,18 @@ export const SemanticSearch: React.FC = () => {
                   <button
                     id={`copy-btn-${result.id}`}
                     onClick={() => copyToClipboard(`${result.text_uthmani}\n\n"${result.translation}" - Quran ${result.verse_key}`)}
-                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
+                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer sm:px-3 sm:py-1.5"
                   >
-                    <Copy size={13} /> Copy Verse
+                    <Copy size={13} />
+                    <span className="hidden sm:inline">Copy Verse</span>
                   </button>
                   <button
                     id={`share-btn-${result.id}`}
                     onClick={() => shareVerse(result)}
-                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium px-3 py-1.5 flex items-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72]"
+                    className="bg-[#33261a] border border-[#33261a] rounded-md text-[#8c6b4a] text-[11px] font-medium p-2 flex items-center justify-center gap-1.5 transition-all hover:border-[#4d3926] hover:text-[#6b9e72] cursor-pointer sm:px-3 sm:py-1.5"
                   >
-                    <Share2 size={13} /> Share
+                    <Share2 size={13} />
+                    <span className="hidden sm:inline">Share</span>
                   </button>
                 </div>
               </div>
